@@ -1,0 +1,38 @@
+{
+  "ignored_categories": [
+    "biologics",
+    "dietary_ingredients",
+    "flame_retardants",
+    "plasticizers"
+  ],
+  "too_small_categories": [
+    "biologics",
+    "dietary_ingredients",
+    "flame_retardants",
+    "plasticizers"
+  ],
+  "borderline_small_categories": [],
+  "adequate_size_categories": [
+    "animal_drugs",
+    "cosmetics",
+    "endocrine_disruptors",
+    "flavoring_agents",
+    "food_additives",
+    "food_contact_substances",
+    "fragrances",
+    "human_drugs",
+    "lipids",
+    "pfas",
+    "pesticides",
+    "polymers",
+    "solvents",
+    "surfactants",
+    "uvcb"
+  ],
+  "rule_used": {
+    "too_small": "positive_count < 100",
+    "borderline_small": "100 <= positive_count < 250",
+    "adequate_size": "positive_count >= 250"
+  },
+  "interpretation": "Categories marked too_small are sample-size-limited enough that their scores should not be trusted for product decisions. Categories marked adequate_size may still be weak, but the main trust problem is not sample count."
+}

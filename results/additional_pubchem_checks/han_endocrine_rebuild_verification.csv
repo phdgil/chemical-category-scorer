@@ -1,0 +1,2 @@
+model_id,threshold_used_in_model,threshold_recomputed_from_rebuild,positive_count,negative_count,auc,pr_auc,mcc_recomputed_best,balanced_accuracy_using_model_threshold,confusion_matrix_using_model_threshold
+han_endocrine_disruptors,0.6643,0.6654505104917977,6125,9985,0.9211888363156981,0.9413958731494305,0.8394643754122941,0.9065530131932593,"[[9767, 218], [1011, 5114]]"

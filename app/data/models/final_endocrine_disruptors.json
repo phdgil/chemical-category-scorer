@@ -1,0 +1,103 @@
+{
+  "model_id": "final_endocrine_disruptors",
+  "label": "Endocrine disruptors",
+  "category": "endocrine_disruptors",
+  "model_type": "choi_auto",
+  "threshold": 0.44869092292028634,
+  "source_student": "GJC final endocrine rebuild",
+  "source_student_id": "GJC",
+  "description": "Uncapped endocrine disruptor scorer rebuilt with full PubChem positives, retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+  "metrics": {
+    "auc": 0.8279271704968251,
+    "ks": 0.5485482535125751,
+    "balanced_accuracy": 0.7742741267562876,
+    "overlap": 0.4492620669395968,
+    "objective": 1.532310525285736,
+    "negative_count": 3455
+  },
+  "selected_props": [
+    "logP",
+    "TPSA",
+    "AromaticRings",
+    "MW",
+    "HBA"
+  ],
+  "ranges": {
+    "logP": [
+      1.7834199999999998,
+      6.782208500000004
+    ],
+    "TPSA": [
+      20.23,
+      96.36
+    ],
+    "AromaticRings": [
+      0.0,
+      3.0
+    ],
+    "MW": [
+      220.35599999999994,
+      482.5388500000003
+    ],
+    "HBA": [
+      1.0,
+      6.0
+    ]
+  },
+  "pattern_weights": {
+    "nitro": 1.6026587597497848,
+    "aromatic_oh": 45.53845730628397,
+    "benzophenone": 3.637044219982846,
+    "cinnamate": 1.0
+  },
+  "selected_patterns": {
+    "nitro": "[N+](=O)[O-]",
+    "aromatic_oh": "Oc1ccccc1",
+    "benzophenone": "c1ccccc1C(=O)c1ccccc1",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1"
+  },
+  "best_w": 0.55,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.15,
+  "ratio_threshold": 2.0,
+  "range_quantiles": [
+    0.15,
+    0.85
+  ],
+  "optimization_method": "mixed_grid_search",
+  "optimization_trials": 0,
+  "category_prior_used": true,
+  "category_prior": {
+    "prior_id": "endocrine_disruptors",
+    "source": "data/models/pubchem_endocrine_disruptors.json broad Choi pattern evidence",
+    "motifs": {
+      "aromatic_oh": 4.0,
+      "benzophenone": 2.0,
+      "cinnamate": 1.0
+    }
+  },
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\endocrine_disruptors__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\endocrine_disruptors__negative_source.csv",
+  "negative_policy": {
+    "final_category_pool": [
+      "animal_drugs",
+      "cosmetics",
+      "endocrine_disruptors",
+      "flavoring_agents",
+      "food_additives",
+      "food_contact_substances",
+      "fragrances",
+      "human_drugs",
+      "pesticides",
+      "solvents",
+      "surfactants"
+    ],
+    "cross_category_overlap_policy": "retain_overlap_from_other_categories",
+    "excluded_only": [
+      "exact_target_positive_overlap",
+      "duplicate_smiles_in_negative_source",
+      "near_positive_tanimoto_after_step1"
+    ],
+    "note": "Molecules found in other categories are retained as negatives unless they are also in the target positive set."
+  }
+}

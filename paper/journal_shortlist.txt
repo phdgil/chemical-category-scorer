@@ -1,0 +1,38 @@
+Target journal shortlist
+
+Tier 1: best fit
+1. Journal of Cheminformatics
+   - Best scope match for chemical structure representation, structure/similarity search, QSAR, data mining, and cheminformatics methodology.
+   - Best first submission target for this manuscript.
+   - Scope: https://jcheminform.github.io/jcheminform-author-guidelines/aimsAndScope.html
+
+2. Journal of Chemical Information and Modeling (JCIM)
+   - Strong fit if the paper is framed as a methodological chemical-informatics contribution with clear validation and reusable scoring workflow.
+   - Scope: https://pubs.acs.org/page/jcisd8/about.html
+
+3. Molecular Informatics
+   - Good fit if the manuscript is framed as molecular informatics / computer-assisted molecular design rather than only software deployment.
+   - Scope: https://onlinelibrary.wiley.com/page/journal/18681751/homepage/productinformation.html
+
+Tier 2: conditional fit
+4. BMC Chemistry
+   - Broad chemistry venue; acceptable if the manuscript is more application-focused and less specialized than JCIM / Journal of Cheminformatics.
+   - Scope: https://bmcchem.biomedcentral.com/submission-guidelines/aims-and-scope
+
+5. Computational Toxicology
+   - Use only if the paper is reframed toward safety / hazard / toxicology-related chemical grouping rather than broad product-category scoring.
+   - Scope: https://www.sciencedirect.com/journal/computational-toxicology
+
+6. Current Computer-Aided Drug Design
+   - Use only if the manuscript is reframed toward drug-design relevance; otherwise the product-category scope is broader than this journal’s center of gravity.
+   - Scope: https://www.benthamscience.com/journal/5/about-journal
+
+Recommended submission order
+1. Journal of Cheminformatics
+2. JCIM
+3. Molecular Informatics
+4. BMC Chemistry
+
+Reason for this order
+- The current manuscript is strongest as a cheminformatics methodology paper: full-positive PubChem category rebuilding, property-plus-pattern scoring, and same-regime QED comparison.
+- It is weaker as a toxicology-only or drug-design-only story.

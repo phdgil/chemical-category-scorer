@@ -1,0 +1,93 @@
+{
+  "model_id": "final_solvents",
+  "label": "Solvents / Final rebuilt scorer",
+  "category": "solvents",
+  "model_type": "choi_auto",
+  "threshold": 0.5020830273425801,
+  "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+  "source_student_id": "20251266+20251288",
+  "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+  "metrics": {
+    "auc": 0.929459230819288,
+    "ks": 0.7360624343444673,
+    "balanced_accuracy": 0.8680312171722336,
+    "overlap": 0.21626212012754603,
+    "objective": 0.7674191805598528,
+    "negative_count": 8890
+  },
+  "selected_props": [
+    "MW",
+    "TPSA",
+    "FCsp3",
+    "HBA",
+    "AromaticRings",
+    "HBD"
+  ],
+  "ranges": {
+    "MW": [
+      88.14999999999999,
+      162.22899999999998
+    ],
+    "TPSA": [
+      0.0,
+      27.69
+    ],
+    "FCsp3": [
+      0.75,
+      1.0
+    ],
+    "HBA": [
+      0.0,
+      2.0
+    ],
+    "AromaticRings": [
+      0.0,
+      0.0
+    ],
+    "HBD": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "long_chain": 8.948302949734586
+  },
+  "selected_patterns": {
+    "long_chain": "CCCCCC"
+  },
+  "best_w": 0.7531245410138703,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.31844820512829464,
+  "ratio_threshold": 4.190549904649883,
+  "range_quantiles": [
+    0.15,
+    0.85
+  ],
+  "optimization_method": "mixed_lee_tpe_bayesian",
+  "optimization_trials": 8,
+  "category_prior_used": false,
+  "category_prior": null,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\solvents__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\solvents__negative_source.csv",
+  "negative_policy": {
+    "final_category_pool": [
+      "animal_drugs",
+      "human_drugs",
+      "cosmetics",
+      "flavoring_agents",
+      "food_additives",
+      "food_contact_substances",
+      "fragrances",
+      "pesticides",
+      "solvents",
+      "surfactants"
+    ],
+    "cross_category_overlap_policy": "retain_overlap_from_other_categories",
+    "excluded_only": [
+      "exact_target_positive_overlap",
+      "duplicate_smiles_in_negative_source",
+      "near_positive_tanimoto_after_step1"
+    ],
+    "note": "Molecules found in other categories are retained as negatives unless they are also in the target positive set."
+  }
+}

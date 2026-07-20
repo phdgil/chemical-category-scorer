@@ -1,0 +1,20 @@
+{
+  "model_id": "dietary_supplements",
+  "label": "Dietary supplements",
+  "hnid": 18246704,
+  "positive_count": 2192,
+  "negative_count": 7082,
+  "selected_prop_count": 2,
+  "pattern_count": 1,
+  "auc": 0.532073448260935,
+  "balanced_accuracy": 0.547150481224117,
+  "threshold": 0.005605013495262934,
+  "qed_auc": 0.3337323457537048,
+  "qed_balanced_accuracy": 0.47202395246919815,
+  "delta_auc_vs_qed": 0.19834110250723014,
+  "delta_balanced_accuracy_vs_qed": 0.07512652875491888,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\additional_pubchem_checks\\dietary_supplements\\inputs\\dietary_supplements__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\additional_pubchem_checks\\dietary_supplements\\inputs\\dietary_supplements__negative_source.csv",
+  "model_path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\additional_pubchem_checks\\dietary_supplements\\models\\dietary_supplements.json",
+  "negative_policy": "Union of final category positives with exact target-overlap removed, followed by Tanimoto filtering at 0.3."
+}

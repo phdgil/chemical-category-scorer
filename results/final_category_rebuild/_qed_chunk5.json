@@ -1,0 +1,16 @@
+[
+  {
+    "category": "solvents",
+    "positive_count": 605,
+    "negative_count": 8890,
+    "qed_auc": 0.5197155314263403,
+    "qed_balanced_accuracy": 0.6654091792244978
+  },
+  {
+    "category": "surfactants",
+    "positive_count": 268,
+    "negative_count": 11815,
+    "qed_auc": 0.27163042173811436,
+    "qed_balanced_accuracy": 0.5176047397376217
+  }
+]

@@ -1,0 +1,134 @@
+{
+  "model_id": "final_human_drugs",
+  "label": "Human Drugs / Final rebuilt scorer",
+  "category": "human_drugs",
+  "model_type": "choi_auto",
+  "threshold": 0.17191444947821252,
+  "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+  "source_student_id": "20251266+20251288",
+  "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+  "metrics": {
+    "auc": 0.7876086652524834,
+    "ks": 0.47384457402160934,
+    "balanced_accuracy": 0.7369222870108046,
+    "overlap": 0.504210435075693,
+    "objective": 1.8125847409816507,
+    "negative_count": 3422
+  },
+  "selected_props": [
+    "MW",
+    "TPSA",
+    "HBD",
+    "AromaticRings",
+    "HBA",
+    "RotBonds",
+    "FCsp3"
+  ],
+  "ranges": {
+    "MW": [
+      281.326,
+      539.0650000000003
+    ],
+    "TPSA": [
+      50.72,
+      146.01
+    ],
+    "HBD": [
+      1.0,
+      3.0
+    ],
+    "AromaticRings": [
+      1.0,
+      3.0
+    ],
+    "HBA": [
+      3.0,
+      8.0
+    ],
+    "RotBonds": [
+      3.0,
+      9.0
+    ],
+    "FCsp3": [
+      0.29411764705882354,
+      0.6
+    ]
+  },
+  "pattern_weights": {
+    "fluoroaromatic": 4.569330703266439,
+    "pyridine": 8.020085309326204,
+    "imidazole": 5.0,
+    "nitro": 1.2178038047628987,
+    "carbamate": 2.415574992996379,
+    "aromatic_oh": 20.531202632020786,
+    "aromatic_nh2": 13.629334859449756,
+    "glycol": 11.252998851515283,
+    "long_chain": 4.0,
+    "urea": 2.0,
+    "quaternary_n": 2.0,
+    "ester": 2.0,
+    "halogen": 2.0
+  },
+  "selected_patterns": {
+    "fluoroaromatic": "[F]c",
+    "pyridine": "c1ccncc1",
+    "imidazole": "c1cnc[nH]1",
+    "nitro": "[N+](=O)[O-]",
+    "carbamate": "OC(=O)N",
+    "aromatic_oh": "Oc1ccccc1",
+    "aromatic_nh2": "Nc1ccccc1",
+    "glycol": "OCCO",
+    "long_chain": "CCCCCC",
+    "urea": "NC(=O)N",
+    "quaternary_n": "[N+]",
+    "ester": "C(=O)OC",
+    "halogen": "[Cl,Br,F,I]"
+  },
+  "best_w": 0.4,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.15,
+  "ratio_threshold": 2.0,
+  "range_quantiles": [
+    0.25,
+    0.75
+  ],
+  "optimization_method": "mixed_grid_search",
+  "optimization_trials": 0,
+  "category_prior_used": true,
+  "category_prior": {
+    "prior_id": "human_drugs",
+    "source": "data/evidence_panels/human_drugs.json; motifs used only as broad-category priors, not subtype replacement targets",
+    "motifs": {
+      "imidazole": 5.0,
+      "long_chain": 4.0,
+      "aromatic_oh": 3.0,
+      "urea": 2.0,
+      "quaternary_n": 2.0,
+      "ester": 2.0,
+      "halogen": 2.0
+    }
+  },
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\human_drugs__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\human_drugs__negative_source.csv",
+  "negative_policy": {
+    "final_category_pool": [
+      "animal_drugs",
+      "human_drugs",
+      "cosmetics",
+      "flavoring_agents",
+      "food_additives",
+      "food_contact_substances",
+      "fragrances",
+      "pesticides",
+      "solvents",
+      "surfactants"
+    ],
+    "cross_category_overlap_policy": "retain_overlap_from_other_categories",
+    "excluded_only": [
+      "exact_target_positive_overlap",
+      "duplicate_smiles_in_negative_source",
+      "near_positive_tanimoto_after_step1"
+    ],
+    "note": "Molecules found in other categories are retained as negatives unless they are also in the target positive set."
+  }
+}

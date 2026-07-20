@@ -1,0 +1,80 @@
+Working title
+Structure-based chemical product-category scoring from molecular structure: full-positive PubChem broad-category rebuild, QED comparison, and desktop deployment
+
+Target paper shape
+1. Introduction
+   - Why chemical product-category suggestion from structure matters.
+   - Why a score-based method is a reasonable first publication target before adding the machine-learning-final models.
+   - Why PubChem Classification Browser enables broad category expansion.
+   - Why QED is the natural baseline: all scorers were inspired by RDKit drug-likeness style scoring, so improvement beyond QED is the minimum publication gate.
+
+2. Data and benchmark setup
+   - Positive set source: PubChem Classification Browser HID 72 chemical classes.
+   - Final reported categories: animal drugs, human drugs, cosmetics, flavoring agents, food additives, food contact substances, fragrances, pesticides, solvents, surfactants.
+   - Final run uses all available positives for those categories in this project run.
+   - Positive count reported in the final tables means unique SMILES after PubChem CID-to-SMILES fetch and SMILES deduplication.
+   - Negative construction for the final run:
+     - negatives are drawn from the other final categories,
+     - cross-category overlap is retained,
+     - removal only for exact target-positive overlap, duplicate negative SMILES, and near-positive Tanimoto matches.
+
+3. Scoring methodology
+   - Kim Nayeon: pesticide baseline with PPV histogram plus scaffold/residue logic.
+   - Lee Seoyun: Bayesian optimization around property-score separation.
+   - Choi Yebin: automated category builder using Tanimoto negative filtering, KS-based property selection, structural-pattern screening, and weight optimization.
+   - Final broad-category rebuild in this project combines:
+     - positive-set physicochemical property ranges,
+     - structural patterns,
+     - retained cross-category negatives,
+     - and Lee-style Bayesian optimization when it beats grid search.
+
+4. Main reporting rule
+   - A category is manuscript-reportable only if its scorer is compared against raw RDKit QED on the same rebuilt evaluation set.
+   - Main performance table should always show:
+     - scorer AUC,
+     - scorer balanced accuracy,
+     - QED AUC,
+     - QED balanced accuracy,
+     - delta vs QED.
+
+5. Final results to report
+   - Surfactants: AUC 0.9778 vs QED 0.2716.
+   - Flavoring agents: AUC 0.9389 vs QED 0.5656.
+   - Solvents: AUC 0.9295 vs QED 0.5197.
+   - Fragrances: AUC 0.9254 vs QED 0.5527.
+   - Food additives: AUC 0.8334 vs QED 0.4463.
+   - Human drugs: AUC 0.7876 vs QED 0.4730.
+   - Pesticides: AUC 0.7527 vs QED 0.6790.
+   - Food contact substances: AUC 0.6213 vs QED 0.3497.
+   - Cosmetics: AUC 0.6179 vs QED 0.2605.
+   - Animal drugs: AUC 0.6136 vs QED 0.4445.
+
+6. Interpretation section
+   - Full-positive rebuild changed some categories materially relative to earlier capped runs.
+   - Pesticides improved once the positive cap was removed and now beats QED under the final rebuilt regime.
+   - Several broad product categories remain weaker than fragrance/surfactant/solvent classes, but they still beat QED and therefore remain reportable.
+   - Food contact substances and cosmetics remain difficult broad classes even after full-positive rebuild, which should be stated directly.
+
+7. Desktop deployment section
+   - Desktop app now has a final broad-category rebuild line for the 10 selected categories.
+   - Report the exact model registry used for the manuscript run.
+   - Keep machine-learning-final models out of this paper version.
+
+8. Limitations
+   - Positive counts are full available project-run positives after CID-to-SMILES deduplication, not raw PubChem CID counts.
+   - The final task is still positive-versus-constructed-background, not perfect binary truth.
+   - Negative-set definition still matters and should be described explicitly in Methods.
+   - QED comparison is same-regime comparison, not universal proof of deployment readiness.
+
+9. Conclusion
+   - The final uncapped broad-category rebuild is ready for manuscript drafting.
+   - All 10 final categories are now paired with explicit QED comparisons.
+   - The manuscript can claim score improvement beyond QED on the rebuilt evaluation sets.
+
+Immediate manuscript files to use
+- paper/final_category_rebuild_summary.csv
+- paper/final_category_rebuild_qed_comparison.csv
+- paper/manuscript_ready_summary.txt
+- paper/journal_shortlist.txt
+- paper/regime_separated_comparison_table.csv
+- paper/evidence_table.csv

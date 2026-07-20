@@ -1,0 +1,742 @@
+node_id,hnid,name,depth,compound_count,child_count,is_leaf,parent_path,path
+node_231,1857282,Agrochemical Information,1,2852,4,False,PubChem Compound TOC,PubChem Compound TOC > Agrochemical Information
+node_232,1857046,Agrochemical Category,2,1677,0,True,PubChem Compound TOC > Agrochemical Information,PubChem Compound TOC > Agrochemical Information > Agrochemical Category
+node_235,3973846,Agrochemical Transformations,2,1494,0,True,PubChem Compound TOC > Agrochemical Information,PubChem Compound TOC > Agrochemical Information > Agrochemical Transformations
+node_233,1857255,EU Pesticides Data,2,1039,0,True,PubChem Compound TOC > Agrochemical Information,PubChem Compound TOC > Agrochemical Information > EU Pesticides Data
+node_234,3647581,USDA Pesticide Data Program,2,647,0,True,PubChem Compound TOC > Agrochemical Information,PubChem Compound TOC > Agrochemical Information > USDA Pesticide Data Program
+node_224,1857178,Associated Disorders and Diseases,1,30162,1,False,PubChem Compound TOC,PubChem Compound TOC > Associated Disorders and Diseases
+node_225,4112372,Disease and References,2,13410,0,True,PubChem Compound TOC > Associated Disorders and Diseases,PubChem Compound TOC > Associated Disorders and Diseases > Disease and References
+node_1,1856929,Biologic Description,1,2624625,10,False,PubChem Compound TOC,PubChem Compound TOC > Biologic Description
+node_2,1857064,Biologic Depiction,2,2592992,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > Biologic Depiction
+node_3,3647531,Biologic Line Notation,2,2541613,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > Biologic Line Notation
+node_9,4348003,GlyCosmos Monoisotopic Mass,2,37586,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > GlyCosmos Monoisotopic Mass
+node_11,4636480,GlyCosmos Species,2,8375,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > GlyCosmos Species
+node_8,4348002,GlyCosmos Subsumption,2,39752,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > GlyCosmos Subsumption
+node_10,4636478,GlyCosmos Tissue/Organ,2,127,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > GlyCosmos Tissue/Organ
+node_4,3966266,GlyGen Classification,2,11194,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > GlyGen Classification
+node_5,3966267,GlyGen Motifs,2,8908,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > GlyGen Motifs
+node_6,4242880,Monosaccharide Composition,2,15689,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > Monosaccharide Composition
+node_7,4242881,Permethylated Mass,2,15665,0,True,PubChem Compound TOC > Biologic Description,PubChem Compound TOC > Biologic Description > Permethylated Mass
+node_727,3647709,Biological Test Results,1,5124474,2,False,PubChem Compound TOC,PubChem Compound TOC > Biological Test Results
+node_729,18951461,Antiviral Activity,2,5087,0,True,PubChem Compound TOC > Biological Test Results,PubChem Compound TOC > Biological Test Results > Antiviral Activity
+node_728,3647710,BioAssay Results,2,5123025,0,True,PubChem Compound TOC > Biological Test Results,PubChem Compound TOC > Biological Test Results > BioAssay Results
+node_115,1857008,Chemical and Physical Properties,1,334422,3,False,PubChem Compound TOC,PubChem Compound TOC > Chemical and Physical Properties
+node_116,1857014,Chemical Classes,2,92390,17,False,PubChem Compound TOC > Chemical and Physical Properties,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes
+node_129,13589649,Drugs,3,15122,3,False,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs
+node_131,12950173,Animal Drugs,4,907,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs > Animal Drugs
+node_132,13589668,Biologics,4,28,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs > Biologics
+node_130,12950172,Human Drugs,4,3943,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs > Human Drugs
+node_119,12950174,Cosmetics,3,3841,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Cosmetics
+node_136,18246703,Dietary Ingredients,3,63,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Dietary Ingredients
+node_120,12950175,Endocrine Disruptors,3,6125,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Endocrine Disruptors
+node_126,13315350,Flame Retardants,3,64,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Flame Retardants
+node_135,17821330,Flavoring Agents,3,2444,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Flavoring Agents
+node_118,12946439,Food Additives,3,2960,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Food Additives
+node_134,17227309,Food Contact Substances,3,1945,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Food Contact Substances
+node_124,12950244,Fragrances,3,2548,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Fragrances
+node_117,12946385,Lipids,3,48936,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Lipids
+node_121,12950176,Pesticides,3,2973,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Pesticides
+node_122,12950177,PFAS,3,6153,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > PFAS
+node_127,13315351,Plasticizers,3,90,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Plasticizers
+node_123,12950178,Polymers,3,1162,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Polymers
+node_128,13315352,Solvents,3,632,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Solvents
+node_133,13589650,Surfactants,3,268,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Surfactants
+node_125,12950245,UVCB,3,315,0,True,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > UVCB
+node_137,1857151,Experimental Properties,2,245253,44,False,PubChem Compound TOC > Chemical and Physical Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties
+node_181,11290136,Accelerating Rate Calorimetry (ARC),3,2,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Accelerating Rate Calorimetry (ARC)
+node_157,1857248,Acid Value,3,4,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Acid Value
+node_168,3647548,Autoignition Temperature,3,905,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Autoignition Temperature
+node_162,3647541,Boiling Point,3,5262,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Boiling Point
+node_149,1857085,Caco2 Permeability,3,84,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Caco2 Permeability
+node_176,4016771,Collision Cross Section,3,9825,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Collision Cross Section
+node_155,1857210,Color/Form,3,4633,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Color/Form
+node_156,1857228,Corrosivity,3,632,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Corrosivity
+node_154,1857192,Decomposition,3,3101,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Decomposition
+node_148,1857076,Density,3,5673,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Density
+node_171,3647553,Dielectric Constant,3,3,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Dielectric Constant
+node_180,11290135,Differential Scanning Calorimetry (DSC),3,2,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Differential Scanning Calorimetry (DSC)
+node_146,1857040,Dispersion,3,1,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Dispersion
+node_173,3647556,Dissociation Constants,3,11746,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Dissociation Constants
+node_177,4364673,Enthalpy of Sublimation,3,11,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Enthalpy of Sublimation
+node_160,1857294,Flash Point,3,1979,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Flash Point
+node_150,1857090,Heat of Combustion,3,474,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Heat of Combustion
+node_151,1857097,Heat of Vaporization,3,689,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Heat of Vaporization
+node_138,1856918,Henry's Law Constant,3,661,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Henry's Law Constant
+node_153,1857136,Hydrophobicity,3,17,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Hydrophobicity
+node_178,5565660,Ionization Efficiency,3,397,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Ionization Efficiency
+node_145,1857021,Ionization Potential,3,285,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Ionization Potential
+node_159,1857257,Isoelectric Point,3,18,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Isoelectric Point
+node_140,1856944,Kovats Retention Index,3,79656,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Kovats Retention Index
+node_139,1856923,LogP,3,18387,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > LogP
+node_158,1857254,LogS,3,195,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > LogS
+node_152,1857132,Melting Point,3,11833,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Melting Point
+node_141,1856973,Odor,3,2230,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Odor
+node_147,1857042,Odor Threshold,3,511,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Odor Threshold
+node_144,1857011,Optical Rotation,3,537,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Optical Rotation
+node_175,3647558,Other Experimental Properties,3,3707,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Other Experimental Properties
+node_143,1856994,pH,3,685,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > pH
+node_163,3647542,Physical Description,3,98363,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Physical Description
+node_170,3647550,Polymerization,3,162,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Polymerization
+node_172,3647555,Refractive Index,3,3352,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Refractive Index
+node_174,3647557,Relative Evaporation Rate,3,133,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Relative Evaporation Rate
+node_179,11290134,Self-Accelerating Decomposition Temperature (SADT),3,1,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Self-Accelerating Decomposition Temperature (SADT)
+node_164,3647543,Solubility,3,66785,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Solubility
+node_167,3647547,Stability/Shelf Life,3,2397,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Stability/Shelf Life
+node_169,3647549,Surface Tension,3,514,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Surface Tension
+node_161,3647540,Taste,3,680,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Taste
+node_165,3647544,Vapor Density,3,1290,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Vapor Density
+node_166,3647545,Vapor Pressure,3,4421,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Vapor Pressure
+node_142,1856993,Viscosity,3,681,0,True,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties,PubChem Compound TOC > Chemical and Physical Properties > Experimental Properties > Viscosity
+node_182,3956435,SpringerMaterials Properties,2,32963,0,True,PubChem Compound TOC > Chemical and Physical Properties,PubChem Compound TOC > Chemical and Physical Properties > SpringerMaterials Properties
+node_54,1857006,Classification,1,26618959,60,False,PubChem Compound TOC,PubChem Compound TOC > Classification
+node_113,18828592,Aggregated CCS Classification,2,9827,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Aggregated CCS Classification
+node_106,17821331,ATCvet Classification,2,3537,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > ATCvet Classification
+node_64,1857131,CAMEO Chemicals,2,4428,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > CAMEO Chemicals
+node_101,5565651,CCS Classification - Baker Lab,2,3438,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > CCS Classification - Baker Lab
+node_87,4121372,CCSBase Classification,2,6238,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > CCSBase Classification
+node_56,1856957,ChEBI Ontology,2,179526,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > ChEBI Ontology
+node_75,1956969,ChEMBL Target Tree,2,1058753,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > ChEMBL Target Tree
+node_105,17061376,Chemicals in PubChem from Regulatory Sources,2,71366,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Chemicals in PubChem from Regulatory Sources
+node_57,1856974,ChemIDplus,2,340507,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > ChemIDplus
+node_93,4364672,Consumer Product Information Database Classification,2,3216,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Consumer Product Information Database Classification
+node_114,18951462,Dietary Supplement Ingredients Classification,2,2551,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Dietary Supplement Ingredients Classification
+node_84,3850689,Drug Enforcement Administration (DEA) Classification,2,2091,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Drug Enforcement Administration (DEA) Classification
+node_112,18828528,EPA Chemical Data Reporting Classification,2,5644,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > EPA Chemical Data Reporting Classification
+node_83,3670675,EPA CPDat Classification,2,28694,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > EPA CPDat Classification
+node_88,4206626,EPA DSSTox Classification,2,257802,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > EPA DSSTox Classification
+node_73,1857278,EPA Safer Choice,2,653,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > EPA Safer Choice
+node_100,5553555,EPA Substance Registry Services Tree,2,61718,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > EPA Substance Registry Services Tree
+node_102,12951733,EPA TSCA and CDR Classification,2,43040,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > EPA TSCA and CDR Classification
+node_95,4923900,FDA Drug Type and Pharmacologic Classification,2,3133,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > FDA Drug Type and Pharmacologic Classification
+node_108,18141026,FDA Liver Toxicity Knowledge Base (LTKB),2,2018,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > FDA Liver Toxicity Knowledge Base (LTKB)
+node_74,1857298,FDA Pharm Classes,2,1563,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > FDA Pharm Classes
+node_110,18296076,Food Ontology (FoodOn),2,855,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Food Ontology (FoodOn)
+node_103,13312513,Glycan Naming and Subsumption Ontology (GNOme),2,45474,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Glycan Naming and Subsumption Ontology (GNOme)
+node_107,18140353,HTS Classification,2,1010,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > HTS Classification
+node_91,4326271,International Agency for Research on Cancer (IARC) Classification,2,875,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > International Agency for Research on Cancer (IARC) Classification
+node_76,1957001,IUPHAR/BPS Guide to PHARMACOLOGY Target Classification,2,9082,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > IUPHAR/BPS Guide to PHARMACOLOGY Target Classification
+node_89,4308218,KEGG : Antimicrobials,2,1139,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG : Antimicrobials
+node_97,4970610,KEGG : Antimicrobials Abbreviations,2,106,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG : Antimicrobials Abbreviations
+node_85,3868940,KEGG : Glycosides,2,512,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG : Glycosides
+node_65,1857152,KEGG: ATC,2,4760,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: ATC
+node_60,1856991,KEGG: Crude Drug,2,2,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Crude Drug
+node_71,1857260,KEGG: Drug,2,1470,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Drug
+node_98,4970611,KEGG: Drug Classes,2,853,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Drug Classes
+node_80,3647724,KEGG: Drug Groups,2,5225,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Drug Groups
+node_66,1857157,KEGG: EDC,2,89,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: EDC
+node_58,1856975,KEGG: JP15,2,938,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: JP15
+node_77,3647712,KEGG: Lipid,2,3542,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Lipid
+node_69,1857184,KEGG: Metabolite,2,526,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Metabolite
+node_63,1857119,KEGG: Natural Toxins,2,281,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Natural Toxins
+node_61,1857065,KEGG: OTC drugs,2,306,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: OTC drugs
+node_70,1857239,KEGG: Peptide,2,22,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Peptide
+node_67,1857160,KEGG: Pesticides,2,919,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Pesticides
+node_62,1857105,KEGG: Phytochemical Compounds,2,2847,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Phytochemical Compounds
+node_79,3647715,KEGG: Risk Category of Japanese OTC Drugs,2,642,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Risk Category of Japanese OTC Drugs
+node_72,1857277,KEGG: Target-based Classification of Drugs,2,4770,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: Target-based Classification of Drugs
+node_78,3647714,KEGG: TCM,2,1,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: TCM
+node_59,1856983,KEGG: USP,2,1332,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > KEGG: USP
+node_68,1857175,LIPID MAPS Classification,2,48632,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > LIPID MAPS Classification
+node_96,4923901,LOTUS: Biological Tree,2,204072,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > LOTUS: Biological Tree
+node_111,18351148,LOTUS: Chemical Tree,2,203291,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > LOTUS: Chemical Tree
+node_55,1856932,MeSH Tree,2,89371,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > MeSH Tree
+node_104,13407309,MolGenie Organic Chemistry Ontology,2,4783587,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > MolGenie Organic Chemistry Ontology
+node_94,4812200,NCI Thesaurus Tree,2,19929,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > NCI Thesaurus Tree
+node_92,4364659,NIST Synthetic Polymer MALDI Recipes Database Classification,2,89,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > NIST Synthetic Polymer MALDI Recipes Database Classification
+node_86,3956432,NORMAN Suspect List Exchange Classification,2,134529,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > NORMAN Suspect List Exchange Classification
+node_109,18229617,Open Targets Classification,2,3329,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > Open Targets Classification
+node_99,5525629,PFAS and Fluorinated Organic Compounds in PubChem,2,23627947,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > PFAS and Fluorinated Organic Compounds in PubChem
+node_90,4326270,The Natural Products Atlas Classification,2,36256,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > The Natural Products Atlas Classification
+node_82,3654886,UN GHS Classification,2,271348,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > UN GHS Classification
+node_81,3647727,WHO ATC Classification System,2,3380,0,True,PubChem Compound TOC > Classification,PubChem Compound TOC > Classification > WHO ATC Classification System
+node_183,1857071,Drug and Medication Information,1,24389,29,False,PubChem Compound TOC,PubChem Compound TOC > Drug and Medication Information
+node_184,1856916,Clinical Trials,2,11806,3,False,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Clinical Trials
+node_185,3647573,ClinicalTrials.gov,3,10241,0,True,PubChem Compound TOC > Drug and Medication Information > Clinical Trials,PubChem Compound TOC > Drug and Medication Information > Clinical Trials > ClinicalTrials.gov
+node_186,3647574,EU Clinical Trials Register,3,5920,0,True,PubChem Compound TOC > Drug and Medication Information > Clinical Trials,PubChem Compound TOC > Drug and Medication Information > Clinical Trials > EU Clinical Trials Register
+node_187,3647575,NIPH Clinical Trials Search of Japan,3,1380,0,True,PubChem Compound TOC > Drug and Medication Information > Clinical Trials,PubChem Compound TOC > Drug and Medication Information > Clinical Trials > NIPH Clinical Trials Search of Japan
+node_212,12869006,DEA Drug and Chemical Information,2,2000,1,False,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > DEA Drug and Chemical Information
+node_213,3850688,DEA Controlled Substances,3,578,0,True,PubChem Compound TOC > Drug and Medication Information > DEA Drug and Chemical Information,PubChem Compound TOC > Drug and Medication Information > DEA Drug and Chemical Information > DEA Controlled Substances
+node_215,18182622,Drug Development Summary,2,13968,6,False,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary
+node_220,18182627,Availability Type,3,2644,0,True,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary > Availability Type
+node_219,18182626,Black Box Warning,3,743,0,True,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary > Black Box Warning
+node_217,18182624,First Approval,3,2860,0,True,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary > First Approval
+node_216,18182623,Max Phase,3,13968,0,True,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary > Max Phase
+node_221,18182628,Route of Administration,3,2789,0,True,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary > Route of Administration
+node_218,18182625,Withdrawn,3,330,0,True,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary,PubChem Compound TOC > Drug and Medication Information > Drug Development Summary > Withdrawn
+node_208,5562092,Biomarker Information,2,1108,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Biomarker Information
+node_209,5562093,Cancer Drugs,2,229,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Cancer Drugs
+node_197,3647570,Drug Classes,2,1954,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Classes
+node_191,1857174,Drug Idiosyncrasies,2,73,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Idiosyncrasies
+node_190,1857173,Drug Indication,2,7842,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Indication
+node_210,5614018,Drug Labels,2,3836,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Labels
+node_222,18182629,Drug Targets,2,3346,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Targets
+node_189,1857108,Drug Tolerance,2,223,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Tolerance
+node_200,4041262,Drug Transformations,2,132,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Transformations
+node_188,1857101,Drug Warnings,2,1931,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug Warnings
+node_202,4088594,Drug-Drug Interactions,2,3817,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug-Drug Interactions
+node_203,4088595,Drug-Food Interactions,2,1367,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Drug-Food Interactions
+node_198,3647577,EMA Drug Information,2,5161,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > EMA Drug Information
+node_211,5614020,FDA Approved Drugs,2,2499,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > FDA Approved Drugs
+node_201,4072102,FDA Green Book,2,459,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > FDA Green Book
+node_195,1857314,FDA Medication Guides,2,418,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > FDA Medication Guides
+node_206,4877713,FDA National Drug Code Directory,2,3016,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > FDA National Drug Code Directory
+node_196,1857316,FDA Orange Book,2,2419,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > FDA Orange Book
+node_207,5553591,FDA Purple Book,2,28,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > FDA Purple Book
+node_205,4877709,HIV/AIDS and Opportunistic Infection Drugs,2,118,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > HIV/AIDS and Opportunistic Infection Drugs
+node_214,13313400,Japan PMDA Drugs,2,182,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Japan PMDA Drugs
+node_193,1857193,LiverTox Summary,2,881,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > LiverTox Summary
+node_194,1857212,Maximum Drug Dose,2,44,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Maximum Drug Dose
+node_192,1857190,Reported Fatal Dose,2,828,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Reported Fatal Dose
+node_199,3647578,Therapeutic Uses,2,1834,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > Therapeutic Uses
+node_204,4308220,WHO Essential Medicines,2,478,0,True,PubChem Compound TOC > Drug and Medication Information,PubChem Compound TOC > Drug and Medication Information > WHO Essential Medicines
+node_236,1857308,Food Additives and Ingredients,1,16235,10,False,PubChem Compound TOC,PubChem Compound TOC > Food Additives and Ingredients
+node_246,18246704,Dietary Supplements,2,2445,2,False,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > Dietary Supplements
+node_247,18296619,Dietary Supplement Fact Sheets,3,63,0,True,PubChem Compound TOC > Food Additives and Ingredients > Dietary Supplements,PubChem Compound TOC > Food Additives and Ingredients > Dietary Supplements > Dietary Supplement Fact Sheets
+node_248,18828591,Dietary Supplement Label Information,3,2445,0,True,PubChem Compound TOC > Food Additives and Ingredients > Dietary Supplements,PubChem Compound TOC > Food Additives and Ingredients > Dietary Supplements > Dietary Supplement Label Information
+node_244,3956438,Associated Foods,2,10227,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > Associated Foods
+node_242,3647579,Color Additive Status,2,223,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > Color Additive Status
+node_243,3647580,Evaluations of the Joint FAO/WHO Expert Committee on Food Additives - JECFA,2,2954,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > Evaluations of the Joint FAO/WHO Expert Committee on Food Additives - JECFA
+node_245,17227310,FDA Food Contact Substances (FCS),2,1945,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > FDA Food Contact Substances (FCS)
+node_238,1857302,FDA Generally Recognized as Safe - GRAS Notices,2,131,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > FDA Generally Recognized as Safe - GRAS Notices
+node_241,2999717,FDA Substances Added to Food,2,2859,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > FDA Substances Added to Food
+node_237,1857296,FEMA Flavor Profile,2,1969,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > FEMA Flavor Profile
+node_240,1857336,Food Additive Classes,2,3733,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > Food Additive Classes
+node_239,1857334,Food Additive Definition,2,51,0,True,PubChem Compound TOC > Food Additives and Ingredients,PubChem Compound TOC > Food Additives and Ingredients > Food Additive Definition
+node_226,1857246,Identification,1,3522,4,False,PubChem Compound TOC,PubChem Compound TOC > Identification
+node_229,1857269,Analytic Laboratory Methods,2,3119,0,True,PubChem Compound TOC > Identification,PubChem Compound TOC > Identification > Analytic Laboratory Methods
+node_228,1857164,Clinical Laboratory Methods,2,1432,0,True,PubChem Compound TOC > Identification,PubChem Compound TOC > Identification > Clinical Laboratory Methods
+node_227,1857060,NIOSH Analytical Methods,2,205,0,True,PubChem Compound TOC > Identification,PubChem Compound TOC > Identification > NIOSH Analytical Methods
+node_230,3647599,Sampling Procedures,2,855,0,True,PubChem Compound TOC > Identification,PubChem Compound TOC > Identification > Sampling Procedures
+node_262,2166084,Information Sources,1,56209363,180,False,PubChem Compound TOC,PubChem Compound TOC > Information Sources
+node_386,5594121,Agency for Toxic Substances and Disease Registry (ATSDR),2,159,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Agency for Toxic Substances and Disease Registry (ATSDR)
+node_384,5592926,Athena Minerals,2,296,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Athena Minerals
+node_403,13313402,Australian Industrial Chemicals Introduction Scheme (AICIS),2,20794,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Australian Industrial Chemicals Introduction Scheme (AICIS)
+node_374,5565652,"Baker Lab, Chemistry Department, The University of North Carolina at Chapel Hill",2,3438,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Baker Lab, Chemistry Department, The University of North Carolina at Chapel Hill"
+node_436,18246707,Beilstein Journals,2,42855,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Beilstein Journals
+node_370,5564641,BindingDB,2,45015,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > BindingDB
+node_413,13590447,California Office of Environmental Health Hazard Assessment (OEHHA),2,971,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > California Office of Environmental Health Hazard Assessment (OEHHA)
+node_412,13590446,California Safe Cosmetics Program (CSCP) Product Database,2,2134,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > California Safe Cosmetics Program (CSCP) Product Database
+node_269,2166078,CAMEO Chemicals,2,4434,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > CAMEO Chemicals
+node_342,4280018,CAS Common Chemistry,2,411528,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > CAS Common Chemistry
+node_339,4112373,CCSbase,2,6238,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > CCSbase
+node_268,2166075,ChEBI,2,179539,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > ChEBI
+node_296,3373678,ChEMBL,2,2898882,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > ChEMBL
+node_376,5565659,Chemical Probes Portal,2,971,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Chemical Probes Portal
+node_284,2631959,ChemIDplus,2,340542,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > ChemIDplus
+node_283,2555398,ClinicalTrials.gov,2,10241,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > ClinicalTrials.gov
+node_421,17147188,"Commission on New Minerals, Nomenclature and Classification (CNMNC)",2,240,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Commission on New Minerals, Nomenclature and Classification (CNMNC)"
+node_333,4032642,Comparative Toxicogenomics Database (CTD),2,11714,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Comparative Toxicogenomics Database (CTD)
+node_349,4364658,Consumer Product Information Database (CPID),2,3235,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Consumer Product Information Database (CPID)
+node_351,4630756,Cooperative Patent Classification (CPC),2,38607131,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Cooperative Patent Classification (CPC)
+node_399,12950246,Cosmetic Ingredient Review (CIR),2,1767,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Cosmetic Ingredient Review (CIR)
+node_390,11194677,Crystallography Open Database (COD),2,196471,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Crystallography Open Database (COD)
+node_266,2166072,DailyMed,2,3836,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > DailyMed
+node_407,13313715,DHS Chemical Facility Anti-Terrorism Standards (CFATS) Chemicals of Interest,2,305,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > DHS Chemical Facility Anti-Terrorism Standards (CFATS) Chemicals of Interest
+node_439,18828593,Dietary Supplement Label Database (DSLD),2,2614,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Dietary Supplement Label Database (DSLD)
+node_359,4877712,"Drug Database, Clinicalinfo.hiv.gov",2,118,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Drug Database, Clinicalinfo.hiv.gov"
+node_332,4024330,Drug Enforcement Administration (DEA),2,2094,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Drug Enforcement Administration (DEA)
+node_317,3857765,Drug Gene Interaction database (DGIdb),2,14875,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Drug Gene Interaction database (DGIdb)
+node_264,2166068,DrugBank,2,15348,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > DrugBank
+node_433,18182631,DrugCentral,2,4626,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > DrugCentral
+node_310,3647736,Drugs and Lactation Database (LactMed),2,1769,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Drugs and Lactation Database (LactMed)
+node_388,5614019,Drugs@FDA,2,2499,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Drugs@FDA
+node_291,3101694,DTP/NCI,2,306329,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > DTP/NCI
+node_360,5528232,E. coli Metabolome Database (ECMDB),2,2068,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > E. coli Metabolome Database (ECMDB)
+node_355,4877011,"ECI Group, LCSB, University of Luxembourg",2,1967,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > ECI Group, LCSB, University of Luxembourg"
+node_427,17764027,EFSA OpenFoodTox,2,4661,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EFSA OpenFoodTox
+node_392,11552267,Emergency Response Guidebook (ERG),2,1069,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Emergency Response Guidebook (ERG)
+node_346,4308216,EPA Acute Exposure Guideline Levels (AEGLs),2,302,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Acute Exposure Guideline Levels (AEGLs)
+node_313,3739863,EPA Chemical and Products Database (CPDat),2,30165,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Chemical and Products Database (CPDat)
+node_396,12940423,EPA Chemical Data Reporting (CDR),2,5924,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Chemical Data Reporting (CDR)
+node_275,2166090,EPA Chemicals under the TSCA,2,43469,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Chemicals under the TSCA
+node_305,3647731,EPA DSSTox,2,1146923,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA DSSTox
+node_432,18182630,EPA Hazardous Air Pollutants,2,171,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Hazardous Air Pollutants
+node_398,12950181,EPA Integrated Risk Information System (IRIS),2,543,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Integrated Risk Information System (IRIS)
+node_326,3956026,EPA Pesticide Ecotoxicity Database,2,1057,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Pesticide Ecotoxicity Database
+node_404,13313403,EPA Provisional Peer-Reviewed Toxicity Values (PPRTVs),2,377,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Provisional Peer-Reviewed Toxicity Values (PPRTVs)
+node_356,4877708,EPA Regional Screening Levels for Chemical Contaminants at Superfund Sites,2,818,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Regional Screening Levels for Chemical Contaminants at Superfund Sites
+node_409,13315356,EPA Safe Drinking Water Act (SDWA),2,403,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Safe Drinking Water Act (SDWA)
+node_288,2965194,EPA Safer Choice,2,673,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Safer Choice
+node_364,5553554,EPA Substance Registry Services,2,61718,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Substance Registry Services
+node_442,18951804,EPA Toxicity Values Database (ToxValDB),2,40191,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EPA Toxicity Values Database (ToxValDB)
+node_306,3647732,EU Clinical Trials Register,2,5920,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EU Clinical Trials Register
+node_287,2965193,EU Food Improvement Agents,2,2670,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EU Food Improvement Agents
+node_279,2499251,EU Pesticides Database,2,1039,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EU Pesticides Database
+node_440,18951463,EUbOPEN,2,2692,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > EUbOPEN
+node_299,3406885,European Chemicals Agency (ECHA),2,347817,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > European Chemicals Agency (ECHA)
+node_309,3647735,European Medicines Agency (EMA),2,5161,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > European Medicines Agency (EMA)
+node_353,4875758,FDA Approved Animal Drug Products (Green Book),2,459,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Approved Animal Drug Products (Green Book)
+node_423,17227287,FDA Generally Recognized as Safe (GRAS),2,131,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Generally Recognized as Safe (GRAS)
+node_371,5564821,FDA Global Substance Registration System (GSRS),2,124203,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Global Substance Registration System (GSRS)
+node_431,18140378,FDA Liver Toxicity Knowledge Base (LTKB),2,2021,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Liver Toxicity Knowledge Base (LTKB)
+node_286,2888961,FDA Medication Guides,2,418,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Medication Guides
+node_272,2166083,FDA Orange Book,2,2419,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Orange Book
+node_424,17227311,FDA Packaging & Food Contact Substances (FCS),2,1945,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Packaging & Food Contact Substances (FCS)
+node_267,2166074,FDA Pharm Classes,2,1563,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Pharm Classes
+node_365,5553592,FDA Purple Book,2,28,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Purple Book
+node_417,16930017,FDA Regulatory Status of Color Additives,2,223,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Regulatory Status of Color Additives
+node_414,16930014,FDA Substances Added to Food,2,2859,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FDA Substances Added to Food
+node_300,3406935,Flavor and Extract Manufacturers Association (FEMA),2,2388,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Flavor and Extract Manufacturers Association (FEMA)
+node_437,18296077,Food Ontology (FoodOn),2,855,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Food Ontology (FoodOn)
+node_338,4088596,FooDB,2,10227,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > FooDB
+node_397,12940424,GHS Classification (UNECE),2,271348,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > GHS Classification (UNECE)
+node_402,13312512,Glycan Naming and Subsumption Ontology (GNOme),2,45474,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Glycan Naming and Subsumption Ontology (GNOme)
+node_347,4335081,GlycoNAVI,2,783,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > GlycoNAVI
+node_425,17241922,GlyConnect,2,1911,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > GlyConnect
+node_337,4072107,GlyCosmos Glycoscience Portal,2,53733,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > GlyCosmos Glycoscience Portal
+node_331,3998176,GlyGen,2,15689,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > GlyGen
+node_330,3982910,GlyTouCan Project,2,52910,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > GlyTouCan Project
+node_406,13313624,Handbook of Mineralogy,2,236,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Handbook of Mineralogy
+node_363,5541179,"Haz-Map, Information on Hazardous Chemicals and Occupational Diseases",2,11536,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Haz-Map, Information on Hazardous Chemicals and Occupational Diseases"
+node_302,3507862,"Hazardous Chemical Information System (HCIS), Safe Work Australia",2,4118,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Hazardous Chemical Information System (HCIS), Safe Work Australia"
+node_334,4041263,Hazardous Substances Data Bank (HSDB),2,5610,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Hazardous Substances Data Bank (HSDB)
+node_290,3101693,Human Metabolome Database (HMDB),2,203800,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Human Metabolome Database (HMDB)
+node_387,5614017,ILO-WHO International Chemical Safety Cards (ICSCs),2,1586,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > ILO-WHO International Chemical Safety Cards (ICSCs)
+node_344,4308214,International Agency for Research on Cancer (IARC),2,876,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > International Agency for Research on Cancer (IARC)
+node_395,12871129,International Fragrance Association (IFRA),2,2540,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > International Fragrance Association (IFRA)
+node_400,13123425,IUPAC Digitized pKa Dataset,2,10611,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > IUPAC Digitized pKa Dataset
+node_297,3373679,IUPHAR/BPS Guide to PHARMACOLOGY,2,9649,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > IUPHAR/BPS Guide to PHARMACOLOGY
+node_382,5592748,Japan Chemical Substance Dictionary (Nikkaji),2,3534448,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Japan Chemical Substance Dictionary (Nikkaji)
+node_405,13313404,Japan Pharmaceuticals and Medical Devices Agency (PMDA),2,182,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Japan Pharmaceuticals and Medical Devices Agency (PMDA)
+node_336,4072106,Joint FAO/WHO Expert Committee on Food Additives (JECFA),2,3043,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Joint FAO/WHO Expert Committee on Food Additives (JECFA)
+node_274,2166089,KEGG,2,25302,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > KEGG
+node_380,5592126,KNApSAcK Species-Metabolite Database,2,47729,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > KNApSAcK Species-Metabolite Database
+node_375,5565658,"Kruve Lab, Ionization & Mass Spectrometry, Stockholm University",2,397,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Kruve Lab, Ionization & Mass Spectrometry, Stockholm University"
+node_319,3876358,"Lab and Research Safety, University of Minnesota",2,240,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Lab and Research Safety, University of Minnesota"
+node_277,2166097,LIPID MAPS,2,48632,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > LIPID MAPS
+node_285,2733217,LiverTox,2,885,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > LiverTox
+node_354,4875769,LOTUS - the natural products occurrence database,2,224615,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > LOTUS - the natural products occurrence database
+node_369,5562094,MarkerDB,2,1108,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > MarkerDB
+node_352,4636481,MassBank Europe,2,20276,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > MassBank Europe
+node_298,3395385,MassBank of North America (MoNA),2,652593,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > MassBank of North America (MoNA)
+node_341,4198065,Medical Subject Headings (MeSH),2,89462,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Medical Subject Headings (MeSH)
+node_434,18229618,MetaboLights,2,8817,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > MetaboLights
+node_378,5592123,Metabolomics Workbench,2,176701,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Metabolomics Workbench
+node_311,3647737,Molecular Imaging and Contrast Agent Database (MICAD),2,365,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Molecular Imaging and Contrast Agent Database (MICAD)
+node_381,5592747,Molecular Imaging Database (MOLI),2,1543,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Molecular Imaging Database (MOLI)
+node_410,13407308,MolGenie,2,4783587,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > MolGenie
+node_389,5614337,Mother To Baby Fact Sheets,2,159,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Mother To Baby Fact Sheets
+node_357,4877710,National Drug Code (NDC) Directory,2,3659,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > National Drug Code (NDC) Directory
+node_379,5592124,Natural Product Activity and Species Source (NPASS),2,82181,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Natural Product Activity and Species Source (NPASS)
+node_367,5554044,Nature Catalysis,2,1109,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Nature Catalysis
+node_323,3948057,Nature Chemical Biology,2,16706,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Nature Chemical Biology
+node_325,3948059,Nature Chemistry,2,29823,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Nature Chemistry
+node_324,3948058,Nature Communications,2,1594,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Nature Communications
+node_366,5554043,Nature Portfolio Journals,2,314,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Nature Portfolio Journals
+node_368,5554045,Nature Synthesis,2,8493,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Nature Synthesis
+node_441,18951464,NCATS Antiviral Compound Database,2,5087,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NCATS Antiviral Compound Database
+node_276,2166096,NCBI,2,2718826,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NCBI
+node_294,3128991,NCI Cancer Drugs,2,229,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NCI Cancer Drugs
+node_282,2534392,NCI Investigational Drugs,2,89,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NCI Investigational Drugs
+node_320,3891199,NCI Thesaurus (NCIt),2,20809,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NCI Thesaurus (NCIt)
+node_394,12871128,New Zealand Environmental Protection Authority (EPA),2,17544,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > New Zealand Environmental Protection Authority (EPA)
+node_426,17764026,NIAID ChemDB,2,279247,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NIAID ChemDB
+node_435,18246706,NIH Dietary Supplement Fact Sheets,2,63,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NIH Dietary Supplement Fact Sheets
+node_273,2166088,NIOSH Manual of Analytical Methods,2,205,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NIOSH Manual of Analytical Methods
+node_308,3647734,NIPH Clinical Trials Search of Japan,2,1380,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NIPH Clinical Trials Search of Japan
+node_316,3857764,NIST Mass Spectrometry Data Center,2,262555,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NIST Mass Spectrometry Data Center
+node_348,4358447,NIST Synthetic Polymer MALDI Recipes Database,2,90,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NIST Synthetic Polymer MALDI Recipes Database
+node_271,2166081,NITE-CMC,2,3175,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NITE-CMC
+node_270,2166080,NJDOH RTK Hazardous Substance List,2,2043,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NJDOH RTK Hazardous Substance List
+node_358,4877711,NLM RxNorm Terminology,2,3940,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NLM RxNorm Terminology
+node_307,3647733,NMRShiftDB,2,42453,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NMRShiftDB
+node_329,3956436,NORMAN Suspect List Exchange,2,136157,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NORMAN Suspect List Exchange
+node_418,16930999,NTP Technical Reports,2,506,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > NTP Technical Reports
+node_314,3749971,Occupational Safety and Health Administration (OSHA),2,775,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Occupational Safety and Health Administration (OSHA)
+node_415,16930015,Open Targets,2,19260,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Open Targets
+node_438,18351191,"PAC Chemical Database, U.S. Department of Energy",2,2810,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > PAC Chemical Database, U.S. Department of Energy"
+node_327,3956027,PATENTSCOPE (WIPO),2,22302615,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > PATENTSCOPE (WIPO)
+node_422,17147345,Pertti (Bert) Hakkinen's Toxicology and Other Annotations,2,125,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Pertti (Bert) Hakkinen's Toxicology and Other Annotations
+node_411,13589651,PharmGKB,2,3825,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > PharmGKB
+node_385,5593203,Pharos,2,366629,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Pharos
+node_295,3301275,Pistoia Alliance Chemical Safety Library,2,244,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Pistoia Alliance Chemical Safety Library
+node_315,3811982,Protein Data Bank in Europe (PDBe),2,40328,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Protein Data Bank in Europe (PDBe)
+node_312,3662371,PubChem Elements,2,1396,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > PubChem Elements
+node_321,3900108,RCSB Protein Data Bank (RCSB PDB),2,45689,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > RCSB Protein Data Bank (RCSB PDB)
+node_401,13123426,Regulation (EC) No 1272/2008 of the European Parliament and of the Council,2,3123,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Regulation (EC) No 1272/2008 of the European Parliament and of the Council
+node_335,4051485,Rhea - Annotated Reactions Database,2,13299,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Rhea - Annotated Reactions Database
+node_416,16930016,Risk Assessment Information System (RAIS),2,2071,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Risk Assessment Information System (RAIS)
+node_383,5592923,RRUFF Project,2,258,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > RRUFF Project
+node_303,3507863,Sanford-Burnham Center for Chemical Genomics,2,57854,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Sanford-Burnham Center for Chemical Genomics
+node_289,2999718,SpectraBase,2,959562,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > SpectraBase
+node_292,3115240,Springer Nature,2,740475,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Springer Nature
+node_328,3956433,SpringerMaterials,2,32963,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > SpringerMaterials
+node_419,16994505,StatPearls,2,561,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > StatPearls
+node_350,4364671,"Suuberg Lab, School of Engineering, Brown University",2,11,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > Suuberg Lab, School of Engineering, Brown University"
+node_278,2166099,The Cambridge Structural Database,2,73789,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > The Cambridge Structural Database
+node_301,3406936,The National Institute for Occupational Safety and Health (NIOSH),2,628,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > The National Institute for Occupational Safety and Health (NIOSH)
+node_345,4308215,The Natural Products Atlas,2,37363,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > The Natural Products Atlas
+node_322,3940358,The University of Alabama Libraries,2,2870,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > The University of Alabama Libraries
+node_372,5564824,Therapeutic Target Database (TTD),2,25656,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Therapeutic Target Database (TTD)
+node_304,3587567,Thieme Chemistry,2,899537,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Thieme Chemistry
+node_377,5592120,Toxin and Toxin Target Database (T3DB),2,4045,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Toxin and Toxin Target Database (T3DB)
+node_391,11290137,U.S. Chemical Safety and Hazard Investigation Board (CSB),2,13,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > U.S. Chemical Safety and Hazard Investigation Board (CSB)
+node_428,17764028,"US Code of Federal Regulations, Hazardous Materials, 49 CFR Part 172",2,2022,0,True,PubChem Compound TOC > Information Sources,"PubChem Compound TOC > Information Sources > US Code of Federal Regulations, Hazardous Materials, 49 CFR Part 172"
+node_420,17058747,USDA APHIS Chemical Effects Database,2,1877,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > USDA APHIS Chemical Effects Database
+node_281,2499254,USDA Pesticide Data Program,2,647,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > USDA Pesticide Data Program
+node_280,2499252,USGS Columbia Environmental Research Center,2,301,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > USGS Columbia Environmental Research Center
+node_408,13315355,USGS Health-Based Screening Levels for Evaluating Water-Quality Data,2,797,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > USGS Health-Based Screening Levels for Evaluating Water-Quality Data
+node_293,3115244,USGS National Minerals Information Center,2,63,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > USGS National Minerals Information Center
+node_430,18053273,USITC Harmonized Tariff Schedule,2,1045,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > USITC Harmonized Tariff Schedule
+node_393,12866216,UVCBs and Multi-Constituent Substances (MCS) Committee,2,1,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > UVCBs and Multi-Constituent Substances (MCS) Committee
+node_362,5541056,West Coast Metabolomics Center-UC Davis,2,1540,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > West Coast Metabolomics Center-UC Davis
+node_340,4129386,WHO Anatomical Therapeutic Chemical (ATC) Classification,2,3393,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > WHO Anatomical Therapeutic Chemical (ATC) Classification
+node_429,17771788,WHO ATCvet - Classification of Veterinary Medicines,2,3548,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > WHO ATCvet - Classification of Veterinary Medicines
+node_343,4308213,WHO Model Lists of Essential Medicines,2,478,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > WHO Model Lists of Essential Medicines
+node_361,5539558,Wikidata,2,1324374,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Wikidata
+node_263,1749177,Wikipedia,2,21283,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Wikipedia
+node_318,3857766,Wiley,2,112196,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Wiley
+node_265,2166069,WIPO,2,38867693,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > WIPO
+node_373,5565494,Yeast Metabolome Database (YMDB),2,2054,0,True,PubChem Compound TOC > Information Sources,PubChem Compound TOC > Information Sources > Yeast Metabolome Database (YMDB)
+node_731,5564640,Interactions and Pathways,1,225988,4,False,PubChem Compound TOC,PubChem Compound TOC > Interactions and Pathways
+node_738,3647707,Molecular Imaging Information,2,1862,1,False,PubChem Compound TOC > Interactions and Pathways,PubChem Compound TOC > Interactions and Pathways > Molecular Imaging Information
+node_739,3647708,MICAD Imaging Information,3,365,0,True,PubChem Compound TOC > Interactions and Pathways > Molecular Imaging Information,PubChem Compound TOC > Interactions and Pathways > Molecular Imaging Information > MICAD Imaging Information
+node_732,3647701,Protein Bound 3D Structures,2,88573,1,False,PubChem Compound TOC > Interactions and Pathways,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures
+node_733,4358448,Ligands from Protein Bound 3D Structures,3,40328,3,False,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures
+node_736,3706170,PDBe Conformer,4,40328,0,True,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures > PDBe Conformer
+node_734,3706168,PDBe Ligand Code,4,40328,0,True,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures > PDBe Ligand Code
+node_735,3706169,PDBe Structure Code,4,38761,0,True,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures,PubChem Compound TOC > Interactions and Pathways > Protein Bound 3D Structures > Ligands from Protein Bound 3D Structures > PDBe Structure Code
+node_740,5564639,Chemical-Target Interactions,2,86569,0,True,PubChem Compound TOC > Interactions and Pathways,PubChem Compound TOC > Interactions and Pathways > Chemical-Target Interactions
+node_737,3647702,Pathways,2,63124,0,True,PubChem Compound TOC > Interactions and Pathways,PubChem Compound TOC > Interactions and Pathways > Pathways
+node_249,1857367,Literature,1,4692422,12,False,PubChem Compound TOC,PubChem Compound TOC > Literature
+node_261,18246705,Beilstein References,2,42855,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Beilstein References
+node_250,1857222,Chemical Co-Occurrences in Literature,2,3437449,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Chemical Co-Occurrences in Literature
+node_255,3647696,Chemical-Disease Co-Occurrences in Literature,2,1150414,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Chemical-Disease Co-Occurrences in Literature
+node_256,3647697,Chemical-Gene Co-Occurrences in Literature,2,1377044,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Chemical-Gene Co-Occurrences in Literature
+node_260,17147240,Chemical-Organism Co-Occurrences in Literature,2,1826472,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Chemical-Organism Co-Occurrences in Literature
+node_258,5599342,Consolidated References,2,4551278,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Consolidated References
+node_259,12902080,Nature Journal References,2,57191,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Nature Journal References
+node_252,3647693,NLM Curated PubMed Citations,2,77559,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > NLM Curated PubMed Citations
+node_254,3647695,Springer Nature References,2,740475,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Springer Nature References
+node_253,3647694,Synthesis References,2,2870,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Synthesis References
+node_251,3115249,Thieme References,2,899537,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Thieme References
+node_257,3857763,Wiley References,2,112196,0,True,PubChem Compound TOC > Literature,PubChem Compound TOC > Literature > Wiley References
+node_12,1856948,Names and Identifiers,1,8138928,3,False,PubChem Compound TOC,PubChem Compound TOC > Names and Identifiers
+node_13,1857348,Other Identifiers,2,8117145,37,False,PubChem Compound TOC > Names and Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers
+node_43,17764024,AIDS Number,3,279247,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > AIDS Number
+node_14,1856949,CAS,3,1429529,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > CAS
+node_39,12940422,ChEBI ID,3,179537,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > ChEBI ID
+node_35,5603665,ChEMBL ID,3,2898303,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > ChEMBL ID
+node_25,3891197,DEA Code Number,3,579,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > DEA Code Number
+node_24,3834819,Deprecated CAS,3,20212,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Deprecated CAS
+node_38,12903266,DrugBank ID,3,15348,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > DrugBank ID
+node_46,18182620,DrugCentral,3,4626,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > DrugCentral
+node_23,3670674,DSSTox Substance ID,3,1146906,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > DSSTox Substance ID
+node_50,18951460,EUbOPEN ID,3,2692,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > EUbOPEN ID
+node_16,1857084,European Community (EC) Number,3,347748,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > European Community (EC) Number
+node_17,1857320,FEMA Number,3,2458,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > FEMA Number
+node_42,17241921,GlyConnect Structure,3,1911,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > GlyConnect Structure
+node_27,3982909,GlyTouCan Accession,3,53733,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > GlyTouCan Accession
+node_44,18053244,GNOme ID,3,45439,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > GNOme ID
+node_40,12946384,HMDB ID,3,203800,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > HMDB ID
+node_45,18053272,HTS Number,3,699,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > HTS Number
+node_15,1856959,ICSC Number,3,1586,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > ICSC Number
+node_48,18251299,International Nonproprietary Names (INN),3,9722,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > International Nonproprietary Names (INN)
+node_28,4088593,JECFA Number,3,2234,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > JECFA Number
+node_36,11378257,KEGG ID,3,25145,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > KEGG ID
+node_37,12866214,Lipid Maps ID (LM_ID),3,48632,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Lipid Maps ID (LM_ID)
+node_47,18229616,MetaboLights,3,8817,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > MetaboLights
+node_32,5592125,Metabolomics Workbench ID,3,176701,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Metabolomics Workbench ID
+node_29,4643908,NCI Thesaurus Code,3,19254,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > NCI Thesaurus Code
+node_33,5592749,Nikkaji Number,3,3534448,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Nikkaji Number
+node_18,3647533,NSC Number,3,306329,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > NSC Number
+node_41,13589648,PharmGKB ID,3,3825,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > PharmGKB ID
+node_34,5593204,Pharos Ligand ID,3,366629,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Pharos Ligand ID
+node_26,3966265,Related CAS,3,20094,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Related CAS
+node_19,3647534,RTECS Number,3,561,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > RTECS Number
+node_30,4877714,RXCUI,3,3940,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > RXCUI
+node_20,3647535,UN Number,3,2957,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > UN Number
+node_21,3647536,UNII,3,124203,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > UNII
+node_49,18251300,United States Adopted Name (USAN),3,5675,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > United States Adopted Name (USAN)
+node_31,5539559,Wikidata,3,1324374,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Wikidata
+node_22,3647537,Wikipedia,3,21283,0,True,PubChem Compound TOC > Names and Identifiers > Other Identifiers,PubChem Compound TOC > Names and Identifiers > Other Identifiers > Wikipedia
+node_52,3647538,Synonyms,2,89462,1,False,PubChem Compound TOC > Names and Identifiers,PubChem Compound TOC > Names and Identifiers > Synonyms
+node_53,1857271,MeSH Entry Terms,3,89462,0,True,PubChem Compound TOC > Names and Identifiers > Synonyms,PubChem Compound TOC > Names and Identifiers > Synonyms > MeSH Entry Terms
+node_51,3647532,Record Description,2,439846,0,True,PubChem Compound TOC > Names and Identifiers,PubChem Compound TOC > Names and Identifiers > Record Description
+node_718,3647699,Patents,1,46655209,8,False,PubChem Compound TOC,PubChem Compound TOC > Patents
+node_722,11552815,Chemical Co-Occurrences in Patents,2,10565045,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > Chemical Co-Occurrences in Patents
+node_724,11552817,Chemical-Disease Co-Occurrences in Patents,2,5367797,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > Chemical-Disease Co-Occurrences in Patents
+node_723,11552816,Chemical-Gene Co-Occurrences in Patents,2,4228891,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > Chemical-Gene Co-Occurrences in Patents
+node_726,17147239,Chemical-Organism Co-Occurrences in Patents,2,6049816,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > Chemical-Organism Co-Occurrences in Patents
+node_719,1857007,Depositor-Supplied Patent Identifiers,2,39018951,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > Depositor-Supplied Patent Identifiers
+node_725,12950180,FDA Green Book Patents,2,99,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > FDA Green Book Patents
+node_720,1857340,FDA Orange Book Patents,2,956,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > FDA Orange Book Patents
+node_721,3956028,WIPO PATENTSCOPE,2,22302615,0,True,PubChem Compound TOC > Patents,PubChem Compound TOC > Patents > WIPO PATENTSCOPE
+node_495,3647584,Pharmacology and Biochemistry,1,110999,13,False,PubChem Compound TOC,PubChem Compound TOC > Pharmacology and Biochemistry
+node_500,1857207,Human Metabolite Information,2,64827,3,False,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information
+node_503,3647591,Cellular Locations,3,38826,0,True,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information > Cellular Locations
+node_501,1857186,Metabolite Pathways,3,43638,0,True,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information > Metabolite Pathways
+node_502,3647590,Tissue Locations,3,6677,0,True,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information,PubChem Compound TOC > Pharmacology and Biochemistry > Human Metabolite Information > Tissue Locations
+node_498,1857171,"Absorption, Distribution and Excretion",2,4732,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,"PubChem Compound TOC > Pharmacology and Biochemistry > Absorption, Distribution and Excretion"
+node_504,1857230,ATC Code,2,3639,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > ATC Code
+node_510,3775413,Biochemical Reactions,2,70122,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Biochemical Reactions
+node_496,1857018,Biological Half-Life,2,2909,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Biological Half-Life
+node_507,3647587,Bionecessity,2,130,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Bionecessity
+node_505,1857331,FDA Pharmacological Classification,2,2139,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > FDA Pharmacological Classification
+node_497,1857026,Mechanism of Action,2,4633,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Mechanism of Action
+node_499,1857194,MeSH Pharmacological Classification,2,9919,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > MeSH Pharmacological Classification
+node_508,3647588,Metabolism/Metabolites,2,9138,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Metabolism/Metabolites
+node_506,3647585,Pharmacodynamics,2,2616,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Pharmacodynamics
+node_509,3647676,Protein Binding,2,1781,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Protein Binding
+node_511,3956434,Transformations,2,9483,0,True,PubChem Compound TOC > Pharmacology and Biochemistry,PubChem Compound TOC > Pharmacology and Biochemistry > Transformations
+node_482,3647565,Related Records,1,15835582,8,False,PubChem Compound TOC,PubChem Compound TOC > Related Records
+node_488,3662370,Related Element,2,1396,3,False,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Related Element
+node_491,2999715,Atomic Number,3,1396,0,True,PubChem Compound TOC > Related Records > Related Element,PubChem Compound TOC > Related Records > Related Element > Atomic Number
+node_490,2965189,Element Name,3,1396,0,True,PubChem Compound TOC > Related Records > Related Element,PubChem Compound TOC > Related Records > Related Element > Element Name
+node_489,2965188,Element Symbol,3,1396,0,True,PubChem Compound TOC > Related Records > Related Element,PubChem Compound TOC > Related Records > Related Element > Element Symbol
+node_485,3647568,Substances,2,635012,1,False,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Substances
+node_486,12866215,PubChem Reference Collection SID,3,635012,0,True,PubChem Compound TOC > Related Records > Substances,PubChem Compound TOC > Related Records > Substances > PubChem Reference Collection SID
+node_487,3647569,Associated Chemicals,2,1221,0,True,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Associated Chemicals
+node_493,3948061,Component Compounds,2,11736243,0,True,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Component Compounds
+node_483,1857130,Entrez Crosslinks,2,378543,0,True,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Entrez Crosslinks
+node_492,3678739,NCBI LinkOut,2,2718826,0,True,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > NCBI LinkOut
+node_494,5592891,Other Relationships,2,86260,0,True,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Other Relationships
+node_484,3647566,Parent Compound,2,8284063,0,True,PubChem Compound TOC > Related Records,PubChem Compound TOC > Related Records > Parent Compound
+node_529,3647601,Safety and Hazards,1,272535,11,False,PubChem Compound TOC,PubChem Compound TOC > Safety and Hazards
+node_530,1856946,Accidental Release Measures,2,5885,6,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures
+node_534,1857270,Cleanup Methods,3,2461,0,True,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures > Cleanup Methods
+node_533,1857181,Disposal Methods,3,4672,0,True,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures > Disposal Methods
+node_532,1857041,Isolation and Evacuation,3,2853,0,True,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures > Isolation and Evacuation
+node_531,1857004,Preventive Measures,3,3231,0,True,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures > Preventive Measures
+node_536,3647612,Spillage Disposal,3,1584,0,True,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures > Spillage Disposal
+node_535,3647611,Toxic-by-Inhalation (TIH) Gas,3,74,0,True,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures,PubChem Compound TOC > Safety and Hazards > Accidental Release Measures > Toxic-by-Inhalation (TIH) Gas
+node_537,1856956,Exposure Control and Personal Protection,2,8043,23,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection
+node_557,4308217,Acute Exposure Guideline Levels (AEGLs),3,323,2,False,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Acute Exposure Guideline Levels (AEGLs)
+node_558,4308219,AEGLs Notes,4,301,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Acute Exposure Guideline Levels (AEGLs),PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Acute Exposure Guideline Levels (AEGLs) > AEGLs Notes
+node_559,4308221,AEGLs Table,4,258,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Acute Exposure Guideline Levels (AEGLs),PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Acute Exposure Guideline Levels (AEGLs) > AEGLs Table
+node_540,1857043,Allowable Tolerances,3,722,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Allowable Tolerances
+node_541,1857078,Effects of Long Term Exposure,3,970,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Effects of Long Term Exposure
+node_538,1856964,Effects of Short Term Exposure,3,1442,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Effects of Short Term Exposure
+node_552,3647626,Emergency Response Planning Guidelines,3,1093,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Emergency Response Planning Guidelines
+node_545,1857170,Exposure Prevention,3,1196,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Exposure Prevention
+node_548,1857322,Eye Prevention,3,1576,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Eye Prevention
+node_547,1857317,Fire Prevention,3,1266,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Fire Prevention
+node_546,1857285,Immediately Dangerous to Life or Health (IDLH),3,1379,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Immediately Dangerous to Life or Health (IDLH)
+node_542,1857116,Ingestion Prevention,3,1509,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Ingestion Prevention
+node_543,1857123,Inhalation Prevention,3,1565,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Inhalation Prevention
+node_544,1857126,Inhalation Risk,3,1553,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Inhalation Risk
+node_560,5592121,Minimum Risk Level,3,1292,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Minimum Risk Level
+node_561,13313651,Occupational Exposure Limits (OEL),3,681,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Occupational Exposure Limits (OEL)
+node_539,1857038,Other Standards Regulations and Guidelines,3,652,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Other Standards Regulations and Guidelines
+node_550,3647618,Permissible Exposure Limit (PEL),3,1514,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Permissible Exposure Limit (PEL)
+node_554,3647631,Personal Protective Equipment (PPE),3,4968,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Personal Protective Equipment (PPE)
+node_562,18351190,Protective Action Criteria (PAC),3,3170,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Protective Action Criteria (PAC)
+node_553,3647630,Radiation Limits and Potential,3,27,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Radiation Limits and Potential
+node_549,3647617,Recommended Exposure Limit (REL),3,660,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Recommended Exposure Limit (REL)
+node_555,3647632,Respirator Recommendations,3,606,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Respirator Recommendations
+node_556,3647633,Skin Prevention,3,1544,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Skin Prevention
+node_551,3647625,Threshold Limit Values (TLV),3,1962,0,True,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection,PubChem Compound TOC > Safety and Hazards > Exposure Control and Personal Protection > Threshold Limit Values (TLV)
+node_584,2566473,Fire Fighting,2,4947,2,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Fire Fighting
+node_585,1857321,Fire Fighting Procedures,3,2573,0,True,PubChem Compound TOC > Safety and Hazards > Fire Fighting,PubChem Compound TOC > Safety and Hazards > Fire Fighting > Fire Fighting Procedures
+node_586,3647610,Firefighting Hazards,3,535,0,True,PubChem Compound TOC > Safety and Hazards > Fire Fighting,PubChem Compound TOC > Safety and Hazards > Fire Fighting > Firefighting Hazards
+node_582,1857295,First Aid Measures,2,4229,1,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > First Aid Measures
+node_583,1857339,First Aid,3,3940,0,True,PubChem Compound TOC > Safety and Hazards > First Aid Measures,PubChem Compound TOC > Safety and Hazards > First Aid Measures > First Aid
+node_597,3647613,Handling and Storage,2,5266,3,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Handling and Storage
+node_598,3647614,Nonfire Spill Response,3,3712,0,True,PubChem Compound TOC > Safety and Hazards > Handling and Storage,PubChem Compound TOC > Safety and Hazards > Handling and Storage > Nonfire Spill Response
+node_599,3647615,Safe Storage,3,1507,0,True,PubChem Compound TOC > Safety and Hazards > Handling and Storage,PubChem Compound TOC > Safety and Hazards > Handling and Storage > Safe Storage
+node_600,3647616,Storage Conditions,3,2929,0,True,PubChem Compound TOC > Safety and Hazards > Handling and Storage,PubChem Compound TOC > Safety and Hazards > Handling and Storage > Storage Conditions
+node_563,1857023,Hazards Identification,2,259527,13,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Hazards Identification
+node_576,17764025,DOT Hazard Classification,3,2022,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > DOT Hazard Classification
+node_572,2566486,EPA Hazardous Waste Number,3,615,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > EPA Hazardous Waste Number
+node_569,1857280,EPA Safer Chemical,3,568,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > EPA Safer Chemical
+node_568,1857148,Explosion Hazards,3,35,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Explosion Hazards
+node_570,1857330,Fire Hazards,3,4110,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Fire Hazards
+node_571,1857332,Fire Potential,3,1635,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Fire Potential
+node_564,1856941,GHS Classification,3,256891,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > GHS Classification
+node_575,4016770,Hazard Classes and Categories,3,249670,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Hazard Classes and Categories
+node_566,1857089,Hazards Summary,3,10271,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Hazards Summary
+node_567,1857091,Health Hazards,3,3656,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Health Hazards
+node_574,3749970,Highly Hazardous Substance,3,119,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > Highly Hazardous Substance
+node_565,1856984,NFPA Hazard Classification,3,803,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,PubChem Compound TOC > Safety and Hazards > Hazards Identification > NFPA Hazard Classification
+node_573,3647602,"Skin, Eye, and Respiratory Irritations",3,2054,0,True,PubChem Compound TOC > Safety and Hazards > Hazards Identification,"PubChem Compound TOC > Safety and Hazards > Hazards Identification > Skin, Eye, and Respiratory Irritations"
+node_577,1857217,Other Safety Information,2,12675,4,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Other Safety Information
+node_578,2566470,History and Incidents,3,265,0,True,PubChem Compound TOC > Safety and Hazards > Other Safety Information,PubChem Compound TOC > Safety and Hazards > Other Safety Information > History and Incidents
+node_581,3647655,Other Hazardous Reactions,3,299,0,True,PubChem Compound TOC > Safety and Hazards > Other Safety Information,PubChem Compound TOC > Safety and Hazards > Other Safety Information > Other Hazardous Reactions
+node_579,2566476,Special Reports,3,2217,0,True,PubChem Compound TOC > Safety and Hazards > Other Safety Information,PubChem Compound TOC > Safety and Hazards > Other Safety Information > Special Reports
+node_580,3647654,Toxic Combustion Products,3,1369,0,True,PubChem Compound TOC > Safety and Hazards > Other Safety Information,PubChem Compound TOC > Safety and Hazards > Other Safety Information > Toxic Combustion Products
+node_619,3647644,Regulatory Information,2,40552,12,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Regulatory Information
+node_620,1857195,Atmospheric Standards,3,653,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > Atmospheric Standards
+node_628,3647649,CERCLA Reportable Quantities,3,881,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > CERCLA Reportable Quantities
+node_627,3647648,Clean Water Act Requirements,3,656,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > Clean Water Act Requirements
+node_631,13313716,DHS Chemicals of Interest (COI),3,305,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > DHS Chemicals of Interest (COI)
+node_622,1857313,FDA Requirements,3,1692,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > FDA Requirements
+node_623,1857315,Federal Drinking Water Guidelines,3,466,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > Federal Drinking Water Guidelines
+node_621,1857293,Federal Drinking Water Standards,3,323,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > Federal Drinking Water Standards
+node_624,1857325,FIFRA Requirements,3,949,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > FIFRA Requirements
+node_630,3647651,RCRA Requirements,3,587,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > RCRA Requirements
+node_626,3647647,State Drinking Water Guidelines,3,782,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > State Drinking Water Guidelines
+node_625,3647646,State Drinking Water Standards,3,264,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > State Drinking Water Standards
+node_629,3647650,TSCA Requirements,3,572,0,True,PubChem Compound TOC > Safety and Hazards > Regulatory Information,PubChem Compound TOC > Safety and Hazards > Regulatory Information > TSCA Requirements
+node_587,3647603,Safety and Hazard Properties,2,2256,9,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties
+node_593,2566481,Chemical Dangers,3,1505,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Chemical Dangers
+node_595,3647605,Critical Temperature and Pressure,3,490,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Critical Temperature and Pressure
+node_591,1857281,Explosive Limits and Potential,3,1014,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Explosive Limits and Potential
+node_592,1857335,Flammable Limits,3,784,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Flammable Limits
+node_589,1857176,Lower Explosive Limit (LEL),3,511,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Lower Explosive Limit (LEL)
+node_588,1856938,NIOSH Recommendations,3,927,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > NIOSH Recommendations
+node_590,1857264,OSHA Standards,3,786,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > OSHA Standards
+node_596,3647608,Physical Dangers,3,579,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Physical Dangers
+node_594,3647604,Upper Explosive Limit (UEL),3,402,0,True,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties,PubChem Compound TOC > Safety and Hazards > Safety and Hazard Properties > Upper Explosive Limit (UEL)
+node_601,3647639,Stability and Reactivity,2,4870,6,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity
+node_605,3647635,Reactivity Alerts,3,1617,1,False,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Reactivity Alerts
+node_606,3647636,CSL Reaction Information,4,244,0,True,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Reactivity Alerts,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Reactivity Alerts > CSL Reaction Information
+node_602,1857267,Air and Water Reactions,3,3969,0,True,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Air and Water Reactions
+node_603,3415875,Hazardous Reactivities and Incompatibilities,3,2211,0,True,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Hazardous Reactivities and Incompatibilities
+node_608,3834820,Peroxide Forming Chemical,3,240,0,True,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Peroxide Forming Chemical
+node_604,3647634,Reactive Group,3,3969,0,True,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Reactive Group
+node_607,3647637,Reactivity Profile,3,3837,0,True,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity,PubChem Compound TOC > Safety and Hazards > Stability and Reactivity > Reactivity Profile
+node_609,3647640,Transport Information,2,3456,9,False,PubChem Compound TOC > Safety and Hazards,PubChem Compound TOC > Safety and Hazards > Transport Information
+node_613,1857221,DOT Emergency Guidelines,3,1237,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > DOT Emergency Guidelines
+node_612,1857103,DOT ID and Guide,3,1176,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > DOT ID and Guide
+node_611,1857073,DOT Label,3,2810,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > DOT Label
+node_610,1857002,EC Classification,3,876,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > EC Classification
+node_617,3647642,Packaging and Labelling,3,784,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > Packaging and Labelling
+node_616,3647641,Shipment Methods and Regulations,3,1571,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > Shipment Methods and Regulations
+node_614,2566480,Shipping Name/ Number DOT/UN/NA/IMO,3,1340,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > Shipping Name/ Number DOT/UN/NA/IMO
+node_615,2566487,Standard Transportation Number,3,740,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > Standard Transportation Number
+node_618,3647643,UN Classification,3,1076,0,True,PubChem Compound TOC > Safety and Hazards > Transport Information,PubChem Compound TOC > Safety and Hazards > Transport Information > UN Classification
+node_450,3647559,Spectral Information,1,1653535,8,False,PubChem Compound TOC,PubChem Compound TOC > Spectral Information
+node_456,1857013,1D NMR Spectra,2,660056,8,False,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > 1D NMR Spectra
+node_457,1856908,11B NMR Spectra,3,685,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 11B NMR Spectra
+node_461,1857233,13C NMR Spectra,3,485779,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 13C NMR Spectra
+node_460,1857141,15N NMR Spectra,3,4759,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 15N NMR Spectra
+node_459,1857111,17O NMR Spectra,3,3375,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 17O NMR Spectra
+node_463,1857275,19F NMR Spectra,3,17516,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 19F NMR Spectra
+node_458,1857039,1H NMR Spectra,3,239040,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 1H NMR Spectra
+node_464,2499233,29Si NMR Spectra,3,1762,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 29Si NMR Spectra
+node_462,1857244,31P NMR Spectra,3,12476,0,True,PubChem Compound TOC > Spectral Information > 1D NMR Spectra,PubChem Compound TOC > Spectral Information > 1D NMR Spectra > 31P NMR Spectra
+node_475,1857142,2D NMR Spectra,2,1066,2,False,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > 2D NMR Spectra
+node_477,1857266,1H-13C NMR Spectra,3,1062,0,True,PubChem Compound TOC > Spectral Information > 2D NMR Spectra,PubChem Compound TOC > Spectral Information > 2D NMR Spectra > 1H-13C NMR Spectra
+node_476,1857001,1H-1H NMR Spectra,3,228,0,True,PubChem Compound TOC > Spectral Information > 2D NMR Spectra,PubChem Compound TOC > Spectral Information > 2D NMR Spectra > 1H-1H NMR Spectra
+node_465,1857032,Chromatograms,2,87,2,False,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > Chromatograms
+node_466,1857251,GC,3,2,0,True,PubChem Compound TOC > Spectral Information > Chromatograms,PubChem Compound TOC > Spectral Information > Chromatograms > GC
+node_467,2165930,HPLC,3,85,0,True,PubChem Compound TOC > Spectral Information > Chromatograms,PubChem Compound TOC > Spectral Information > Chromatograms > HPLC
+node_451,1856945,IR Spectra,2,229258,4,False,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > IR Spectra
+node_452,1857240,ATR-IR Spectra,3,30581,0,True,PubChem Compound TOC > Spectral Information > IR Spectra,PubChem Compound TOC > Spectral Information > IR Spectra > ATR-IR Spectra
+node_453,1857326,FTIR Spectra,3,80890,0,True,PubChem Compound TOC > Spectral Information > IR Spectra,PubChem Compound TOC > Spectral Information > IR Spectra > FTIR Spectra
+node_455,4206625,Near IR Spectra,3,1910,0,True,PubChem Compound TOC > Spectral Information > IR Spectra,PubChem Compound TOC > Spectral Information > IR Spectra > Near IR Spectra
+node_454,3647562,Vapor Phase IR Spectra,3,149997,0,True,PubChem Compound TOC > Spectral Information > IR Spectra,PubChem Compound TOC > Spectral Information > IR Spectra > Vapor Phase IR Spectra
+node_468,1857112,Mass Spectrometry,2,1232589,5,False,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > Mass Spectrometry
+node_473,4636479,MALDI,3,53,1,False,PubChem Compound TOC > Spectral Information > Mass Spectrometry,PubChem Compound TOC > Spectral Information > Mass Spectrometry > MALDI
+node_474,4358446,MALDI Recipes,4,1,0,True,PubChem Compound TOC > Spectral Information > Mass Spectrometry > MALDI,PubChem Compound TOC > Spectral Information > Mass Spectrometry > MALDI > MALDI Recipes
+node_469,1856940,GC-MS,3,587291,0,True,PubChem Compound TOC > Spectral Information > Mass Spectrometry,PubChem Compound TOC > Spectral Information > Mass Spectrometry > GC-MS
+node_471,3857761,LC-MS,3,27248,0,True,PubChem Compound TOC > Spectral Information > Mass Spectrometry,PubChem Compound TOC > Spectral Information > Mass Spectrometry > LC-MS
+node_470,1857020,MS-MS,3,9458,0,True,PubChem Compound TOC > Spectral Information > Mass Spectrometry,PubChem Compound TOC > Spectral Information > Mass Spectrometry > MS-MS
+node_472,3857762,Other MS,3,641476,0,True,PubChem Compound TOC > Spectral Information > Mass Spectrometry,PubChem Compound TOC > Spectral Information > Mass Spectrometry > Other MS
+node_478,3647560,UV Spectra,2,16009,1,False,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > UV Spectra
+node_479,3647561,UV-VIS Spectra,3,14608,0,True,PubChem Compound TOC > Spectral Information > UV Spectra,PubChem Compound TOC > Spectral Information > UV Spectra > UV-VIS Spectra
+node_481,3647564,Other Spectra,2,863,0,True,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > Other Spectra
+node_480,3647563,Raman Spectra,2,45505,0,True,PubChem Compound TOC > Spectral Information,PubChem Compound TOC > Spectral Information > Raman Spectra
+node_443,3115241,Structures,1,14519834,2,False,PubChem Compound TOC,PubChem Compound TOC > Structures
+node_445,1857102,Crystal Structures,2,231146,4,False,PubChem Compound TOC > Structures,PubChem Compound TOC > Structures > Crystal Structures
+node_446,1856915,Associated Article,3,187926,0,True,PubChem Compound TOC > Structures > Crystal Structures,PubChem Compound TOC > Structures > Crystal Structures > Associated Article
+node_448,3647530,CCDC Number,3,73789,0,True,PubChem Compound TOC > Structures > Crystal Structures,PubChem Compound TOC > Structures > Crystal Structures > CCDC Number
+node_449,11194676,COD Number,3,196471,0,True,PubChem Compound TOC > Structures > Crystal Structures,PubChem Compound TOC > Structures > Crystal Structures > COD Number
+node_447,1856927,Crystal Structure Data,3,193589,0,True,PubChem Compound TOC > Structures > Crystal Structures,PubChem Compound TOC > Structures > Crystal Structures > Crystal Structure Data
+node_444,1857012,3D Status,2,14342448,0,True,PubChem Compound TOC > Structures,PubChem Compound TOC > Structures > 3D Status
+node_632,3647656,Toxicity,1,125297,3,False,PubChem Compound TOC,PubChem Compound TOC > Toxicity
+node_639,1856987,Ecological Information,2,6183,28,False,PubChem Compound TOC > Toxicity,PubChem Compound TOC > Toxicity > Ecological Information
+node_660,3647667,US EPA Regional Removal Management Levels for Chemical Contaminants,3,818,1,False,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > US EPA Regional Removal Management Levels for Chemical Contaminants
+node_661,3647668,Hazard Quotient Level 3 or Cancer Risk Level 1E-04,4,818,0,True,PubChem Compound TOC > Toxicity > Ecological Information > US EPA Regional Removal Management Levels for Chemical Contaminants,PubChem Compound TOC > Toxicity > Ecological Information > US EPA Regional Removal Management Levels for Chemical Contaminants > Hazard Quotient Level 3 or Cancer Risk Level 1E-04
+node_658,3647665,US EPA Regional Screening Levels for Chemical Contaminants,3,818,1,False,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > US EPA Regional Screening Levels for Chemical Contaminants
+node_659,3647666,Hazard Quotient Level 0.1 or Cancer Risk Level 1E-06,4,818,0,True,PubChem Compound TOC > Toxicity > Ecological Information > US EPA Regional Screening Levels for Chemical Contaminants,PubChem Compound TOC > Toxicity > Ecological Information > US EPA Regional Screening Levels for Chemical Contaminants > Hazard Quotient Level 0.1 or Cancer Risk Level 1E-06
+node_652,1857249,Animal Concentrations,3,249,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Animal Concentrations
+node_643,1856990,Artificial Pollution Sources,3,3180,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Artificial Pollution Sources
+node_666,3647687,Atmospheric Concentrations,3,916,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Atmospheric Concentrations
+node_647,1857094,Average Daily Intake,3,347,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Average Daily Intake
+node_653,1857262,Body Burden,3,697,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Body Burden
+node_657,2566485,Ecotoxicity Excerpts,3,1091,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Ecotoxicity Excerpts
+node_648,1857117,Ecotoxicity Values,3,3206,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Ecotoxicity Values
+node_642,1856951,Effluent Concentrations,3,1343,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Effluent Concentrations
+node_641,1856943,Environmental Abiotic Degradation,3,3142,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Environmental Abiotic Degradation
+node_655,1857284,Environmental Bioconcentration,3,3085,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Environmental Bioconcentration
+node_649,1857177,Environmental Biodegradation,3,2290,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Environmental Biodegradation
+node_646,1857062,Environmental Fate,3,3178,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Environmental Fate
+node_645,1857054,Environmental Fate/Exposure Summary,3,3112,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Environmental Fate/Exposure Summary
+node_664,3647685,Environmental Water Concentrations,3,1614,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Environmental Water Concentrations
+node_654,1857279,EPA Ecotoxicity,3,1057,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > EPA Ecotoxicity
+node_656,1857297,Fish/Seafood Concentrations,3,501,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Fish/Seafood Concentrations
+node_667,3647688,Food Survey Values,3,978,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Food Survey Values
+node_640,1856931,ICSC Environmental Data,3,1001,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > ICSC Environmental Data
+node_650,1857200,Milk Concentrations,3,750,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Milk Concentrations
+node_651,1857236,Natural Pollution Sources,3,1375,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Natural Pollution Sources
+node_644,1857009,Other Environmental Concentrations,3,779,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Other Environmental Concentrations
+node_668,3647689,Plant Concentrations,3,655,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Plant Concentrations
+node_669,3647690,Probable Routes of Human Exposure,3,3465,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Probable Routes of Human Exposure
+node_665,3647686,Sediment/Soil Concentrations,3,792,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Sediment/Soil Concentrations
+node_662,3647683,Soil Adsorption/Mobility,3,3049,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Soil Adsorption/Mobility
+node_663,3647684,Volatilization from Water/Soil,3,3037,0,True,PubChem Compound TOC > Toxicity > Ecological Information,PubChem Compound TOC > Toxicity > Ecological Information > Volatilization from Water/Soil
+node_633,1856930,EFSA OpenFoodTox,2,3845,5,False,PubChem Compound TOC > Toxicity,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox
+node_634,1856935,EFSA Genotoxicity,3,3844,0,True,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox > EFSA Genotoxicity
+node_638,3647692,EFSA Hazard Characterization: Reference Points,3,1629,0,True,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox > EFSA Hazard Characterization: Reference Points
+node_636,1857241,EFSA Hazard Characterization: Reference Values,3,2480,0,True,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox > EFSA Hazard Characterization: Reference Values
+node_637,3647691,EFSA Outputs,3,3844,0,True,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox > EFSA Outputs
+node_635,1857055,EFSA Substance Characterization,3,2,0,True,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox,PubChem Compound TOC > Toxicity > EFSA OpenFoodTox > EFSA Substance Characterization
+node_670,3647657,Toxicological Information,2,123457,28,False,PubChem Compound TOC > Toxicity,PubChem Compound TOC > Toxicity > Toxicological Information
+node_695,5599341,Effects During Pregnancy and Lactation,3,1791,1,False,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Effects During Pregnancy and Lactation
+node_696,3647571,Drug Effects during Lactation,4,3,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Effects During Pregnancy and Lactation,PubChem Compound TOC > Toxicity > Toxicological Information > Effects During Pregnancy and Lactation > Drug Effects during Lactation
+node_699,18951793,Toxicity Data and Values,3,40912,18,False,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values
+node_701,1856992,Acceptable Daily Intakes,4,454,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Acceptable Daily Intakes
+node_713,18951799,Benchmark Values,4,321,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Benchmark Values
+node_710,18951796,Effect Concentration,4,732,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Effect Concentration
+node_711,18951797,Effect Level,4,6625,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Effect Level
+node_706,13315353,EPA Human Health Benchmarks for Pesticides,4,472,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > EPA Human Health Benchmarks for Pesticides
+node_705,13313401,EPA Provisional Peer-Reviewed Toxicity Values,4,377,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > EPA Provisional Peer-Reviewed Toxicity Values
+node_702,1857118,Human Toxicity Values,4,176,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Human Toxicity Values
+node_708,18951794,Lethal Concentration,4,2690,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Lethal Concentration
+node_709,18951795,Lethal Dose,4,35921,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Lethal Dose
+node_716,18951802,Medium-Specific Concentration,4,371,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Medium-Specific Concentration
+node_715,18951801,Military Exposure Guidelines (MEGs),4,3292,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Military Exposure Guidelines (MEGs)
+node_700,1856939,NIOSH Toxicity Data,4,561,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > NIOSH Toxicity Data
+node_703,1857237,Non-Human Toxicity Values,4,3026,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Non-Human Toxicity Values
+node_717,18951803,Other Toxicity Values,4,693,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Other Toxicity Values
+node_707,16930013,RAIS Toxicity Values,4,1349,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > RAIS Toxicity Values
+node_714,18951800,Reference and Risk Values,4,5114,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Reference and Risk Values
+node_712,18951798,Screening Level,4,905,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Screening Level
+node_704,3647669,Toxicity Data,4,2761,0,True,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Data and Values > Toxicity Data
+node_680,1857234,Acute Effects,3,108108,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Acute Effects
+node_679,1857232,Acute Toxicity Link,3,301,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Acute Toxicity Link
+node_693,5541178,Adverse Effects,3,6183,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Adverse Effects
+node_671,1856933,Antidote and Emergency Treatment,3,3886,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Antidote and Emergency Treatment
+node_687,3647662,Cancer Sites,3,152,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Cancer Sites
+node_681,1857252,Carcinogen Classification,3,4706,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Carcinogen Classification
+node_692,4280020,Drug Induced Liver Injury,3,1923,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Drug Induced Liver Injury
+node_697,12950179,EPA IRIS Information,3,543,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > EPA IRIS Information
+node_684,3647658,Evidence for Carcinogenicity,3,1325,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Evidence for Carcinogenicity
+node_676,1857169,Exposure Routes,3,4255,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Exposure Routes
+node_674,1857088,Health Effects,3,3074,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Health Effects
+node_678,1857211,Hepatotoxicity,3,882,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Hepatotoxicity
+node_677,1857209,Human Toxicity Excerpts,3,4089,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Human Toxicity Excerpts
+node_675,1857163,Interactions,3,2426,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Interactions
+node_673,1856962,Medical Surveillance,3,933,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Medical Surveillance
+node_672,1856950,National Toxicology Program Studies,3,580,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > National Toxicology Program Studies
+node_682,1857347,Non-Human Toxicity Excerpts,3,4628,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Non-Human Toxicity Excerpts
+node_683,2566474,Ongoing Test Status,3,1096,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Ongoing Test Status
+node_691,3647673,Populations at Special Risk,3,1039,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Populations at Special Risk
+node_685,3647659,Signs and Symptoms,3,4175,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Signs and Symptoms
+node_688,3647670,Skin Symptoms,3,3,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Skin Symptoms
+node_686,3647661,Target Organs,3,823,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Target Organs
+node_689,3647671,Toxicity Summary,3,6165,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Toxicity Summary
+node_694,5592122,Treatment,3,2443,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > Treatment
+node_690,3647672,TSCA Test Submissions,3,457,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > TSCA Test Submissions
+node_698,13315354,USGS Health-Based Screening Levels for Evaluating Water-Quality,3,797,0,True,PubChem Compound TOC > Toxicity > Toxicological Information,PubChem Compound TOC > Toxicity > Toxicological Information > USGS Health-Based Screening Levels for Evaluating Water-Quality
+node_512,3647592,Use and Manufacturing,1,65946,10,False,PubChem Compound TOC,PubChem Compound TOC > Use and Manufacturing
+node_527,12871126,IFRA Fragrance Standards,2,244,1,False,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > IFRA Fragrance Standards
+node_528,12871127,Restriction Limits in the Finished Product (%),3,168,0,True,PubChem Compound TOC > Use and Manufacturing > IFRA Fragrance Standards,PubChem Compound TOC > Use and Manufacturing > IFRA Fragrance Standards > Restriction Limits in the Finished Product (%)
+node_520,3647595,Uses,2,39530,5,False,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > Uses
+node_521,1856960,Consumer Uses,3,3198,0,True,PubChem Compound TOC > Use and Manufacturing > Uses,PubChem Compound TOC > Use and Manufacturing > Uses > Consumer Uses
+node_525,3891198,DEA Listed Chemicals,3,47,0,True,PubChem Compound TOC > Use and Manufacturing > Uses,PubChem Compound TOC > Use and Manufacturing > Uses > DEA Listed Chemicals
+node_523,3148429,Household Products,3,2940,0,True,PubChem Compound TOC > Use and Manufacturing > Uses,PubChem Compound TOC > Use and Manufacturing > Uses > Household Products
+node_522,1857005,Industry Uses,3,4999,0,True,PubChem Compound TOC > Use and Manufacturing > Uses,PubChem Compound TOC > Use and Manufacturing > Uses > Industry Uses
+node_524,3647593,Use Classification,3,14724,0,True,PubChem Compound TOC > Use and Manufacturing > Uses,PubChem Compound TOC > Use and Manufacturing > Uses > Use Classification
+node_513,1856961,Consumption Patterns,2,939,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > Consumption Patterns
+node_517,1857250,Formulations/Preparations,2,3331,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > Formulations/Preparations
+node_519,2566478,General Manufacturing Information,2,41992,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > General Manufacturing Information
+node_514,1856977,Impurities,2,704,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > Impurities
+node_516,1857202,Methods of Manufacturing,2,4472,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > Methods of Manufacturing
+node_518,1857346,U.S. Exports,2,815,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > U.S. Exports
+node_515,1857068,U.S. Imports,2,1239,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > U.S. Imports
+node_526,3647597,U.S. Production,2,6504,0,True,PubChem Compound TOC > Use and Manufacturing,PubChem Compound TOC > Use and Manufacturing > U.S. Production
+node_741,5592924,Minerals,1,321,0,True,PubChem Compound TOC,PubChem Compound TOC > Minerals
+node_223,1857153,Primary Hazards,1,256891,0,True,PubChem Compound TOC,PubChem Compound TOC > Primary Hazards
+node_730,4814687,Taxonomy,1,245503,0,True,PubChem Compound TOC,PubChem Compound TOC > Taxonomy

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chemical-category-scorer"
+version = "1.0.0"
+description = "Local-first chemical product category scorers for desktop and Python library use."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+  "numpy",
+  "rdkit",
+]
+
+[project.urls]
+Homepage = "https://github.com/shkdidrlf/chemical-category-scorer"
+Repository = "https://github.com/shkdidrlf/chemical-category-scorer"
+
+[project.scripts]
+chemical-category-scorer = "chemical_category_scorer.cli:main"
+chemical-category-scorer-desktop = "app.desktop_app:main"
+
+[tool.setuptools]
+packages = ["chemical_category_scorer", "app"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+app = ["data/*.json", "data/*.png", "data/models/*.json", "data/evidence_panels/*.json", "data/model_refs/*.csv"]

@@ -1,0 +1,289 @@
+panel_id,family_id,family_name,display_name,member_count,seed,regime,negative_count,auc,ks,balanced_accuracy,overlap,threshold,optimization_method
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,11,all_other_random,2380,0.9912,0.9504,0.9752,0.062,0.5896,lee_tpe_bayesian
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,11,sibling_hard,636,0.994,0.9701,0.9851,0.0409,0.6027,lee_tpe_bayesian
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,11,external_other,2364,0.991,0.9492,0.9746,0.0643,0.5954,lee_tpe_bayesian
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,11,property_matched,1556,0.9679,0.8468,0.9234,0.1774,0.7333,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,23,all_other_random,2375,0.9963,0.9533,0.9766,0.0571,0.6875,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,23,sibling_hard,636,0.9975,0.9701,0.9851,0.0389,0.6875,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,23,external_other,2418,0.9958,0.9475,0.9737,0.0616,0.6875,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,23,property_matched,1556,0.9679,0.8468,0.9234,0.1774,0.7333,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,37,all_other_random,2361,0.9961,0.9526,0.9763,0.056,0.6875,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,37,sibling_hard,636,0.9975,0.9701,0.9851,0.0389,0.6875,grid_w_objective_fallback
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,37,external_other,2402,0.9909,0.9334,0.9667,0.0751,0.5513,lee_tpe_bayesian
+cosmetics,family_01,long_chain_ester_family,Cosmetics prototype: Long chain ester family,109,37,property_matched,1556,0.9679,0.8468,0.9234,0.1774,0.7333,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,11,all_other_random,2466,0.9905,0.9453,0.9726,0.0704,0.7429,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,11,sibling_hard,742,0.9923,0.9542,0.9771,0.059,0.7559,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,11,external_other,2526,0.9915,0.9489,0.9745,0.0664,0.7413,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,11,property_matched,1802,0.9724,0.8502,0.9251,0.1868,0.7188,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,23,all_other_random,2480,0.9888,0.9294,0.9647,0.0931,0.676,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,23,sibling_hard,742,0.9923,0.9542,0.9771,0.059,0.7559,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,23,external_other,2556,0.9925,0.9527,0.9763,0.065,0.7424,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,23,property_matched,1802,0.9724,0.8502,0.9251,0.1868,0.7188,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,37,all_other_random,2491,0.9872,0.933,0.9665,0.091,0.6743,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,37,sibling_hard,742,0.9923,0.9542,0.9771,0.059,0.7559,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,37,external_other,2523,0.9893,0.9402,0.9701,0.0863,0.6713,grid_w_objective_fallback
+cosmetics,family_02,ester_long_chain_family,Cosmetics prototype: Ester long chain family,41,37,property_matched,1802,0.9724,0.8502,0.9251,0.1868,0.7188,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,11,all_other_random,2455,0.9201,0.7324,0.8662,0.2983,0.4875,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,11,sibling_hard,727,0.9438,0.7512,0.8756,0.2971,0.7,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,11,external_other,2509,0.9519,0.7702,0.8851,0.2792,0.7,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,11,property_matched,1762,0.8584,0.685,0.8425,0.4106,0.5257,lee_tpe_bayesian
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,23,all_other_random,2468,0.9198,0.7316,0.8658,0.2991,0.4875,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,23,sibling_hard,727,0.9438,0.7512,0.8756,0.2971,0.7,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,23,external_other,2541,0.9494,0.7621,0.881,0.2879,0.7,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,23,property_matched,1762,0.8484,0.5763,0.7882,0.452,0.4813,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,37,all_other_random,2500,0.92,0.7334,0.8667,0.2979,0.4875,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,37,sibling_hard,727,0.9438,0.7512,0.8756,0.2971,0.7,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,37,external_other,2506,0.9178,0.7262,0.8631,0.3047,0.4875,grid_w_objective_fallback
+cosmetics,family_03,long_chain_glycol_family,Cosmetics prototype: Long chain glycol family,24,37,property_matched,1762,0.8484,0.5763,0.7882,0.452,0.4813,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,11,all_other_random,2535,0.9762,0.8831,0.9415,0.1442,0.4875,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,11,sibling_hard,754,0.9849,0.8864,0.9432,0.0636,0.9875,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,11,external_other,2585,0.9784,0.8897,0.9449,0.1367,0.4875,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,11,property_matched,2001,0.9527,0.7775,0.8887,0.234,0.4743,lee_tpe_bayesian
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,23,all_other_random,2526,0.9876,0.9034,0.9517,0.0011,0.9999,lee_tpe_bayesian
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,23,sibling_hard,754,0.9848,0.878,0.939,0.0008,0.9998,lee_tpe_bayesian
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,23,external_other,2614,0.9889,0.9045,0.9523,0.0011,0.9999,lee_tpe_bayesian
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,23,property_matched,2001,0.945,0.7427,0.8713,0.0,0.0005,lee_tpe_bayesian
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,37,all_other_random,2551,0.9781,0.8882,0.9441,0.1386,0.4875,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,37,sibling_hard,754,0.9849,0.8864,0.9432,0.0636,0.9875,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,37,external_other,2596,0.9759,0.8803,0.9402,0.1469,0.4875,grid_w_objective_fallback
+cosmetics,family_04,long_chain_family,Cosmetics prototype: Long chain family,19,37,property_matched,2001,0.9352,0.7536,0.8768,0.2571,0.4813,grid_w_objective_fallback
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,11,all_other_random,2728,0.99,0.9195,0.9598,0.1047,0.729,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,11,sibling_hard,895,0.9909,0.8837,0.9418,0.1381,0.7395,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,11,external_other,2750,0.9925,0.9305,0.9653,0.0924,0.68,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,11,property_matched,2245,0.9732,0.8944,0.9472,0.2102,0.6323,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,23,all_other_random,2734,0.9866,0.9148,0.9574,0.1244,0.7,grid_w_objective_fallback
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,23,sibling_hard,895,0.9858,0.8601,0.93,0.2131,0.7188,grid_w_objective_fallback
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,23,external_other,2755,0.9873,0.9223,0.9612,0.1188,0.7,grid_w_objective_fallback
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,23,property_matched,2245,0.9209,0.7437,0.8718,0.2989,0.8714,grid_w_objective_fallback
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,37,all_other_random,2742,0.9895,0.911,0.9555,0.1216,0.6805,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,37,sibling_hard,895,0.9882,0.8848,0.9424,0.1535,0.7515,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,37,external_other,2745,0.9898,0.9133,0.9566,0.1217,0.6712,lee_tpe_bayesian
+cosmetics,family_05,long_chain_sulfonate_family,Cosmetics prototype: Long chain sulfonate family,19,37,property_matched,2245,0.9732,0.8944,0.9472,0.1442,0.7455,lee_tpe_bayesian
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,11,all_other_random,2605,0.9808,0.8534,0.9267,0.163,0.7091,lee_tpe_bayesian
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,11,sibling_hard,775,0.9627,0.8103,0.9052,0.0612,0.9812,grid_w_objective_fallback
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,11,external_other,2653,0.9754,0.8104,0.9052,0.2009,0.6437,lee_tpe_bayesian
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,11,property_matched,1898,0.8532,0.6984,0.8492,0.3914,0.5,grid_w_objective_fallback
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,23,all_other_random,2589,0.9517,0.7638,0.8819,0.2476,0.4813,grid_w_objective_fallback
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,23,sibling_hard,775,0.9627,0.8103,0.9052,0.0009,0.9998,lee_tpe_bayesian
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,23,external_other,2692,0.9514,0.7638,0.8819,0.2475,0.4813,grid_w_objective_fallback
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,23,property_matched,1898,0.8532,0.6984,0.8492,0.3914,0.5,grid_w_objective_fallback
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,37,all_other_random,2623,0.9738,0.8483,0.9241,0.1854,0.7267,lee_tpe_bayesian
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,37,sibling_hard,775,0.9627,0.8103,0.9052,0.0612,0.9812,grid_w_objective_fallback
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,37,external_other,2654,0.977,0.858,0.929,0.1766,0.7235,lee_tpe_bayesian
+cosmetics,family_06,long_chain_family,Cosmetics prototype: Long chain family,16,37,property_matched,1898,0.8532,0.6984,0.8492,0.3914,0.5,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,11,all_other_random,2449,0.9561,0.832,0.916,0.1771,0.4813,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,11,sibling_hard,910,0.9879,0.8746,0.9373,0.0422,0.9937,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,11,external_other,2474,0.9787,0.8521,0.926,0.0757,0.9937,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,11,property_matched,1581,0.884,0.7789,0.8894,0.2677,0.5,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,23,all_other_random,2461,0.9765,0.8445,0.9223,0.0011,0.9999,lee_tpe_bayesian
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,23,sibling_hard,910,0.9871,0.8735,0.9367,0.0005,0.9999,lee_tpe_bayesian
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,23,external_other,2459,0.9764,0.8364,0.9182,0.0011,0.9999,lee_tpe_bayesian
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,23,property_matched,1581,0.8677,0.758,0.879,0.1511,0.0005,lee_tpe_bayesian
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,37,all_other_random,2466,0.9785,0.8471,0.9235,0.0739,0.9937,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,37,sibling_hard,910,0.9879,0.8746,0.9373,0.0422,0.9937,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,37,external_other,2447,0.9556,0.8238,0.9119,0.1846,0.4813,grid_w_objective_fallback
+food_contact_substances,family_01,long_chain_family,Food Contact Substances prototype: Long chain family,58,37,property_matched,1581,0.884,0.7789,0.8894,0.2677,0.5,grid_w_objective_fallback
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,11,all_other_random,2363,0.9874,0.9181,0.9591,0.112,0.6465,lee_tpe_bayesian
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,11,sibling_hard,850,0.997,0.9574,0.9787,0.0546,0.6324,grid_w_objective_fallback
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,11,external_other,2403,0.9897,0.9191,0.9595,0.1095,0.6479,lee_tpe_bayesian
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,11,property_matched,1714,0.9673,0.8358,0.9179,0.1923,0.6323,lee_tpe_bayesian
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,23,all_other_random,2396,0.9866,0.914,0.957,0.1028,0.6661,lee_tpe_bayesian
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,23,sibling_hard,850,0.997,0.9574,0.9787,0.0546,0.6324,grid_w_objective_fallback
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,23,external_other,2368,0.9861,0.9141,0.9571,0.1039,0.6642,lee_tpe_bayesian
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,23,property_matched,1714,0.9409,0.7514,0.8757,0.288,0.75,grid_w_objective_fallback
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,37,all_other_random,2375,0.9901,0.9223,0.9611,0.1007,0.6875,grid_w_objective_fallback
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,37,sibling_hard,850,0.997,0.9574,0.9787,0.0546,0.6324,grid_w_objective_fallback
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,37,external_other,2382,0.9841,0.9079,0.9539,0.1206,0.7119,lee_tpe_bayesian
+food_contact_substances,family_02,long_chain_ester_family,Food Contact Substances prototype: Long chain ester family,42,37,property_matched,1714,0.9501,0.7929,0.8964,0.2526,0.7455,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,11,all_other_random,2540,0.9726,0.8256,0.9128,0.209,0.729,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,11,sibling_hard,930,0.9858,0.9065,0.9532,0.0419,0.9812,grid_w_objective_fallback
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,11,external_other,2546,0.9767,0.8378,0.9189,0.1971,0.729,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,11,property_matched,1880,0.8491,0.7345,0.8673,0.344,0.6323,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,23,all_other_random,2548,0.9727,0.8242,0.9121,0.0011,0.9998,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,23,sibling_hard,930,0.9858,0.9065,0.9532,0.0006,0.9998,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,23,external_other,2539,0.9734,0.8184,0.9092,0.0011,0.9998,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,23,property_matched,1880,0.8491,0.7345,0.8673,0.0117,0.0005,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,37,all_other_random,2596,0.9737,0.8259,0.9129,0.2144,0.6805,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,37,sibling_hard,930,0.9858,0.9065,0.9532,0.0419,0.9812,grid_w_objective_fallback
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,37,external_other,2543,0.9745,0.8223,0.9111,0.2166,0.6805,lee_tpe_bayesian
+food_contact_substances,family_03,long_chain_family,Food Contact Substances prototype: Long chain family,21,37,property_matched,1880,0.8491,0.7345,0.8673,0.344,0.7455,lee_tpe_bayesian
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,11,all_other_random,2729,0.9913,0.956,0.978,0.0347,0.9875,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,11,sibling_hard,972,0.9927,0.9691,0.9846,0.0492,0.7666,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,11,external_other,2744,0.9896,0.9552,0.9776,0.0342,0.9875,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,11,property_matched,2472,0.9578,0.798,0.899,0.2587,0.848,lee_tpe_bayesian
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,23,all_other_random,2715,0.9908,0.9558,0.9779,0.0007,0.9999,lee_tpe_bayesian
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,23,sibling_hard,972,0.9927,0.9691,0.9846,0.0492,0.7666,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,23,external_other,2736,0.9908,0.9529,0.9764,0.0007,0.9999,lee_tpe_bayesian
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,23,property_matched,2472,0.9622,0.813,0.9065,0.2377,0.7228,lee_tpe_bayesian
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,37,all_other_random,2719,0.9904,0.9526,0.9763,0.0354,0.9875,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,37,sibling_hard,972,0.9927,0.9691,0.9846,0.0492,0.7666,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,37,external_other,2749,0.9902,0.9538,0.9769,0.0359,0.9875,grid_w_objective_fallback
+food_contact_substances,family_04,ester_glycol_family,Food Contact Substances prototype: Ester glycol family,13,37,property_matched,2472,0.9536,0.798,0.899,0.2703,0.8435,lee_tpe_bayesian
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,11,all_other_random,2970,0.9797,0.8879,0.9439,0.1223,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,11,sibling_hard,1151,0.9775,0.8852,0.9426,0.1337,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,11,external_other,2965,0.9804,0.8902,0.9451,0.1192,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,11,property_matched,2899,0.9689,0.87,0.935,0.1497,0.4216,lee_tpe_bayesian
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,23,all_other_random,2980,0.9804,0.8896,0.9448,0.1193,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,23,sibling_hard,1151,0.9775,0.8852,0.9426,0.1337,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,23,external_other,2977,0.9791,0.8886,0.9443,0.1238,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,23,property_matched,2899,0.9797,0.891,0.9455,0.1152,0.2616,lee_tpe_bayesian
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,37,all_other_random,2972,0.9803,0.8913,0.9456,0.1178,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,37,sibling_hard,1151,0.9775,0.8852,0.9426,0.1337,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,37,external_other,2973,0.9794,0.8902,0.9451,0.1207,0.5,grid_w_objective_fallback
+food_contact_substances,family_05,prototype_family_5,Food Contact Substances prototype: Prototype family 5,10,37,property_matched,2899,0.9689,0.87,0.935,0.1499,0.497,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,11,all_other_random,2618,0.9859,0.9607,0.9803,0.0887,0.6954,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,11,sibling_hard,965,0.9961,0.9845,0.9922,0.0271,0.7723,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,11,external_other,2638,0.9868,0.9556,0.9778,0.0912,0.6954,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,11,property_matched,2451,0.9015,0.8029,0.9015,0.0,1.0,grid_w_objective_fallback
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,23,all_other_random,2632,0.9877,0.9411,0.9706,0.0003,0.9997,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,23,sibling_hard,965,0.9961,0.9813,0.9907,0.0001,0.9997,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,23,external_other,2614,0.9877,0.9419,0.9709,0.0003,0.9997,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,23,property_matched,2451,0.9776,0.9208,0.9604,0.0003,0.9997,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,37,all_other_random,2634,0.9821,0.9472,0.9736,0.0821,0.772,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,37,sibling_hard,965,0.9961,0.9813,0.9907,0.0234,0.8125,grid_w_objective_fallback
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,37,external_other,2643,0.9839,0.9538,0.9769,0.0758,0.772,lee_tpe_bayesian
+food_contact_substances,family_06,ester_long_chain_family,Food Contact Substances prototype: Ester long chain family,9,37,property_matched,2451,0.9621,0.929,0.9645,0.0867,0.772,lee_tpe_bayesian
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,11,all_other_random,2995,0.9981,0.9843,0.9922,0.0422,0.5625,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,11,sibling_hard,1142,0.9941,0.9448,0.9724,0.0908,0.5938,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,11,external_other,2997,0.9983,0.9867,0.9933,0.0395,0.5312,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,11,property_matched,2962,0.9929,0.9375,0.9688,0.0945,0.5938,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,23,all_other_random,2992,0.9983,0.985,0.9925,0.04,0.5625,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,23,sibling_hard,1142,0.9941,0.9448,0.9724,0.0908,0.5938,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,23,external_other,2996,0.9988,0.9887,0.9943,0.0378,0.5312,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,23,property_matched,2962,0.9929,0.9375,0.9688,0.0945,0.5938,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,37,all_other_random,2992,0.9988,0.9876,0.9938,0.0369,0.5625,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,37,sibling_hard,1142,0.9941,0.9448,0.9724,0.0908,0.5938,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,37,external_other,2998,0.9989,0.9907,0.9953,0.0341,0.5312,grid_w_objective_fallback
+human_drugs,family_01,glycol_quaternary_n_family,Human Drugs prototype: Glycol quaternary n family,10,37,property_matched,2962,0.9929,0.9375,0.9688,0.0945,0.5938,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,11,all_other_random,2990,1.0,1.0,1.0,0.0064,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,11,sibling_hard,1129,1.0,1.0,1.0,0.0119,0.5875,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,11,external_other,2992,1.0,1.0,1.0,0.0083,0.5257,lee_tpe_bayesian
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,11,property_matched,2929,1.0,0.9997,0.9998,0.0078,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,23,all_other_random,2987,1.0,1.0,1.0,0.0064,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,23,sibling_hard,1129,1.0,1.0,1.0,0.0119,0.5875,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,23,external_other,2993,1.0,1.0,1.0,0.0057,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,23,property_matched,2929,1.0,0.9997,0.9998,0.0078,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,37,all_other_random,2988,1.0,1.0,1.0,0.006,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,37,sibling_hard,1129,1.0,1.0,1.0,0.0119,0.5875,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,37,external_other,2990,1.0,1.0,1.0,0.0056,0.55,grid_w_objective_fallback
+human_drugs,family_02,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,9,37,property_matched,2929,1.0,0.9997,0.9998,0.0078,0.55,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,11,all_other_random,2989,1.0,1.0,1.0,0.0052,0.5125,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,11,sibling_hard,1134,0.9997,0.9974,0.9987,0.0313,0.5504,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,11,external_other,2993,1.0,0.9997,0.9998,0.0073,0.4985,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,11,property_matched,2937,1.0,1.0,1.0,0.0148,0.5125,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,23,all_other_random,2984,0.9999,0.9993,0.9997,0.0066,0.4992,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,23,sibling_hard,1134,0.9997,0.9974,0.9987,0.0313,0.5504,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,23,external_other,2994,1.0,0.9997,0.9998,0.0059,0.4978,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,23,property_matched,2937,1.0,1.0,1.0,0.0148,0.5125,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,37,all_other_random,2989,1.0,1.0,1.0,0.006,0.5125,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,37,sibling_hard,1134,0.9997,0.9974,0.9987,0.0313,0.5504,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,37,external_other,2991,1.0,0.9997,0.9998,0.0046,0.5197,grid_w_objective_fallback
+human_drugs,family_03,imidazole_long_chain_family,Human Drugs prototype: Imidazole long chain family,8,37,property_matched,2937,1.0,1.0,1.0,0.0148,0.5125,grid_w_objective_fallback
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,11,all_other_random,2992,0.8685,0.82,0.91,0.2575,0.1594,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,11,sibling_hard,1147,0.8462,0.7595,0.8797,0.3296,0.2437,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,11,external_other,2989,0.872,0.8297,0.9149,0.2405,0.1594,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,11,property_matched,2960,0.832,0.7352,0.8676,0.3418,0.2437,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,23,all_other_random,2991,0.8411,0.6932,0.8466,0.1882,0.0005,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,23,sibling_hard,1147,0.7883,0.6445,0.8223,0.2669,0.0005,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,23,external_other,2992,0.8472,0.7071,0.8535,0.1729,0.0003,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,23,property_matched,2960,0.7943,0.6599,0.8299,0.2527,0.0005,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,37,all_other_random,2988,0.8674,0.8223,0.9112,0.2581,0.1824,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,37,sibling_hard,1147,0.8462,0.7595,0.8797,0.335,0.1824,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,37,external_other,2998,0.8708,0.8298,0.9149,0.2495,0.1824,lee_tpe_bayesian
+human_drugs,family_04,urea_aromatic_oh_family,Human Drugs prototype: Urea aromatic oh family,7,37,property_matched,2960,0.832,0.7352,0.8676,0.3381,0.1824,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,11,all_other_random,2987,0.9997,0.998,0.999,0.0308,0.6838,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,11,sibling_hard,1147,0.9986,0.9904,0.9952,0.053,0.6387,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,11,external_other,2985,0.9992,0.9966,0.9983,0.0265,0.6547,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,11,property_matched,2940,0.9986,0.9901,0.9951,0.0459,0.75,grid_w_objective_fallback
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,23,all_other_random,2989,0.9996,0.9983,0.9992,0.037,0.7286,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,23,sibling_hard,1147,0.9998,0.9983,0.9991,0.0468,0.7104,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,23,external_other,2989,0.9988,0.9896,0.9948,0.0619,0.6,grid_w_objective_fallback
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,23,property_matched,2940,0.9993,0.9966,0.9983,0.0475,0.7269,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,37,all_other_random,2985,0.9996,0.9983,0.9992,0.0467,0.6273,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,37,sibling_hard,1147,0.9974,0.9913,0.9956,0.0667,0.6273,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,37,external_other,2990,0.9999,0.999,0.9995,0.0422,0.6273,lee_tpe_bayesian
+human_drugs,family_05,halogen_long_chain_family,Human Drugs prototype: Halogen long chain family,7,37,property_matched,2940,0.9986,0.9901,0.9951,0.0459,0.75,grid_w_objective_fallback
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,11,all_other_random,2985,0.9774,0.8784,0.9392,0.2414,0.4655,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,11,sibling_hard,1149,0.9755,0.8712,0.9356,0.253,0.4568,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,11,external_other,2986,0.9811,0.9019,0.9509,0.2315,0.4675,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,11,property_matched,2933,0.9557,0.7941,0.897,0.2248,0.5376,grid_w_objective_fallback
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,23,all_other_random,2983,0.9797,0.9266,0.9633,0.2331,0.6353,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,23,sibling_hard,1149,0.974,0.8755,0.9378,0.2136,0.6532,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,23,external_other,2989,0.9819,0.9301,0.965,0.2305,0.6319,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,23,property_matched,2933,0.9812,0.91,0.955,0.144,0.6547,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,37,all_other_random,2984,0.9826,0.9139,0.9569,0.2256,0.5177,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,37,sibling_hard,1149,0.9778,0.886,0.943,0.2346,0.5063,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,37,external_other,2982,0.9817,0.9095,0.9547,0.2306,0.5194,lee_tpe_bayesian
+human_drugs,family_06,long_chain_ester_family,Human Drugs prototype: Long chain ester family,6,37,property_matched,2933,0.9773,0.8796,0.9398,0.227,0.5073,lee_tpe_bayesian
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,11,all_other_random,2991,0.9127,0.801,0.9005,0.2475,0.4875,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,11,sibling_hard,826,0.8869,0.7324,0.8662,0.3434,0.4813,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,11,external_other,2991,0.9125,0.8111,0.9055,0.2341,0.4875,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,11,property_matched,2951,0.8779,0.7065,0.8533,0.3304,0.4813,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,23,all_other_random,2991,0.9102,0.8004,0.9002,0.1859,0.0004,lee_tpe_bayesian
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,23,sibling_hard,826,0.8869,0.7324,0.8662,0.1923,0.0005,lee_tpe_bayesian
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,23,external_other,2995,0.9144,0.8132,0.9066,0.2341,0.4875,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,23,property_matched,2951,0.8779,0.7065,0.8533,0.186,0.0005,lee_tpe_bayesian
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,37,all_other_random,2988,0.9104,0.7942,0.8971,0.254,0.4875,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,37,sibling_hard,826,0.8869,0.7324,0.8662,0.3434,0.4813,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,37,external_other,2996,0.9139,0.8166,0.9083,0.2313,0.4875,grid_w_objective_fallback
+animal_drugs,family_01,ester_family,Animal Drugs prototype: Ester family,13,37,property_matched,2951,0.8779,0.7065,0.8533,0.3304,0.4813,grid_w_objective_fallback
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,11,all_other_random,2527,0.9686,0.8108,0.9054,0.2437,0.6954,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,11,sibling_hard,826,0.9775,0.8111,0.9056,0.0965,0.9688,grid_w_objective_fallback
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,11,external_other,2515,0.9648,0.7796,0.8898,0.1133,0.9875,grid_w_objective_fallback
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,11,property_matched,1649,0.8181,0.6739,0.837,0.3434,0.4813,grid_w_objective_fallback
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,23,all_other_random,2526,0.9627,0.779,0.8895,0.0012,0.9999,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,23,sibling_hard,826,0.9775,0.8111,0.9056,0.0009,0.9997,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,23,external_other,2519,0.962,0.7817,0.8908,0.0012,0.9999,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,23,property_matched,1649,0.8184,0.7296,0.8648,0.223,0.0004,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,37,all_other_random,2534,0.9703,0.8157,0.9079,0.2416,0.772,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,37,sibling_hard,826,0.9775,0.8111,0.9056,0.0965,0.9688,grid_w_objective_fallback
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,37,external_other,2482,0.9676,0.8147,0.9073,0.2421,0.772,lee_tpe_bayesian
+animal_drugs,family_02,long_chain_family,Animal Drugs prototype: Long chain family,11,37,property_matched,1649,0.8184,0.7296,0.8648,0.3332,0.6212,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,11,all_other_random,2982,0.9986,0.9836,0.9918,0.044,0.6838,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,11,sibling_hard,828,0.9968,0.9807,0.9903,0.0375,0.7875,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,11,external_other,2989,0.9992,0.9903,0.9951,0.0419,0.6838,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,11,property_matched,2921,0.9976,0.9709,0.9855,0.0234,0.975,grid_w_objective_fallback
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,23,all_other_random,2985,0.9988,0.9869,0.9935,0.0003,0.9997,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,23,sibling_hard,828,0.9968,0.9746,0.9873,0.0451,0.7324,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,23,external_other,2989,0.9995,0.9923,0.9962,0.0277,0.8038,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,23,property_matched,2921,0.9981,0.9843,0.9921,0.0502,0.7386,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,37,all_other_random,2984,0.9968,0.9591,0.9796,0.0714,0.65,grid_w_objective_fallback
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,37,sibling_hard,828,0.9965,0.9674,0.9837,0.0187,0.975,grid_w_objective_fallback
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,37,external_other,2986,0.9982,0.9782,0.9891,0.0666,0.6273,lee_tpe_bayesian
+animal_drugs,family_03,halogen_long_chain_family,Animal Drugs prototype: Halogen long chain family,11,37,property_matched,2921,0.9976,0.9709,0.9855,0.0234,0.975,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,11,all_other_random,2991,0.9999,0.999,0.9995,0.0046,0.5531,lee_tpe_bayesian
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,11,sibling_hard,843,1.0,1.0,1.0,0.0023,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,11,external_other,2993,0.9999,0.999,0.9995,0.0049,0.5542,lee_tpe_bayesian
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,11,property_matched,2966,0.9998,0.9983,0.9992,0.0068,0.5584,lee_tpe_bayesian
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,23,all_other_random,2988,1.0,1.0,1.0,0.0017,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,23,sibling_hard,843,1.0,1.0,1.0,0.0023,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,23,external_other,2989,1.0,1.0,1.0,0.0011,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,23,property_matched,2966,1.0,1.0,1.0,0.0032,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,37,all_other_random,2990,1.0,1.0,1.0,0.0012,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,37,sibling_hard,843,1.0,1.0,1.0,0.0023,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,37,external_other,2994,1.0,1.0,1.0,0.0013,0.625,grid_w_objective_fallback
+animal_drugs,family_04,imidazole_aromatic_oh_family,Animal Drugs prototype: Imidazole aromatic oh family,10,37,property_matched,2966,1.0,1.0,1.0,0.0032,0.625,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,11,all_other_random,2980,0.9984,0.9755,0.9878,0.0432,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,11,sibling_hard,838,0.9983,0.9761,0.9881,0.0518,0.3046,lee_tpe_bayesian
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,11,external_other,2986,0.999,0.9833,0.9916,0.0352,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,11,property_matched,2935,0.9959,0.9537,0.9768,0.0728,0.3046,lee_tpe_bayesian
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,23,all_other_random,2985,0.9984,0.9745,0.9873,0.0445,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,23,sibling_hard,838,0.9974,0.957,0.9785,0.0,0.0003,lee_tpe_bayesian
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,23,external_other,2984,0.9987,0.9802,0.9901,0.0382,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,23,property_matched,2935,0.9943,0.9097,0.9549,0.0,0.0003,lee_tpe_bayesian
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,37,all_other_random,2980,0.9987,0.9799,0.9899,0.0389,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,37,sibling_hard,838,0.9974,0.957,0.9785,0.068,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,37,external_other,2990,0.9989,0.9823,0.9911,0.0363,0.5,grid_w_objective_fallback
+animal_drugs,family_05,prototype_family_5,Animal Drugs prototype: Prototype family 5,10,37,property_matched,2935,0.9959,0.9537,0.9768,0.0728,0.228,lee_tpe_bayesian
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,11,all_other_random,2961,0.9914,0.9443,0.9721,0.0863,0.5,grid_w_objective_fallback
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,11,sibling_hard,818,0.9838,0.9315,0.9658,0.1068,0.5,grid_w_objective_fallback
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,11,external_other,2968,0.9943,0.9491,0.9746,0.0804,0.5,grid_w_objective_fallback
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,11,property_matched,2819,0.973,0.8695,0.9347,0.1438,0.4216,lee_tpe_bayesian
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,23,all_other_random,2954,0.9924,0.9448,0.9724,0.0,0.0003,lee_tpe_bayesian
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,23,sibling_hard,818,0.9838,0.9315,0.9658,0.0,0.0003,lee_tpe_bayesian
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,23,external_other,2960,0.9924,0.9476,0.9738,0.0,0.0003,lee_tpe_bayesian
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,23,property_matched,2819,0.973,0.8695,0.9347,0.0,0.0004,lee_tpe_bayesian
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,37,all_other_random,2964,0.9927,0.9477,0.9739,0.0819,0.5,grid_w_objective_fallback
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,37,sibling_hard,818,0.9838,0.9315,0.9658,0.1068,0.5,grid_w_objective_fallback
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,37,external_other,2959,0.9923,0.9412,0.9706,0.0885,0.5,grid_w_objective_fallback
+animal_drugs,family_06,prototype_family_6,Animal Drugs prototype: Prototype family 6,9,37,property_matched,2819,0.973,0.8695,0.9347,0.1438,0.497,lee_tpe_bayesian

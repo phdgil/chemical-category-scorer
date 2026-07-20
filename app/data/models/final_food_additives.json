@@ -1,0 +1,100 @@
+{
+  "model_id": "final_food_additives",
+  "label": "Food Additives / Final rebuilt scorer",
+  "category": "food_additives",
+  "model_type": "choi_auto",
+  "threshold": 0.49386282243579027,
+  "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+  "source_student_id": "20251266+20251288",
+  "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+  "metrics": {
+    "auc": 0.8333975675836891,
+    "ks": 0.5351598555185288,
+    "balanced_accuracy": 0.7675799277592644,
+    "overlap": 0.46405725156181554,
+    "objective": 1.5607845155342548,
+    "negative_count": 4685
+  },
+  "selected_props": [
+    "MW",
+    "TPSA",
+    "HBA",
+    "AromaticRings",
+    "HBD"
+  ],
+  "ranges": {
+    "MW": [
+      116.15999999999998,
+      264.88099999999986
+    ],
+    "TPSA": [
+      17.07,
+      75.99000000000001
+    ],
+    "HBA": [
+      1.0,
+      4.0
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ],
+    "HBD": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "aldehyde": 7.099310684934421,
+    "cinnamate": 1.0,
+    "ester": 1.0
+  },
+  "selected_patterns": {
+    "aldehyde": "[CH1](=O)",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1",
+    "ester": "C(=O)OC"
+  },
+  "best_w": 0.7531245410138703,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.31844820512829464,
+  "ratio_threshold": 4.190549904649883,
+  "range_quantiles": [
+    0.15,
+    0.85
+  ],
+  "optimization_method": "mixed_lee_tpe_bayesian",
+  "optimization_trials": 8,
+  "category_prior_used": true,
+  "category_prior": {
+    "prior_id": "food_additives",
+    "source": "data/models/pubchem_food_additives.json broad Choi pattern evidence",
+    "motifs": {
+      "aldehyde": 3.0,
+      "cinnamate": 1.0,
+      "ester": 1.0
+    }
+  },
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\food_additives__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\final_category_rebuild\\inputs\\food_additives__negative_source.csv",
+  "negative_policy": {
+    "final_category_pool": [
+      "animal_drugs",
+      "human_drugs",
+      "cosmetics",
+      "flavoring_agents",
+      "food_additives",
+      "food_contact_substances",
+      "fragrances",
+      "pesticides",
+      "solvents",
+      "surfactants"
+    ],
+    "cross_category_overlap_policy": "retain_overlap_from_other_categories",
+    "excluded_only": [
+      "exact_target_positive_overlap",
+      "duplicate_smiles_in_negative_source",
+      "near_positive_tanimoto_after_step1"
+    ],
+    "note": "Molecules found in other categories are retained as negatives unless they are also in the target positive set."
+  }
+}

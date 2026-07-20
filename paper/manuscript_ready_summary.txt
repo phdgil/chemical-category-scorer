@@ -1,0 +1,45 @@
+Manuscript-ready result package
+
+Primary tables
+- final_category_rebuild_summary.csv: final uncapped broad-category scorer results for the 11 selected categories.
+- final_category_rebuild_qed_comparison.csv: same categories with direct RDKit QED comparison on the same rebuilt evaluation sets.
+- regime_separated_comparison_table.csv: older regime-split comparison for original-vs-hybrid-vs-stress interpretations.
+- evidence_table.csv: legacy benchmark evidence references.
+
+Main scientific claim now supported
+- The final broad-category rebuild uses all available PubChem positives in this run, retained cross-category negatives, positive-set physicochemical ranges, and structural patterns.
+- Every final category now has an explicit same-regime QED comparison.
+- All 11 final manuscript categories beat QED in AUC on the final rebuilt evaluation sets.
+
+Positive-count interpretation
+- Positive counts in the final tables are unique SMILES counts after PubChem CID-to-SMILES conversion and SMILES deduplication.
+- Therefore they are expected to be lower than raw PubChem CID counts for some categories.
+
+Best-performing categories in the final manuscript run
+- surfactants: AUC 0.9778, QED 0.2716
+- flavoring_agents: AUC 0.9389, QED 0.5656
+- endocrine_disruptors: AUC 0.9348, QED 0.6072
+- solvents: AUC 0.9295, QED 0.5197
+- fragrances: AUC 0.9254, QED 0.5527
+
+Moderate but reportable categories
+- food_additives: AUC 0.8334, QED 0.4463
+- human_drugs: AUC 0.7876, QED 0.4730
+- pesticides: AUC 0.7527, QED 0.6790
+
+Harder broad categories but still above QED
+- food_contact_substances: AUC 0.6213, QED 0.3497
+- cosmetics: AUC 0.6179, QED 0.2605
+- animal_drugs: AUC 0.6136, QED 0.4445
+
+Manuscript drafting recommendation
+- Use the uncapped full-positive tables as the main Results tables.
+- Use the regime-separated table only as methodological context or supplement.
+- State the negative policy explicitly in Methods.
+- State clearly that QED improvement is the baseline publication gate for this paper.
+App/library sync update (2026-07-14): the desktop app now loads the final selected scorer set directly from app/data/models, and the same scoring engine is also exposed through the chemical_category_scorer Python library for QED-like import use.
+
+PubChem addendum checks:
+- Agrochemical Information overlaps Pesticides, but the final pesticide scorer remains defined only from the dedicated Pesticides class.
+- Food Additives and Ingredients branches were screened, but no extra branch scorer was promoted into the final manuscript or app set because the category definitions remained too mixed or label-oriented for a clean final target.
+- Cross-regime endocrine validation selected Han Se-eum's endocrine scorer for the final manuscript/app scorer set because it outperformed the uncapped GJC endocrine rebuild on both the native drug-negative regime and the final broad-category regime.

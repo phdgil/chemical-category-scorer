@@ -1,0 +1,16 @@
+name,slug,hnid,compound_count,path,release_eligible
+Lipids,lipids,12946385,48936,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Lipids,True
+PFAS,pfas,12950177,6153,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > PFAS,True
+Endocrine Disruptors,endocrine_disruptors,12950175,6125,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Endocrine Disruptors,True
+Human Drugs,human_drugs,12950172,3943,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs > Human Drugs,True
+Cosmetics,cosmetics,12950174,3841,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Cosmetics,True
+Pesticides,pesticides,12950176,2973,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Pesticides,False
+Food Additives,food_additives,12946439,2960,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Food Additives,True
+Fragrances,fragrances,12950244,2548,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Fragrances,False
+Flavoring Agents,flavoring_agents,17821330,2444,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Flavoring Agents,True
+Food Contact Substances,food_contact_substances,17227309,1945,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Food Contact Substances,True
+Polymers,polymers,12950178,1162,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Polymers,True
+Animal Drugs,animal_drugs,12950173,907,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Drugs > Animal Drugs,True
+Solvents,solvents,13315352,632,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Solvents,True
+UVCB,uvcb,12950245,315,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > UVCB,True
+Surfactants,surfactants,13589650,268,PubChem Compound TOC > Chemical and Physical Properties > Chemical Classes > Surfactants,False

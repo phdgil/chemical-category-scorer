@@ -1,0 +1,407 @@
+from __future__ import annotations
+
+import argparse
+import base64
+import csv
+import tempfile
+from pathlib import Path
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+
+from algorithm_score_engine import (
+    ALL_MODELS_SENTINEL,
+    MODELS_DIR,
+    choose_best_result,
+    list_models,
+    refresh_model_registry,
+    render_molecule_png,
+    render_pattern_match_png,
+    score_csv,
+    score_smiles,
+    score_smiles_all,
+)
+
+APP_DIR = Path(__file__).resolve().parent
+OUTPUT_DIR = APP_DIR / "output"
+LOGO_PATH = APP_DIR / "data" / "AAA_logo.png"
+DEFAULT_MODEL_ID = "final_pesticides"
+
+
+def _clean_label(label: str) -> str:
+    return str(label).replace(" / Final rebuilt scorer", "")
+
+
+def _clean_decision(text: str) -> str:
+    text = str(text or "").replace("_", " ").strip()
+    return text[:1].upper() + text[1:] if text else text
+
+
+def _humanize_pattern(name: str) -> str:
+    return str(name).replace("_", " ").strip().title()
+
+
+class AlgorithmScoringApp(tk.Tk):
+    def __init__(self) -> None:
+        super().__init__()
+        self.title("Chemical Category Scorer")
+        self.geometry("1080x860")
+        self.minsize(820, 560)
+        self._image_refs: list[tk.PhotoImage] = []
+        self._logo_photo: tk.PhotoImage | None = None
+        self._build_widgets()
+        self._refresh_model_choices()
+
+    def _build_widgets(self) -> None:
+        outer = ttk.Frame(self)
+        outer.pack(fill="both", expand=True)
+
+        self.main_canvas = tk.Canvas(outer, highlightthickness=0)
+        self.main_canvas.pack(side="left", fill="both", expand=True)
+        self.main_scrollbar = ttk.Scrollbar(outer, orient="vertical", command=self.main_canvas.yview)
+        self.main_scrollbar.pack(side="right", fill="y")
+        self.main_canvas.configure(yscrollcommand=self.main_scrollbar.set)
+        self._scroll_enabled = False
+
+        root = ttk.Frame(self.main_canvas, padding=12)
+        self._canvas_window = self.main_canvas.create_window((0, 0), window=root, anchor="nw")
+        root.bind("<Configure>", self._update_scrollregion)
+        self.main_canvas.bind("<Configure>", self._resize_scroll_frame)
+        self.main_canvas.bind_all("<MouseWheel>", self._on_mousewheel)
+
+        header = ttk.Frame(root)
+        header.pack(fill="x", pady=(0, 12))
+        self._load_logo(header)
+        header_text_block = ttk.Frame(header)
+        header_text_block.pack(side="left", fill="x", expand=True, padx=(12, 0))
+        ttk.Label(header_text_block, text="Chemical category scorers", font=("Segoe UI", 15, "bold")).pack(anchor="w")
+        ttk.Label(
+            header_text_block,
+            text="Local-first desktop scorer for the final broad-category manuscript models.",
+            foreground="#555555",
+        ).pack(anchor="w")
+
+        selector = ttk.LabelFrame(root, text="Model selection", padding=12)
+        selector.pack(fill="x", pady=(0, 12))
+        selector.columnconfigure(1, weight=1)
+
+        ttk.Label(selector, text="Scoring mode").grid(row=0, column=0, sticky="w")
+        self.model_choice = tk.StringVar()
+        self.model_box = ttk.Combobox(selector, textvariable=self.model_choice, state="readonly")
+        self.model_box.grid(row=0, column=1, sticky="ew", padx=(8, 8))
+        ttk.Button(selector, text="Refresh models", command=self._refresh_model_choices).grid(row=0, column=2)
+
+        single = ttk.LabelFrame(root, text="Single SMILES scoring", padding=12)
+        single.pack(fill="x", pady=(0, 12))
+        single.columnconfigure(1, weight=1)
+
+        ttk.Label(single, text="SMILES").grid(row=0, column=0, sticky="w")
+        self.single_smiles = tk.Text(single, height=4, width=100)
+        self.single_smiles.grid(row=1, column=0, columnspan=4, sticky="ew", pady=(4, 8))
+
+        ttk.Button(single, text="Score molecule", command=self.score_single).grid(row=2, column=0, sticky="w")
+        ttk.Button(single, text="Clear", command=self.clear_single).grid(row=2, column=1, sticky="w", padx=(8, 0))
+
+        self.single_result = tk.StringVar(value="Enter a SMILES string and click 'Score molecule'.")
+        ttk.Label(single, textvariable=self.single_result, justify="left").grid(row=3, column=0, columnspan=4, sticky="w", pady=(10, 0))
+
+        visuals = ttk.LabelFrame(root, text="Molecule and matched patterns", padding=12)
+        visuals.pack(fill="both", pady=(0, 12))
+        visuals.columnconfigure(1, weight=1)
+
+        self.molecule_image_label = ttk.Label(visuals, text="Molecule image will appear after scoring.")
+        self.molecule_image_label.grid(row=0, column=0, rowspan=2, sticky="nw")
+
+        self.pattern_summary = tk.StringVar(value="Matched structural patterns will appear here when the selected scorer uses them.")
+        ttk.Label(visuals, textvariable=self.pattern_summary, justify="left", wraplength=640).grid(row=0, column=1, sticky="w", padx=(12, 0))
+        self.pattern_gallery = ttk.Frame(visuals)
+        self.pattern_gallery.grid(row=1, column=1, sticky="nw", padx=(12, 0), pady=(8, 0))
+
+        batch = ttk.LabelFrame(root, text="Batch CSV scoring", padding=12)
+        batch.pack(fill="x", pady=(0, 12))
+        batch.columnconfigure(1, weight=1)
+
+        self.input_path = tk.StringVar()
+        self.output_path = tk.StringVar(value="")
+        self.smiles_column = tk.StringVar(value="SMILES")
+
+        ttk.Label(batch, text="Input CSV").grid(row=0, column=0, sticky="w")
+        ttk.Entry(batch, textvariable=self.input_path).grid(row=0, column=1, sticky="ew", padx=(8, 8))
+        ttk.Button(batch, text="Browse", command=self.browse_input).grid(row=0, column=2)
+
+        ttk.Label(batch, text="Output CSV").grid(row=1, column=0, sticky="w", pady=(8, 0))
+        ttk.Entry(batch, textvariable=self.output_path).grid(row=1, column=1, sticky="ew", padx=(8, 8), pady=(8, 0))
+        ttk.Button(batch, text="Save as", command=self.browse_output).grid(row=1, column=2, pady=(8, 0))
+
+        ttk.Label(batch, text="SMILES column").grid(row=2, column=0, sticky="w", pady=(8, 0))
+        ttk.Entry(batch, textvariable=self.smiles_column).grid(row=2, column=1, sticky="w", padx=(8, 8), pady=(8, 0))
+        ttk.Button(batch, text="Score batch", command=self.score_batch).grid(row=2, column=2, pady=(8, 0))
+
+        notes = ttk.LabelFrame(root, text="Notes", padding=12)
+        notes.pack(fill="both", expand=True)
+        notes_text = (
+            "• Core workflow: paste one SMILES for a quick suggestion or score a CSV file in batch mode.\n"
+            "• The model menu now shows only the final broad-category names, without threshold clutter.\n"
+            "• 'All models' ranks the 10 final broad-category scorers by raw score; thresholds are shown only in the result panel.\n"
+            "• Output CSV starts blank on purpose; after you choose an input file, the app suggests an output name automatically.\n"
+            "• The molecule image and matched structural patterns are shown for the selected scorer whenever pattern matches exist.\n"
+            "• Advanced scorer rebuilding is kept out of the desktop UI; use the project scripts if you need offline model-development work."
+        )
+        ttk.Label(notes, text=notes_text, justify="left").pack(anchor="w")
+
+    def _update_scrollregion(self, _event=None) -> None:
+        bbox = self.main_canvas.bbox("all")
+        if not bbox:
+            self._scroll_enabled = False
+            return
+        self.main_canvas.coords(self._canvas_window, 0, 0)
+        self.main_canvas.configure(scrollregion=bbox)
+        content_height = max(0, bbox[3] - bbox[1])
+        viewport_height = max(1, self.main_canvas.winfo_height())
+        self._scroll_enabled = content_height > (viewport_height + 4)
+        if self._scroll_enabled:
+            if not self.main_scrollbar.winfo_ismapped():
+                self.main_scrollbar.pack(side="right", fill="y")
+        else:
+            self.main_canvas.yview_moveto(0.0)
+            if self.main_scrollbar.winfo_ismapped():
+                self.main_scrollbar.pack_forget()
+
+    def _resize_scroll_frame(self, event) -> None:
+        self.main_canvas.itemconfigure(self._canvas_window, width=event.width)
+        self._update_scrollregion()
+
+    def _on_mousewheel(self, event) -> str | None:
+        if not self.main_canvas.winfo_exists() or not self._scroll_enabled:
+            return "break"
+        delta = int(-1 * (event.delta / 120))
+        if delta == 0:
+            return "break"
+        first, last = self.main_canvas.yview()
+        if delta < 0 and first <= 0.0:
+            return "break"
+        if delta > 0 and last >= 1.0:
+            return "break"
+        self.main_canvas.yview_scroll(delta, "units")
+        return "break"
+
+    def _load_logo(self, parent: ttk.Frame) -> None:
+        if not LOGO_PATH.exists():
+            return
+        try:
+            original = tk.PhotoImage(file=str(LOGO_PATH), master=self)
+            self.iconphoto(True, original)
+            max_dim = 96
+            factor = max(1, (max(original.width(), original.height()) + max_dim - 1) // max_dim)
+            self._logo_photo = original.subsample(factor, factor) if factor > 1 else original
+            ttk.Label(parent, image=self._logo_photo).pack(side="left", anchor="nw")
+        except Exception:
+            self._logo_photo = None
+
+    def _refresh_model_choices(self) -> None:
+        refresh_model_registry()
+        self.model_display_to_id = {"All models (ranked suggestion)": ALL_MODELS_SENTINEL}
+        for model in list_models(public_only=True):
+            display = _clean_label(model["label"])
+            self.model_display_to_id[display] = model["model_id"]
+        values = list(self.model_display_to_id.keys())
+        self.model_box["values"] = values
+        if not self.model_choice.get() or self.model_choice.get() not in self.model_display_to_id:
+            default_display = next((label for label, model_id in self.model_display_to_id.items() if model_id == DEFAULT_MODEL_ID), values[0])
+            self.model_choice.set(default_display)
+
+    def _photo_from_png(self, png_bytes: bytes | None) -> tk.PhotoImage | None:
+        if not png_bytes:
+            return None
+        encoded = base64.b64encode(png_bytes).decode("ascii")
+        photo = tk.PhotoImage(data=encoded, master=self)
+        self._image_refs.append(photo)
+        return photo
+
+    def _clear_visuals(self) -> None:
+        self._image_refs = []
+        self.molecule_image_label.configure(image="", text="Molecule image will appear after scoring.")
+        self.pattern_summary.set("Matched structural patterns will appear here when the selected scorer uses them.")
+        for child in self.pattern_gallery.winfo_children():
+            child.destroy()
+
+    def _render_visuals(self, smiles: str, result) -> None:
+        self._clear_visuals()
+        mol_png = render_molecule_png(smiles)
+        mol_photo = self._photo_from_png(mol_png)
+        if mol_photo is not None:
+            self.molecule_image_label.configure(image=mol_photo, text="")
+        matched = list(getattr(result, "matched_patterns", ()) or ())
+        if not matched:
+            self.pattern_summary.set(f"No structural pattern match was found for {_clean_label(result.model_label)}.")
+            return
+        self.pattern_summary.set(
+            f"Matched structural patterns for {_clean_label(result.model_label)}: "
+            + ", ".join(_humanize_pattern(name) for name in matched)
+        )
+        for index, pattern_name in enumerate(matched[:6]):
+            frame = ttk.Frame(self.pattern_gallery, padding=(0, 0, 12, 12))
+            frame.grid(row=index // 3, column=index % 3, sticky="nw")
+            ttk.Label(frame, text=_humanize_pattern(pattern_name)).pack(anchor="w")
+            png = render_pattern_match_png(smiles, result.model_id, pattern_name)
+            photo = self._photo_from_png(png)
+            if photo is not None:
+                ttk.Label(frame, image=photo).pack(anchor="w", pady=(4, 0))
+            else:
+                ttk.Label(frame, text="Pattern image unavailable").pack(anchor="w", pady=(4, 0))
+
+    def browse_input(self) -> None:
+        path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv"), ("All files", "*.*")])
+        if path:
+            self.input_path.set(path)
+            if not self.output_path.get().strip():
+                input_path = Path(path)
+                self.output_path.set(str(input_path.with_name(f"{input_path.stem}_scored.csv")))
+
+    def browse_output(self) -> None:
+        path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
+        if path:
+            self.output_path.set(path)
+
+    def clear_single(self) -> None:
+        self.single_smiles.delete("1.0", "end")
+        self.single_result.set("Enter a SMILES string and click 'Score molecule'.")
+        self._clear_visuals()
+
+    def score_single(self) -> None:
+        smiles = self.single_smiles.get("1.0", "end").strip()
+        if not smiles:
+            self.single_result.set("Enter a SMILES string first.")
+            self._clear_visuals()
+            return
+        selected = self.model_display_to_id[self.model_choice.get()]
+        if selected == ALL_MODELS_SENTINEL:
+            results = score_smiles_all(smiles)
+            best = choose_best_result(results)
+            if not best:
+                self.single_result.set("Invalid SMILES. Check syntax and try again.")
+                self._clear_visuals()
+                return
+            lines = [
+                f"Best suggestion: {_clean_label(best.model_label)}",
+                f"Decision: {_clean_decision(best.decision)}",
+                f"Score: {best.score:.6f} | threshold={best.threshold:.6f} | margin={best.margin:.6f}",
+                "",
+                "Ranked models:",
+            ]
+            for index, result in enumerate(results, start=1):
+                if not result.valid:
+                    continue
+                lines.append(
+                    f"{index}. {_clean_label(result.model_label)} | score={result.score:.6f} | margin={result.margin:.6f} | {_clean_decision(result.decision)}"
+                )
+            self.single_result.set("\n".join(lines))
+            self._render_visuals(smiles, best)
+            return
+
+        result = score_smiles(smiles, selected)
+        if not result.valid:
+            self.single_result.set("Invalid SMILES. Check syntax and try again.")
+            self._clear_visuals()
+            return
+        matched_text = ", ".join(_humanize_pattern(name) for name in result.matched_patterns) if result.matched_patterns else "none"
+        self.single_result.set(
+            "\n".join(
+                [
+                    f"Model: {_clean_label(result.model_label)}",
+                    f"Decision: {_clean_decision(result.decision)}",
+                    f"Final score: {result.score:.6f}",
+                    f"Threshold: {result.threshold:.6f}",
+                    f"Margin: {result.margin:.6f}",
+                    f"Matched structural patterns: {matched_text}",
+                ]
+            )
+        )
+        self._render_visuals(smiles, result)
+
+    def score_batch(self) -> None:
+        input_csv = self.input_path.get().strip()
+        output_csv = self.output_path.get().strip()
+        smiles_column = self.smiles_column.get().strip() or None
+        if not input_csv or not output_csv:
+            messagebox.showerror("Missing path", "Set both input and output CSV paths.")
+            return
+        selected = self.model_display_to_id[self.model_choice.get()]
+        model_ids = [selected] if selected != ALL_MODELS_SENTINEL else [ALL_MODELS_SENTINEL]
+        try:
+            out_path = score_csv(input_csv, output_csv, smiles_column, model_ids)
+        except Exception as exc:
+            messagebox.showerror("Batch scoring failed", str(exc))
+            return
+        messagebox.showinfo("Batch scoring complete", f"Saved scored CSV to:\n{out_path}")
+
+
+def run_self_test() -> None:
+    refresh_model_registry()
+    models = list_models(public_only=True)
+    print("SELF_TEST_MODELS=" + ",".join(model["model_id"] for model in models))
+
+    single = score_smiles("CCO", DEFAULT_MODEL_ID)
+    print(f"SELF_TEST_DEFAULT={single.model_id}:{single.score:.6f}:{single.decision}")
+
+    ranked = score_smiles_all("CCO")
+    best = choose_best_result(ranked)
+    if best:
+        print(f"SELF_TEST_BEST={best.model_id}:{best.score:.6f}:{best.margin:.6f}:{len(best.matched_patterns)}")
+
+    assert render_molecule_png("CCO") is not None
+    print("SELF_TEST_IMAGE=True")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        input_path = Path(tmp) / "input.csv"
+        output_path = Path(tmp) / "output.csv"
+        with input_path.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=["SMILES", "name"])
+            writer.writeheader()
+            writer.writerow({"SMILES": "CCO", "name": "ethanol"})
+            writer.writerow({"SMILES": "CC(=O)Oc1ccccc1C(=O)O", "name": "aspirin"})
+        score_csv(input_path, output_path, "SMILES", [ALL_MODELS_SENTINEL])
+        print(f"SELF_TEST_BATCH={output_path.exists()}")
+        print(output_path.read_text(encoding="utf-8").strip())
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Desktop app for chemical category scoring.")
+    parser.add_argument("--self-test", action="store_true", help="Run a headless smoke test.")
+    parser.add_argument("--list-models", action="store_true", help="Print available model ids and labels.")
+    parser.add_argument("--score", help="Score a single SMILES string with one model.")
+    parser.add_argument("--model-id", default=DEFAULT_MODEL_ID, help="Model id for --score or --batch-*.")
+    parser.add_argument("--score-all", help="Score a single SMILES string across all models.")
+    parser.add_argument("--batch-in", help="Input CSV for batch scoring.")
+    parser.add_argument("--batch-out", help="Output CSV for batch scoring.")
+    parser.add_argument("--smiles-column", default="SMILES", help="SMILES column name for batch scoring.")
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    if args.self_test:
+        run_self_test()
+        return
+    if args.list_models:
+        refresh_model_registry()
+        for model in list_models(public_only=True):
+            print(f"{model['model_id']}\t{_clean_label(model['label'])}")
+        return
+    if args.score_all:
+        for result in score_smiles_all(args.score_all):
+            print(result)
+        return
+    if args.score:
+        print(score_smiles(args.score, args.model_id))
+        return
+    if args.batch_in and args.batch_out:
+        model_ids = [args.model_id] if args.model_id != ALL_MODELS_SENTINEL else [ALL_MODELS_SENTINEL]
+        print(score_csv(args.batch_in, args.batch_out, args.smiles_column, model_ids))
+        return
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    app = AlgorithmScoringApp()
+    app.mainloop()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,36 @@
+Journal of Cheminformatics updated drafting plan
+
+Current drafting status
+- Introduction now includes related-work positioning around QED, natural-product likeness, synthetic accessibility, and Bioalerts.
+- Main-text draft is approximately 4089 words before references and declarations.
+- Final software story now includes both local-first delivery modes: desktop application and importable Python library.
+
+Updated introduction plan
+1. Open with interpretable molecular scoring as a practical cheminformatics idea.
+2. Use QED as the direct conceptual anchor and cite it as the closest baseline.
+3. Broaden to the need for chemical product-category suggestion beyond drug-likeness.
+4. Review adjacent scorer/alert literature and extract the three precedents this study inherits:
+   - descriptor-and-fragment scoring
+   - interpretable structural motifs
+   - reusable software delivery
+5. State the gap clearly: prior work does not provide a common broad-category product scorer benchmark and does not resolve positive-set capping or overlapping-category negative doctrine.
+6. End the introduction with the study objective, the final ten-category scope, same-regime QED comparison, and dual local-first software deployment.
+
+Next drafting moves
+1. Tighten Methods so the optimization description matches the final engine without overemphasizing exploratory branches.
+2. Convert Table 1 and Table 2 placeholders into journal-ready tables drawn from final_category_rebuild_summary.csv and final_category_rebuild_qed_comparison.csv.
+3. Draft Figure 1-4 captions so the figure story matches the updated software narrative.
+4. Add one short sentence in Results or Methods explicitly noting that desktop and library calls produce identical scores because they share the same scoring engine.
+5. Finalize the reference list and verify journal style details before submission packaging.
+
+High-priority evidence files
+- paper/final_category_rebuild_summary.csv
+- paper/final_category_rebuild_qed_comparison.csv
+- paper/submission_decision_table.csv
+- app/README_GITHUB.md
+- python_library_usage.txt
+
+Main table submission rule
+- For Journal of Cheminformatics, normal main-text tables should stay in the manuscript file (Word/Docx/RTF/LaTeX) at the relevant position or, if long, at the end of the manuscript with in-text callouts.
+- Only very large tables or tabular datasets that exceed one page or A4/Letter width should be submitted as additional files (for example CSV or XLS).
+- Therefore Table 1 and Table 2 should be embedded in the main manuscript, while extended benchmark tables can remain supplementary CSV files.

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.tmp
+*.log
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.gjc/
+app/output/
+app/_tmp_touch.txt
+app/_tmp_touch2.txt

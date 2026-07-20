@@ -1,0 +1,3 @@
+category,seed,regime,unrepaired_negative_count_before_audit,repaired_negative_count_after_audit,excluded_negative_count_by_audit,property_matched_pool_count,property_matched_unique_count,retained_count,category_specific_dual_use,near_positive_tanimoto,retained_audited_hard_negatives,near_positive_tanimoto_threshold,dual_use_categories
+human_drugs,11,audited_hard_negative,600,280,320,600,564,280,259,0,280,0.85,animal_drugs;cosmetics;endocrine_disruptors;flavoring_agents;food_additives
+animal_drugs,11,audited_hard_negative,600,272,328,600,571,272,265,0,272,0.85,cosmetics;endocrine_disruptors;flavoring_agents;food_additives;human_drugs

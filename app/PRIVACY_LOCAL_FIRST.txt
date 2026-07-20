@@ -1,0 +1,19 @@
+Local-first privacy note for the desktop scorer
+
+1. Intended deployment
+The preferred release mode is a desktop GitHub repository that companies can clone or download and run on an internal workstation.
+
+2. Data flow
+- input SMILES are provided locally by the user
+- descriptors are computed locally with RDKit
+- scoring is executed locally against bundled JSON models
+- CSV outputs are written locally to disk
+
+3. Privacy rationale
+For chemical manufacturers, molecular structure information can be commercially sensitive. A local desktop app minimizes the accidental disclosure risk that would exist if structures were routinely submitted to a hosted web service.
+
+4. Scope of the privacy claim
+This app is private by architecture only when users run it locally. GitHub distribution does not expose user structures; however, users must still follow their own internal security policy for local files, backups, screenshots, and repository forks.
+
+5. Manuscript wording suggestion
+The software translation can be described as a local-first desktop implementation intended to reduce data-leak concern for industrial users handling confidential molecular structures.

@@ -1,0 +1,78 @@
+{
+  "model_id": "choi_fragrance",
+  "label": "Fragrance / Choi Yebin",
+  "category": "fragrance",
+  "model_type": "choi_auto",
+  "threshold": 0.5729897515087323,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.9152437304951803,
+    "ks": 0.7066697903634853,
+    "balanced_accuracy": 0.8533348951817428,
+    "overlap": 0.30646491848826884,
+    "objective": 1.0056142664196184,
+    "negative_count": 1757
+  },
+  "selected_props": [
+    "MW",
+    "HBD",
+    "HBA",
+    "TPSA",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      122.16699999999997,
+      264.409
+    ],
+    "HBD": [
+      0.0,
+      1.0
+    ],
+    "HBA": [
+      1.0,
+      3.0
+    ],
+    "TPSA": [
+      12.53,
+      46.53
+    ],
+    "FCsp3": [
+      0.2222222222222222,
+      1.0
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "ester": 23.980066853413323,
+    "aldehyde": 8.776980424908286,
+    "long_chain": 37.92919605541007,
+    "benzophenone": 0.6326611308817714,
+    "cinnamate": 0.6374547002072487
+  },
+  "selected_patterns": {
+    "ester": "C(=O)OC",
+    "aldehyde": "[CH1](=O)",
+    "long_chain": "CCCCCC",
+    "benzophenone": "c1ccccc1C(=O)c1ccccc1",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1"
+  },
+  "best_w": 0.6842308584268638,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.2198728555527938,
+  "ratio_threshold": 2.1082432930814905,
+  "range_quantiles": [
+    0.1,
+    0.9
+  ],
+  "optimization_method": "lee_tpe_bayesian",
+  "optimization_trials": 18,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\컴퓨터알고리즘\\20251266_최예빈\\PubChem.csv\\PubChem_Fragrance.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\컴퓨터알고리즘\\20251266_최예빈\\PubChem.csv\\PubChem_Pesticides.csv"
+}

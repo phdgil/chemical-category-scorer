@@ -1,0 +1,19 @@
+{
+  "phase_1": [
+    "Freeze the Kim Nayeon pesticide baseline as the v1 scoring engine.",
+    "Benchmark the baseline against Lee Seoyun and Choi Yebin comparison runs.",
+    "Package a desktop GUI with single-SMILES scoring and batch CSV export.",
+    "Write the algorithm paper around score design, validation, and app translation."
+  ],
+  "phase_2": [
+    "Add comparative experiments from upper-tier algorithm submissions.",
+    "Expand the app to support additional product categories after validating their independent score quality.",
+    "Add only ML modules that pass the explicit integration gate."
+  ],
+  "release_criteria": [
+    "Desktop app smoke test passes.",
+    "Single-score and batch-score outputs are reproducible from the packaged workspace.",
+    "Paper evidence table is aligned with the selected app baseline.",
+    "Student contribution and permission policy is finalized before public release."
+  ]
+}

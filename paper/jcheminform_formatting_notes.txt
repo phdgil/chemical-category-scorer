@@ -1,0 +1,67 @@
+Journal of Cheminformatics submission-format notes
+
+Source basis
+- Current Springer Nature / Journal of Cheminformatics author guidance summarized from publisher pages and journal guideline pages used in this session.
+
+Key manuscript-structure requirements
+1. Abstract: maximum 350 words.
+2. The abstract must include a section titled "Scientific Contribution".
+3. Scientific Contribution should be concise and state what advances the field and how the work differs from prior work.
+4. Keywords: 3-10 keywords.
+5. Core article sections for a Research article:
+   - Title page
+   - Abstract
+   - Scientific Contribution
+   - Keywords
+   - Introduction
+   - Methods/Experimental
+   - Results
+   - Discussion (or Results and Discussion)
+   - Conclusions
+   - List of abbreviations
+   - Declarations
+   - References
+6. Declarations should include:
+   - Availability of data and materials
+   - Competing interests
+   - Funding
+   - Authors’ contributions
+   - Acknowledgements
+   - Authors’ information (optional)
+   If a section does not apply, write "Not applicable".
+
+Reproducibility expectations
+- The journal strongly emphasizes reproducibility.
+- Data, software, and algorithms needed to reproduce conclusions should be openly accessible.
+- Source code availability should be explicit.
+- The manuscript must include an Availability of data and materials section.
+
+Formatting notes
+- Use line numbering and page numbering.
+- Use SI units.
+- Do not place references in footnotes.
+- Web resources and datasets should appear in the reference list, not only inline in text.
+
+Reference / citation style
+- Use Basic Springer reference style.
+- The reference list is numbered only by order in the manuscript file if your writing software enforces it, but the journal examples are conventional Springer-style bibliography entries with authors, year, title, journal abbreviation, volume, pages, and DOI.
+- Journal abbreviations should follow Index Medicus / MEDLINE conventions.
+- Include DOI where available.
+- Do not cite references in the abstract.
+
+Practical writing rule for this project
+- Main Results table should be `final_category_rebuild_qed_comparison.csv`.
+- Main Methods description must explicitly state:
+  - full-positive uncapped rebuild
+  - unique-SMILES positive count definition
+  - retained cross-category negative policy
+  - property-range + structural-pattern scoring
+  - same-regime QED comparison
+
+Suggested supporting files for submission package
+- final_category_rebuild_summary.csv
+- final_category_rebuild_qed_comparison.csv
+- regime_separated_comparison_table.csv (supplement/context)
+- evidence_table.csv
+- manuscript_ready_summary.txt
+- journal_shortlist_rationale.txt

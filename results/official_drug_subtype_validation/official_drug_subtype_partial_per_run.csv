@@ -1,0 +1,93 @@
+panel_id,subtype_hnid,subtype_name,subtype_depth,regime,seed,positive_unique_smiles_count,negative_count,auc,ks,balanced_accuracy,overlap,threshold,optimization_method
+human_drugs,4922628,"Anti-Inflammatory Agents, Non-Steroidal [CS]",3,all_other_random,11,31,2816,0.8719,0.6344,0.8172,0.3772,0.0438,grid_w_objective_fallback
+human_drugs,4922628,"Anti-Inflammatory Agents, Non-Steroidal [CS]",3,external_other,11,31,2805,0.8976,0.689,0.8445,0.3226,0.0438,grid_w_objective_fallback
+human_drugs,4922628,"Anti-Inflammatory Agents, Non-Steroidal [CS]",3,property_matched,11,31,2643,0.7238,0.3353,0.6677,0.2756,0.0438,grid_w_objective_fallback
+human_drugs,4922628,"Anti-Inflammatory Agents, Non-Steroidal [CS]",3,sibling_hard,11,31,2853,0.8514,0.5857,0.7928,0.2784,0.0438,grid_w_objective_fallback
+human_drugs,4922632,Antiarrhythmic [EPC],3,all_other_random,11,26,2782,0.6719,0.3174,0.6587,0.4384,0.5914,grid_w_objective_fallback
+human_drugs,4922632,Antiarrhythmic [EPC],3,external_other,11,26,2774,0.6961,0.3617,0.6808,0.3607,0.5944,grid_w_objective_fallback
+human_drugs,4922632,Antiarrhythmic [EPC],3,property_matched,11,26,2642,0.5988,0.224,0.612,0.4153,0.825,grid_w_objective_fallback
+human_drugs,4922632,Antiarrhythmic [EPC],3,sibling_hard,11,26,2773,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4922674,Azole Antifungal [EPC],3,all_other_random,11,26,2898,0.8551,0.6786,0.8393,0.3452,0.43,grid_w_objective_fallback
+human_drugs,4922674,Azole Antifungal [EPC],3,external_other,11,26,2855,0.8779,0.7037,0.8518,0.2862,0.4272,grid_w_objective_fallback
+human_drugs,4922674,Azole Antifungal [EPC],3,property_matched,11,26,2889,0.7302,0.4585,0.7293,0.2745,0.325,grid_w_objective_fallback
+human_drugs,4922674,Azole Antifungal [EPC],3,sibling_hard,11,26,2914,0.8326,0.5753,0.7877,0.3528,0.1712,grid_w_objective_fallback
+human_drugs,4922675,Azoles [CS],3,all_other_random,11,26,2898,0.8551,0.6786,0.8393,0.3452,0.43,grid_w_objective_fallback
+human_drugs,4922675,Azoles [CS],3,external_other,11,26,2855,0.8779,0.7037,0.8518,0.2862,0.4272,grid_w_objective_fallback
+human_drugs,4922675,Azoles [CS],3,property_matched,11,26,2889,0.7302,0.4585,0.7293,0.2745,0.325,grid_w_objective_fallback
+human_drugs,4922675,Azoles [CS],3,sibling_hard,11,26,2914,0.8326,0.5753,0.7877,0.3528,0.1712,grid_w_objective_fallback
+human_drugs,4922708,Breast Cancer Resistance Protein Inhibitors [MoA],3,all_other_random,11,48,2952,0.9151,0.7258,0.8629,0.3127,0.6473,grid_w_objective_fallback
+human_drugs,4922708,Breast Cancer Resistance Protein Inhibitors [MoA],3,external_other,11,48,2976,0.9449,0.7876,0.8938,0.2544,0.6776,grid_w_objective_fallback
+human_drugs,4922708,Breast Cancer Resistance Protein Inhibitors [MoA],3,property_matched,11,48,2940,0.7768,0.4918,0.7459,0.4287,0.1,grid_w_objective_fallback
+human_drugs,4922708,Breast Cancer Resistance Protein Inhibitors [MoA],3,sibling_hard,11,48,2939,0.8706,0.6376,0.8188,0.4075,0.6199,grid_w_objective_fallback
+human_drugs,4922817,Corticosteroid Hormone Receptor Agonists [MoA],3,all_other_random,11,52,2865,0.9258,0.7878,0.8939,0.2678,0.5267,lee_tpe_bayesian
+human_drugs,4922817,Corticosteroid Hormone Receptor Agonists [MoA],3,external_other,11,52,2878,0.9452,0.8291,0.9146,0.2096,0.7789,lee_tpe_bayesian
+human_drugs,4922817,Corticosteroid Hormone Receptor Agonists [MoA],3,property_matched,11,52,2823,0.9104,0.7776,0.8888,0.3044,0.4774,lee_tpe_bayesian
+human_drugs,4922817,Corticosteroid Hormone Receptor Agonists [MoA],3,sibling_hard,11,52,2839,0.9157,0.7787,0.8893,0.2865,0.5616,lee_tpe_bayesian
+human_drugs,4922818,Corticosteroid [EPC],3,all_other_random,11,52,2865,0.9258,0.7878,0.8939,0.2678,0.5267,lee_tpe_bayesian
+human_drugs,4922818,Corticosteroid [EPC],3,external_other,11,52,2878,0.9452,0.8291,0.9146,0.2096,0.7789,lee_tpe_bayesian
+human_drugs,4922818,Corticosteroid [EPC],3,property_matched,11,52,2823,0.9104,0.7776,0.8888,0.3044,0.4774,lee_tpe_bayesian
+human_drugs,4922818,Corticosteroid [EPC],3,sibling_hard,11,52,2839,0.9157,0.7787,0.8893,0.2865,0.5616,lee_tpe_bayesian
+human_drugs,4922820,Cyclooxygenase Inhibitors [MoA],3,all_other_random,11,31,2816,0.8719,0.6344,0.8172,0.3772,0.0438,grid_w_objective_fallback
+human_drugs,4922820,Cyclooxygenase Inhibitors [MoA],3,external_other,11,31,2805,0.8976,0.689,0.8445,0.3226,0.0438,grid_w_objective_fallback
+human_drugs,4922820,Cyclooxygenase Inhibitors [MoA],3,property_matched,11,31,2643,0.7238,0.3353,0.6677,0.2756,0.0438,grid_w_objective_fallback
+human_drugs,4922820,Cyclooxygenase Inhibitors [MoA],3,sibling_hard,11,31,2853,0.8514,0.5857,0.7928,0.2784,0.0438,grid_w_objective_fallback
+human_drugs,4922833,Cytochrome P450 2C19 Inhibitors [MoA],3,all_other_random,11,28,2974,0.7979,0.5289,0.7645,0.3698,0.1133,grid_w_objective_fallback
+human_drugs,4922833,Cytochrome P450 2C19 Inhibitors [MoA],3,external_other,11,28,2974,0.8801,0.6638,0.8319,0.4014,0.5374,lee_tpe_bayesian
+human_drugs,4922833,Cytochrome P450 2C19 Inhibitors [MoA],3,property_matched,11,28,2935,0.6431,0.2217,0.6109,0.4347,0.15,grid_w_objective_fallback
+human_drugs,4922833,Cytochrome P450 2C19 Inhibitors [MoA],3,sibling_hard,11,28,2957,0.6989,0.3204,0.6602,0.4161,0.2443,grid_w_objective_fallback
+human_drugs,4922835,Cytochrome P450 2C8 Inhibitors [MoA],3,all_other_random,11,26,2963,0.8913,0.6744,0.8372,0.4103,0.4,grid_w_objective_fallback
+human_drugs,4922835,Cytochrome P450 2C8 Inhibitors [MoA],3,external_other,11,26,2970,0.9094,0.6983,0.8491,0.3585,0.3999,lee_tpe_bayesian
+human_drugs,4922835,Cytochrome P450 2C8 Inhibitors [MoA],3,property_matched,11,26,2949,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4922835,Cytochrome P450 2C8 Inhibitors [MoA],3,sibling_hard,11,26,2970,0.8248,0.594,0.797,0.4736,0.5153,lee_tpe_bayesian
+human_drugs,4922840,Cytochrome P450 2D6 Inhibitors [MoA],3,all_other_random,11,35,2941,0.8289,0.5341,0.7671,0.5054,0.4437,lee_tpe_bayesian
+human_drugs,4922840,Cytochrome P450 2D6 Inhibitors [MoA],3,external_other,11,35,2962,0.8579,0.5954,0.7977,0.4596,0.6073,grid_w_objective_fallback
+human_drugs,4922840,Cytochrome P450 2D6 Inhibitors [MoA],3,property_matched,11,35,2903,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4922840,Cytochrome P450 2D6 Inhibitors [MoA],3,sibling_hard,11,35,2904,0.7296,0.3826,0.6913,0.4599,0.0429,grid_w_objective_fallback
+human_drugs,4922843,Cytochrome P450 3A Inhibitors [MoA],3,all_other_random,11,40,2953,0.9379,0.7932,0.8966,0.2393,0.5496,lee_tpe_bayesian
+human_drugs,4922843,Cytochrome P450 3A Inhibitors [MoA],3,external_other,11,40,2976,0.9687,0.8636,0.9318,0.1701,0.5577,grid_w_objective_fallback
+human_drugs,4922843,Cytochrome P450 3A Inhibitors [MoA],3,property_matched,11,40,2921,0.8229,0.5614,0.7807,0.4429,0.1,grid_w_objective_fallback
+human_drugs,4922843,Cytochrome P450 3A Inhibitors [MoA],3,sibling_hard,11,40,2907,0.8883,0.6687,0.8344,0.3594,0.5938,lee_tpe_bayesian
+human_drugs,4922845,Cytochrome P450 3A4 Inhibitors [MoA],3,all_other_random,11,49,2931,0.8525,0.619,0.8095,0.3525,0.05,grid_w_objective_fallback
+human_drugs,4922845,Cytochrome P450 3A4 Inhibitors [MoA],3,external_other,11,49,2960,0.8883,0.6571,0.8285,0.3287,0.05,grid_w_objective_fallback
+human_drugs,4922845,Cytochrome P450 3A4 Inhibitors [MoA],3,property_matched,11,49,2875,0.6635,0.2269,0.6135,0.3799,0.1092,grid_w_objective_fallback
+human_drugs,4922845,Cytochrome P450 3A4 Inhibitors [MoA],3,sibling_hard,11,49,2899,0.7847,0.477,0.7385,0.4124,0.05,grid_w_objective_fallback
+human_drugs,4922535,HUMAN OTC DRUG,2,all_other_random,11,286,1776,0.5032,0.0064,0.5032,0.3471,0.3677,lee_tpe_bayesian
+human_drugs,4922535,HUMAN OTC DRUG,2,external_other,11,286,1776,0.5534,0.085,0.5425,0.5166,0.05,grid_w_objective_fallback
+human_drugs,4922535,HUMAN OTC DRUG,2,property_matched,11,286,1677,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4922535,HUMAN OTC DRUG,2,sibling_hard,11,286,1838,0.5027,0.0054,0.5027,0.5273,1.0,grid_w_objective_fallback
+human_drugs,4922536,HUMAN PRESCRIPTION DRUG,2,all_other_random,11,1877,1182,0.7137,0.3385,0.6693,0.6773,0.2445,lee_tpe_bayesian
+human_drugs,4922536,HUMAN PRESCRIPTION DRUG,2,external_other,11,1877,1312,0.7544,0.4099,0.705,0.6144,0.2798,lee_tpe_bayesian
+human_drugs,4922536,HUMAN PRESCRIPTION DRUG,2,property_matched,11,1877,1001,0.4394,0.1155,0.5058,0.487,1.0,grid_w_objective_fallback
+human_drugs,4922536,HUMAN PRESCRIPTION DRUG,2,sibling_hard,11,1877,352,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923052,Histamine H1 Receptor Antagonists [MoA],3,all_other_random,11,27,2798,0.809,0.5192,0.7596,0.5048,0.3624,lee_tpe_bayesian
+human_drugs,4923052,Histamine H1 Receptor Antagonists [MoA],3,external_other,11,27,2821,0.8277,0.581,0.7905,0.4414,0.3249,lee_tpe_bayesian
+human_drugs,4923052,Histamine H1 Receptor Antagonists [MoA],3,property_matched,11,27,2697,0.6186,0.2369,0.6185,0.4346,0.033,lee_tpe_bayesian
+human_drugs,4923052,Histamine H1 Receptor Antagonists [MoA],3,sibling_hard,11,27,2753,0.8,0.5279,0.764,0.543,0.4177,lee_tpe_bayesian
+human_drugs,4923055,Histamine-1 Receptor Antagonist [EPC],3,all_other_random,11,26,2799,0.8251,0.5887,0.7943,0.4568,0.3445,lee_tpe_bayesian
+human_drugs,4923055,Histamine-1 Receptor Antagonist [EPC],3,external_other,11,26,2821,0.8326,0.6358,0.8179,0.4038,0.3545,lee_tpe_bayesian
+human_drugs,4923055,Histamine-1 Receptor Antagonist [EPC],3,property_matched,11,26,2691,0.6564,0.3101,0.6551,0.403,0.0264,lee_tpe_bayesian
+human_drugs,4923055,Histamine-1 Receptor Antagonist [EPC],3,sibling_hard,11,26,2759,0.8148,0.5793,0.7896,0.4862,0.4177,lee_tpe_bayesian
+human_drugs,4923126,Increased Large Intestinal Motility [PE],3,all_other_random,11,26,2785,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923126,Increased Large Intestinal Motility [PE],3,external_other,11,26,2799,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923126,Increased Large Intestinal Motility [PE],3,property_matched,11,26,2731,0.4214,0.2326,0.5454,0.211,1.0,grid_w_objective_fallback
+human_drugs,4923126,Increased Large Intestinal Motility [PE],3,sibling_hard,11,26,2731,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923209,Kinase Inhibitor [EPC],3,all_other_random,11,92,2979,0.958,0.8213,0.9107,0.1978,0.6204,grid_w_objective_fallback
+human_drugs,4923209,Kinase Inhibitor [EPC],3,external_other,11,92,2987,0.9742,0.8757,0.9379,0.148,0.6756,grid_w_objective_fallback
+human_drugs,4923209,Kinase Inhibitor [EPC],3,property_matched,11,92,2949,0.8806,0.6698,0.8349,0.3608,0.6634,grid_w_objective_fallback
+human_drugs,4923209,Kinase Inhibitor [EPC],3,sibling_hard,11,92,2962,0.9312,0.7594,0.8797,0.2587,0.6562,grid_w_objective_fallback
+human_drugs,4923342,Nonsteroidal Anti-inflammatory Drug [EPC],3,all_other_random,11,31,2816,0.8719,0.6344,0.8172,0.3772,0.0438,grid_w_objective_fallback
+human_drugs,4923342,Nonsteroidal Anti-inflammatory Drug [EPC],3,external_other,11,31,2805,0.8976,0.689,0.8445,0.3226,0.0438,grid_w_objective_fallback
+human_drugs,4923342,Nonsteroidal Anti-inflammatory Drug [EPC],3,property_matched,11,31,2643,0.7238,0.3353,0.6677,0.2756,0.0438,grid_w_objective_fallback
+human_drugs,4923342,Nonsteroidal Anti-inflammatory Drug [EPC],3,sibling_hard,11,31,2853,0.8514,0.5857,0.7928,0.2784,0.0438,grid_w_objective_fallback
+human_drugs,4923373,Osmotic Activity [MoA],3,all_other_random,11,28,2822,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923373,Osmotic Activity [MoA],3,external_other,11,28,2822,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923373,Osmotic Activity [MoA],3,property_matched,11,28,2769,0.532,0.2041,0.602,0.3184,0.6922,lee_tpe_bayesian
+human_drugs,4923373,Osmotic Activity [MoA],3,sibling_hard,11,28,2783,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923375,Osmotic Laxative [EPC],3,all_other_random,11,27,2814,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923375,Osmotic Laxative [EPC],3,external_other,11,27,2826,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923375,Osmotic Laxative [EPC],3,property_matched,11,27,2787,0.4076,0.2555,0.5444,0.2128,1.0,grid_w_objective_fallback
+human_drugs,4923375,Osmotic Laxative [EPC],3,sibling_hard,11,27,2788,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923384,P-Glycoprotein Inhibitors [MoA],3,all_other_random,11,70,2919,0.8827,0.6852,0.8426,0.3759,0.6312,lee_tpe_bayesian
+human_drugs,4923384,P-Glycoprotein Inhibitors [MoA],3,external_other,11,70,2949,0.9245,0.7775,0.8888,0.2832,0.7073,grid_w_objective_fallback
+human_drugs,4923384,P-Glycoprotein Inhibitors [MoA],3,property_matched,11,70,2882,0.5,0.0,0.5,0.0,0.5,grid_w_objective_fallback
+human_drugs,4923384,P-Glycoprotein Inhibitors [MoA],3,sibling_hard,11,70,2862,0.8198,0.5589,0.7794,0.4803,0.6323,lee_tpe_bayesian

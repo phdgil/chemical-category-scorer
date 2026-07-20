@@ -1,0 +1,61 @@
+{
+  "policy": {
+    "classification": {
+      "min_roc_auc": 0.8,
+      "min_mcc": 0.35,
+      "requires_saved_model": true,
+      "requires_reproducible_preprocessing": true
+    },
+    "regression": {
+      "min_r2": 0.5,
+      "requires_saved_model": true,
+      "requires_reproducible_preprocessing": true
+    }
+  },
+  "screened_candidates": [
+    {
+      "student": "정수아",
+      "task": "acute_oral classification",
+      "source": "D:/DSWU/2026_기말고사/기계학습/endpoint_sorted_submissions/acute_oral/정수아_20250564_AI머신러닝_unzipped/기말고사_template2_ml_model_pipeline_제출.ipynb",
+      "metrics": {
+        "auc": 0.847,
+        "f1": 0.639
+      },
+      "gate_status": "passes_classification_auc_only",
+      "note": "MCC not observed in the quick pass; requires deeper audit before integration."
+    },
+    {
+      "student": "민재윤",
+      "task": "acute_oral regression",
+      "source": "D:/DSWU/2026_기말고사/기계학습/endpoint_sorted_submissions/acute_oral/ML_기말_20251275 민재윤_unzipped/기말고사_template2_ml_model_pipeline.ipynb",
+      "metrics": {
+        "r2": 0.594,
+        "rmse": 0.578
+      },
+      "gate_status": "passes_regression_gate",
+      "note": "Good phase-2 candidate if the endpoint fits the release story."
+    },
+    {
+      "student": "최예빈",
+      "task": "cardiac_toxicity_dictrank classification",
+      "source": "D:/DSWU/2026_기말고사/기계학습/endpoint_sorted_submissions/cardiac_toxicity_dictrank/20251266_최예빈_unzipped/20251266_최예빈_ML(2).ipynb",
+      "metrics": {
+        "roc_auc": 0.8006,
+        "mcc": 0.4113
+      },
+      "gate_status": "passes_classification_gate",
+      "note": "Good add-on candidate once the algorithm app is stable."
+    },
+    {
+      "student": "김나연",
+      "task": "cancer classification",
+      "source": "D:/DSWU/2026_기말고사/기계학습/endpoint_sorted_submissions/cancer/김나연/github_ML2026/experiment_best.csv",
+      "metrics": {
+        "test_roc_auc": 0.7366
+      },
+      "gate_status": "hold",
+      "note": "Below the current classification gate."
+    }
+  ],
+  "current_decision": "Do not integrate ML modules into v1 of the desktop app."
+}

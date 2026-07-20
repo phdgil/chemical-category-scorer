@@ -1,0 +1,84 @@
+{
+  "model_id": "pubchem_flavoring_agents",
+  "label": "Flavoring Agents / PubChem Auto",
+  "category": "flavoring_agents",
+  "model_type": "choi_auto",
+  "threshold": 0.618850125210113,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.9270426697515816,
+    "ks": 0.7474987245984667,
+    "balanced_accuracy": 0.8737493622992334,
+    "overlap": 0.27780613794339437,
+    "objective": 0.9048409065787631,
+    "negative_count": 1354
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBD",
+    "HBA",
+    "TPSA",
+    "RotBonds",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      90.12199999999999,
+      265.1459999999999
+    ],
+    "logP": [
+      0.5002200000000003,
+      4.726910000000003
+    ],
+    "HBD": [
+      0.0,
+      2.0
+    ],
+    "HBA": [
+      1.0,
+      4.0
+    ],
+    "TPSA": [
+      0.0,
+      56.57399999999994
+    ],
+    "RotBonds": [
+      0.0,
+      11.0
+    ],
+    "FCsp3": [
+      0.13250000000000003,
+      1.0
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "ester": 26.535024014502113,
+    "aldehyde": 8.61242472051513,
+    "cinnamate": 0.7600571954715802
+  },
+  "selected_patterns": {
+    "ester": "C(=O)OC",
+    "aldehyde": "[CH1](=O)",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1"
+  },
+  "best_w": 0.7000000000000001,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.1,
+  "ratio_threshold": 3.0,
+  "range_quantiles": [
+    0.05,
+    0.95
+  ],
+  "optimization_method": "grid_w_objective_fallback",
+  "optimization_trials": 0,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\flavoring_agents__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\flavoring_agents__negative_source.csv"
+}

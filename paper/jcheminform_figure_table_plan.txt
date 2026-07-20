@@ -1,0 +1,49 @@
+Journal of Cheminformatics main-text figure and table plan
+
+Figure 1. Workflow of the final scoring rebuild
+- PubChem HID72 category extraction
+- CID-to-SMILES conversion and deduplication
+- retained-cross-category negative construction
+- Tanimoto filtering
+- descriptor + structural-pattern scoring
+- same-regime QED comparison
+- desktop deployment
+
+Figure 2. AUC comparison between final scorers and QED
+- one bar pair per final category
+- emphasize delta AUC versus QED
+
+Figure 3. Descriptor-pattern composition of the final scorers
+- selected descriptor count
+- selected pattern count
+- final mixing weight per category
+
+Figure 4. Score performance stratified by category tier
+- strongest, middle-tier, difficult categories
+- can be ROC, violin, or ranked score-distribution panels
+
+Figure 5. Desktop application snapshot
+- optional if the journal page budget allows it
+
+Table 1. Final broad-category benchmark summary
+- category
+- positive count
+- negative count after Tanimoto
+- AUC
+- balanced accuracy
+- QED AUC
+- delta AUC versus QED
+
+Table 2. Final scorer composition summary
+- category
+- selected descriptors
+- selected structural patterns
+- pattern count
+- best_w
+- optimization method
+
+Table 3. Optional supplementary-style benchmark table
+- threshold
+- KS statistic
+- category prior flag
+- model artifact path or accession pointer

@@ -1,0 +1,9 @@
+category,seed,eval_regime,unrepaired_negative_count_before_audit,repaired_negative_count_after_audit,excluded_negative_count_by_audit,property_matched_pool_count,property_matched_unique_count,retained_count,category_specific_dual_use,near_positive_tanimoto,retained_eval_negatives,near_positive_tanimoto_threshold,dual_use_categories
+pesticides,11,property_matched,60,60,0,60,55,60,0,0,60,not_audited,
+fragrances,11,audited_hard_negative,60,2,58,60,44,2,25,0,2,0.85,cosmetics;flavoring_agents;food_additives;solvents
+food_additives,11,property_matched,60,60,0,60,46,60,0,0,60,not_audited,
+flavoring_agents,11,audited_hard_negative,60,4,56,60,50,4,32,0,4,0.85,cosmetics;food_additives;fragrances;solvents
+lipids,11,audited_hard_negative,60,18,42,60,58,18,40,0,18,0.85,cosmetics;food_additives;food_contact_substances;plasticizers;surfactants
+solvents,11,property_matched,60,60,0,60,38,60,0,0,60,not_audited,
+endocrine_disruptors,11,property_matched,60,60,0,60,56,60,0,0,60,not_audited,
+surfactants,11,property_matched,60,60,0,60,57,60,0,0,60,not_audited,

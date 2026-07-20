@@ -1,0 +1,128 @@
+[
+  {
+    "model_id": "final_animal_drugs",
+    "label": "Animal Drugs / Final rebuilt scorer",
+    "category": "animal_drugs",
+    "threshold": 0.313835692716592,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_animal_drugs.json"
+  },
+  {
+    "model_id": "final_cosmetics",
+    "label": "Cosmetics / Final rebuilt scorer",
+    "category": "cosmetics",
+    "threshold": 0.35808806253907344,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_cosmetics.json"
+  },
+  {
+    "model_id": "final_endocrine_disruptors",
+    "label": "Endocrine disruptors",
+    "category": "endocrine_disruptors",
+    "threshold": 0.44869092292028634,
+    "model_type": "choi_auto",
+    "source_student": "GJC final endocrine rebuild",
+    "description": "Uncapped endocrine disruptor scorer rebuilt with full PubChem positives, retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_endocrine_disruptors.json"
+  },
+  {
+    "model_id": "final_flavoring_agents",
+    "label": "Flavoring Agents / Final rebuilt scorer",
+    "category": "flavoring_agents",
+    "threshold": 0.5309615458268176,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_flavoring_agents.json"
+  },
+  {
+    "model_id": "final_food_additives",
+    "label": "Food Additives / Final rebuilt scorer",
+    "category": "food_additives",
+    "threshold": 0.49386282243579027,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_food_additives.json"
+  },
+  {
+    "model_id": "final_food_contact_substances",
+    "label": "Food Contact Substances / Final rebuilt scorer",
+    "category": "food_contact_substances",
+    "threshold": 0.55,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_food_contact_substances.json"
+  },
+  {
+    "model_id": "final_fragrances",
+    "label": "Fragrances / Final rebuilt scorer",
+    "category": "fragrances",
+    "threshold": 0.5173230656217211,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_fragrances.json"
+  },
+  {
+    "model_id": "final_human_drugs",
+    "label": "Human Drugs / Final rebuilt scorer",
+    "category": "human_drugs",
+    "threshold": 0.17191444947821252,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_human_drugs.json"
+  },
+  {
+    "model_id": "final_pesticides",
+    "label": "Pesticides / Final rebuilt scorer",
+    "category": "pesticides",
+    "threshold": 0.4985092616952654,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_pesticides.json"
+  },
+  {
+    "model_id": "final_solvents",
+    "label": "Solvents / Final rebuilt scorer",
+    "category": "solvents",
+    "threshold": 0.5020830273425801,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_solvents.json"
+  },
+  {
+    "model_id": "final_surfactants",
+    "label": "Surfactants / Final rebuilt scorer",
+    "category": "surfactants",
+    "threshold": 0.5382806792357159,
+    "model_type": "choi_auto",
+    "source_student": "최예빈 + 이서윤 hybrid final rebuild",
+    "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\final_surfactants.json"
+  },
+  {
+    "model_id": "han_endocrine_disruptors",
+    "label": "Endocrine disruptors",
+    "category": "endocrine_disruptors",
+    "model_type": "han_edc",
+    "source_student": "Han Se-eum",
+    "source_student_id": "20251279",
+    "auc": 0.9211888363156981,
+    "balanced_accuracy": 0.9065530131932593,
+    "positive_count": 6125,
+    "negative_count": 9985,
+    "notes": "Deployed app/library endocrine scorer reconstructed from the original Han Se-eum notebook validation regime.",
+    "threshold": 0.6643,
+    "description": "Deployed endocrine scorer reconstructed from the original Han Se-eum notebook using property, scaffold, SMARTS, and similarity evidence.",
+    "path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\data\\models\\han_endocrine_disruptors.json"
+  }
+]

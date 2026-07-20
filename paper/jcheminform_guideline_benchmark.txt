@@ -1,0 +1,59 @@
+Journal of Cheminformatics guideline and article benchmark
+
+Official guidance confirmed
+- Research article abstract maximum: 350 words.
+- Scientific Contribution section in abstract: maximum 3 sentences.
+- No explicit official maximum main-text word count was found in the current Research guidance.
+- No explicit official maximum number of figures or tables was found in the current Research guidance.
+- Figure title limit: 15 words.
+- Figure legend limit: 300 words.
+- Table title limit: 15 words.
+- Table legend limit: 300 words.
+
+Why article benchmarking matters
+Because the journal does not state a hard maximum for main-text length, figures, or tables, the most practical calibration comes from similar accepted articles in Journal of Cheminformatics.
+
+Comparable accepted articles used for benchmarking
+1. NaPLeS (2019, software scorer paper)
+- approximately 3858 words in extracted article text proxy
+- 6 figures
+- 1 table
+- strongest benchmark for a scorer + software manuscript
+
+2. SAscore paper (2009, research scorer paper)
+- approximately 3826 words in extracted article text proxy
+- 6 figures
+- 1 table
+- strongest benchmark for a descriptor/fragment-based scoring manuscript
+
+3. Bioalerts (2016, software structural-alert paper)
+- approximately 5100 words in extracted article text proxy
+- 1 figure
+- 0 main-text tables detected in the extracted article view
+- useful benchmark for a text-heavier software/method paper
+
+Current manuscript position
+- current polished draft is about 2685 words
+- this is shorter than the closest scorer/software precedents
+- current draft still needs explicit figure and table callouts to look manuscript-complete
+
+Practical recommendation for this manuscript
+- expand the main text moderately rather than aggressively
+- target approximately 3200-4200 words for the core manuscript body before references and declarations
+- prepare approximately 4-6 main figures
+- prepare approximately 2-3 main tables
+
+Recommended figure plan
+1. Workflow figure: full-positive rebuild and scoring pipeline
+2. QED comparison bar chart across the 10 categories
+3. Score-distribution or ROC-style panel for the strongest categories
+4. Structural-pattern summary figure across categories
+5. Optional app/deployment figure
+
+Recommended table plan
+1. Final category summary table (positive counts, AUC, balanced accuracy, QED comparison)
+2. Structural-pattern/property summary table
+3. Optional journal/supplement-style regime comparison table
+
+Conclusion
+The current draft is already within the official abstract/contribution constraints, but it is still short relative to similar accepted Journal of Cheminformatics scorer/software papers. For a polished submission, it should become slightly longer and include an explicit figure/table plan.

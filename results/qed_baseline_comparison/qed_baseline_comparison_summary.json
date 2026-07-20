@@ -1,0 +1,21 @@
+{
+  "comparison_basis": "A category is marked reportable_vs_qed when the current reported AUC is higher than raw RDKit QED AUC on the same reconstructed evaluation set.",
+  "categories_compared": 13,
+  "reportable_vs_qed": [
+    "pfas",
+    "surfactants",
+    "solvents",
+    "endocrine_disruptors",
+    "pesticides",
+    "fragrances",
+    "lipids",
+    "cosmetics",
+    "food_contact_substances",
+    "human_drugs",
+    "animal_drugs"
+  ],
+  "not_better_than_qed": [
+    "food_additives",
+    "flavoring_agents"
+  ]
+}

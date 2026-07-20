@@ -1,0 +1,135 @@
+Validation gate for manuscript readiness
+
+Current gate status: the article-search -> read/extract -> analysis/drafting -> search-again loop is active and must continue until the manuscript no longer exposes uncited or weakly supported claims.
+
+Why the previous gate was too weak
+- The previous gate was centered on the final uncapped scoring run and same-regime QED comparison.
+- That was enough for numerical reporting, but not enough for a publishable literature-grounded manuscript.
+- The manuscript now also needs a repeatable evidence loop for references, prior-art comparison, and targeted follow-up analyses.
+
+Manuscript readiness loop (repeat until all gate checks pass)
+
+1. Search references
+- Search primary literature for category-specific scoring, category-specific chemical-space analysis, and adjacent functional-use classification.
+- Search order:
+  a. direct scoring papers for a target category
+  b. category-specific descriptor/rule/property-space papers
+  c. functional-use QSUR/classification papers
+  d. general likeness-score template papers (QED, NP-likeness, CLscore)
+- Search surfaces:
+  a. local article folders already collected by the project
+  b. PubMed / PMC
+  c. DOI / publisher abstract pages
+- Pass condition:
+  - Every major scientific claim in Introduction/Discussion has at least one primary-source citation.
+  - Every final chemical category either has a documented prior-art citation or an explicit note that direct score literature was not found.
+
+2. Read and extract article evidence
+- For each selected paper, extract:
+  a. task type (continuous score, hard filter, classifier, chemical-space map)
+  b. target category
+  c. descriptors / fragments / structural alerts used
+  d. dataset source and size
+  e. validation design and performance metrics
+  f. relevance to our manuscript claim
+  g. limitation relative to the present work
+- Pass condition:
+  - A reference map exists that links each target category to the strongest available prior art.
+  - The manuscript can state exactly whether prior work is direct precedent, adjacent precedent, or genuine gap.
+
+3. Design and conduct data analysis
+- Use the extracted literature to trigger only the analyses that materially strengthen the manuscript.
+- Mandatory analysis checks:
+  a. same-regime QED comparison remains the universal baseline
+  b. all numbers in manuscript match `results/final_category_rebuild/final_category_rebuild_qed_comparison.csv` and related final tables
+  c. category-specific claims are aligned to the right literature comparator
+  d. direct-precedent categories (especially pesticides) are compared explicitly against the literature design logic
+  e. adjacent-precedent categories (fragrance, GRAS/flavor, cosmetics, surfactant, solvent) are discussed as extensions rather than as if no prior work exists
+- Optional follow-up analysis triggers:
+  - a paper reveals a descriptor family or evaluation regime missing from the manuscript
+  - a literature claim contradicts the current interpretation
+  - a target category has prior art strong enough that a new side-by-side comparison is needed
+- Pass condition:
+  - No numerical statement in the manuscript depends on memory or outdated intermediate runs.
+  - Every comparative statement is tied either to a cited paper or to a named project output file.
+
+4. Loop back to step 1 after drafting
+- Step 4 is not an independent terminal gate. It is the explicit return from step 3 back to step 1.
+- After Results and Discussion are revised, run a new targeted article search specifically for gaps exposed by drafting.
+- Trigger a new loop if any of the following are true:
+  a. a paragraph introduces an uncited scientific claim
+  b. a category is framed as novel without checking adjacent literature
+  c. a direct precedent paper appears after a targeted search
+  d. a reviewer-like question cannot be answered from the reference map and final outputs
+- Stop the loop only when all gate checks below are green.
+
+Green-light gate checks
+
+A. Reference coverage gate
+- At least these reference families are covered in the manuscript or supporting drafting notes:
+  1) QED / drug-likeness foundation
+  2) pesticide-likeness literature
+  3) fragrance-like literature
+  4) GRAS / flavor chemoinformatics literature
+  5) cosmetics / consumer-product function prediction literature
+  6) functional-use QSUR literature spanning fragrance/flavorant/surfactant/solvent-like roles
+  7) solvent classification literature
+  8) one general fragment-/likeness-score analogue beyond QED
+- Current strongest candidate set:
+  - Bickerton 2012
+  - Tice 2001
+  - Hao 2011
+  - Avram 2014
+  - Ruddigkeit 2014
+  - Sprous & Salemme 2007
+  - Medina-Franco 2012
+  - Isaacs 2016
+  - Phillips 2017
+  - Gramatica 1999
+  - Alder 2016
+  - Jayaseelan 2012 and/or Brunner 2020
+  - Karmaus 2016
+  - Huang 2017
+
+B. Category coverage gate
+- Every final manuscript category is labeled as one of:
+  1) direct precedent exists
+  2) adjacent precedent exists
+  3) little direct precedent found
+- This prevents overclaiming novelty.
+
+C. Numerical integrity gate
+- Abstract, Results, Discussion, tables, and figure legends must all match the final CSV outputs.
+- Any category summary in prose must be traceable to the final reporting table.
+
+D. Comparative-claim gate
+- If the manuscript says a score is better than QED, the exact comparison must exist in the same evaluation regime.
+- If a direct published continuous score exists for the same category, the manuscript must compare against that published score on the current regime as well.
+- Current confirmed direct published continuous comparator beyond QED: Avram 2014 QEP for pesticides.
+- If the manuscript says a category is underexplored, the reference map must show that the search was actually done.
+
+E. Deployment gate
+- The manuscript may mention the desktop app and Python library only if the released scorers correspond to the final validated scoring set.
+
+F. Reviewer-question gate
+- The following questions must be answerable from the manuscript package without re-analysis:
+  - What is the closest prior score for pesticides?
+  - What is the closest prior work for fragrances?
+  - What is the closest prior work for food additives / flavoring agents?
+  - Is there direct prior art for cosmetics, food contact substances, surfactants, solvents, animal drugs, and human drugs?
+  - Why is QED the baseline?
+  - Which categories are direct extensions versus gap-filling categories?
+
+Ready-for-polishing decision rule
+- The manuscript is ready for polishing only when:
+  1. the final scoring tables are frozen,
+  2. the reference map is complete,
+  3. every major claim has a citation or an explicit project-output source,
+  4. direct-versus-adjacent precedent is stated honestly, and
+  5. no unresolved reviewer-question gate item remains.
+
+Files supporting this gate
+- `paper/category_specific_scoring_reference_map.md`
+- `results/final_category_rebuild/final_category_rebuild_qed_comparison.csv`
+- `paper/final_scoring_performance_table.csv`
+- `paper/jcheminform_manuscript_polished.md`

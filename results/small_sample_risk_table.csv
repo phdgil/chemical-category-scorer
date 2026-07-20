@@ -1,0 +1,20 @@
+category,name,compound_count,positive_count,sample_size_risk,trust_band,primary_issue,decision,auc,balanced_accuracy,recommended_mode,ignore_recommended,note
+biologics,Biologics,28,28,too_small,low,sample_size,experimental_revisit,0.7125,0.7088,not_prioritized,True,Safe to ignore for now: too small and weak impact.
+dietary_ingredients,Dietary Ingredients,63,62,too_small,low,sample_size,reject_for_now,0.5000,0.5000,not_prioritized,True,Safe to ignore for now: too small and weak impact.
+flame_retardants,Flame Retardants,64,62,too_small,low,sample_size,reject_for_now,0.5000,0.5000,not_prioritized,True,Safe to ignore for now: too small and weak impact.
+plasticizers,Plasticizers,90,90,too_small,low,sample_size,experimental_revisit,0.9105,0.8740,not_prioritized,True,Safe to ignore for now: too small and weak impact.
+animal_drugs,Animal Drugs,907,859,adequate_size,normal,not_sample_size_primary,reject_for_now,0.5816,0.5670,evidence_panel,False,Adequate size; if weak, distrust is driven mainly by source mismatch and label structure rather than count.
+cosmetics,Cosmetics,3841,1179,adequate_size,normal,not_sample_size_primary,reject_for_now,0.4645,0.5068,evidence_panel,False,Adequate size; if weak, distrust is driven mainly by heterogeneity/label quality rather than count.
+endocrine_disruptors,Endocrine Disruptors,6125,1196,adequate_size,normal,not_sample_size_primary,release_candidate,0.8391,0.7512,conditional_score,False,Adequate size; weak points are robustness-sensitive rather than sample-limited.
+flavoring_agents,Flavoring Agents,2444,1163,adequate_size,normal,not_sample_size_primary,strong_release_candidate,0.9245,0.8679,experimental_score,False,Adequate size; weak points are robustness-sensitive rather than sample-limited.
+food_additives,Food Additives,2960,1169,adequate_size,normal,not_sample_size_primary,release_candidate,0.8117,0.7515,experimental_score,False,Adequate size; weak points are robustness-sensitive rather than sample-limited.
+food_contact_substances,Food Contact Substances,1945,1187,adequate_size,normal,not_sample_size_primary,reject_for_now,0.5000,0.5000,evidence_panel,False,Adequate size; weakness is driven by heterogeneous regulatory/use labeling, not by count.
+fragrances,Fragrances,2548,1138,adequate_size,normal,not_sample_size_primary,existing_release_line,0.8969,0.8355,experimental_score,False,Adequate size; weak points are robustness-sensitive rather than sample-limited.
+human_drugs,Human Drugs,3943,1167,adequate_size,normal,not_sample_size_primary,experimental_revisit,0.7128,0.6764,evidence_panel,False,Adequate size at parent level; official subtype labels show signal, so distrust is not due to top-level count.
+lipids,Lipids,48936,1185,adequate_size,normal,not_sample_size_primary,release_candidate,0.8950,0.8298,experimental_score,False,Adequate size; weak points are robustness-sensitive rather than sample-limited.
+pfas,PFAS,6153,1182,adequate_size,normal,not_sample_size_primary,strong_release_candidate,0.9936,0.9691,robust_score,False,Adequate size and robust performance.
+pesticides,Pesticides,2973,1169,adequate_size,normal,not_sample_size_primary,existing_release_line,0.7697,0.7006,experimental_score,False,Adequate size; weak points are robustness-sensitive rather than sample-limited.
+polymers,Polymers,1162,1134,adequate_size,normal,not_sample_size_primary,reject_for_now,0.5000,0.5000,not_prioritized,False,Adequate size; weakness is driven by label/structure mismatch rather than count.
+solvents,Solvents,632,605,adequate_size,normal,not_sample_size_primary,strong_release_candidate,0.9423,0.9082,conditional_score,False,Adequate size; main caution is robustness under harder negatives, not sample count.
+surfactants,Surfactants,268,268,adequate_size,normal,not_sample_size_primary,existing_release_line,0.9524,0.9015,robust_score,False,Adequate size and robust performance.
+uvcb,UVCB,315,315,adequate_size,normal,not_sample_size_primary,reject_for_now,0.5759,0.5500,not_prioritized,False,Adequate size; weakness is driven by broad category definition rather than count.

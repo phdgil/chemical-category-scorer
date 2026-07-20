@@ -1,0 +1,103 @@
+Journal of Cheminformatics submission-ready figure/table checklist
+
+Status target
+- Manuscript body calibrated to similar Journal of Cheminformatics scorer/software papers.
+- Current near-final draft length: about 4089 words before references/declarations checks.
+- Target figure count: 4 main figures, with Figure 5 optional.
+- Target table count: 2 main tables, with Table 3 optional or supplementary.
+
+Required journal-facing checks
+1. Abstract <= 350 words.
+2. Scientific Contribution <= 3 sentences.
+3. Figure titles <= 15 words each.
+4. Figure legends <= 300 words each.
+5. Table titles <= 15 words each.
+6. Table legends <= 300 words each.
+7. No references in abstract.
+8. Declarations section complete before submission.
+
+Introduction drafting plan
+- Para 1: establish interpretable molecular scoring and QED as the conceptual anchor.
+- Para 2: define why broad chemical product-category scoring matters in practice.
+- Para 3: review related scorer/alert literature (QED, natural-product likeness, synthetic accessibility, Bioalerts).
+- Para 4: identify the unresolved gap: no common broad-category framework and no explicit treatment of positive capping or overlapping-category negatives.
+- Para 5: state the PubChem HID72 setting, the methodological risks found in exploratory work, and the present study objective.
+
+
+Main table submission rule
+- For Journal of Cheminformatics, normal main-text tables should stay in the manuscript file (Word/Docx/RTF/LaTeX) at the relevant position or, if long, at the end of the manuscript with in-text callouts.
+- Only very large tables or tabular datasets that exceed one page or A4/Letter width should be submitted as additional files (for example CSV or XLS).
+- Therefore Table 1 and Table 2 should be embedded in the main manuscript, while extended benchmark tables can remain supplementary CSV files.
+
+Main-text insertion plan
+- Figure 1 near end of Introduction: overall workflow.
+- Table 1 in Results opening: final category benchmark summary.
+- Figure 2 in Results/QED section: scorer versus QED comparison.
+- Table 2 and Figure 3 in Results/pattern section: model composition.
+- Figure 4 in Methods/Software deployment or end of Results: local-first desktop + Python library workflow.
+- Figure 5 optional only if page economy allows: additional score-distribution panel.
+- Table 3 optional or supplementary: extended thresholds, KS, optimization route, category prior flag.
+
+Planned main tables
+Table 1. Final broad-category benchmark summary
+Columns:
+- category
+- positive_count
+- negative_count_after_tanimoto
+- auc
+- balanced_accuracy
+- qed_auc
+- qed_balanced_accuracy
+- delta_auc_vs_qed
+- reportable_vs_qed
+
+Table 2. Final scorer composition summary
+Columns:
+- category
+- selected_prop_count
+- selected_props
+- pattern_count
+- selected_patterns
+- best_w
+- optimization_method
+
+Planned main figures
+Figure 1. Final rebuild workflow
+- PubChem HID72 extraction
+- CID-to-SMILES conversion and deduplication
+- retained-cross-category negative construction
+- Tanimoto filtering
+- descriptor plus pattern scoring
+- same-regime QED comparison
+- desktop deployment
+
+Figure 2. Category AUC versus QED
+- paired bars for each of the 11 final selected scorers
+- highlight delta AUC
+
+Figure 3. Descriptor-pattern composition map
+- pattern count
+- descriptor count
+- best_w per category
+
+Figure 4. Local-first software modes
+- desktop single-molecule scoring panel
+- batch scoring panel
+- Python library usage panel
+- note that all scoring runs locally
+
+Optional Figure 5. Category score distribution or ROC detail
+- only if a stronger visual result section is needed
+
+Content caveats to preserve
+- Full-positive uncapped rebuild was used in the final run.
+- Cross-category negatives were retained except for exact target overlap, duplicate negatives, and near-positive Tanimoto conflicts.
+- QED comparison must remain same-regime for every reported category.
+- The desktop app should be described as local-first because confidentiality of molecular structure is part of the industrial-use rationale.
+
+Before submission
+- Replace author placeholders.
+- Add public repository/archive link in Availability of data and materials.
+- Finalize figure files and legends.
+- Finalize tables in journal-compatible format.
+- Confirm references against the journal citation style during submission formatting.

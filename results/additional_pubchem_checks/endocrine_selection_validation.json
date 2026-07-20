@@ -1,0 +1,98 @@
+{
+  "recommended_final_endocrine_model": "final_endocrine_disruptors",
+  "rationale": [
+    "Han Se-eum's model is the strongest single-regime benchmark on the EDC-vs-drug comparator set.",
+    "The uncapped GJC final endocrine scorer remains the aligned cross-regime deployment choice because it is validated under the same broad-category doctrine as the rest of the final app/manuscript set.",
+    "Final deployment should favor same-regime comparability across categories rather than a stronger but regime-specific comparator."
+  ],
+  "regime_winners": {
+    "han_native_edc_vs_drug": "han_endocrine_disruptors",
+    "gjc_uncapped_final_regime": "han_endocrine_disruptors"
+  },
+  "rows": [
+    {
+      "regime": "han_native_edc_vs_drug",
+      "model_id": "qed_baseline",
+      "label": "RDKit QED",
+      "tanimoto_threshold": 0.4,
+      "positive_count": 6125,
+      "negative_count": 10015,
+      "auc": 0.5467338176408856,
+      "pr_auc": 0.39526679982541835,
+      "balanced_accuracy": 0.5433482836969037,
+      "threshold": 0.5140338885855897
+    },
+    {
+      "regime": "han_native_edc_vs_drug",
+      "model_id": "final_endocrine_disruptors",
+      "label": "GJC uncapped final doctrine",
+      "tanimoto_threshold": 0.4,
+      "positive_count": 6125,
+      "negative_count": 10015,
+      "auc": 0.7371460360479689,
+      "pr_auc": 0.6007009073213997,
+      "balanced_accuracy": 0.6786144456784211,
+      "mcc_at_model_threshold": 0.34692536037638905,
+      "threshold": 0.44869092292028634,
+      "delta_auc_vs_qed": 0.19041221840708333,
+      "delta_balanced_accuracy_vs_qed": 0.13526616198151742
+    },
+    {
+      "regime": "han_native_edc_vs_drug",
+      "model_id": "han_endocrine_disruptors",
+      "label": "Han Se-eum reconstructed",
+      "tanimoto_threshold": 0.4,
+      "positive_count": 6125,
+      "negative_count": 10015,
+      "auc": 0.927484218570104,
+      "pr_auc": 0.949319281394956,
+      "balanced_accuracy": 0.9380959173484671,
+      "mcc_at_model_threshold": 0.8889556919294372,
+      "threshold": 0.6643,
+      "delta_auc_vs_qed": 0.3807504009292184,
+      "delta_balanced_accuracy_vs_qed": 0.3947476336515634
+    },
+    {
+      "regime": "gjc_uncapped_final_regime",
+      "model_id": "qed_baseline",
+      "label": "RDKit QED",
+      "tanimoto_threshold": 0.3,
+      "positive_count": 5892,
+      "negative_count": 3455,
+      "auc": 0.607228226750098,
+      "pr_auc": 0.7093892190015623,
+      "balanced_accuracy": 0.5811984755998715,
+      "threshold": 0.5072974072735447
+    },
+    {
+      "regime": "gjc_uncapped_final_regime",
+      "model_id": "final_endocrine_disruptors",
+      "label": "GJC uncapped final doctrine",
+      "tanimoto_threshold": 0.3,
+      "positive_count": 5892,
+      "negative_count": 3455,
+      "auc": 0.8279271704968251,
+      "pr_auc": 0.8793070179346982,
+      "balanced_accuracy": 0.7742741267562876,
+      "mcc_at_model_threshold": 0.5306958515434581,
+      "threshold": 0.44869092292028634,
+      "delta_auc_vs_qed": 0.22069894374672705,
+      "delta_balanced_accuracy_vs_qed": 0.19307565115641612
+    },
+    {
+      "regime": "gjc_uncapped_final_regime",
+      "model_id": "han_endocrine_disruptors",
+      "label": "Han Se-eum reconstructed",
+      "tanimoto_threshold": 0.3,
+      "positive_count": 5892,
+      "negative_count": 3455,
+      "auc": 0.9347590443712832,
+      "pr_auc": 0.9718822679435034,
+      "balanced_accuracy": 0.9350072162406187,
+      "mcc_at_model_threshold": 0.8445877983697279,
+      "threshold": 0.6643,
+      "delta_auc_vs_qed": 0.3275308176211852,
+      "delta_balanced_accuracy_vs_qed": 0.3538087406407472
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "model_id": "choi_surfactant",
+  "label": "Surfactant / Choi Yebin",
+  "category": "surfactant",
+  "model_type": "choi_auto",
+  "threshold": 0.573695308977182,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.9648600545081923,
+    "ks": 0.8622970696481647,
+    "balanced_accuracy": 0.9311485348240823,
+    "overlap": 0.17702281091237757,
+    "objective": 0.5416275594638345,
+    "negative_count": 2782
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBD",
+    "TPSA",
+    "RotBonds",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      239.71079999999998,
+      635.2666000000006
+    ],
+    "logP": [
+      0.09322000000000161,
+      5.591570000000006
+    ],
+    "HBD": [
+      1.0,
+      3.0
+    ],
+    "TPSA": [
+      47.92,
+      137.44
+    ],
+    "RotBonds": [
+      7.0,
+      38.30000000000001
+    ],
+    "FCsp3": [
+      0.56875,
+      1.0
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "long_chain": 66.88305417556359,
+    "glycol": 49.89189566187752
+  },
+  "selected_patterns": {
+    "long_chain": "CCCCCC",
+    "glycol": "OCCO"
+  },
+  "best_w": 0.5102018582028092,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.28161174428438557,
+  "ratio_threshold": 5.762643214418477,
+  "range_quantiles": [
+    0.1,
+    0.9
+  ],
+  "optimization_method": "lee_tpe_bayesian",
+  "optimization_trials": 18,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\컴퓨터알고리즘\\20251266_최예빈\\PubChem.csv\\PubChem_Surfactant.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\컴퓨터알고리즘\\20251266_최예빈\\PubChem.csv\\PubChem_Pesticides.csv"
+}

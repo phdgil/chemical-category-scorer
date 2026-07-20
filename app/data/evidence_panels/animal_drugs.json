@@ -1,0 +1,240 @@
+{
+  "panel_id": "animal_drugs",
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\full_category_decision\\inputs\\animal_drugs__positive.csv",
+  "entry_count": 859,
+  "related_models": [
+    "final_food_additives",
+    "final_flavoring_agents",
+    "final_solvents",
+    "final_pesticides"
+  ],
+  "notes": [
+    "Animal drugs is a sparse pharmacology/regulatory bucket, so evidence is organized as prototype families rather than one hard score.",
+    "Top related-model scores are supporting evidence only, not final labels.",
+    "Related model support remapped to final rebuilt broad-category scorers integrated into the desktop app."
+  ],
+  "families": [
+    {
+      "family_id": "family_01",
+      "family_name": "ester_family",
+      "member_count": 13,
+      "representative_smiles": "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C",
+      "representative_similarity_within_family": 0.7146,
+      "top_motifs": [
+        {
+          "name": "ester",
+          "fraction": 0.3077,
+          "smarts": "C(=O)OC"
+        }
+      ],
+      "property_medians": {
+        "MW": 403.4570000000002,
+        "logP": 0.4864999999999998,
+        "HBD": 3.0,
+        "HBA": 5.0,
+        "TPSA": 112.73,
+        "RotBonds": 5.0,
+        "FCsp3": 0.4375,
+        "AromaticRings": 1.0
+      },
+      "example_smiles": [
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C",
+        "CCN(CC)CCOC(=O)C1=CC=C(C=C1)N.CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=CC=C3)N)C(=O)O)C",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=CC=C3)C(=O)O)C(=O)O)C",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=CC=C3)N)C(=O)O)C.O.O.O",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=C(C=C3)O)N)C(=O)O)C",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.C1=CC=C(C=C1)CCNCC2=CC=CC=C2",
+        "CCN(CC)CCOC(=O)C1C(SC2N1C(=O)C2NC(=O)CC3=CC=CC=C3)(C)C.I",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.C1=CC=C(C=C1)CNCCNCC2=CC=CC=C2.O.O.O.O",
+        "CCN(CC)CCOC(=O)C1=CC=C(C=C1)N.CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.C1=CC=C(C=C1)CNCCNCC2=CC=CC=C2",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)[O-])C.[K+]",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)[O-])C.[Na+]"
+      ]
+    },
+    {
+      "family_id": "family_02",
+      "family_name": "long_chain_family",
+      "member_count": 11,
+      "representative_smiles": "CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].[Al+3]",
+      "representative_similarity_within_family": 0.8122,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        }
+      ],
+      "property_medians": {
+        "MW": 591.2570000000005,
+        "logP": 9.438000000000002,
+        "HBD": 0.0,
+        "HBA": 4.0,
+        "TPSA": 80.25999999999999,
+        "RotBonds": 32.0,
+        "FCsp3": 0.9444444444444444,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCC=CCCCCCCCC(=O)[O-].[Na+]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].[OH-].[Al+3]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].[Mg+2]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].[Zn+2]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].[Al+3]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCC(=O)[O-].[Ca+2]",
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCCCCCC(=O)[O-].[Ca+2]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].[Na+]",
+        "CCCCCCCCC=CCCCCCCCC(=O)OCC",
+        "CCCCCCCCC=CCCCCCCCCCCCC(=O)N",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].[OH-].[OH-].[Al+3]"
+      ]
+    },
+    {
+      "family_id": "family_03",
+      "family_name": "halogen_long_chain_family",
+      "member_count": 11,
+      "representative_smiles": "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CO)O)C)O)F)C",
+      "representative_similarity_within_family": 0.7225,
+      "top_motifs": [
+        {
+          "name": "halogen",
+          "fraction": 1.0,
+          "smarts": "[Cl,Br,F,I]"
+        },
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "ester",
+          "fraction": 0.4545,
+          "smarts": "C(=O)OC"
+        }
+      ],
+      "property_medians": {
+        "MW": 434.5040000000002,
+        "logP": 2.220500000000001,
+        "HBD": 2.0,
+        "HBA": 6.0,
+        "TPSA": 100.9,
+        "RotBonds": 3.0,
+        "FCsp3": 0.717391304347826,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COC(=O)C)O)C)O)F)C",
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CO)O)C)O)F)C",
+        "CC1(OC2CC3C4CCC5=CC(=O)C=CC5(C4(C(CC3(C2(O1)C(=O)CO)C)O)F)C)C",
+        "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CO)O)C)O)F)C)F",
+        "CCCCC(=O)OC1(C(CC2C1(CC(C3(C2CCC4=CC(=O)C=CC43C)F)O)C)C)C(=O)CO",
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COP(=O)([O-])[O-])O)C)O)F)C.[Na+].[Na+]",
+        "CCC(=O)OCC(=O)C1(C(CC2C1(CC(C3(C2CCC4=CC(=O)C=CC43C)F)O)C)C)OC(=O)CC",
+        "CC12CC(C3(C(C1CC(C2(C(=O)CO)O)O)CCC4=CC(=O)C=CC43C)F)O",
+        "CC(=O)OCC(=O)C1(CCC2C1(CC(C3(C2CCC4=CC(=O)C=CC43C)F)O)C)O",
+        "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COC(=O)C)O)C)O)F)C)F",
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CC(=O)C)O)C)O)F)C.CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COP(=O)([O-])[O-])O)C)O)F)C.[Na+].[Na+]"
+      ]
+    },
+    {
+      "family_id": "family_04",
+      "family_name": "imidazole_aromatic_oh_family",
+      "member_count": 10,
+      "representative_smiles": "CC(C)CC(C(=O)NC(CCCN=C(N)N)C(=O)N1CCCC1C(=O)NCC(=O)N)NC(=O)C(CC2=CNC3=CC=CC=C32)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CC5=CNC6=CC=CC=C65)NC(=O)C(CC7=CN=CN7)NC(=O)C8CCC(=O)N8",
+      "representative_similarity_within_family": 0.8932,
+      "top_motifs": [
+        {
+          "name": "imidazole",
+          "fraction": 1.0,
+          "smarts": "c1cnc[nH]1"
+        },
+        {
+          "name": "aromatic_oh",
+          "fraction": 0.9,
+          "smarts": "Oc1ccccc1"
+        }
+      ],
+      "property_medians": {
+        "MW": 1270.4220000000003,
+        "logP": -2.2493500000000144,
+        "HBD": 16.5,
+        "HBA": 15.0,
+        "TPSA": 481.3499999999999,
+        "RotBonds": 32.0,
+        "FCsp3": 0.45606060606060606,
+        "AromaticRings": 5.0
+      },
+      "example_smiles": [
+        "CC(C)CC(C(=O)NC(CCCN=C(N)N)C(=O)N1CCCC1C(=O)NCC(=O)N)NC(=O)C(CC2=CNC3=CC=CC=C32)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CC5=CNC6=CC=CC=C65)NC(=O)C(CC7=CN=CN7)NC(=O)C8CCC(=O)N8.CC(=O)O",
+        "CCNC(=O)C1CCCN1C(=O)C(CCCN=C(N)N)NC(=O)C(CC(C)C)NC(=O)C(COC(C)(C)C)NC(=O)C(CC2=CC=C(C=C2)O)NC(=O)C(CO)NC(=O)C(CC3=CNC4=CC=CC=C43)NC(=O)C(CC5=CN=CN5)NC(=O)C6CCC(=O)N6.CC(=O)O",
+        "CCNC(=O)C1CCCN1C(=O)C(CCCN=C(N)N)NC(=O)C(CC(C)C)NC(=O)C(COC(C)(C)C)NC(=O)C(CC2=CC=C(C=C2)O)NC(=O)C(CO)NC(=O)C(CC3=CNC4=CC=CC=C43)NC(=O)C(CC5=CN=CN5)NC(=O)C6CCC(=O)N6",
+        "CC(C)CC(C(=O)NC(CCCN=C(N)N)C(=O)N1CCCC1C(=O)NCC(=O)N)NC(=O)CNC(=O)C(CC2=CC=C(C=C2)O)NC(=O)C(CO)NC(=O)C(CC3=CNC4=CC=CC=C43)NC(=O)C(CC5=CN=CN5)NC(=O)C6CCC(=O)N6",
+        "CC(C)CC(C(=O)NC(CCCN=C(N)N)C(=O)N1CCCC1C(=O)NCC(=O)N)NC(=O)CNC(=O)C(CC2=CC=C(C=C2)O)NC(=O)C(CO)NC(=O)C(CC3=CNC4=CC=CC=C43)NC(=O)C(CC5=CN=CN5)NC(=O)C6CCC(=O)N6.CC(=O)O",
+        "CC(C)CC(C(=O)NC(CCCN=C(N)N)C(=O)N1CCCC1C(=O)NCC(=O)N)NC(=O)CNC(=O)C(CC2=CC=C(C=C2)O)NC(=O)C(CO)NC(=O)C(CC3=CNC4=CC=CC=C43)NC(=O)C(CC5=CN=CN5)NC(=O)C6CCC(=O)N6.Cl",
+        "CC(C)CC(C(=O)NC(CCCN=C(N)N)C(=O)N1CCCC1C(=O)NCC(=O)N)NC(=O)C(CC2=CNC3=CC=CC=C32)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CC5=CNC6=CC=CC=C65)NC(=O)C(CC7=CN=CN7)NC(=O)C8CCC(=O)N8",
+        "CCNC(=O)C1CCCN1C(=O)C(CCCN=C(N)N)NC(=O)C(CC(C)C)NC(=O)C(CC2=CNC3=CC=CC=C32)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CC5=CNC6=CC=CC=C65)NC(=O)C(CC7=CN=CN7)NC(=O)C8CCC(=O)N8",
+        "CCNC(=O)C1CCCN1C(=O)C(CCCN=C(N)N)NC(=O)C(CC(C)C)NC(=O)C(CC2=CNC3=CC=CC=C32)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CC5=CNC6=CC=CC=C65)NC(=O)C(CC7=CN=CN7)NC(=O)C8CCC(=O)N8.CC(=O)O",
+        "C1CC(N(C1)C(=O)C(CCCCN)NC(=O)C(CC2=CC3=CC=CC=C3N2)NC(=O)C(CC(=O)N)NC(=O)C(CC4=CN=CN4)NC(=O)C(CO)NC(=O)C(CC5=CC6=CC=CC=C6N5)NC(=O)C(CC7=CN=CN7)NC(=O)C8CCC(=O)N8)C(=O)NCC(=O)N"
+      ]
+    },
+    {
+      "family_id": "family_05",
+      "family_name": "prototype_family_5",
+      "member_count": 10,
+      "representative_smiles": "O.O.O.O.O.O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]",
+      "representative_similarity_within_family": 0.812,
+      "top_motifs": [],
+      "property_medians": {
+        "MW": 148.982,
+        "logP": -5.793649999999998,
+        "HBD": 1.0,
+        "HBA": 3.0,
+        "TPSA": 97.75500000000001,
+        "RotBonds": 0.0,
+        "FCsp3": 0.0,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "O.O.OP(=O)(O)[O-].[Na+]",
+        "OP(=O)([O-])[O-].[Na+].[Na+]",
+        "OP(=O)(O)[O-].[Na+]",
+        "OP(=O)([O-])[O-].[Ca+2]",
+        "OP(=O)([O-])[O-].[K+].[K+]",
+        "OP(=O)(O)[O-].[K+]",
+        "O.O.O.O.O.O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]",
+        "O.O.OP(=O)([O-])[O-].[Ca+2]",
+        "O.OP(=O)(O)[O-].[Na+]",
+        "O.O.OP(=O)([O-])[O-].[Na+].[Na+]"
+      ]
+    },
+    {
+      "family_id": "family_06",
+      "family_name": "prototype_family_6",
+      "member_count": 9,
+      "representative_smiles": "C(=O)([O-])[O-].[Na+].[Na+]",
+      "representative_similarity_within_family": 0.7551,
+      "top_motifs": [],
+      "property_medians": {
+        "MW": 124.003,
+        "logP": -5.6556,
+        "HBD": 0.0,
+        "HBA": 3.0,
+        "TPSA": 94.69,
+        "RotBonds": 0.0,
+        "FCsp3": 0.0,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "C(=O)([O-])[O-].O.O.O.O.O.O.O.O.O.O.[Na+].[Na+]",
+        "C(=O)([O-])[O-].[Na+].[Na+]",
+        "C(=O)([O-])[O-].[Mn+2]",
+        "C(=O)([O-])[O-].[Cu+2]",
+        "C(=O)([O-])[O-].C(=O)([O-])[O-].[Mg+2].[Ca+2]",
+        "C(=O)([O-])[O-].O.[Na+].[Na+]",
+        "C(=O)(O)[O-].[Na+]",
+        "C(=O)([O-])[O-].[O-2].[O-2].[Bi+3].[Bi+3]",
+        "CC(=O)[O-].O.O.O.[Na+]"
+      ]
+    }
+  ]
+}

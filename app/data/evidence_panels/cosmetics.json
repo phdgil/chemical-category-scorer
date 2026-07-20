@@ -1,0 +1,277 @@
+{
+  "panel_id": "cosmetics",
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\full_category_decision\\inputs\\cosmetics__positive.csv",
+  "entry_count": 1179,
+  "related_models": [
+    "final_fragrances",
+    "final_surfactants",
+    "final_solvents",
+    "final_flavoring_agents",
+    "final_food_additives"
+  ],
+  "notes": [
+    "Cosmetics is a heterogeneous use category, so evidence is organized as prototype families rather than hard subtype predictions.",
+    "Top related-model scores are supporting evidence only, not final labels.",
+    "Related model support remapped to final rebuilt broad-category scorers integrated into the desktop app."
+  ],
+  "families": [
+    {
+      "family_id": "family_01",
+      "family_name": "long_chain_ester_family",
+      "member_count": 109,
+      "representative_smiles": "CCCCCCCCCCCCCCCCCCCCCC(=O)OCCCCCCCCCCCC",
+      "representative_similarity_within_family": 0.7385,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "ester",
+          "fraction": 0.9817,
+          "smarts": "C(=O)OC"
+        }
+      ],
+      "property_medians": {
+        "MW": 452.80800000000045,
+        "logP": 9.787699999999997,
+        "HBD": 0.0,
+        "HBA": 2.0,
+        "TPSA": 26.3,
+        "RotBonds": 26.0,
+        "FCsp3": 0.95,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)OCCCCCCCCCCCC",
+        "CCCCOC(=O)CCCCC(=O)OCCCC",
+        "CCCOC(=O)CCCCC(=O)OCCC",
+        "CCCCOC(=O)CCCCCCCCC(=O)OCCCC",
+        "CCCCCCOC(=O)CCCCC(=O)OCCCCCC",
+        "CCCCCCCCCCCCCCCCCC(=O)OCC",
+        "CCCCCCCCCCCCCCCC(=O)OC(C)C",
+        "CCCCCCCC(=O)OCC(COC(=O)CCCCCCC)OC(=O)CCCCCCC",
+        "CCCCCCCCCCCC(=O)OCC(COC(=O)CCCCCCCCCCC)OC(=O)CCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCC(=O)OCC",
+        "CCCCCCCCCCCC(=O)OCC(CO)O",
+        "CCCCCCCCCCCCCCCC(=O)OCC(CO)O"
+      ]
+    },
+    {
+      "family_id": "family_02",
+      "family_name": "ester_long_chain_family",
+      "member_count": 41,
+      "representative_smiles": "CCCCCCCCC=CCCCCCCCC(=O)OCC(COC(=O)CCCCCCCC=CCCCCCCCC)O",
+      "representative_similarity_within_family": 0.6732,
+      "top_motifs": [
+        {
+          "name": "ester",
+          "fraction": 1.0,
+          "smarts": "C(=O)OC"
+        },
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "glycol",
+          "fraction": 0.6829,
+          "smarts": "OCCO"
+        }
+      ],
+      "property_medians": {
+        "MW": 492.22900000000027,
+        "logP": 6.1969000000000065,
+        "HBD": 1.0,
+        "HBA": 5.0,
+        "TPSA": 72.83000000000001,
+        "RotBonds": 24.0,
+        "FCsp3": 0.8571428571428571,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCC=CCCCCCCCC(=O)OCC(COC(=O)CCCCCCCC=CCCCCCCCC)O",
+        "CCCCCCCCCCCCCCCCCC(=O)OCC(COC(=O)C)O",
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)OCC(C[N+](C)(C)C)O.[Cl-]",
+        "CCCCCCCCC=CCCCCCCCC(=O)OCC(CO)(CO)COC(=O)CCCCCCCC=CCCCCCCCC",
+        "CCCCCC=CCC=CCCCCCCCC(=O)OCC",
+        "CCCCCC=CCC=CCC=CCC=CCCCC(=O)OCC(CO)O",
+        "CCCCCC=CCC=CCCCCCCCC(=O)OC",
+        "CCCCCC=CCC=CCCCCCCCC(=O)OCC(COC(=O)CCCCCCCC=CCC=CCCCCC)OC(=O)CCCCCCCC=CCC=CCCCCC",
+        "CCCCCCC(CC=CCCCCCCCC(=O)OC)O",
+        "CCCCCCC(CC=CCCCCCCCC(=O)OCC(C)O)O",
+        "CCCCCCC(CC=CCCCCCCCC(=O)OCCO)O",
+        "CCCCCCCCC=CCCCCCCCC(=O)OC"
+      ]
+    },
+    {
+      "family_id": "family_03",
+      "family_name": "long_chain_glycol_family",
+      "member_count": 24,
+      "representative_smiles": "CCCCCCCCC=CCCCCCCCCCCCC(=O)O.CCCCCCCCC=CCCCCCCCCCCCC(=O)O",
+      "representative_similarity_within_family": 0.686,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 0.9583,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "glycol",
+          "fraction": 0.2083,
+          "smarts": "OCCO"
+        }
+      ],
+      "property_medians": {
+        "MW": 329.567,
+        "logP": 6.0044500000000065,
+        "HBD": 1.0,
+        "HBA": 1.0,
+        "TPSA": 37.3,
+        "RotBonds": 16.0,
+        "FCsp3": 0.8819444444444444,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCC=CCCCCCCCCCCCC(=O)O.CCCCCCCCC=CCCCCCCCCCCCC(=O)O",
+        "CCC=CCC=CCC=CCCCCCCCC(=O)O",
+        "CCCCCC=CCC=CCCCCCCCC(=O)O",
+        "CCCCCCCCCCCCCCCCCC(=O)O",
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)O",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O",
+        "CCCCCCCCCCCCCC(=O)O",
+        "CCCCCCCCCC(=O)O.CCCCCCCC(=O)O.C(C(CO)O)O",
+        "CCCCCC=CCC=CCC=CCC=CCCCC(=O)O",
+        "CCCCCCCCC=CCCCCCCCC(=O)O",
+        "CCC=CCC=CCC=CCC=CCC=CCCCC(=O)O",
+        "CCCCCCCCC=CCCCCCCCC(=O)N"
+      ]
+    },
+    {
+      "family_id": "family_04",
+      "family_name": "long_chain_family",
+      "member_count": 19,
+      "representative_smiles": "CCCCCCCCCCCCCCCCCCCCCC(=O)NCCO",
+      "representative_similarity_within_family": 0.7013,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        }
+      ],
+      "property_medians": {
+        "MW": 340.5960000000001,
+        "logP": 4.756600000000005,
+        "HBD": 2.0,
+        "HBA": 2.0,
+        "TPSA": 55.120000000000005,
+        "RotBonds": 17.0,
+        "FCsp3": 0.9375,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)NCCO",
+        "CCCCCCCCCCCCCC(=O)NCCO",
+        "CCCCCCCCCCCC(=O)NCCO",
+        "CCCCCCCCCCCCCCCCCC(=O)NN",
+        "CCCCCCCCCCCCCCCC(=O)NCCCN(C)C",
+        "CCCCCCCCCCCCCCCCCC(=O)NCCCN(C)C.CC(C(=O)O)O",
+        "CCCCCCCCCCCCCCCCCC(=O)NCCCN(C)C",
+        "CCCCCCCCCCCCCC(=O)NCCC[N+](C)(C)[O-]",
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)NCCCN(C)C",
+        "CCCCCCCCCCCCCCCCCC(=O)NCCNCCO.OP(=O)(O)O",
+        "CCCCCCCCCCCCCCCC(=O)NCC(=O)O",
+        "CCCCCCCCCCCC(=O)NCCOCCO"
+      ]
+    },
+    {
+      "family_id": "family_05",
+      "family_name": "long_chain_sulfonate_family",
+      "member_count": 19,
+      "representative_smiles": "CCCCCCCCOCCOS(=O)(=O)O",
+      "representative_similarity_within_family": 0.661,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "sulfonate",
+          "fraction": 0.6316,
+          "smarts": "S(=O)(=O)"
+        },
+        {
+          "name": "glycol",
+          "fraction": 0.5789,
+          "smarts": "OCCO"
+        }
+      ],
+      "property_medians": {
+        "MW": 399.59400000000016,
+        "logP": 4.015800000000003,
+        "HBD": 1.0,
+        "HBA": 5.0,
+        "TPSA": 107.83,
+        "RotBonds": 20.0,
+        "FCsp3": 1.0,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCOCCOS(=O)(=O)O",
+        "CCCCCCCCCCOCCCCCCCCCC",
+        "CCCCCCCCCCCCOCCOS(=O)(=O)O.N",
+        "CCCCCCCCCCCCOCCOCCOCCOCCOCCOCCOCCO",
+        "CCCCCCCCCCCCOCCOCCOCCOCCOCCOCCOCCOCCOCCOCCOCCOCCO",
+        "CCCCCCCCCCCCCCCCOCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCOCCOCCOCCO",
+        "CCCCCCCCCCCCCCOCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCOS(=O)(=O)O.N",
+        "CCCCCCCCCCCCOS(=O)(=O)O.CC(CN)O",
+        "CCCCCCCCCCCCCCCCOS(=O)(=O)O.C(CO)NCCO",
+        "CCCCCCCCCCCCCCOS(=O)(=O)O.C(CO)NCCO"
+      ]
+    },
+    {
+      "family_id": "family_06",
+      "family_name": "long_chain_family",
+      "member_count": 16,
+      "representative_smiles": "CCCCCCCCCCCCCC(=O)[O-].[Na+]",
+      "representative_similarity_within_family": 0.8199,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        }
+      ],
+      "property_medians": {
+        "MW": 409.3245000000003,
+        "logP": 4.553200000000004,
+        "HBD": 0.0,
+        "HBA": 2.0,
+        "TPSA": 59.86,
+        "RotBonds": 20.0,
+        "FCsp3": 0.9285714285714286,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CCCCCCCCCCCCCC(=O)[O-].[Na+]",
+        "CCCCCCCCCCCCCCCCCC(=O)CCCCCCCCCCCCCCCCC",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].C(CO)[NH+](CCO)CCO",
+        "CCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCC(=O)[O-].[Ca+2]",
+        "CCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCC(=O)[O-].[Mg+2]",
+        "CCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCC(=O)[O-].[Al+3]",
+        "CCCCCCCCCCCCCC(=O)N",
+        "CCCCCCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCCCCCCCCCCCC(=O)[O-].[Al+3]",
+        "[Li+].CCCCCCCCCCCCCCCCCC(=O)[O-]",
+        "CCCCCCCCCC(=O)[O-].[Na+]",
+        "CCCCCCCCCCCCCCCCCC(=O)[O-].[NH4+]",
+        "CCCCCCCCCCCC(=O)[O-].CCCCCCCCCCCC(=O)[O-].[Ca+2]"
+      ]
+    }
+  ]
+}

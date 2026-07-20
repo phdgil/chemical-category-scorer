@@ -1,0 +1,86 @@
+{
+  "model_id": "pubchem_lipids",
+  "label": "Lipids / PubChem Auto",
+  "category": "lipids",
+  "model_type": "choi_auto",
+  "threshold": 0.5713909579902103,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.8906575533103835,
+    "ks": 0.6508483578401658,
+    "balanced_accuracy": 0.8254241789200829,
+    "overlap": 0.39732612758101715,
+    "objective": 1.267424535609527,
+    "negative_count": 1991
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBD",
+    "HBA",
+    "TPSA",
+    "RotBonds",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      200.36159999999998,
+      2054.8080000000014
+    ],
+    "logP": [
+      -2.639179999999997,
+      22.336739999999992
+    ],
+    "HBD": [
+      0.0,
+      21.0
+    ],
+    "HBA": [
+      1.0,
+      33.0
+    ],
+    "TPSA": [
+      20.23,
+      563.0869999999993
+    ],
+    "RotBonds": [
+      2.0,
+      76.0
+    ],
+    "FCsp3": [
+      0.21052631578947367,
+      0.9545454545454546
+    ],
+    "AromaticRings": [
+      0.0,
+      3.0
+    ]
+  },
+  "pattern_weights": {
+    "ester": 37.92740082229396,
+    "long_chain": 61.99992596841296,
+    "glycol": 51.834472163274285,
+    "cinnamate": 1.1494252873563218
+  },
+  "selected_patterns": {
+    "ester": "C(=O)OC",
+    "long_chain": "CCCCCC",
+    "glycol": "OCCO",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1"
+  },
+  "best_w": 0.35000000000000003,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.1,
+  "ratio_threshold": 3.0,
+  "range_quantiles": [
+    0.05,
+    0.95
+  ],
+  "optimization_method": "grid_w_objective_fallback",
+  "optimization_trials": 0,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\lipids__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\lipids__negative_source.csv"
+}

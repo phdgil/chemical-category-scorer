@@ -1,0 +1,13 @@
+branch,hnid,cid_count,smiles_count,best_existing_match,overlap_ratio_with_best_existing,existing_category_coverage,jaccard_with_best_existing,recommendation,rationale
+dietary_supplements,18246704,2441,2192,food_additives,0.2039,0.1591,0.0982,candidate_new_category,Broad supplement-product branch; may be useful if treated as supplement ingredients rather than finished products.
+dietary_supplement_fact_sheets,18296619,63,62,food_additives,0.4355,0.0096,0.0095,ignore_small,"Reference/fact-sheet subset, too small and metadata-heavy for scoring."
+dietary_supplement_label_information,18828591,2441,2192,food_additives,0.2039,0.1591,0.0982,review_carefully_before_scoring,"Large ingredient/label branch, but its label-oriented nature should be checked before scoring."
+associated_foods,3956438,10229,8375,food_additives,0.1131,0.3371,0.0925,ignore_metadata_or_context,Food-occurrence context; too broad for a clean product-class scorer.
+color_additive_status,3647579,223,215,food_additives,0.5953,0.0456,0.0442,review_carefully_before_scoring,"Regulatory status list; possible narrow colorant category, but sample size is limited."
+jecfa_evaluations,3647580,2953,2711,food_additives,0.8443,0.8149,0.7084,review_carefully_before_scoring,"Evaluation inventory spanning additives, flavors, contaminants, toxicants, and veterinary drugs; likely too mixed."
+fda_food_contact_substances,17227310,1953,1917,food_contact_substances,0.9958,0.9995,0.9953,mostly_existing_category_duplicate,FDA inventory branch corresponding to food-contact chemistry.
+gras_notices,1857302,131,123,food_additives,0.3252,0.0142,0.0138,ignore_small,Regulatory GRAS notice set; likely useful as a niche food-safe ingredient category if size permits.
+fda_substances_added_to_food,2999717,2855,2715,food_additives,0.9982,0.9648,0.963,mostly_existing_category_duplicate,Large FDA food-ingredient inventory; promising for a broader food-ingredient scorer.
+fema_flavor_profile,1857296,1968,1854,food_additives,0.9784,0.6458,0.6367,mostly_existing_category_duplicate,Flavor-indicator branch expected to overlap strongly with flavoring agents/fragrances.
+food_additive_classes,1857336,3728,3376,food_additives,0.7065,0.8491,0.6276,candidate_new_category,Large food-found classification branch that may yield additional food-related scorer candidates.
+food_additive_definition,1857334,52,51,food_additives,0.6275,0.0114,0.0113,ignore_small,Definition/specification subset; too small for scoring.

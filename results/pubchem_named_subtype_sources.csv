@@ -1,0 +1,13 @@
+panel_id,pubchem_source_name,expected_role,found_in_catalog,hnid,compound_count,path
+cosmetics,California Safe Cosmetics Program (CSCP) Product Database,official named cosmetics-related PubChem source for future subtype labeling,True,13590446,2134,PubChem Compound TOC > Information Sources > California Safe Cosmetics Program (CSCP) Product Database
+cosmetics,Consumer Product Information Database Classification,product-use classification source with consumer-product terms,True,4364672,3216,PubChem Compound TOC > Classification > Consumer Product Information Database Classification
+cosmetics,EPA CPDat Classification,consumer-product and exposure-use taxonomy candidate,True,3670675,28694,PubChem Compound TOC > Classification > EPA CPDat Classification
+food_contact_substances,FDA Food Contact Substances (FCS),official named food-contact source for subtype replacement,True,17227310,1945,PubChem Compound TOC > Food Additives and Ingredients > FDA Food Contact Substances (FCS)
+food_contact_substances,FDA Packaging & Food Contact Substances (FCS),official packaging/food-contact source mirror,True,17227311,1945,PubChem Compound TOC > Information Sources > FDA Packaging & Food Contact Substances (FCS)
+food_contact_substances,Food Ontology (FoodOn),food-related controlled vocabulary for finer naming where applicable,True,18296077,855,PubChem Compound TOC > Information Sources > Food Ontology (FoodOn)
+human_drugs,FDA Drug Type and Pharmacologic Classification,official named human-drug subtype source,True,4923900,3133,PubChem Compound TOC > Classification > FDA Drug Type and Pharmacologic Classification
+human_drugs,FDA Pharm Classes,official pharmacologic class source,True,2166074,1563,PubChem Compound TOC > Information Sources > FDA Pharm Classes
+human_drugs,KEGG: Drug,named drug taxonomy candidate,True,1857260,1470,PubChem Compound TOC > Classification > KEGG: Drug
+animal_drugs,ATCvet Classification,official named animal-drug subtype source,True,17821331,3537,PubChem Compound TOC > Classification > ATCvet Classification
+animal_drugs,FDA Pharm Classes,shared pharmacologic class source where veterinary mapping exists,True,2166074,1563,PubChem Compound TOC > Information Sources > FDA Pharm Classes
+animal_drugs,KEGG: Drug,fallback named drug taxonomy candidate,True,1857260,1470,PubChem Compound TOC > Classification > KEGG: Drug

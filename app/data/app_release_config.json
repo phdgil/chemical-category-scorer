@@ -1,0 +1,65 @@
+{
+  "app_name": "Chemical Category Scorer",
+  "status": "v1.0 final selected scoring-function set integrated into desktop app",
+  "default_model": "final_pesticides",
+  "supports_all_model_ranking": true,
+  "supports_pubchem_class_builder": true,
+  "available_models": [
+    "final_animal_drugs",
+    "final_human_drugs",
+    "final_cosmetics",
+    "han_endocrine_disruptors",
+    "final_flavoring_agents",
+    "final_food_additives",
+    "final_food_contact_substances",
+    "final_fragrances",
+    "final_pesticides",
+    "final_solvents",
+    "final_surfactants"
+  ],
+  "built_in_model_policy": "Desktop app synchronized to the final selected scoring-function set using full positive sets, retained cross-category negatives, and the Han Se-eum endocrine model selected by cross-regime validation.",
+  "post_g005_broad_category_state": {
+    "robust_or_release_grade_with_caveats": [
+      "pfas"
+    ],
+    "preserved_weak_categories": [
+      "solvents",
+      "fragrances",
+      "food_additives",
+      "flavoring_agents",
+      "cosmetics",
+      "food_contact_substances",
+      "human_drugs",
+      "animal_drugs"
+    ],
+    "experimental_positive_delta_categories": [
+      "surfactants",
+      "endocrine_disruptors",
+      "pesticides"
+    ],
+    "bounded_candidate_categories": [
+      "lipids"
+    ],
+    "not_prioritized_categories": [
+      "polymers",
+      "uvcb"
+    ],
+    "single_seed_caveat": "G003-G005 rows are bounded one-seed attempts; report as current evidence, not final proof."
+  },
+  "tracking_artifacts": [
+    "results/final_scoring_performance_table.csv",
+    "results/final_scoring_performance_table.json",
+    "results/score_robustness/",
+    "results/g003_broad_category_improvement/",
+    "results/g004_broad_drug_improvement/",
+    "results/g005_remaining_category_improvement/",
+    "results/official_drug_subtype_validation/",
+    "results/subcategory_validation/"
+  ],
+  "notes": [
+    "Built-in app scorers point to the final selected manuscript/app scorer set, including the Han Se-eum endocrine model chosen after outperforming the uncapped GJC endocrine rebuild on both the drug-negative and broad final-category regimes.",
+    "The pesticide scorer remains tied to the dedicated Pesticides class and does not merge Agrochemical Information into the target definition.",
+    "Food Additives and Ingredients follow-up branches were screened, but none were promoted into the final deployed scorer set.",
+    "Desktop scoring remains local-first so confidential molecular structures do not need to be submitted to a hosted service."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "model_id": "pubchem_pfas",
+  "label": "PFAS / PubChem Auto",
+  "category": "pfas",
+  "model_type": "choi_auto",
+  "threshold": 0.5531483611920587,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.9933715377600812,
+    "ks": 0.9314920261456108,
+    "balanced_accuracy": 0.9657460130728053,
+    "overlap": 0.07769348524478376,
+    "objective": 0.24115307882228734,
+    "negative_count": 1940
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBD",
+    "HBA",
+    "RotBonds",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      282.13899999999995,
+      738.4070000000005
+    ],
+    "logP": [
+      2.4573,
+      8.055100000000005
+    ],
+    "HBD": [
+      0.0,
+      1.0
+    ],
+    "HBA": [
+      0.0,
+      4.0
+    ],
+    "RotBonds": [
+      3.0,
+      15.0
+    ],
+    "FCsp3": [
+      0.46153846153846156,
+      1.0
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "halogen": 80.14590308860689,
+    "CF3": 91.05664882323869
+  },
+  "selected_patterns": {
+    "halogen": "[Cl,Br,F,I]",
+    "CF3": "C(F)(F)F"
+  },
+  "best_w": 0.21853897251207044,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.22596457658117558,
+  "ratio_threshold": 3.178755857184452,
+  "range_quantiles": [
+    0.15,
+    0.85
+  ],
+  "optimization_method": "lee_tpe_bayesian",
+  "optimization_trials": 8,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\pfas__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\pfas__negative_source.csv"
+}

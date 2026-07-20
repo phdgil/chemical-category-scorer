@@ -1,0 +1,25 @@
+{
+  "direct_published_score_comparators": {
+    "all_categories": [
+      "QED"
+    ],
+    "pesticides": [
+      "QEH",
+      "QEI",
+      "QEF",
+      "QEP_max",
+      "QEP_avg"
+    ]
+  },
+  "no_other_final_category_has_a_direct_published_continuous_score_confirmed_in_this_project_pass": [
+    "animal_drugs",
+    "cosmetics",
+    "flavoring_agents",
+    "food_additives",
+    "food_contact_substances",
+    "fragrances",
+    "human_drugs",
+    "solvents",
+    "surfactants"
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "category": "animal_drugs",
+    "hnid": 12950173,
+    "pubchem_cid_count": 907,
+    "unique_smiles_count": 859
+  },
+  {
+    "category": "human_drugs",
+    "hnid": 12950172,
+    "pubchem_cid_count": 3943,
+    "unique_smiles_count": 3749
+  },
+  {
+    "category": "cosmetics",
+    "hnid": 12950174,
+    "pubchem_cid_count": 3841,
+    "unique_smiles_count": 3665
+  },
+  {
+    "category": "flavoring_agents",
+    "hnid": 17821330,
+    "pubchem_cid_count": 2444,
+    "unique_smiles_count": 2316
+  },
+  {
+    "category": "food_additives",
+    "hnid": 12946439,
+    "pubchem_cid_count": 2960,
+    "unique_smiles_count": 2809
+  },
+  {
+    "category": "food_contact_substances",
+    "hnid": 17227309,
+    "pubchem_cid_count": 1945,
+    "unique_smiles_count": 1910
+  },
+  {
+    "category": "fragrances",
+    "hnid": 12950244,
+    "pubchem_cid_count": 2548,
+    "unique_smiles_count": 2286
+  },
+  {
+    "category": "pesticides",
+    "hnid": 12950176,
+    "pubchem_cid_count": 2973,
+    "unique_smiles_count": 2847
+  },
+  {
+    "category": "solvents",
+    "hnid": 13315352,
+    "pubchem_cid_count": 632,
+    "unique_smiles_count": 605
+  },
+  {
+    "category": "surfactants",
+    "hnid": 13589650,
+    "pubchem_cid_count": 268,
+    "unique_smiles_count": 268
+  }
+]

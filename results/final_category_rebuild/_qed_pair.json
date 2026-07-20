@@ -1,0 +1,16 @@
+[
+  {
+    "category": "animal_drugs",
+    "positive_count": 859,
+    "negative_count": 6010,
+    "qed_auc": 0.44449055609684285,
+    "qed_balanced_accuracy": 0.5278894895779057
+  },
+  {
+    "category": "human_drugs",
+    "positive_count": 3749,
+    "negative_count": 3422,
+    "qed_auc": 0.4730478293140006,
+    "qed_balanced_accuracy": 0.5641466986170012
+  }
+]

@@ -1,0 +1,13 @@
+category,variant,regime,train_regime,eval_regime,target_scope,runs,auc_mean,auc_sd,auc_min,auc_max,balanced_accuracy_mean,balanced_accuracy_sd,ks_mean,ks_sd,delta_auc_vs_baseline_mean,delta_ba_vs_baseline_mean
+human_drugs,baseline,audited_hard_negative,audited_hard_negative,audited_hard_negative,broad_category,1,0.375,0.0,0.375,0.375,0.5,0.0,0.25,0.0,0.0,0.0
+human_drugs,category_prior,audited_hard_negative,audited_hard_negative,audited_hard_negative,broad_category,1,0.375,0.0,0.375,0.375,0.5,0.0,0.25,0.0,0.0,0.0
+human_drugs,all_other_random,audited_hard_negative,all_other_random,audited_hard_negative,broad_category,1,0.4439,0.0,0.4439,0.4439,0.546,0.0,0.19,0.0,0.0689,0.046
+human_drugs,all_other_random_category_prior,audited_hard_negative,all_other_random,audited_hard_negative,broad_category,1,0.2483,0.0,0.2483,0.2483,0.5181,0.0,0.4688,0.0,-0.1267,0.0181
+human_drugs,related_hard,audited_hard_negative,related_hard,audited_hard_negative,broad_category,1,0.4609,0.0,0.4609,0.4609,0.5443,0.0,0.19,0.0,0.0859,0.0443
+human_drugs,related_hard_category_prior,audited_hard_negative,related_hard,audited_hard_negative,broad_category,1,0.2645,0.0,0.2645,0.2645,0.5083,0.0,0.4236,0.0,-0.1105,0.0083
+animal_drugs,baseline,audited_hard_negative,audited_hard_negative,audited_hard_negative,broad_category,1,0.4067,0.0,0.4067,0.4067,0.5217,0.0,0.23,0.0,0.0,0.0
+animal_drugs,category_prior,audited_hard_negative,audited_hard_negative,audited_hard_negative,broad_category,1,0.3733,0.0,0.3733,0.3733,0.5,0.0,0.2533,0.0,-0.0334,-0.0217
+animal_drugs,all_other_random,audited_hard_negative,all_other_random,audited_hard_negative,broad_category,1,0.41,0.0,0.41,0.41,0.5217,0.0,0.2233,0.0,0.0033,0.0
+animal_drugs,all_other_random_category_prior,audited_hard_negative,all_other_random,audited_hard_negative,broad_category,1,0.5077,0.0,0.5077,0.5077,0.5604,0.0,0.1207,0.0,0.101,0.0387
+animal_drugs,related_hard,audited_hard_negative,related_hard,audited_hard_negative,broad_category,1,0.41,0.0,0.41,0.41,0.5217,0.0,0.2233,0.0,0.0033,0.0
+animal_drugs,related_hard_category_prior,audited_hard_negative,related_hard,audited_hard_negative,broad_category,1,0.5236,0.0,0.5236,0.5236,0.5673,0.0,0.1346,0.0,0.1169,0.0456

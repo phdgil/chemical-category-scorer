@@ -1,0 +1,16 @@
+[
+  {
+    "category": "fragrances",
+    "positive_count": 2286,
+    "negative_count": 5484,
+    "qed_auc": 0.552693096532153,
+    "qed_balanced_accuracy": 0.6132007022098167
+  },
+  {
+    "category": "pesticides",
+    "positive_count": 2847,
+    "negative_count": 4438,
+    "qed_auc": 0.6789868623518855,
+    "qed_balanced_accuracy": 0.6216860074083185
+  }
+]

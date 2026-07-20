@@ -1,0 +1,281 @@
+{
+  "panel_id": "human_drugs",
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\full_category_decision\\inputs\\human_drugs__positive.csv",
+  "entry_count": 1167,
+  "related_models": [
+    "final_food_additives",
+    "final_flavoring_agents",
+    "final_solvents",
+    "final_pesticides"
+  ],
+  "notes": [
+    "Human drugs is a pharmacology mixture class with broad scaffold diversity, so evidence is organized as prototype families rather than one hard score.",
+    "Top related-model scores are supporting evidence only, not final labels.",
+    "Related model support remapped to final rebuilt broad-category scorers integrated into the desktop app."
+  ],
+  "families": [
+    {
+      "family_id": "family_01",
+      "family_name": "glycol_quaternary_n_family",
+      "member_count": 10,
+      "representative_smiles": "COCC1=C(N2C(C(C2=O)NC(=O)C(=NOC)C3=CSC(=N3)N)SC1)C(=O)[O-].[Na+]",
+      "representative_similarity_within_family": 0.6943,
+      "top_motifs": [
+        {
+          "name": "glycol",
+          "fraction": 0.2,
+          "smarts": "OCCO"
+        },
+        {
+          "name": "quaternary_n",
+          "fraction": 0.2,
+          "smarts": "[N+]"
+        },
+        {
+          "name": "ester",
+          "fraction": 0.2,
+          "smarts": "C(=O)OC"
+        }
+      ],
+      "property_medians": {
+        "MW": 493.58150000000023,
+        "logP": -2.321649999999995,
+        "HBD": 2.0,
+        "HBA": 10.5,
+        "TPSA": 177.65,
+        "RotBonds": 7.0,
+        "FCsp3": 0.32575757575757575,
+        "AromaticRings": 1.0
+      },
+      "example_smiles": [
+        "COCC1=C(N2C(C(C2=O)NC(=O)C(=NOC)C3=CSC(=N3)N)SC1)C(=O)[O-].[Na+]",
+        "C=CC1=C(N2C(C(C2=O)NC(=O)C(=NOCC(=O)O)C3=CSC(=N3)N)SC1)C(=O)O",
+        "C[N+]1(CCCC1)CC2=C(N3C(C(C3=O)NC(=O)C(=NOC)C4=CSC(=N4)N)SC2)C(=O)[O-]",
+        "CC(C)(C(=O)O)ON=C(C1=CSC(=N1)N)C(=O)NC2C3N(C2=O)C(=C(CS3)C[N+]4=CC=CC=C4)C(=O)[O-]",
+        "CC(C)OC(=O)OC(C)OC(=O)C1=C(CSC2N1C(=O)C2NC(=O)C(=NOC)C3=CSC(=N3)N)COC",
+        "C[N+]1(CCCC1)CC2=C(N3C(C(C3=O)NC(=O)C(=NOC)C4=CSC(=N4)N)SC2)C(=O)O.O.Cl.[Cl-]",
+        "CC1=C(SC=N1)C=CC2=C(N3C(C(C3=O)NC(=O)C(=NOC)C4=CSC(=N4)N)SC2)C(=O)O",
+        "CON=C(C1=CSC(=N1)N)C(=O)NC2C3N(C2=O)C(=CCS3)C(=O)[O-].[Na+]",
+        "CON=C(C1=CC=CO1)C(=O)NC2C3N(C2=O)C(=C(CS3)COC(=O)N)C(=O)[O-].[Na+]",
+        "CN1C(=NC(=O)C(=O)[N-]1)SCC2=C(N3C(C(C3=O)NC(=O)C(=NOC)C4=CSC(=N4)N)SC2)C(=O)[O-].[Na+].[Na+]"
+      ]
+    },
+    {
+      "family_id": "family_02",
+      "family_name": "imidazole_long_chain_family",
+      "member_count": 9,
+      "representative_smiles": "CCC(C)C1C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(CSSCC2C(=O)NCC(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(CSSCC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)N2)C(C)C)CC(=O)N)CO)CCC(=O)O)NC(=O)C(CC(C)C)NC(=O)C3CSSCC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)N3)CC(C)C)CC(=O)N)CCC(=O)N)CO)CCC(=O)O)C(C)O)NC(=O)C(CC(=O)O)NC(=O)C(C(C)O)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(C(C)O)NC(=O)C(CC(C)C)N)C(=O)N1)CCCCN)CC(=O)N)CCC(=O)N)C(=O)NC(C(C)C)C(=O)NC(C(C)O)C(=O)NCC(=O)NC(CCC(=O)O)C(=O)NCC(=O)NC(C(C)O)C(=O)N5CCCC5C(=O)NC(CCCCN)C(=O)N6CCCC6C(=O)NC(CCC(=O)N)C(=O)NC(CO)C(=O)NC(CC7=CNC=N7)C(=O)NC(CC(=O)N)C(=O)NC(CC(=O)O)C(=O)NCC(=O)NC(CC(=O)O)C(=O)NC(CC8=CC=CC=C8)C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(C(C)CC)C(=O)N9CCCC9C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(CC1=CC=C(C=C1)O)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)N)C(=O)O)CCC(=O)N)CC(=O)N)CCCCN)CCC(=O)O)CC(=O)O)CO)CC(C)C",
+      "representative_similarity_within_family": 0.7252,
+      "top_motifs": [
+        {
+          "name": "imidazole",
+          "fraction": 1.0,
+          "smarts": "c1cnc[nH]1"
+        },
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "aromatic_oh",
+          "fraction": 0.8889,
+          "smarts": "Oc1ccccc1"
+        }
+      ],
+      "property_medians": {
+        "MW": 4102.79799999999,
+        "logP": -20.98876000000035,
+        "HBD": 61.0,
+        "HBA": 61.0,
+        "TPSA": 1739.7299999999987,
+        "RotBonds": 110.0,
+        "FCsp3": 0.6236933797909407,
+        "AromaticRings": 4.0
+      },
+      "example_smiles": [
+        "CCC(C)C1C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(CSSCC2C(=O)NCC(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(CSSCC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)N2)C(C)C)CC(=O)N)CO)CCC(=O)O)NC(=O)C(CC(C)C)NC(=O)C3CSSCC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)N3)CC(C)C)CC(=O)N)CCC(=O)N)CO)CCC(=O)O)C(C)O)NC(=O)C(CC(=O)O)NC(=O)C(C(C)O)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(C(C)O)NC(=O)C(CC(C)C)N)C(=O)N1)CCCCN)CC(=O)N)CCC(=O)N)C(=O)NC(C(C)C)C(=O)NC(C(C)O)C(=O)NCC(=O)NC(CCC(=O)O)C(=O)NCC(=O)NC(C(C)O)C(=O)N5CCCC5C(=O)NC(CCCCN)C(=O)N6CCCC6C(=O)NC(CCC(=O)N)C(=O)NC(CO)C(=O)NC(CC7=CNC=N7)C(=O)NC(CC(=O)N)C(=O)NC(CC(=O)O)C(=O)NCC(=O)NC(CC(=O)O)C(=O)NC(CC8=CC=CC=C8)C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(C(C)CC)C(=O)N9CCCC9C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(CC1=CC=C(C=C1)O)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)N)C(=O)O)CCC(=O)N)CC(=O)N)CCCCN)CCC(=O)O)CC(=O)O)CO)CC(C)C",
+        "CCC(C)C1C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(CSSCC2C(=O)NCC(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(CSSCC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)N2)C(C)C)CC(=O)N)CO)CCC(=O)O)NC(=O)C(CC(C)C)NC(=O)C3CSSCC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)N3)CC(C)C)CC(=O)N)CCC(=O)N)CO)CCC(=O)O)C(C)O)NC(=O)C(CC(=O)O)NC(=O)C(C(C)O)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(C(C)C)NC(=O)C(C(C)C)N)C(=O)N1)CCCCN)CC(=O)N)CCC(=O)N)C(=O)NC(C(C)C)C(=O)NC(C(C)O)C(=O)NCC(=O)NC(CCC(=O)O)C(=O)NCC(=O)NC(C(C)O)C(=O)N5CCCC5C(=O)NC(CCCCN)C(=O)N6CCCC6C(=O)NC(CCC(=O)N)C(=O)NC(CO)C(=O)NC(CC7=CN=CN7)C(=O)NC(CC(=O)N)C(=O)NC(CC(=O)O)C(=O)NCC(=O)NC(CC(=O)O)C(=O)NC(CC8=CC=CC=C8)C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(C(C)CC)C(=O)N9CCCC9C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(CC1=CC=C(C=C1)O)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)N)C(=O)O)CCC(=O)N)CC(=O)N)CCCCN)CCC(=O)O)CC(=O)O)CO)CC(C)C",
+        "CCCCCCCCCCCCCC(=O)NCCCCC(C(=O)O)NC(=O)C1CCCN1C(=O)C(C(C)O)NC(=O)C(CC2=CC=C(C=C2)O)NC(=O)C(CC3=CC=CC=C3)NC(=O)C(CC4=CC=CC=C4)NC(=O)CNC(=O)C(CCCNC(=N)N)NC(=O)C(CCC(=O)O)NC(=O)CNC(=O)C5CSSCC(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C6CSSCC(C(=O)NC(CSSCC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N5)C(C)C)CC(C)C)CC7=CC=C(C=C7)O)CC(C)C)C)CCC(=O)O)C(C)C)CC(C)C)CC8=CNC=N8)CO)NC(=O)C(CC(C)C)NC(=O)C(CC9=CNC=N9)NC(=O)C(CCC(=O)N)NC(=O)C(CC(=O)N)NC(=O)C(C(C)C)NC(=O)C(CC1=CC=CC=C1)N)C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N6)C(C)CC)CO)C(C)O)NC(=O)C(CCC(=O)N)NC(=O)C(CCC(=O)O)NC(=O)C(C(C)C)NC(=O)C(C(C)CC)NC(=O)CN)CO)CC(C)C)CC1=CC=C(C=C1)O)CCC(=O)N)CC(C)C)CCC(=O)O)CC(=O)N)CC1=CC=C(C=C1)O)C(=O)NC(CC(=O)N)C(=O)O",
+        "CC(C)CC1C(=O)NC(C(=O)NC(C(=O)NC(CSSCC(C(=O)NC(C(=O)NC(C(=O)N1)CC(=O)N)CO)N)C(=O)NC(C(C)C)C(=O)NC(CC(C)C)C(=O)NCC(=O)NC(CCCCN)C(=O)NC(CC(C)C)C(=O)NC(CO)C(=O)NC(CCC(=O)N)C(=O)NC(CCC(=O)O)C(=O)NC(CC(C)C)C(=O)NC(CC2=CN=CN2)C(=O)NC(CCCCN)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)N)C(=O)NC(C(C)O)C(=O)NC(CC3=CC=C(C=C3)O)C(=O)N4CCCC4C(=O)NC(CCCNC(=N)N)C(=O)NC(C(C)O)C(=O)NC(CC(=O)N)C(=O)NC(C(C)O)C(=O)NCC(=O)NC(CO)C(=O)NCC(=O)NC(C(C)O)C(=O)N5CCCC5C(=O)N)C(C)O)CO",
+        "CCC(C)C(C(=O)NCC(=O)NC(C(C)C)C(=O)NCC(=O)NC(C)C(=O)N1CCCC1C(=O)N)NC(=O)C(C)NC(=O)C(C(C)O)NC(=O)C(CCC(=O)N)NC(=O)C2CCCN2C(=O)C(CC3=CC=CC=C3)NC(=O)C(C(C)O)NC(=O)C(CC4=CNC=N4)NC(=O)C(CC5=CC=CC=C5)NC(=O)C(CCCCN)NC(=O)C(CC(=O)N)NC(=O)C(CC6=CC=CC=C6)NC(=O)C(CC(=O)O)NC(=O)C(CCC(=O)N)NC(=O)C(C(C)O)NC(=O)C(CC7=CC=C(C=C7)O)NC(=O)C(C(C)O)NC(=O)CNC(=O)C(CC(C)C)NC(=O)C(CCSC)NC(=O)C8CSSCC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N8)C(C)O)CO)CC(C)C)CC(=O)N)N",
+        "CCC(C)C1C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NCC(=O)NC(CSSCC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N1)CCCNC(=N)N)CC(=O)O)CCSC)CCCCN)CCCNC(=N)N)CC2=CC=CC=C2)NC(=O)CNC(=O)C(CO)NC(=O)CNC(=O)C(CCC(=O)N)NC(=O)C(C(C)C)NC(=O)C(CCSC)NC(=O)C(CCCCN)NC(=O)C3CCCN3C(=O)C(CO)N)C(=O)NC(CCCCN)C(=O)NC(C(C)C)C(=O)NC(CC(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NC(CCCNC(=N)N)C(=O)NC(CC4=CNC=N4)C(=O)O)CC(C)C)CO)CO)CO)CO",
+        "CCC(C)C(C(=O)NC(CC(C)C)C(=O)N1CCCC1C(=O)N2CCCC2C(=O)NC(C(C)O)C(=O)NC(CC(=O)N)C(=O)NC(C(C)C)C(=O)NCC(=O)NC(CO)C(=O)NC(CC(=O)N)C(=O)NC(C(C)O)C(=O)NC(CC3=CC=C(C=C3)O)C(=O)N)NC(=O)C4CCCN4C(=O)CNC(=O)C(CC5=CC=CC=C5)NC(=O)C(CC(=O)N)NC(=O)C(CC(=O)N)NC(=O)C(CO)NC(=O)C(CO)NC(=O)C(CC6=CNC=N6)NC(=O)C(C(C)C)NC(=O)C(CC(C)C)NC(=O)C(CC7=CC=CC=C7)NC(=O)C(CC(=O)N)NC(=O)C(C)NC(=O)C(CC(C)C)NC(=O)C(CCCNC(=N)N)NC(=O)C(CCC(=O)N)NC(=O)C(C(C)O)NC(=O)C(C)NC(=O)C8CSSCC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N8)C(C)O)C)C(C)O)CC(=O)N)NC(=O)C(CCCCN)N.CC(=O)O",
+        "CCC(C)C1C(=O)NC2CSSCC(C(=O)NC(CSSCC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(CSSCC(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC(=O)C(NC2=O)CO)CC(C)C)CC3=CC=C(C=C3)O)CCC(=O)N)CC(C)C)CCC(=O)O)CC(=O)N)CC4=CC=C(C=C4)O)C(=O)NC(CC(=O)N)C(=O)O)C(=O)NCC(=O)NC(CCC(=O)O)C(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)NC(CC5=CC=CC=C5)C(=O)NC(CC6=CC=CC=C6)C(=O)NC(CC7=CC=C(C=C7)O)C(=O)NC(C(C)O)C(=O)N8CCCC8C(=O)NC(CCCCNC(=O)CCC(C(=O)O)NC(=O)CCCCCCCCCCCCCCC(=O)O)C(=O)O)C(C)C)CC(C)C)CC9=CC=C(C=C9)O)CC(C)C)C)CCC(=O)O)C(C)C)CC(C)C)CC2=CNC=N2)CO)NC(=O)C(CC(C)C)NC(=O)C(CC2=CNC=N2)NC(=O)C(CCC(=O)N)NC(=O)C(CC(=O)N)NC(=O)C(C(C)C)NC(=O)C(CC2=CC=CC=C2)N)C(=O)NC(C(=O)NC(C(=O)N1)CO)C(C)O)NC(=O)C(CCC(=O)N)NC(=O)C(CCC(=O)O)NC(=O)C(C(C)C)NC(=O)C(C(C)CC)NC(=O)CN",
+        "CCC(C)C1C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NCC(=O)NC(CSSCC(C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)N1)CCCNC(=N)N)CC(=O)O)CC(C)C)CCCCN)CC(C)C)CC2=CC=CC=C2)NC(=O)CNC(=O)C(CCCCN)NC(=O)C(CO)NC(=O)C(CC(C)C)NC(=O)CNC(=O)C(CCCCN)NC(=O)C(CCCCN)NC(=O)C(CC(=O)N)NC(=O)C(C)NC(=O)CNC(=O)C(CCCCN)NC(=O)C(CC3=CC=C(C=C3)O)NC(=O)C(CCCCN)NC(=O)C(CCCNC(=N)N)NC(=O)C(C)NC(=O)C(CC(=O)N)NC(=O)C4CCCN4C(=O)C(CC5=CN=CN5)NC(=O)C(CCC(=O)O)NC(=O)C(CCC(=O)N)NC(=O)CNC(=O)C6CCCN6)C(=O)O)CC(C)C)CO)CCSC)CO"
+      ]
+    },
+    {
+      "family_id": "family_03",
+      "family_name": "imidazole_long_chain_family",
+      "member_count": 8,
+      "representative_smiles": "CCCCCCCCCCCCCCCC(=O)NC(CCC(=O)NCCCCC(C(=O)NC(CCC(=O)O)C(=O)NC(CC1=CC=CC=C1)C(=O)NC(C(C)CC)C(=O)NC(C)C(=O)NC(CC2=CNC3=CC=CC=C32)C(=O)NC(CC(C)C)C(=O)NC(C(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)O)NC(=O)C(C)NC(=O)C(C)NC(=O)C(CCC(=O)N)NC(=O)CNC(=O)C(CCC(=O)O)NC(=O)C(CC(C)C)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CO)NC(=O)C(C(C)C)NC(=O)C(CC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)O)NC(=O)C(CC5=CC=CC=C5)NC(=O)C(C(C)O)NC(=O)CNC(=O)C(CCC(=O)O)NC(=O)C(C)NC(=O)C(CC6=CN=CN6)N)C(=O)O",
+      "representative_similarity_within_family": 0.7134,
+      "top_motifs": [
+        {
+          "name": "imidazole",
+          "fraction": 1.0,
+          "smarts": "c1cnc[nH]1"
+        },
+        {
+          "name": "long_chain",
+          "fraction": 0.875,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "aromatic_oh",
+          "fraction": 0.5,
+          "smarts": "Oc1ccccc1"
+        }
+      ],
+      "property_medians": {
+        "MW": 4147.812999999984,
+        "logP": -15.309330000000294,
+        "HBD": 60.5,
+        "HBA": 57.5,
+        "TPSA": 1771.2999999999988,
+        "RotBonds": 146.5,
+        "FCsp3": 0.6162882440606645,
+        "AromaticRings": 6.0
+      },
+      "example_smiles": [
+        "CCC(C)C(C(=O)NC(C(C)C)C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)N)C(=O)NC(CS)C(=O)NC(CS)C(=O)NC(C(C)O)C(=O)NC(CO)C(=O)NC(C(C)CC)C(=O)NC(CS)C(=O)NC(CO)C(=O)NC(CC(C)C)C(=O)NC(CC1=CC=C(C=C1)O)C(=O)NC(CCC(=O)N)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)O)C(=O)NC(CC(=O)N)C(=O)NC(CC2=CC=C(C=C2)O)C(=O)NC(CS)C(=O)NC(CC(=O)N)C(=O)O)NC(=O)CN.CC(C)CC(C(=O)NC(CC1=CC=C(C=C1)O)C(=O)NC(CC(C)C)C(=O)NC(C(C)C)C(=O)NC(CS)C(=O)NCC(=O)NC(CCC(=O)O)C(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)NC(CC2=CC=CC=C2)C(=O)NC(CC3=CC=CC=C3)C(=O)NC(CC4=CC=C(C=C4)O)C(=O)NC(C(C)O)C(=O)NC(CC(=O)O)C(=O)NC(CCCCN)C(=O)NC(C(C)O)C(=O)O)NC(=O)C(C)NC(=O)C(CCC(=O)O)NC(=O)C(C(C)C)NC(=O)C(CC(C)C)NC(=O)C(CC5=CN=CN5)NC(=O)C(CO)NC(=O)CNC(=O)C(CS)NC(=O)C(CC(C)C)NC(=O)C(CC6=CN=CN6)NC(=O)C(CCC(=O)N)NC(=O)C(CC(=O)N)NC(=O)C(C(C)C)NC(=O)C(CC7=CC=CC=C7)N",
+        "CCC(C)C(C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)O)C(=O)NC(CO)C(=O)NC(CCC(=O)N)C(=O)NC(CC(=O)N)C(=O)NC(CCC(=O)N)C(=O)NC(CCC(=O)N)C(=O)NC(CCC(=O)O)C(=O)NC(CCCCN)C(=O)NC(CC(=O)N)C(=O)NC(CCC(=O)O)C(=O)NC(CCC(=O)N)C(=O)NC(CCC(=O)O)C(=O)NC(CC(C)C)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)O)C(=O)NC(CC(C)C)C(=O)NC(CC(=O)O)C(=O)NC(CCCCN)C(=O)NC(CC1=CNC2=CC=CC=C21)C(=O)NC(C)C(=O)NC(CO)C(=O)NC(CC(C)C)C(=O)NC(CC3=CNC4=CC=CC=C43)C(=O)NC(CC(=O)N)C(=O)NC(CC5=CNC6=CC=CC=C65)C(=O)NC(CC7=CC=CC=C7)C(=O)N)NC(=O)C(CC(C)C)NC(=O)C(CO)NC(=O)C(CC8=CN=CN8)NC(=O)C(C(C)CC)NC(=O)C(CC(C)C)NC(=O)C(CO)NC(=O)C(C(C)O)NC(=O)C(CC9=CC=C(C=C9)O)NC(=O)C",
+        "CCC(C)C(C(=O)NC(CO)C(=O)NC(CC(C)C)C(=O)NC(CC(=O)O)C(=O)NC(CC(C)C)C(=O)NC(C(C)O)C(=O)NC(CC1=CC=CC=C1)C(=O)NC(CC2=CN=CN2)C(=O)NC(CC(C)C)C(=O)NC(CC(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NC(CCC(=O)O)C(=O)NC(C(C)C)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)O)C(=O)NC(CCSC)C(=O)NC(C(C)O)C(=O)NC(CCCCN)C(=O)NC(C)C(=O)NC(CC(=O)O)C(=O)NC(CCC(=O)N)C(=O)NC(CC(C)C)C(=O)NC(C)C(=O)NC(CCC(=O)N)C(=O)NC(CCC(=O)N)C(=O)NC(C)C(=O)NC(CC3=CN=CN3)C(=O)NC(CO)C(=O)NC(CC(=O)N)C(=O)NC(CCCNC(=N)N)C(=O)NC(CCCCN)C(=O)NC(CC(C)C)C(=O)NC(CC(C)C)C(=O)NC(CC(=O)O)C(=O)NC(C(C)CC)C(=O)NC(C)C(=O)N)NC(=O)C4CCCN4C(=O)C5CCCN5C(=O)C(CCC(=O)O)NC(=O)C(CCC(=O)N)NC(=O)C(CO)N",
+        "CCC(C)C(C(=O)NC(CCC(=O)N)C(=O)NC(CC(C)C)C(=O)NC(CCSC)C(=O)NC(CC1=CNC=N1)C(=O)NC(CC(=O)N)C(=O)NC(CC(C)C)C(=O)NCC(=O)NC(CCCCN)C(=O)NC(CC2=CNC=N2)C(=O)NC(CC(C)C)C(=O)NC(CC(=O)N)C(=O)NC(CO)C(=O)NC(CCSC)C(=O)NC(CCC(=O)O)C(=O)NC(CCCNC(=N)N)C(=O)NC(C(C)C)C(=O)NC(CCC(=O)O)C(=O)NC(CC3=CNC4=CC=CC=C43)C(=O)NC(CC(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NC(CCCCN)C(=O)NC(CCCCN)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)N)C(=O)NC(CC(=O)O)C(=O)NC(C(C)C)C(=O)NC(CC5=CNC=N5)C(=O)NC(CC(=O)N)C(=O)NC(CC6=CC=CC=C6)C(=O)O)NC(=O)C(CCC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)C)NC(=O)C(CO)N",
+        "CCCCCCCCCCCCCCCC(=O)NC(CCC(=O)NCCCCC(C(=O)NC(CCC(=O)O)C(=O)NC(CC1=CC=CC=C1)C(=O)NC(C(C)CC)C(=O)NC(C)C(=O)NC(CC2=CNC3=CC=CC=C32)C(=O)NC(CC(C)C)C(=O)NC(C(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)O)NC(=O)C(C)NC(=O)C(C)NC(=O)C(CCC(=O)N)NC(=O)CNC(=O)C(CCC(=O)O)NC(=O)C(CC(C)C)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CO)NC(=O)C(C(C)C)NC(=O)C(CC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)O)NC(=O)C(CC5=CC=CC=C5)NC(=O)C(C(C)O)NC(=O)CNC(=O)C(CCC(=O)O)NC(=O)C(C)NC(=O)C(CC6=CN=CN6)N)C(=O)O",
+        "CC(C)CC(C(=O)NC(C(C)C)C(=O)N)NC(=O)CNC(=O)C(CCC(=O)N)NC(=O)C(CC(C)C)NC(=O)C(CC(C)C)NC(=O)C(CCCNC(=N)N)NC(=O)C(CCC(=O)N)NC(=O)C(CC(C)C)NC(=O)C(CCCNC(=N)N)NC(=O)C(C)NC(=O)C(CO)NC(=O)C(CC(=O)O)NC(=O)C(CCCNC(=N)N)NC(=O)C(CC(C)C)NC(=O)C(CCCNC(=N)N)NC(=O)C(CO)NC(=O)C(CC(C)C)NC(=O)C(CCC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)O)NC(=O)C(CC1=CC=CC=C1)NC(=O)C(C(C)O)NC(=O)CNC(=O)C(CC(=O)O)NC(=O)C(CO)NC(=O)C(CC2=CN=CN2)N",
+        "CCC(C)C(C(=O)NC(C)C(=O)NC(CC1=CNC2=CC=CC=C21)C(=O)NC(CC(C)C)C(=O)NC(C(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)NC(CCCNC(=N)N)C(=O)NCC(=O)O)NC(=O)C(CC3=CC=CC=C3)NC(=O)C(CCC(=O)O)NC(=O)C(CCCCNC(=O)COCCOCCNC(=O)COCCOCCNC(=O)CCC(C(=O)O)NC(=O)CCCCCCCCCCCCCCCCC(=O)O)NC(=O)C(C)NC(=O)C(C)NC(=O)C(CCC(=O)N)NC(=O)CNC(=O)C(CCC(=O)O)NC(=O)C(CC(C)C)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CO)NC(=O)C(CO)NC(=O)C(C(C)C)NC(=O)C(CC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)O)NC(=O)C(CC5=CC=CC=C5)NC(=O)C(C(C)O)NC(=O)CNC(=O)C(CCC(=O)O)NC(=O)C(C)(C)NC(=O)C(CC6=CN=CN6)N",
+        "CCC(C)C(C(=O)NC(CCC(=O)N)C(=O)NC(CC(C)C)C(=O)NC(CCSC)C(=O)NC(CC1=CNC=N1)C(=O)NC(CC(=O)N)C(=O)NC(CC(C)C)C(=O)NCC(=O)NC(CCCCN)C(=O)NC(CC2=CNC=N2)C(=O)NC(CC(C)C)C(=O)NC(CC(=O)N)C(=O)NC(CO)C(=O)NC(CCSC)C(=O)NC(CCC(=O)O)C(=O)NC(CCCNC(=N)N)C(=O)NC(C(C)C)C(=O)NC(CCC(=O)O)C(=O)NC(CC3=CNC4=CC=CC=C43)C(=O)NC(CC(C)C)C(=O)NC(CCCNC(=N)N)C(=O)NC(CCCCN)C(=O)NC(CCCCN)C(=O)NC(CC(C)C)C(=O)NC(CCC(=O)N)C(=O)NC(CC(=O)O)C(=O)NC(C(C)C)C(=O)NC(CC5=CNC=N5)C(=O)NC(CC(=O)N)C(=O)NC(CC6=CC=CC=C6)C(=O)O)NC(=O)C(CCC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)C)NC(=O)C(CO)N.CC(=O)O"
+      ]
+    },
+    {
+      "family_id": "family_04",
+      "family_name": "urea_aromatic_oh_family",
+      "member_count": 7,
+      "representative_smiles": "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)[O-])C.[Na+]",
+      "representative_similarity_within_family": 0.6748,
+      "top_motifs": [
+        {
+          "name": "urea",
+          "fraction": 0.2857,
+          "smarts": "NC(=O)N"
+        },
+        {
+          "name": "aromatic_oh",
+          "fraction": 0.2857,
+          "smarts": "Oc1ccccc1"
+        }
+      ],
+      "property_medians": {
+        "MW": 436.4650000000002,
+        "logP": -3.6335999999999977,
+        "HBD": 1.0,
+        "HBA": 7.0,
+        "TPSA": 129.67000000000002,
+        "RotBonds": 5.0,
+        "FCsp3": 0.4375,
+        "AromaticRings": 1.0
+      },
+      "example_smiles": [
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)[O-])C.[Na+]",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=CC=C3)C(=O)[O-])C(=O)[O-])C.[Na+].[Na+]",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.CC1(C(N2C(S1)C(C2=O)NC(=O)CC3=CC=CC=C3)C(=O)O)C.C1=CC=C(C=C1)CNCCNCC2=CC=CC=C2.O.O.O.O",
+        "CCN1CCN(C(=O)C1=O)C(=O)NC(C2=CC=CC=C2)C(=O)NC3C4N(C3=O)C(C(S4)(C)C)C(=O)[O-].[Na+]",
+        "CCOC1=C(C2=CC=CC=C2C=C1)C(=O)NC3C4N(C3=O)C(C(S4)(C)C)C(=O)[O-].[Na+]",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)COC3=CC=CC=C3)C(=O)[O-])C.[K+]",
+        "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=CC=C3)NC(=O)N4CCNC4=O)C(=O)[O-])C.[Na+]"
+      ]
+    },
+    {
+      "family_id": "family_05",
+      "family_name": "halogen_long_chain_family",
+      "member_count": 7,
+      "representative_smiles": "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COC(=O)C)O)C)O)F)C",
+      "representative_similarity_within_family": 0.6806,
+      "top_motifs": [
+        {
+          "name": "halogen",
+          "fraction": 1.0,
+          "smarts": "[Cl,Br,F,I]"
+        },
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "ester",
+          "fraction": 0.5714,
+          "smarts": "C(=O)OC"
+        },
+        {
+          "name": "glycol",
+          "fraction": 0.2857,
+          "smarts": "OCCO"
+        }
+      ],
+      "property_medians": {
+        "MW": 434.5040000000002,
+        "logP": 3.1422000000000017,
+        "HBD": 2.0,
+        "HBA": 6.0,
+        "TPSA": 99.13000000000001,
+        "RotBonds": 3.0,
+        "FCsp3": 0.7272727272727273,
+        "AromaticRings": 0.0
+      },
+      "example_smiles": [
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COC(=O)C)O)C)O)F)C",
+        "CC1(OC2CC3C4CCC5=CC(=O)C=CC5(C4(C(CC3(C2(O1)C(=O)CO)C)O)F)C)C",
+        "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CO)O)C)O)F)C)F",
+        "CC(=O)OCC(=O)C12C(CC3C1(CC(C4(C3CCC5=CC(=O)C=CC54C)F)O)C)OC6(O2)CCCC6",
+        "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)COC(=O)C(C)(C)C)O)C)O)F)C)F",
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CO)OC(=O)C5=CC=CC=C5)C)O)F)C",
+        "CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CCl)O)C)O)F)C"
+      ]
+    },
+    {
+      "family_id": "family_06",
+      "family_name": "long_chain_ester_family",
+      "member_count": 6,
+      "representative_smiles": "CC(=O)OC1CCC2C3CCC4(C(C3CCC2=C1)CCC4(C#C)OC(=O)C)C.CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)O",
+      "representative_similarity_within_family": 0.7246,
+      "top_motifs": [
+        {
+          "name": "long_chain",
+          "fraction": 1.0,
+          "smarts": "CCCCCC"
+        },
+        {
+          "name": "ester",
+          "fraction": 0.8333,
+          "smarts": "C(=O)OC"
+        },
+        {
+          "name": "aromatic_oh",
+          "fraction": 0.8333,
+          "smarts": "Oc1ccccc1"
+        }
+      ],
+      "property_medians": {
+        "MW": 673.4205000000003,
+        "logP": 6.377150000000007,
+        "HBD": 2.0,
+        "HBA": 6.0,
+        "TPSA": 87.56,
+        "RotBonds": 2.0,
+        "FCsp3": 0.6781183932346723,
+        "AromaticRings": 1.0
+      },
+      "example_smiles": [
+        "CC(=O)OC1(CCC2C1(CCC3C2CCC4=CC(=O)CCC34)C)C#C.CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)O.C(=CC(=O)[O-])C(=O)[O-].[Fe+2]",
+        "CC(=O)OC1(CCC2C1(CCC3C2CCC4=CC(=O)CCC34)C)C#C",
+        "CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)O",
+        "CC(=O)OC1CCC2C3CCC4(C(C3CCC2=C1)CCC4(C#C)OC(=O)C)C.CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)O",
+        "CCC12CCC3C(C1CCC2(C#C)OC(=O)C)CCC4=CC(=NO)CCC34.CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)O",
+        "CC(=O)OC1CCC2C3CCC4(C(C3CCC2=C1)CCC4(C#C)OC(=O)C)C.CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)OC"
+      ]
+    }
+  ]
+}

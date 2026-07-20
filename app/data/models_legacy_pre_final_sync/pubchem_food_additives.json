@@ -1,0 +1,72 @@
+{
+  "model_id": "pubchem_food_additives",
+  "label": "Food Additives / PubChem Auto",
+  "category": "food_additives",
+  "model_type": "choi_auto",
+  "threshold": 0.7527696562038975,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.8066226591088469,
+    "ks": 0.4985093635646122,
+    "balanced_accuracy": 0.749254681782306,
+    "overlap": 0.5127090102572593,
+    "objective": 1.770839929081839,
+    "negative_count": 1155
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBD",
+    "HBA",
+    "TPSA",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      128.12699999999998,
+      238.45819999999998
+    ],
+    "logP": [
+      0.7986000000000002,
+      3.465260000000003
+    ],
+    "HBD": [
+      0.0,
+      1.0
+    ],
+    "HBA": [
+      1.0,
+      3.0
+    ],
+    "TPSA": [
+      17.07,
+      52.60000000000001
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "aldehyde": 6.83295065891751,
+    "cinnamate": 0.5524861878453038
+  },
+  "selected_patterns": {
+    "aldehyde": "[CH1](=O)",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1"
+  },
+  "best_w": 0.9033235874446769,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.1633311342527794,
+  "ratio_threshold": 4.542113544371039,
+  "range_quantiles": [
+    0.2,
+    0.8
+  ],
+  "optimization_method": "lee_tpe_bayesian",
+  "optimization_trials": 8,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\food_additives__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\food_additives__negative_source.csv"
+}

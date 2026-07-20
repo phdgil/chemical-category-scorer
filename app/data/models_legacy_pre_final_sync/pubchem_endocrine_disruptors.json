@@ -1,0 +1,74 @@
+{
+  "model_id": "pubchem_endocrine_disruptors",
+  "label": "Endocrine Disruptors / PubChem Auto",
+  "category": "endocrine_disruptors",
+  "model_type": "choi_auto",
+  "threshold": 0.8946682593579517,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Automatically built from PubChem classification CSV exports using the Choi Yebin pipeline with Lee Seoyun-style Bayesian optimization.",
+  "metrics": {
+    "auc": 0.8399185774581944,
+    "ks": 0.5182264928932754,
+    "balanced_accuracy": 0.7591132464466377,
+    "overlap": 0.4349997643873119,
+    "objective": 1.5907881102947445,
+    "negative_count": 1147
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBA",
+    "TPSA",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      168.14799999999997,
+      675.7230000000002
+    ],
+    "logP": [
+      0.7221699999999999,
+      8.914490000000004
+    ],
+    "HBA": [
+      0.0,
+      8.75
+    ],
+    "TPSA": [
+      0.0,
+      149.10750000000002
+    ],
+    "FCsp3": [
+      0.0,
+      0.9943181818181819
+    ],
+    "AromaticRings": [
+      0.0,
+      4.0
+    ]
+  },
+  "pattern_weights": {
+    "aromatic_oh": 50.2685923017621,
+    "benzophenone": 4.306864064602961,
+    "cinnamate": 0.3364737550471063
+  },
+  "selected_patterns": {
+    "aromatic_oh": "Oc1ccccc1",
+    "benzophenone": "c1ccccc1C(=O)c1ccccc1",
+    "cinnamate": "OC(=O)/C=C/c1ccccc1"
+  },
+  "best_w": 0.05,
+  "tanimoto_threshold": 0.3,
+  "ks_threshold": 0.1,
+  "ratio_threshold": 3.0,
+  "range_quantiles": [
+    0.05,
+    0.95
+  ],
+  "optimization_method": "grid_w_objective_fallback",
+  "optimization_trials": 0,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\endocrine_disruptors__positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\pubchem_pipeline\\inputs\\endocrine_disruptors__negative_source.csv"
+}

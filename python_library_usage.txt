@@ -1,0 +1,39 @@
+Python library usage for GitHub distribution
+
+Library package name
+- chemical_category_scorer
+
+Install from a cloned repository
+- pip install .
+
+Core float-returning API
+- from chemical_category_scorer import score_mol
+- from rdkit import Chem
+- mol = Chem.MolFromSmiles("ClC1=C(Cl)C(C#N)=C(Cl)C(C#N)=C1Cl")
+- value = score_mol(mol, model_id="final_pesticides")
+
+Category-specific convenience functions
+- from chemical_category_scorer import pesticides, fragrances, surfactants
+- pesticides(mol)
+- fragrances(mol)
+- surfactants(mol)
+
+Detailed result API
+- from chemical_category_scorer import details_mol
+- info = details_mol(mol, model_id="final_pesticides")
+- info.score
+- info.threshold
+- info.property_score
+- info.structure_score
+- info.decision
+- info.matched_patterns
+
+Available built-in models
+- from chemical_category_scorer import available_models
+- available_models()
+
+GitHub sharing recommendation
+- Share the desktop app and the Python library in the same repository.
+- Desktop users can run run_desktop_app.bat.
+- Python users can import the score functions directly after pip install .
+- Both routes stay local-first and avoid sending confidential molecular structures to a hosted service.
