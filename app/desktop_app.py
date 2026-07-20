@@ -102,7 +102,15 @@ class AlgorithmScoringApp(tk.Tk):
         ttk.Button(single, text="Clear", command=self.clear_single).grid(row=2, column=1, sticky="w", padx=(8, 0))
 
         self.single_result = tk.StringVar(value="Enter a SMILES string and click 'Score molecule'.")
-        ttk.Label(single, textvariable=self.single_result, justify="left").grid(row=3, column=0, columnspan=4, sticky="w", pady=(10, 0))
+        tk.Label(
+            single,
+            textvariable=self.single_result,
+            justify="left",
+            anchor="w",
+            fg="#222222",
+            bg=self.cget("bg"),
+            wraplength=980,
+        ).grid(row=3, column=0, columnspan=4, sticky="ew", pady=(10, 0))
 
         visuals = ttk.LabelFrame(root, text="Molecule and matched patterns", padding=12)
         visuals.pack(fill="both", pady=(0, 12))
@@ -112,7 +120,15 @@ class AlgorithmScoringApp(tk.Tk):
         self.molecule_image_label.grid(row=0, column=0, rowspan=2, sticky="nw")
 
         self.pattern_summary = tk.StringVar(value="Matched structural patterns will appear here when the selected scorer uses them.")
-        ttk.Label(visuals, textvariable=self.pattern_summary, justify="left", wraplength=640).grid(row=0, column=1, sticky="w", padx=(12, 0))
+        tk.Label(
+            visuals,
+            textvariable=self.pattern_summary,
+            justify="left",
+            anchor="w",
+            fg="#222222",
+            bg=self.cget("bg"),
+            wraplength=640,
+        ).grid(row=0, column=1, sticky="ew", padx=(12, 0))
         self.pattern_gallery = ttk.Frame(visuals)
         self.pattern_gallery.grid(row=1, column=1, sticky="nw", padx=(12, 0), pady=(8, 0))
 
