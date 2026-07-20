@@ -101,16 +101,20 @@ class AlgorithmScoringApp(tk.Tk):
         ttk.Button(single, text="Score molecule", command=self.score_single).grid(row=2, column=0, sticky="w")
         ttk.Button(single, text="Clear", command=self.clear_single).grid(row=2, column=1, sticky="w", padx=(8, 0))
 
-        self.single_result = tk.StringVar(value="Enter a SMILES string and click 'Score molecule'.")
-        tk.Label(
+        self.single_result = tk.Text(
             single,
-            textvariable=self.single_result,
-            justify="left",
-            anchor="w",
+            height=6,
+            wrap="word",
+            bg="#ffffff",
             fg="#222222",
-            bg=self.cget("bg"),
-            wraplength=980,
-        ).grid(row=3, column=0, columnspan=4, sticky="ew", pady=(10, 0))
+            relief="solid",
+            borderwidth=1,
+            padx=8,
+            pady=8,
+        )
+        self.single_result.grid(row=3, column=0, columnspan=4, sticky="ew", pady=(10, 0))
+        self.single_result.configure(state="disabled", cursor="arrow")
+        self._set_single_result("Enter a SMILES string and click 'Score molecule'.")
 
         visuals = ttk.LabelFrame(root, text="Molecule and matched patterns", padding=12)
         visuals.pack(fill="both", pady=(0, 12))
@@ -119,16 +123,20 @@ class AlgorithmScoringApp(tk.Tk):
         self.molecule_image_label = ttk.Label(visuals, text="Molecule image will appear after scoring.")
         self.molecule_image_label.grid(row=0, column=0, rowspan=2, sticky="nw")
 
-        self.pattern_summary = tk.StringVar(value="Matched structural patterns will appear here when the selected scorer uses them.")
-        tk.Label(
+        self.pattern_summary = tk.Text(
             visuals,
-            textvariable=self.pattern_summary,
-            justify="left",
-            anchor="w",
+            height=4,
+            wrap="word",
+            bg="#ffffff",
             fg="#222222",
-            bg=self.cget("bg"),
-            wraplength=640,
-        ).grid(row=0, column=1, sticky="ew", padx=(12, 0))
+            relief="solid",
+            borderwidth=1,
+            padx=8,
+            pady=8,
+        )
+        self.pattern_summary.grid(row=0, column=1, sticky="ew", padx=(12, 0))
+        self.pattern_summary.configure(state="disabled", cursor="arrow")
+        self._set_pattern_summary("Matched structural patterns will appear here when the selected scorer uses them.")
         self.pattern_gallery = ttk.Frame(visuals)
         self.pattern_gallery.grid(row=1, column=1, sticky="nw", padx=(12, 0), pady=(8, 0))
 
@@ -225,6 +233,18 @@ class AlgorithmScoringApp(tk.Tk):
             default_display = next((label for label, model_id in self.model_display_to_id.items() if model_id == DEFAULT_MODEL_ID), values[0])
             self.model_choice.set(default_display)
 
+    def _set_readonly_text(self, widget: tk.Text, text: str) -> None:
+        widget.configure(state="normal")
+        widget.delete("1.0", "end")
+        widget.insert("1.0", text)
+        widget.configure(state="disabled")
+
+    def _set_single_result(self, text: str) -> None:
+        self._set_readonly_text(self.single_result, text)
+
+    def _set_pattern_summary(self, text: str) -> None:
+        self._set_readonly_text(self.pattern_summary, text)
+
     def _photo_from_png(self, png_bytes: bytes | None) -> tk.PhotoImage | None:
         if not png_bytes:
             return None
@@ -236,7 +256,7 @@ class AlgorithmScoringApp(tk.Tk):
     def _clear_visuals(self) -> None:
         self._image_refs = []
         self.molecule_image_label.configure(image="", text="Molecule image will appear after scoring.")
-        self.pattern_summary.set("Matched structural patterns will appear here when the selected scorer uses them.")
+        self._set_pattern_summary("Matched structural patterns will appear here when the selected scorer uses them.")
         for child in self.pattern_gallery.winfo_children():
             child.destroy()
 
@@ -248,9 +268,9 @@ class AlgorithmScoringApp(tk.Tk):
             self.molecule_image_label.configure(image=mol_photo, text="")
         matched = list(getattr(result, "matched_patterns", ()) or ())
         if not matched:
-            self.pattern_summary.set(f"No structural pattern match was found for {_clean_label(result.model_label)}.")
+            self._set_pattern_summary(f"No structural pattern match was found for {_clean_label(result.model_label)}.")
             return
-        self.pattern_summary.set(
+        self._set_pattern_summary(
             f"Matched structural patterns for {_clean_label(result.model_label)}: "
             + ", ".join(_humanize_pattern(name) for name in matched)
         )
@@ -280,13 +300,13 @@ class AlgorithmScoringApp(tk.Tk):
 
     def clear_single(self) -> None:
         self.single_smiles.delete("1.0", "end")
-        self.single_result.set("Enter a SMILES string and click 'Score molecule'.")
+        self._set_single_result("Enter a SMILES string and click 'Score molecule'.")
         self._clear_visuals()
 
     def score_single(self) -> None:
         smiles = self.single_smiles.get("1.0", "end").strip()
         if not smiles:
-            self.single_result.set("Enter a SMILES string first.")
+            self._set_single_result("Enter a SMILES string first.")
             self._clear_visuals()
             return
         selected = self.model_display_to_id[self.model_choice.get()]
@@ -294,7 +314,7 @@ class AlgorithmScoringApp(tk.Tk):
             results = score_smiles_all(smiles)
             best = choose_best_result(results)
             if not best:
-                self.single_result.set("Invalid SMILES. Check syntax and try again.")
+                self._set_single_result("Invalid SMILES. Check syntax and try again.")
                 self._clear_visuals()
                 return
             lines = [
@@ -310,17 +330,17 @@ class AlgorithmScoringApp(tk.Tk):
                 lines.append(
                     f"{index}. {_clean_label(result.model_label)} | score={result.score:.6f} | margin={result.margin:.6f} | {_clean_decision(result.decision)}"
                 )
-            self.single_result.set("\n".join(lines))
+            self._set_single_result("\n".join(lines))
             self._render_visuals(smiles, best)
             return
 
         result = score_smiles(smiles, selected)
         if not result.valid:
-            self.single_result.set("Invalid SMILES. Check syntax and try again.")
+            self._set_single_result("Invalid SMILES. Check syntax and try again.")
             self._clear_visuals()
             return
         matched_text = ", ".join(_humanize_pattern(name) for name in result.matched_patterns) if result.matched_patterns else "none"
-        self.single_result.set(
+        self._set_single_result(
             "\n".join(
                 [
                     f"Model: {_clean_label(result.model_label)}",
@@ -366,6 +386,26 @@ def run_self_test() -> None:
 
     assert render_molecule_png("CCO") is not None
     print("SELF_TEST_IMAGE=True")
+
+    app = AlgorithmScoringApp()
+    app.withdraw()
+    app.update_idletasks()
+    default_single = app.single_result.get("1.0", "end").strip()
+    default_pattern = app.pattern_summary.get("1.0", "end").strip()
+    assert default_single == "Enter a SMILES string and click 'Score molecule'."
+    assert default_pattern == "Matched structural patterns will appear here when the selected scorer uses them."
+    app.model_choice.set("Cosmetics")
+    app.single_smiles.insert("1.0", "CCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+    app.score_single()
+    app.update_idletasks()
+    scored_single = app.single_result.get("1.0", "end").strip()
+    scored_pattern = app.pattern_summary.get("1.0", "end").strip()
+    assert "Decision:" in scored_single
+    assert "Threshold:" in scored_single
+    assert "Matched structural patterns:" in scored_single
+    assert scored_pattern.startswith("Matched structural patterns for Cosmetics") or scored_pattern.startswith("No structural pattern match was found for Cosmetics")
+    print("SELF_TEST_UI_TEXT=True")
+    app.destroy()
 
     with tempfile.TemporaryDirectory() as tmp:
         input_path = Path(tmp) / "input.csv"
