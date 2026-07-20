@@ -15,8 +15,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/shkdidrlf/chemical-category-scorer"
-Repository = "https://github.com/shkdidrlf/chemical-category-scorer"
+Homepage = "https://github.com/phdgil/chemical-category-scorer"
+Repository = "https://github.com/phdgil/chemical-category-scorer"
 
 [project.scripts]
 chemical-category-scorer = "chemical_category_scorer.cli:main"

@@ -39,7 +39,7 @@ python app/desktop_app.py
 ### Install from the public GitHub repository
 
 ```bash
-pip install "chemical-category-scorer @ git+https://github.com/shkdidrlf/chemical-category-scorer.git"
+pip install "chemical-category-scorer @ git+https://github.com/phdgil/chemical-category-scorer.git"
 ```
 
 ### Install from a local clone

@@ -162,7 +162,7 @@ SMILES, simplified molecular-input line-entry system
 
 ### Availability of data and materials
 
-All rebuilt category tables, model configuration files, QED comparison outputs, and manuscript-preparation artifacts are stored under the public GitHub repository `https://github.com/shkdidrlf/chemical-category-scorer` together with the desktop application and Python package. Release artifacts also include the desktop bundle and Python distribution files so that the full-positive rebuild and same-regime QED comparison are available without restriction.
+All rebuilt category tables, model configuration files, QED comparison outputs, and manuscript-preparation artifacts are stored under the public GitHub repository `https://github.com/phdgil/chemical-category-scorer` together with the desktop application and Python package. Release artifacts also include the desktop bundle and Python distribution files so that the full-positive rebuild and same-regime QED comparison are available without restriction.
 
 ### Competing interests
 
