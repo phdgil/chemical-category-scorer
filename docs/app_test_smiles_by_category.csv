@@ -1,0 +1,66 @@
+﻿category,model_id,model_label,pattern_source,pattern_name,pattern_smarts,test_name,test_smiles,score,threshold,decision,matched_patterns
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,imidazole,c1cnc[nH]1,Imidazole,c1cnc[nH]1,0.070440,0.313836,unlikely animal drugs,imidazole
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,glycol,OCCO,Ethylene glycol,OCCO,0.635390,0.313836,likely animal drugs,glycol
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.078445,0.313836,unlikely animal drugs,ester
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.078445,0.313836,unlikely animal drugs,long_chain
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,halogen,"[Cl,Br,F,I]",Chloromethane,CCl,0.058834,0.313836,unlikely animal drugs,halogen
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,aromatic_oh,Oc1ccccc1,Phenol,Oc1ccccc1,0.039223,0.313836,unlikely animal drugs,aromatic_oh
+Animal Drugs,final_animal_drugs,Animal Drugs / Final rebuilt scorer,selected_patterns,urea,NC(=O)N,Urea,NC(=O)N,0.439223,0.313836,likely animal drugs,urea
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,fluoroaromatic,[F]c,Fluorobenzene,Fc1ccccc1,0.107267,0.171914,unlikely human drugs,fluoroaromatic; halogen
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,pyridine,c1ccncc1,Pyridine,c1ccncc1,0.118337,0.171914,unlikely human drugs,pyridine
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,imidazole,c1cnc[nH]1,Imidazole,c1cnc[nH]1,0.152436,0.171914,unlikely human drugs,imidazole
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,nitro,[N+](=O)[O-],Nitrobenzene,O=[N+]([O-])c1ccccc1,0.185688,0.171914,likely human drugs,nitro; aromatic_nh2; quaternary_n
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,carbamate,OC(=O)N,Methyl carbamate,COC(=O)N,0.205120,0.171914,likely human drugs,carbamate; ester
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,aromatic_oh,Oc1ccccc1,Phenol,Oc1ccccc1,0.270940,0.171914,likely human drugs,aromatic_oh
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,aromatic_nh2,Nc1ccccc1,Aniline,Nc1ccccc1,0.218278,0.171914,likely human drugs,aromatic_nh2
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,glycol,OCCO,Ethylene glycol,OCCO,0.143004,0.171914,unlikely human drugs,glycol
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.087663,0.171914,unlikely human drugs,long_chain
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,urea,NC(=O)N,Urea,NC(=O)N,0.129546,0.171914,unlikely human drugs,urea
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,quaternary_n,[N+],Tetramethylammonium,C[N+](C)(C)C,0.015260,0.171914,unlikely human drugs,quaternary_n
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.015260,0.171914,unlikely human drugs,ester
+Human Drugs,final_human_drugs,Human Drugs / Final rebuilt scorer,selected_patterns,halogen,"[Cl,Br,F,I]",Chloromethane,CCl,0.015260,0.171914,unlikely human drugs,halogen
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,quaternary_n,[N+],Tetramethylammonium,C[N+](C)(C)C,0.310696,0.358088,unlikely cosmetics,quaternary_n
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,benzophenone,c1ccccc1C(=O)c1ccccc1,Benzophenone,O=C(c1ccccc1)c1ccccc1,0.178743,0.358088,unlikely cosmetics,benzophenone
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,cinnamate,OC(=O)/C=C/c1ccccc1,Methyl cinnamate,COC(=O)/C=C/c1ccccc1,0.438101,0.358088,likely cosmetics,cinnamate; ester
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.348730,0.358088,unlikely cosmetics,long_chain
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.321858,0.358088,unlikely cosmetics,ester
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,glycol,OCCO,Ethylene glycol,OCCO,0.268115,0.358088,unlikely cosmetics,glycol
+Cosmetics,final_cosmetics,Cosmetics / Final rebuilt scorer,selected_patterns,sulfonate,S(=O)(=O),Ethanesulfonic acid,CCS(=O)(=O)O,0.268115,0.358088,unlikely cosmetics,sulfonate
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,phenol,c[OH],Phenol,Oc1ccccc1,0.776920,0.664300,likely endocrine disruptors,phenol
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,aniline,"c[NH2,NH1,NH0]",Aniline,Nc1ccccc1,0.852934,0.664300,likely endocrine disruptors,aniline
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,halogenated_aromatic,"c[F,Cl,Br,I]",Fluorobenzene,Fc1ccccc1,0.671733,0.664300,likely endocrine disruptors,halogenated_aromatic
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,nitro_aromatic,c[N+](=O)[O-],Nitrobenzene,O=[N+]([O-])c1ccccc1,0.878551,0.664300,likely endocrine disruptors,aniline; nitro_aromatic
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,biphenyl,c1ccccc1-c1ccccc1,Biphenyl,c1ccc(cc1)c1ccccc1,0.797370,0.664300,likely endocrine disruptors,biphenyl
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,steroid_like,C1CCC2CCCCC2C1,Androstane,C1CC2CCC3C4CCCC4CCC3C2C1,0.619666,0.664300,unlikely endocrine disruptors,steroid_like
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,amide,[NX3]C(=O)[CX4],Acetamide,CC(=O)N,0.000407,0.664300,unlikely endocrine disruptors,amide
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,urea,[NX3]C(=O)[NX3],Urea,NC(=O)N,0.000400,0.664300,unlikely endocrine disruptors,urea
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,carbamate,[NX3]C(=O)O,Methyl carbamate,COC(=O)N,0.000366,0.664300,unlikely endocrine disruptors,carbamate; ether
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,sulfonamide,S(=O)(=O)N,Benzenesulfonamide,NS(=O)(=O)c1ccccc1,0.647531,0.664300,unlikely endocrine disruptors,sulfonamide
+Endocrine Disruptors,han_endocrine_disruptors,Endocrine disruptors,smarts_patterns,ether,[OD2]([#6])[#6],Anisole,COc1ccccc1,0.710429,0.664300,likely endocrine disruptors,ether
+Flavoring Agents,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,selected_patterns,aldehyde,[CH1](=O),Acetaldehyde,CC=O,0.744038,0.530962,likely flavoring agents,aldehyde
+Flavoring Agents,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,selected_patterns,cinnamate,OC(=O)/C=C/c1ccccc1,Methyl cinnamate,COC(=O)/C=C/c1ccccc1,0.622628,0.530962,likely flavoring agents,cinnamate; ester
+Flavoring Agents,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.589769,0.530962,likely flavoring agents,ester
+Food Additives,final_food_additives,Food Additives / Final rebuilt scorer,selected_patterns,aldehyde,[CH1](=O),Acetaldehyde,CC=O,0.795113,0.493863,likely food additives,aldehyde
+Food Additives,final_food_additives,Food Additives / Final rebuilt scorer,selected_patterns,cinnamate,OC(=O)/C=C/c1ccccc1,Methyl cinnamate,COC(=O)/C=C/c1ccccc1,0.807387,0.493863,likely food additives,cinnamate; ester
+Food Additives,final_food_additives,Food Additives / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.629631,0.493863,likely food additives,ester
+Food Contact Substances,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,selected_patterns,benzophenone,c1ccccc1C(=O)c1ccccc1,Benzophenone,O=C(c1ccccc1)c1ccccc1,0.010641,0.550000,unlikely food contact substances,benzophenone
+Food Contact Substances,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.705068,0.550000,likely food contact substances,long_chain
+Food Contact Substances,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.679223,0.550000,likely food contact substances,ester
+Food Contact Substances,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,selected_patterns,glycol,OCCO,Ethylene glycol,OCCO,0.627534,0.550000,likely food contact substances,glycol
+Food Contact Substances,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,selected_patterns,sulfonate,S(=O)(=O),Ethanesulfonic acid,CCS(=O)(=O)O,0.627534,0.550000,likely food contact substances,sulfonate
+Fragrances,final_fragrances,Fragrances / Final rebuilt scorer,selected_patterns,aldehyde,[CH1](=O),Acetaldehyde,CC=O,0.731364,0.517323,likely fragrances,aldehyde
+Fragrances,final_fragrances,Fragrances / Final rebuilt scorer,selected_patterns,cinnamate,OC(=O)/C=C/c1ccccc1,Methyl cinnamate,COC(=O)/C=C/c1ccccc1,0.667761,0.517323,likely fragrances,cinnamate; ester
+Fragrances,final_fragrances,Fragrances / Final rebuilt scorer,selected_patterns,ester,C(=O)OC,Methyl acetate,CC(=O)OC,0.650875,0.517323,likely fragrances,ester
+Fragrances,final_fragrances,Fragrances / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.517323,0.517323,likely fragrances,long_chain
+Fragrances,final_fragrances,Fragrances / Final rebuilt scorer,selected_patterns,benzophenone,c1ccccc1C(=O)c1ccccc1,Benzophenone,O=C(c1ccccc1)c1ccccc1,0.483552,0.517323,unlikely fragrances,benzophenone
+Pesticides,final_pesticides,Pesticides / Final rebuilt scorer,selected_patterns,chloroaromatic,[Cl]c,Chlorobenzene,Clc1ccccc1,0.498481,0.498509,unlikely pesticides,chloroaromatic
+Pesticides,final_pesticides,Pesticides / Final rebuilt scorer,selected_patterns,CF3,C(F)(F)F,Benzotrifluoride,FC(F)(F)c1ccccc1,0.386365,0.498509,unlikely pesticides,CF3
+Pesticides,final_pesticides,Pesticides / Final rebuilt scorer,selected_patterns,triazole,n1cncn1,"1,2,4-Triazole",c1ncn[nH]1,0.528625,0.498509,likely pesticides,triazole
+Pesticides,final_pesticides,Pesticides / Final rebuilt scorer,selected_patterns,nitro,[N+](=O)[O-],Nitrobenzene,O=[N+]([O-])c1ccccc1,0.514150,0.498509,likely pesticides,nitro
+Pesticides,final_pesticides,Pesticides / Final rebuilt scorer,selected_patterns,carbamate,OC(=O)N,Methyl carbamate,COC(=O)N,0.498509,0.498509,likely pesticides,carbamate
+Pesticides,final_pesticides,Pesticides / Final rebuilt scorer,selected_patterns,urea,NC(=O)N,Urea,NC(=O)N,0.538155,0.498509,likely pesticides,urea
+Solvents,final_solvents,Solvents / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.874479,0.502083,likely solvents,long_chain
+Surfactants,final_surfactants,Surfactants / Final rebuilt scorer,selected_patterns,sulfonate,S(=O)(=O),Ethanesulfonic acid,CCS(=O)(=O)O,0.506357,0.538281,unlikely surfactants,sulfonate
+Surfactants,final_surfactants,Surfactants / Final rebuilt scorer,selected_patterns,glycol,OCCO,Ethylene glycol,OCCO,0.459709,0.538281,unlikely surfactants,glycol
+Surfactants,final_surfactants,Surfactants / Final rebuilt scorer,selected_patterns,long_chain,CCCCCC,Dodecane,CCCCCCCCCCCC,0.338524,0.538281,unlikely surfactants,long_chain
+Surfactants,final_surfactants,Surfactants / Final rebuilt scorer,selected_patterns,quaternary_n,[N+],Tetramethylammonium,C[N+](C)(C)C,0.245410,0.538281,unlikely surfactants,quaternary_n

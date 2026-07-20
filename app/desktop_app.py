@@ -76,7 +76,7 @@ class AlgorithmScoringApp(tk.Tk):
         ttk.Label(header_text_block, text="Chemical category scorers", font=("Segoe UI", 15, "bold")).pack(anchor="w")
         ttk.Label(
             header_text_block,
-            text="Local-first desktop scorer for the final broad-category manuscript models.",
+            text="GitHub: https://github.com/phdgil/chemical-category-scorer",
             foreground="#555555",
         ).pack(anchor="w")
 
