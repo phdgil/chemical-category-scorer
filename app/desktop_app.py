@@ -86,8 +86,10 @@ class AlgorithmScoringApp(tk.Tk):
 
         ttk.Label(selector, text="Scoring mode").grid(row=0, column=0, sticky="w")
         self.model_choice = tk.StringVar()
+        self.selected_model_id = DEFAULT_MODEL_ID
         self.model_box = ttk.Combobox(selector, textvariable=self.model_choice, state="readonly")
         self.model_box.grid(row=0, column=1, sticky="ew", padx=(8, 8))
+        self.model_box.bind("<<ComboboxSelected>>", self._sync_selected_model)
         ttk.Button(selector, text="Refresh models", command=self._refresh_model_choices).grid(row=0, column=2)
 
         single = ttk.LabelFrame(root, text="Single SMILES scoring", padding=12)
@@ -223,15 +225,32 @@ class AlgorithmScoringApp(tk.Tk):
 
     def _refresh_model_choices(self) -> None:
         refresh_model_registry()
+        previous_model_id = self._get_selected_model_id()
         self.model_display_to_id = {"All models (ranked suggestion)": ALL_MODELS_SENTINEL}
         for model in list_models(public_only=True):
             display = _clean_label(model["label"])
             self.model_display_to_id[display] = model["model_id"]
         values = list(self.model_display_to_id.keys())
         self.model_box["values"] = values
-        if not self.model_choice.get() or self.model_choice.get() not in self.model_display_to_id:
-            default_display = next((label for label, model_id in self.model_display_to_id.items() if model_id == DEFAULT_MODEL_ID), values[0])
-            self.model_choice.set(default_display)
+        selected_model_id = previous_model_id if previous_model_id in self.model_display_to_id.values() else DEFAULT_MODEL_ID
+        default_display = next((label for label, model_id in self.model_display_to_id.items() if model_id == selected_model_id), values[0])
+        self.model_choice.set(default_display)
+        self.model_box.set(default_display)
+        self.selected_model_id = self.model_display_to_id[default_display]
+
+    def _sync_selected_model(self, _event=None) -> None:
+        display = self.model_box.get().strip() or self.model_choice.get().strip()
+        mapping = getattr(self, "model_display_to_id", {})
+        if display in mapping:
+            self.model_choice.set(display)
+            self.selected_model_id = mapping[display]
+
+    def _get_selected_model_id(self) -> str:
+        self._sync_selected_model()
+        display = self.model_box.get().strip() or self.model_choice.get().strip()
+        if display in getattr(self, "model_display_to_id", {}):
+            return self.model_display_to_id[display]
+        return self.selected_model_id if self.selected_model_id in getattr(self, "model_display_to_id", {}).values() else DEFAULT_MODEL_ID
 
     def _set_readonly_text(self, widget: tk.Text, text: str) -> None:
         widget.configure(state="normal")
@@ -309,7 +328,7 @@ class AlgorithmScoringApp(tk.Tk):
             self._set_single_result("Enter a SMILES string first.")
             self._clear_visuals()
             return
-        selected = self.model_display_to_id[self.model_choice.get()]
+        selected = self._get_selected_model_id()
         if selected == ALL_MODELS_SENTINEL:
             results = score_smiles_all(smiles)
             best = choose_best_result(results)
@@ -361,7 +380,7 @@ class AlgorithmScoringApp(tk.Tk):
         if not input_csv or not output_csv:
             messagebox.showerror("Missing path", "Set both input and output CSV paths.")
             return
-        selected = self.model_display_to_id[self.model_choice.get()]
+        selected = self._get_selected_model_id()
         model_ids = [selected] if selected != ALL_MODELS_SENTINEL else [ALL_MODELS_SENTINEL]
         try:
             out_path = score_csv(input_csv, output_csv, smiles_column, model_ids)
@@ -394,12 +413,14 @@ def run_self_test() -> None:
     default_pattern = app.pattern_summary.get("1.0", "end").strip()
     assert default_single == "Enter a SMILES string and click 'Score molecule'."
     assert default_pattern == "Matched structural patterns will appear here when the selected scorer uses them."
-    app.model_choice.set("Cosmetics")
+    app.model_box.set("Cosmetics")
+    app._sync_selected_model()
     app.single_smiles.insert("1.0", "CCCCCCCCCCCCCCCCCCCCCCCCCCCC")
     app.score_single()
     app.update_idletasks()
     scored_single = app.single_result.get("1.0", "end").strip()
     scored_pattern = app.pattern_summary.get("1.0", "end").strip()
+    assert "Model: Cosmetics" in scored_single
     assert "Decision:" in scored_single
     assert "Threshold:" in scored_single
     assert "Matched structural patterns:" in scored_single
