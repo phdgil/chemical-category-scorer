@@ -3,7 +3,6 @@
 Local-first chemical product category scoring from molecular structure.
 
 This repository ships the project in two delivery modes:
-
 1. **Desktop app** for single-molecule and batch CSV scoring on a local workstation
 2. **Python library** for direct import, similar to using an RDKit scoring helper
 
@@ -72,7 +71,7 @@ chemical-category-scorer --score "CCO" --model-id final_pesticides
 chemical-category-scorer-desktop
 ```
 
-## Final manuscript category set
+## Available scoring categories
 
 - animal_drugs
 - human_drugs
@@ -90,8 +89,7 @@ chemical-category-scorer-desktop
 
 - `app/` desktop application and scoring engine
 - `chemical_category_scorer/` importable Python API
-- `paper/` manuscript draft and supporting tables
-- `results/` final reporting outputs used in the manuscript
+- `docs/` app screenshot and pattern-testing reference files
 
 ## Privacy
 
@@ -99,7 +97,3 @@ chemical-category-scorer-desktop
 - inputs are read from local files only
 - outputs are written to local files only
 - model JSON files are bundled with the repository
-
-## Manuscript note
-
-The manuscript draft references this public repository as the source for the desktop app, Python package, and reproducibility materials.

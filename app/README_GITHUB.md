@@ -9,14 +9,14 @@ Chemical manufacturers often treat molecular structures as confidential business
 - single-SMILES scoring
 - batch CSV scoring
 - local JSON-backed score models
-- simple single-molecule and batch scoring workflow focused on the final manuscript models
-- advanced scorer rebuilding is available through project scripts, not through the desktop UI
+- simple single-molecule and batch scoring workflow for the deployed category scorers
 - local-first execution for confidential industrial structures
 
-## Final manuscript category set
+## Available categories
 - animal_drugs
 - human_drugs
 - cosmetics
+- endocrine_disruptors
 - flavoring_agents
 - food_additives
 - food_contact_substances
@@ -62,11 +62,6 @@ python desktop_app.py --self-test
 - `data/evidence_panels/`
 - `requirements.txt`
 - `run_desktop_app.bat`
-- example input/output CSV files
-
-## Repository note
-If this app is published on GitHub for public reuse, keep the scoring local-first. Do not replace local scoring with a remote API by default, because the local privacy guarantee is part of the practical value of this project.
-
 
 ## Python library use
 After `pip install .` from the repository root, users can import the scorers directly:
@@ -80,7 +75,4 @@ score = pesticides(mol)
 info = details_mol(mol, model_id="final_pesticides")
 ```
 
-This gives the repository two local-first delivery modes: a desktop app and an importable Python library.
-
-
-Built-in final categories now include endocrine disruptors in both the desktop app and the Python library. The deployed endocrine scorer is the Han Se-eum model selected after cross-regime validation against the uncapped GJC endocrine rebuild on the final broad-category evaluation set.
+This repository provides two local-first delivery modes: a desktop app and an importable Python library.

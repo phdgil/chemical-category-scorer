@@ -13,3 +13,6 @@ dist/
 app/output/
 app/_tmp_touch.txt
 app/_tmp_touch2.txt
+paper/
+results/
+release/

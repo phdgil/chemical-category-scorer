@@ -1,7 +1,0 @@
-panel_id,parent_hnid,parent_cid_count,source_name,source_hnid,source_cid_count,overlap_cid_count,share_of_parent,share_of_source
-animal_drugs,12950173,907,ATCvet Classification,17821331,3537,429,0.473,0.1213
-animal_drugs,12950173,907,FDA Pharm Classes,2166074,1563,178,0.1963,0.1139
-animal_drugs,12950173,907,KEGG: Drug,1857260,1470,173,0.1907,0.1177
-human_drugs,12950172,3943,FDA Drug Type and Pharmacologic Classification,4923900,3133,2089,0.5298,0.6668
-human_drugs,12950172,3943,FDA Pharm Classes,2166074,1563,1331,0.3376,0.8516
-human_drugs,12950172,3943,KEGG: Drug,1857260,1470,923,0.2341,0.6279

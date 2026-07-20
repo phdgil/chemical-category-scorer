@@ -15,5 +15,5 @@ For chemical manufacturers, molecular structure information can be commercially 
 4. Scope of the privacy claim
 This app is private by architecture only when users run it locally. GitHub distribution does not expose user structures; however, users must still follow their own internal security policy for local files, backups, screenshots, and repository forks.
 
-5. Manuscript wording suggestion
-The software translation can be described as a local-first desktop implementation intended to reduce data-leak concern for industrial users handling confidential molecular structures.
+5. Suggested wording
+The software can be described as a local-first desktop implementation intended to reduce data-leak concern for industrial users handling confidential molecular structures.

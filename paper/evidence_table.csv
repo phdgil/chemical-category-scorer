@@ -1,5 +1,0 @@
-student_id,student,course,artifact,metric_1,metric_2,metric_3,metric_4,notes
-20250786,김나연,컴퓨터알고리즘,김나연_20250786_pesticide.ipynb,ROC-AUC=0.9710,PR-AUC=0.9763,Accuracy=0.9169,MCC=0.8337,Selected as pesticide baseline and default app model
-20251288,이서윤,컴퓨터알고리즘,이서윤_20251288_Agrochemical.ipynb,AUC=0.952,KS=0.871,BestThreshold=0.343,,Strong pesticide comparison baseline
-20251266,최예빈,컴퓨터알고리즘,최예빈_20251266_pesticide.ipynb,SurfactantAUC=0.966,FragranceAUC=0.895,CosmeticAUC=0.708,,PubChem-driven category expansion path; app builder now screens new categories before release promotion
-20251279,한세음,컴퓨터알고리즘,한세음_20251279_AL.ipynb,OptunaBestAUC=0.8063,HardDrugNegROC-AUC=0.7801,,,Useful robustness comparison
