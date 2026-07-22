@@ -123,6 +123,20 @@ python -m app.public_model_audit pattern-candidates --input-csv path/to/category
 
 The candidate input CSV must contain one category column and one SMILES column. The local-only `--use-final-rebuild-inputs` shortcut is available when all ten files under `app/output/final_category_rebuild/inputs/` exist; it fails clearly when they do not. The seven-molecule probe audit is intended for post-deployment diagnostics on caffeine, aspirin, DDT, bisphenol A, vanillin, SDS, and ethanol. It is not the formal ten-category classification benchmark. BRICS, Murcko scaffolds, fixed SMARTS, and hybrid candidates should be compared as a preregistered held-out ablation before any model replacement claim.
 
+## Structural-pattern validation loop
+
+When the ten local final-rebuild positive CSVs are available, run the leakage-resistant comparison with:
+
+```bash
+python -m app.structural_pattern_validation --seeds 11,23,37
+```
+
+For a quick end-to-end check, add `--limit-per-category 80 --bootstrap-replicates 10`. The loop assigns duplicate structures and scaffold groups globally to train, validation, or test; mines fixed SMARTS, Murcko, BRICS, and hybrid candidates from training positives only; freezes the method, mixture weight, and threshold on validation; and reports three untouched test-negative regimes plus a cross-category positive-rate matrix. Results and runtime-compatible candidate JSONs are written under `results/structural_pattern_validation/`.
+
+This command never replaces `app/data/models`. Even a passing gate means only `eligible_for_manual_review`; a candidate that lacks multi-seed stability, held-out improvement over fixed SMARTS and property-only baselines, or cross-category specificity is marked `do_not_promote`.
+
+Use a new `--output-dir` when changing inputs, seeds, or loop settings. The command refuses to mix artifacts from runs with different signatures.
+
 ## Repository contents
 
 - `app/` desktop application and scoring engine
