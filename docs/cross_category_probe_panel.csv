@@ -1,0 +1,8 @@
+probe_id,molecule_name,smiles,expected_primary_use,allowed_overlap_notes
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,Stimulant and flavor-related food context; product-use models may also rank human-drug-like chemistry.
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,"Drug molecule with ester/aromatic motifs that can overlap food, fragrance, or cosmetic fixed patterns."
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,Organochlorine pesticide; auxiliary endocrine signal is scientifically plausible and is not a product category.
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,Food-contact/plastic-associated compound with expected auxiliary endocrine-disruption signal.
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,Flavor/fragrance aldehyde and phenol chemistry can trigger multiple product-use thresholds.
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,"Surfactant with long-chain and sulfonate motifs shared by solvent, fragrance, and food-contact scorers."
+ethanol,Ethanol,CCO,solvents,Small polar solvent; weak or no positive calls are possible because fixed-pattern models emphasize broader motifs.

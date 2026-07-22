@@ -1,0 +1,144 @@
+from __future__ import annotations
+
+import csv
+import subprocess
+import sys
+
+from app.algorithm_score_engine import (
+    ALL_MODELS_SENTINEL,
+    get_model_role,
+    list_models,
+    score_csv,
+    score_smiles,
+    score_smiles_all,
+)
+from app.desktop_app import _clean_label, format_all_model_results
+
+
+ASPIRIN_SMILES = "CC(=O)Oc1ccccc1C(=O)O"
+DDT_SMILES = "Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1"
+
+
+def test_desktop_import_and_direct_script_list_models() -> None:
+    import app.desktop_app  # noqa: F401
+
+    completed = subprocess.run(
+        [sys.executable, "app/desktop_app.py", "--list-models"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    listed_ids = [line.split("\t", 1)[0] for line in completed.stdout.splitlines() if line.strip()]
+    assert listed_ids == [model["model_id"] for model in list_models(public_only=True)]
+
+
+def test_public_all_sentinel_uses_ordered_release_models_and_keeps_hidden_explicit() -> None:
+    models = list_models(public_only=True)
+    model_ids = [model["model_id"] for model in models]
+
+    assert model_ids == [
+        "final_animal_drugs",
+        "final_human_drugs",
+        "final_cosmetics",
+        "han_endocrine_disruptors",
+        "final_flavoring_agents",
+        "final_food_additives",
+        "final_food_contact_substances",
+        "final_fragrances",
+        "final_pesticides",
+        "final_solvents",
+        "final_surfactants",
+    ]
+    assert len(model_ids) == 11
+    assert "final_endocrine_disruptors" not in model_ids
+    assert sum(1 for model in models if model["role"] == "product_use") == 10
+    assert [model["model_id"] for model in models if model["role"] == "auxiliary_hazard"] == [
+        "han_endocrine_disruptors"
+    ]
+
+    all_results = score_smiles_all("CCO")
+    assert {result.model_id for result in all_results} == set(model_ids)
+    assert "final_endocrine_disruptors" not in {result.model_id for result in all_results}
+
+    hidden_result = score_smiles("CCO", "final_endocrine_disruptors")
+    assert hidden_result.model_id == "final_endocrine_disruptors"
+    assert get_model_role(hidden_result.model_id) == "hidden"
+
+
+def test_all_model_formatter_lists_product_scores_and_auxiliary_signal_separately() -> None:
+    results = score_smiles_all(ASPIRIN_SMILES)
+    formatted = format_all_model_results(results)
+    product_models = [model for model in list_models(public_only=True) if model["role"] == "product_use"]
+    auxiliary_models = [model for model in list_models(public_only=True) if model["role"] == "auxiliary_hazard"]
+
+    assert "Highest raw product-category score (screening heuristic):" in formatted
+    assert "Best suggestion" not in formatted
+    assert "Raw scores and margins are not calibrated probabilities" in formatted
+    assert "product-use categories are threshold-positive; review overlap/ambiguity" in formatted
+    assert "Product-use category scores:" in formatted
+    assert "Auxiliary hazard signal:" in formatted
+    assert formatted.index("Product-use category scores:") < formatted.index("Auxiliary hazard signal:")
+    assert formatted.count("score=") == 11
+    assert formatted.count("threshold=") == 11
+    assert formatted.count("margin=") == 11
+    assert formatted.count("decision=") == 11
+    assert formatted.count("patterns=") == 11
+
+    for model in product_models:
+        assert _clean_label(model["label"]) in formatted
+    for model in auxiliary_models:
+        assert _clean_label(model["label"]) in formatted
+
+
+def test_all_model_batch_uses_product_representative_and_separate_auxiliary_fields(tmp_path) -> None:
+    input_path = tmp_path / "input.csv"
+    output_path = tmp_path / "output.csv"
+    with input_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["SMILES", "name"])
+        writer.writeheader()
+        writer.writerow({"SMILES": DDT_SMILES, "name": "ddt"})
+        writer.writerow({"SMILES": "not-a-smiles", "name": "invalid"})
+
+    score_csv(input_path, output_path, "SMILES", [ALL_MODELS_SENTINEL])
+
+    with output_path.open("r", encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+
+    assert rows[0]["algorithm_category"] == "pesticides"
+    assert rows[0]["algorithm_category"] != "endocrine disruptors"
+    assert rows[0]["algorithm_margin"]
+    assert rows[0]["product_positive_count"] == "1"
+    assert rows[0]["auxiliary_hazard_model_id"] == "han_endocrine_disruptors"
+    assert rows[0]["auxiliary_hazard_category"] == "endocrine disruptors"
+    assert rows[0]["auxiliary_hazard_score"]
+    assert rows[0]["auxiliary_hazard_threshold"]
+    assert rows[0]["auxiliary_hazard_margin"]
+    assert rows[0]["auxiliary_hazard_valid"] == "true"
+
+    assert rows[1]["algorithm_valid"] == "false"
+    assert rows[1]["algorithm_category"] == ""
+    assert rows[1]["auxiliary_hazard_valid"] == "false"
+
+
+def test_multi_explicit_batch_falls_back_when_no_product_model_is_selected(tmp_path) -> None:
+    input_path = tmp_path / "input.csv"
+    output_path = tmp_path / "output.csv"
+    with input_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["SMILES", "name"])
+        writer.writeheader()
+        writer.writerow({"SMILES": DDT_SMILES, "name": "ddt"})
+
+    score_csv(
+        input_path,
+        output_path,
+        "SMILES",
+        ["han_endocrine_disruptors", "final_endocrine_disruptors"],
+    )
+
+    with output_path.open("r", encoding="utf-8", newline="") as handle:
+        row = next(csv.DictReader(handle))
+
+    assert row["algorithm_valid"] == "true"
+    assert row["algorithm_category"] == "endocrine disruptors"
+    assert row["algorithm_score"]
+    assert row["auxiliary_hazard_model_id"] == "han_endocrine_disruptors"

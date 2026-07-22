@@ -1,0 +1,78 @@
+probe_id,molecule_name,smiles,expected_primary_use,release_model_order,score_rank_within_role,model_id,model_label,model_role,category,valid,score,threshold,margin,decision,matched_patterns
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,1,4,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.400000,0.313836,0.086164,likely animal drugs,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,2,6,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.228571,0.171914,0.056657,likely human drugs,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,3,8,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.125000,0.358088,-0.233088,unlikely cosmetics,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.576791,0.664300,-0.087509,unlikely endocrine disruptors,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,5,5,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.366667,0.530962,-0.164295,unlikely flavoring agents,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,6,1,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.602500,0.493863,0.108637,likely food additives,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,7,10,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.000000,0.550000,-0.550000,unlikely food contact substances,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,8,3,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.466667,0.517323,-0.050656,unlikely fragrances,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,9,2,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,10,7,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.125521,0.502083,-0.376562,unlikely solvents,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,11,9,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.078571,0.538281,-0.459709,unlikely surfactants,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,1,5,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.439223,0.313836,0.125387,likely animal drugs,aromatic_oh
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,2,6,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.385226,0.171914,0.213311,likely human drugs,aromatic_oh
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,3,9,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.250000,0.358088,-0.108088,unlikely cosmetics,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.795566,0.664300,0.131266,likely endocrine disruptors,ether
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,5,7,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.366667,0.530962,-0.164295,unlikely flavoring agents,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,6,1,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.753125,0.493863,0.259262,likely food additives,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,7,3,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.550000,0.550000,0.000000,likely food contact substances,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,8,4,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.466667,0.517323,-0.050656,unlikely fragrances,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,9,2,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,10,10,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.125521,0.502083,-0.376562,unlikely solvents,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,11,8,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.314286,0.538281,-0.223995,unlikely surfactants,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,1,9,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.058834,0.313836,-0.255002,unlikely animal drugs,halogen
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,2,6,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.129546,0.171914,-0.042369,unlikely human drugs,halogen
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,3,4,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.187500,0.358088,-0.170588,unlikely cosmetics,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.931635,0.664300,0.267335,likely endocrine disruptors,halogenated_aromatic
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,5,3,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.275000,0.530962,-0.255962,unlikely flavoring agents,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,6,5,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.150625,0.493863,-0.343238,unlikely food additives,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,7,10,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.000000,0.550000,-0.550000,unlikely food contact substances,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,8,7,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.116667,0.517323,-0.400656,unlikely fragrances,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,9,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.577053,0.498509,0.078543,likely pesticides,chloroaromatic
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,10,2,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.376562,0.502083,-0.125521,unlikely solvents,
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,11,8,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.078571,0.538281,-0.459709,unlikely surfactants,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,1,4,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.439223,0.313836,0.125387,likely animal drugs,aromatic_oh
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,2,6,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.270940,0.171914,0.099026,likely human drugs,aromatic_oh
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,3,7,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.187500,0.358088,-0.170588,unlikely cosmetics,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.962161,0.664300,0.297861,likely endocrine disruptors,phenol
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,5,2,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.458333,0.530962,-0.072628,unlikely flavoring agents,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,6,3,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.451875,0.493863,-0.041988,unlikely food additives,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,7,10,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.000000,0.550000,-0.550000,unlikely food contact substances,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,8,5,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.350000,0.517323,-0.167323,unlikely fragrances,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,9,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,10,9,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.125521,0.502083,-0.376562,unlikely solvents,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,11,8,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.157143,0.538281,-0.381138,unlikely surfactants,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,1,6,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.439223,0.313836,0.125387,likely animal drugs,aromatic_oh
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,2,7,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.328083,0.171914,0.156168,likely human drugs,aromatic_oh
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,3,9,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.250000,0.358088,-0.108088,unlikely cosmetics,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.854484,0.664300,0.190184,likely endocrine disruptors,phenol; ether
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,5,2,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.835705,0.530962,0.304744,likely flavoring agents,aldehyde
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,6,1,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.945738,0.493863,0.451875,likely food additives,aldehyde
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,7,5,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.550000,0.550000,0.000000,likely food contact substances,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,8,3,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.731364,0.517323,0.214041,likely fragrances,aldehyde
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,9,4,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,10,8,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.251042,0.502083,-0.251042,unlikely solvents,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,11,10,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.235714,0.538281,-0.302566,unlikely surfactants,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,1,5,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.478445,0.313836,0.164610,likely animal drugs,long_chain
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,2,10,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.201949,0.171914,0.030034,likely human drugs,long_chain
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,3,6,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.429345,0.358088,0.071257,likely cosmetics,long_chain; sulfonate
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.000444,0.664300,-0.663856,unlikely endocrine disruptors,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,5,9,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.366667,0.530962,-0.164295,unlikely flavoring agents,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,6,4,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.602500,0.493863,0.108637,likely food additives,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,7,1,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.782602,0.550000,0.232602,likely food contact substances,long_chain; sulfonate
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,8,7,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.400656,0.517323,-0.116667,unlikely fragrances,long_chain
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,9,8,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.392857,0.498509,-0.105652,unlikely pesticides,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,10,3,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.623438,0.502083,0.121355,likely solvents,long_chain
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,11,2,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.687738,0.538281,0.149458,likely surfactants,sulfonate; long_chain
+ethanol,Ethanol,CCO,solvents,1,10,final_animal_drugs,Animal Drugs / Final rebuilt scorer,product_use,animal_drugs,true,0.000000,0.313836,-0.313836,unlikely animal drugs,
+ethanol,Ethanol,CCO,solvents,2,9,final_human_drugs,Human Drugs / Final rebuilt scorer,product_use,human_drugs,true,0.057143,0.171914,-0.114772,unlikely human drugs,
+ethanol,Ethanol,CCO,solvents,3,8,final_cosmetics,Cosmetics / Final rebuilt scorer,product_use,cosmetics,true,0.125000,0.358088,-0.233088,unlikely cosmetics,
+ethanol,Ethanol,CCO,solvents,4,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.000434,0.664300,-0.663866,unlikely endocrine disruptors,
+ethanol,Ethanol,CCO,solvents,5,5,final_flavoring_agents,Flavoring Agents / Final rebuilt scorer,product_use,flavoring_agents,true,0.458333,0.530962,-0.072628,unlikely flavoring agents,
+ethanol,Ethanol,CCO,solvents,6,2,final_food_additives,Food Additives / Final rebuilt scorer,product_use,food_additives,true,0.602500,0.493863,0.108637,likely food additives,
+ethanol,Ethanol,CCO,solvents,7,4,final_food_contact_substances,Food Contact Substances / Final rebuilt scorer,product_use,food_contact_substances,true,0.550000,0.550000,0.000000,likely food contact substances,
+ethanol,Ethanol,CCO,solvents,8,3,final_fragrances,Fragrances / Final rebuilt scorer,product_use,fragrances,true,0.583333,0.517323,0.066010,likely fragrances,
+ethanol,Ethanol,CCO,solvents,9,6,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.392857,0.498509,-0.105652,unlikely pesticides,
+ethanol,Ethanol,CCO,solvents,10,1,final_solvents,Solvents / Final rebuilt scorer,product_use,solvents,true,0.627604,0.502083,0.125521,likely solvents,
+ethanol,Ethanol,CCO,solvents,11,7,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.235714,0.538281,-0.302566,unlikely surfactants,

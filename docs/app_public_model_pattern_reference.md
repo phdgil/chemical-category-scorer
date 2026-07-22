@@ -4,21 +4,45 @@ This file lists the structural patterns exposed by each public desktop-app score
 
 Generated from `app/data/app_release_config.json` and `app/data/models/*.json` on 2026-07-20.
 
+## Interpretation boundary
+
+The companion file `docs/app_test_smiles_by_category.csv` is a 65-row structural-pattern probe panel. It verifies that model SMARTS/SMILES probes parse and that expected motifs can be matched by the app. It is not a labeled classification benchmark and should not be used to report category AUC, balanced accuracy, sensitivity, or specificity.
+
+The public model set contains ten product-use scorers plus one auxiliary hazard/activity signal. Scores are thresholded independently by model and are not calibrated probabilities or validated cross-model distances. Shared threshold-positive calls are expected for overlapping product-use chemistry.
+
+The current Choi-style product-use scorers were selected from a fixed 20-SMARTS candidate library. Shared motifs are therefore a known limitation: ester and long-chain patterns recur across seven public categories, glycol across five, cinnamate across four, and several other motifs recur across two or three categories. This supports a follow-up ablation rather than a deployment claim: compare fixed SMARTS, Bemis-Murcko scaffolds, BRICS fragments, and hybrid candidates on held-out data before changing bundled models.
+
+Relevant method references:
+
+- Bemis and Murcko scaffold frameworks: DOI `10.1021/jm9602928`
+- BRICS retrosynthetic fragments: DOI `10.1002/cmdc.200800178`
+- RDKit `MurckoScaffold.GetScaffoldForMol` returns the ring/linker framework after removing terminal substituents.
+- RDKit `BRICS.BRICSDecompose` cuts chemically defined bonds and can return leaf or intermediate fragments with configurable minimum fragment size.
+
+Audit commands:
+
+```bash
+python -m app.public_model_audit pattern-overlap --csv-out docs/public_model_pattern_overlap.csv --markdown-out docs/cross_category_pattern_audit.md
+python -m app.public_model_audit pattern-candidates --input-csv path/to/category_smiles.csv --category-column category --smiles-column SMILES --output-csv results/pattern_candidates/fixed_murcko_brics_hybrid.csv
+```
+
+The input CSV must provide the named category and SMILES columns. A local `--use-final-rebuild-inputs` shortcut is also available, but it requires all ten ignored final-rebuild positive files and fails clearly when any are missing.
+
 ## Public model summary
 
-| Category | App model id | Pattern source | Pattern count |
-| --- | --- | --- | ---: |
-| Animal Drugs | `final_animal_drugs` | `selected_patterns` | 7 |
-| Human Drugs | `final_human_drugs` | `selected_patterns` | 13 |
-| Cosmetics | `final_cosmetics` | `selected_patterns` | 7 |
-| Endocrine Disruptors | `han_endocrine_disruptors` | `smarts_patterns` | 11 |
-| Flavoring Agents | `final_flavoring_agents` | `selected_patterns` | 3 |
-| Food Additives | `final_food_additives` | `selected_patterns` | 3 |
-| Food Contact Substances | `final_food_contact_substances` | `selected_patterns` | 5 |
-| Fragrances | `final_fragrances` | `selected_patterns` | 5 |
-| Pesticides | `final_pesticides` | `selected_patterns` | 6 |
-| Solvents | `final_solvents` | `selected_patterns` | 1 |
-| Surfactants | `final_surfactants` | `selected_patterns` | 4 |
+| Category | App model id | Role | Pattern source | Pattern count |
+| --- | --- | --- | --- | ---: |
+| Animal Drugs | `final_animal_drugs` | product_use | `selected_patterns` | 7 |
+| Human Drugs | `final_human_drugs` | product_use | `selected_patterns` | 13 |
+| Cosmetics | `final_cosmetics` | product_use | `selected_patterns` | 7 |
+| Endocrine Disruptors | `han_endocrine_disruptors` | auxiliary_hazard | `smarts_patterns` | 11 |
+| Flavoring Agents | `final_flavoring_agents` | product_use | `selected_patterns` | 3 |
+| Food Additives | `final_food_additives` | product_use | `selected_patterns` | 3 |
+| Food Contact Substances | `final_food_contact_substances` | product_use | `selected_patterns` | 5 |
+| Fragrances | `final_fragrances` | product_use | `selected_patterns` | 5 |
+| Pesticides | `final_pesticides` | product_use | `selected_patterns` | 6 |
+| Solvents | `final_solvents` | product_use | `selected_patterns` | 1 |
+| Surfactants | `final_surfactants` | product_use | `selected_patterns` | 4 |
 
 ## Pattern details and verified app-test SMILES
 

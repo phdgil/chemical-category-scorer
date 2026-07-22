@@ -1,0 +1,32 @@
+canonical_smarts,pattern_smarts_examples,pattern_names,model_count,category_count,model_ids,categories,roles,shared_across_models
+C(=O)OC,C(=O)OC,ester,7,7,final_animal_drugs; final_cosmetics; final_flavoring_agents; final_food_additives; final_food_contact_substances; final_fragrances; final_human_drugs,animal_drugs; cosmetics; flavoring_agents; food_additives; food_contact_substances; fragrances; human_drugs,product_use,true
+C(F)(F)F,C(F)(F)F,CF3,1,1,final_pesticides,pesticides,product_use,false
+C1CCC2CCCCC2C1,C1CCC2CCCCC2C1,steroid_like,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+CCCCCC,CCCCCC,long_chain,7,7,final_animal_drugs; final_cosmetics; final_food_contact_substances; final_fragrances; final_human_drugs; final_solvents; final_surfactants,animal_drugs; cosmetics; food_contact_substances; fragrances; human_drugs; solvents; surfactants,product_use,true
+Clc,[Cl]c,chloroaromatic,1,1,final_pesticides,pesticides,product_use,false
+Fc,[F]c,fluoroaromatic,1,1,final_human_drugs,human_drugs,product_use,false
+NC(=O)N,NC(=O)N,urea,3,3,final_animal_drugs; final_human_drugs; final_pesticides,animal_drugs; human_drugs; pesticides,product_use,true
+Nc1ccccc1,Nc1ccccc1,aromatic_nh2,1,1,final_human_drugs,human_drugs,product_use,false
+OC(=O)/C=C/c1ccccc1,OC(=O)/C=C/c1ccccc1,cinnamate,4,4,final_cosmetics; final_flavoring_agents; final_food_additives; final_fragrances,cosmetics; flavoring_agents; food_additives; fragrances,product_use,true
+OC(=O)N,OC(=O)N,carbamate,2,2,final_human_drugs; final_pesticides,human_drugs; pesticides,product_use,true
+OCCO,OCCO,glycol,5,5,final_animal_drugs; final_cosmetics; final_food_contact_substances; final_human_drugs; final_surfactants,animal_drugs; cosmetics; food_contact_substances; human_drugs; surfactants,product_use,true
+Oc1ccccc1,Oc1ccccc1,aromatic_oh,2,2,final_animal_drugs; final_human_drugs,animal_drugs; human_drugs,product_use,true
+S(=O)(=O)N,S(=O)(=O)N,sulfonamide,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+S(=O)=O,S(=O)(=O),sulfonate,3,3,final_cosmetics; final_food_contact_substances; final_surfactants,cosmetics; food_contact_substances; surfactants,product_use,true
+[C&H1]=O,[CH1](=O),aldehyde,3,3,final_flavoring_agents; final_food_additives; final_fragrances,flavoring_agents; food_additives; fragrances,product_use,true
+"[Cl,Br,F,I]","[Cl,Br,F,I]",halogen,2,2,final_animal_drugs; final_human_drugs,animal_drugs; human_drugs,product_use,true
+[N&+],[N+],quaternary_n,3,3,final_cosmetics; final_human_drugs; final_surfactants,cosmetics; human_drugs; surfactants,product_use,true
+[N&+](=O)[O&-],[N+](=O)[O-],nitro,2,2,final_human_drugs; final_pesticides,human_drugs; pesticides,product_use,true
+[N&X3]C(=O)O,[NX3]C(=O)O,carbamate,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+[N&X3]C(=O)[C&X4],[NX3]C(=O)[CX4],amide,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+[N&X3]C(=O)[N&X3],[NX3]C(=O)[NX3],urea,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+[O&D2]([#6])[#6],[OD2]([#6])[#6],ether,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+c1ccccc1-c1ccccc1,c1ccccc1-c1ccccc1,biphenyl,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+c1ccccc1C(=O)c1ccccc1,c1ccccc1C(=O)c1ccccc1,benzophenone,3,3,final_cosmetics; final_food_contact_substances; final_fragrances,cosmetics; food_contact_substances; fragrances,product_use,true
+c1ccncc1,c1ccncc1,pyridine,1,1,final_human_drugs,human_drugs,product_use,false
+c1cnc[n&H1]1,c1cnc[nH]1,imidazole,2,2,final_animal_drugs; final_human_drugs,animal_drugs; human_drugs,product_use,true
+"c[F,Cl,Br,I]","c[F,Cl,Br,I]",halogenated_aromatic,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+c[N&+](=O)[O&-],c[N+](=O)[O-],nitro_aromatic,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+"c[N&H2,N&H1,N&H0]","c[NH2,NH1,NH0]",aniline,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+c[O&H1],c[OH],phenol,1,1,han_endocrine_disruptors,endocrine_disruptors,auxiliary_hazard,false
+n1cncn1,n1cncn1,triazole,1,1,final_pesticides,pesticides,product_use,false

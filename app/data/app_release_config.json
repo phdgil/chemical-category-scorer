@@ -17,6 +17,19 @@
     "final_solvents",
     "final_surfactants"
   ],
+  "model_roles": {
+    "final_animal_drugs": "product_use",
+    "final_human_drugs": "product_use",
+    "final_cosmetics": "product_use",
+    "han_endocrine_disruptors": "auxiliary_hazard",
+    "final_flavoring_agents": "product_use",
+    "final_food_additives": "product_use",
+    "final_food_contact_substances": "product_use",
+    "final_fragrances": "product_use",
+    "final_pesticides": "product_use",
+    "final_solvents": "product_use",
+    "final_surfactants": "product_use"
+  },
   "built_in_model_policy": "Desktop app synchronized to the deployed scoring-function set using bundled local JSON models, retained cross-category negatives, and the Han Se-eum endocrine model selected by cross-regime validation.",
   "post_g005_broad_category_state": {
     "robust_or_release_grade_with_caveats": [

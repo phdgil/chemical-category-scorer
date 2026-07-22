@@ -8,18 +8,40 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-from algorithm_score_engine import (
-    ALL_MODELS_SENTINEL,
-    MODELS_DIR,
-    choose_best_result,
-    list_models,
-    refresh_model_registry,
-    render_molecule_png,
-    render_pattern_match_png,
-    score_csv,
-    score_smiles,
-    score_smiles_all,
-)
+if __package__:
+    from .algorithm_score_engine import (
+        ALL_MODELS_SENTINEL,
+        AUXILIARY_HAZARD_ROLE,
+        MODELS_DIR,
+        PRODUCT_USE_ROLE,
+        choose_best_product_result,
+        choose_best_result,
+        get_model_role,
+        list_models,
+        refresh_model_registry,
+        render_molecule_png,
+        render_pattern_match_png,
+        score_csv,
+        score_smiles,
+        score_smiles_all,
+    )
+else:  # pragma: no cover - for direct script execution
+    from algorithm_score_engine import (
+        ALL_MODELS_SENTINEL,
+        AUXILIARY_HAZARD_ROLE,
+        MODELS_DIR,
+        PRODUCT_USE_ROLE,
+        choose_best_product_result,
+        choose_best_result,
+        get_model_role,
+        list_models,
+        refresh_model_registry,
+        render_molecule_png,
+        render_pattern_match_png,
+        score_csv,
+        score_smiles,
+        score_smiles_all,
+    )
 
 APP_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = APP_DIR / "output"
@@ -38,6 +60,56 @@ def _clean_decision(text: str) -> str:
 
 def _humanize_pattern(name: str) -> str:
     return str(name).replace("_", " ").strip().title()
+
+
+def _matched_patterns_text(result) -> str:
+    matched = tuple(getattr(result, "matched_patterns", ()) or ())
+    return ", ".join(_humanize_pattern(name) for name in matched) if matched else "none"
+
+
+def _format_ranked_result(index: int, result) -> str:
+    return (
+        f"{index}. {_clean_label(result.model_label)} | "
+        f"score={result.score:.6f} | threshold={result.threshold:.6f} | "
+        f"margin={result.margin:.6f} | decision={_clean_decision(result.decision)} | "
+        f"patterns={_matched_patterns_text(result)}"
+    )
+
+
+def format_all_model_results(results) -> str:
+    valid_results = [result for result in results if result.valid]
+    if not valid_results:
+        return "Invalid SMILES. Check syntax and try again."
+
+    product_results = [result for result in valid_results if get_model_role(result.model_id) == PRODUCT_USE_ROLE]
+    auxiliary_results = [result for result in valid_results if get_model_role(result.model_id) == AUXILIARY_HAZARD_ROLE]
+    product_results.sort(key=lambda item: (item.score, item.margin), reverse=True)
+    auxiliary_results.sort(key=lambda item: (item.score, item.margin), reverse=True)
+
+    best_product = product_results[0] if product_results else choose_best_result(valid_results)
+    positive_products = [result for result in product_results if result.score >= result.threshold]
+    if len(positive_products) > 1:
+        overlap_text = f"{len(positive_products)} product-use categories are threshold-positive; review overlap/ambiguity."
+    else:
+        overlap_text = f"{len(positive_products)} product-use category is threshold-positive."
+
+    lines = [
+        f"Highest raw product-category score (screening heuristic): {_clean_label(best_product.model_label)}",
+        "Raw scores and margins are not calibrated probabilities or validated cross-model distances.",
+        overlap_text,
+        "",
+        "Product-use category scores:",
+    ]
+    for index, result in enumerate(product_results, start=1):
+        lines.append(_format_ranked_result(index, result))
+
+    lines.extend(["", "Auxiliary hazard signal:"])
+    if auxiliary_results:
+        for index, result in enumerate(auxiliary_results, start=1):
+            lines.append(_format_ranked_result(index, result))
+    else:
+        lines.append("none")
+    return "\n".join(lines)
 
 
 class AlgorithmScoringApp(tk.Tk):
@@ -105,7 +177,7 @@ class AlgorithmScoringApp(tk.Tk):
 
         self.single_result = tk.Text(
             single,
-            height=6,
+            height=18,
             wrap="word",
             bg="#ffffff",
             fg="#222222",
@@ -165,12 +237,12 @@ class AlgorithmScoringApp(tk.Tk):
         notes = ttk.LabelFrame(root, text="Notes", padding=12)
         notes.pack(fill="both", expand=True)
         notes_text = (
-            "• Core workflow: paste one SMILES for a quick suggestion or score a CSV file in batch mode.\n"
-            "• The model menu now shows only the final broad-category names, without threshold clutter.\n"
-            "• 'All models' ranks the 10 final broad-category scorers by raw score; thresholds are shown only in the result panel.\n"
-            "• Output CSV starts blank on purpose; after you choose an input file, the app suggests an output name automatically.\n"
-            "• The molecule image and matched structural patterns are shown for the selected scorer whenever pattern matches exist.\n"
-            "• Advanced scorer rebuilding is kept out of the desktop UI; use the project scripts if you need offline model-development work."
+            "- Core workflow: paste one SMILES for screening or score a CSV file in batch mode.\n"
+            "- The model menu shows the public release models; All models is the default single-molecule view.\n"
+            "- All models ranks product-use scorers by raw score and separates the auxiliary endocrine-disruption signal.\n"
+            "- Raw scores and margins are screening heuristics, not calibrated probabilities or validated cross-model distances.\n"
+            "- Output CSV starts blank on purpose; after you choose an input file, the app suggests an output name automatically.\n"
+            "- The molecule image and matched structural patterns are shown whenever pattern matches exist."
         )
         ttk.Label(notes, text=notes_text, justify="left").pack(anchor="w")
 
@@ -225,14 +297,16 @@ class AlgorithmScoringApp(tk.Tk):
 
     def _refresh_model_choices(self) -> None:
         refresh_model_registry()
-        previous_model_id = self._get_selected_model_id()
-        self.model_display_to_id = {"All models (ranked suggestion)": ALL_MODELS_SENTINEL}
+        previous_model_id = self._get_selected_model_id() if self.model_choice.get().strip() else ALL_MODELS_SENTINEL
+        self.model_display_to_id = {"All models (screening overview)": ALL_MODELS_SENTINEL}
         for model in list_models(public_only=True):
             display = _clean_label(model["label"])
+            if model.get("role") == AUXILIARY_HAZARD_ROLE:
+                display = f"{display} (auxiliary hazard)"
             self.model_display_to_id[display] = model["model_id"]
         values = list(self.model_display_to_id.keys())
         self.model_box["values"] = values
-        selected_model_id = previous_model_id if previous_model_id in self.model_display_to_id.values() else DEFAULT_MODEL_ID
+        selected_model_id = previous_model_id if previous_model_id in self.model_display_to_id.values() else ALL_MODELS_SENTINEL
         default_display = next((label for label, model_id in self.model_display_to_id.items() if model_id == selected_model_id), values[0])
         self.model_choice.set(default_display)
         self.model_box.set(default_display)
@@ -331,25 +405,12 @@ class AlgorithmScoringApp(tk.Tk):
         selected = self._get_selected_model_id()
         if selected == ALL_MODELS_SENTINEL:
             results = score_smiles_all(smiles)
-            best = choose_best_result(results)
+            best = choose_best_product_result(results) or choose_best_result(results)
             if not best:
                 self._set_single_result("Invalid SMILES. Check syntax and try again.")
                 self._clear_visuals()
                 return
-            lines = [
-                f"Best suggestion: {_clean_label(best.model_label)}",
-                f"Decision: {_clean_decision(best.decision)}",
-                f"Score: {best.score:.6f} | threshold={best.threshold:.6f} | margin={best.margin:.6f}",
-                "",
-                "Ranked models:",
-            ]
-            for index, result in enumerate(results, start=1):
-                if not result.valid:
-                    continue
-                lines.append(
-                    f"{index}. {_clean_label(result.model_label)} | score={result.score:.6f} | margin={result.margin:.6f} | {_clean_decision(result.decision)}"
-                )
-            self._set_single_result("\n".join(lines))
+            self._set_single_result(format_all_model_results(results))
             self._render_visuals(smiles, best)
             return
 
@@ -394,14 +455,27 @@ def run_self_test() -> None:
     refresh_model_registry()
     models = list_models(public_only=True)
     print("SELF_TEST_MODELS=" + ",".join(model["model_id"] for model in models))
+    assert len(models) == 11
+    assert "final_endocrine_disruptors" not in {model["model_id"] for model in models}
+    assert sum(1 for model in models if model["role"] == PRODUCT_USE_ROLE) == 10
+    assert [model["model_id"] for model in models if model["role"] == AUXILIARY_HAZARD_ROLE] == ["han_endocrine_disruptors"]
 
     single = score_smiles("CCO", DEFAULT_MODEL_ID)
     print(f"SELF_TEST_DEFAULT={single.model_id}:{single.score:.6f}:{single.decision}")
 
     ranked = score_smiles_all("CCO")
+    assert len(ranked) == 11
+    assert "final_endocrine_disruptors" not in {result.model_id for result in ranked}
     best = choose_best_result(ranked)
     if best:
         print(f"SELF_TEST_BEST={best.model_id}:{best.score:.6f}:{best.margin:.6f}:{len(best.matched_patterns)}")
+    formatted_ranked = format_all_model_results(ranked)
+    assert "Highest raw product-category score (screening heuristic):" in formatted_ranked
+    assert "Raw scores and margins are not calibrated probabilities" in formatted_ranked
+    assert "Product-use category scores:" in formatted_ranked
+    assert "Auxiliary hazard signal:" in formatted_ranked
+    assert "threshold=" in formatted_ranked
+    assert "patterns=" in formatted_ranked
 
     assert render_molecule_png("CCO") is not None
     print("SELF_TEST_IMAGE=True")
@@ -413,6 +487,7 @@ def run_self_test() -> None:
     default_pattern = app.pattern_summary.get("1.0", "end").strip()
     assert default_single == "Enter a SMILES string and click 'Score molecule'."
     assert default_pattern == "Matched structural patterns will appear here when the selected scorer uses them."
+    assert app._get_selected_model_id() == ALL_MODELS_SENTINEL
     app.model_box.set("Cosmetics")
     app._sync_selected_model()
     app.single_smiles.insert("1.0", "CCCCCCCCCCCCCCCCCCCCCCCCCCCC")

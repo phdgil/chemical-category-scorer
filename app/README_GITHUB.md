@@ -10,13 +10,18 @@ Chemical manufacturers often treat molecular structures as confidential business
 - batch CSV scoring
 - local JSON-backed score models
 - simple single-molecule and batch scoring workflow for the deployed category scorers
+- all-public-model scoring for transparent multi-label screening
 - local-first execution for confidential industrial structures
 
 ## Available categories
+
+The deployed public model set contains ten product-use scorers plus one auxiliary Han Se-eum endocrine-disruption hazard/activity signal.
+
+Product-use scorers:
+
 - animal_drugs
 - human_drugs
 - cosmetics
-- endocrine_disruptors
 - flavoring_agents
 - food_additives
 - food_contact_substances
@@ -24,6 +29,16 @@ Chemical manufacturers often treat molecular structures as confidential business
 - pesticides
 - solvents
 - surfactants
+
+Auxiliary signal:
+
+- endocrine_disruptors (`han_endocrine_disruptors`)
+
+## Score interpretation
+
+All-model output should be read as independently thresholded multi-label screening. A molecule can cross more than one product-use threshold because the categories are broad and chemically overlapping. Raw scores and margins are not calibrated probabilities and are not validated distances across models, so the highest raw product-use score is only a screening heuristic.
+
+The endocrine-disruption result is an auxiliary Han signal, not a peer product-use category. Batch and audit reporting should keep this signal separate from the representative product-use category.
 
 ## Privacy model
 - no web upload is required for scoring
@@ -50,10 +65,39 @@ python desktop_app.py
 pip install -r requirements.txt
 ```
 
+From the repository root, the package install exposes both command-line entry points:
+
+```bash
+pip install .
+chemical-category-scorer --list-models
+chemical-category-scorer-desktop --list-models
+```
+
 ## Verify installation
 ```bash
 python desktop_app.py --self-test
 ```
+
+From the repository root, these smoke checks verify the package import path and direct launcher path:
+
+```bash
+python -c "import app.desktop_app"
+python app/desktop_app.py --list-models
+```
+
+## Public audit commands
+
+The audit CLI module is `app.public_model_audit`. Run it from the repository root in this shape:
+
+```bash
+python -m app.public_model_audit audit --scores-out docs/cross_category_probe_scores.csv --summary-out docs/cross_category_probe_summary.csv
+python -m app.public_model_audit pattern-overlap --csv-out docs/public_model_pattern_overlap.csv --markdown-out docs/cross_category_pattern_audit.md
+python -m app.public_model_audit pattern-candidates --input-csv path/to/category_smiles.csv --category-column category --smiles-column SMILES --output-csv results/pattern_candidates/fixed_murcko_brics_hybrid.csv
+```
+
+The audit command is for the seven post-deployment probe molecules: caffeine, aspirin, DDT, bisphenol A, vanillin, SDS, and ethanol. These probes are diagnostic examples for all-model interpretation, not the formal ten-category benchmark.
+
+The pattern-candidate input must provide category and SMILES columns. The local-only `--use-final-rebuild-inputs` shortcut requires all ten `app/output/final_category_rebuild/inputs/*__positive.csv` files and fails clearly when they are absent. The command is experimental: any fixed-SMARTS, Murcko, BRICS, or hybrid claim should come from a held-out ablation, not from replacing deployed models by inspection.
 
 ## Recommended GitHub release contents
 - `desktop_app.py`

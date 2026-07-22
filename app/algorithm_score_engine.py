@@ -24,6 +24,9 @@ RELEASE_CONFIG_PATH = DATA_DIR / "app_release_config.json"
 
 ALL_MODELS_SENTINEL = "__all__"
 DEFAULT_MODEL_ID = "final_pesticides"
+PRODUCT_USE_ROLE = "product_use"
+AUXILIARY_HAZARD_ROLE = "auxiliary_hazard"
+HIDDEN_MODEL_ROLE = "hidden"
 EVIDENCE_ONLY_MODEL_IDS = {"full_cosmetics", "full_food_contact_substances"}
 FP_GEN = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048)
 
@@ -70,6 +73,8 @@ MODEL_CONFIGS: dict[str, dict[str, Any]] = {}
 MODEL_RUNTIMES: dict[str, dict[str, Any]] = {}
 EVIDENCE_PANELS: dict[str, dict[str, Any]] = {}
 PUBLIC_MODEL_IDS: set[str] = set()
+PUBLIC_MODEL_ID_ORDER: tuple[str, ...] = tuple()
+MODEL_ROLES: dict[str, str] = {}
 _REGISTRY_SIGNATURE: tuple[Any, ...] | None = None
 
 
@@ -225,7 +230,7 @@ def _prepare_runtime_model(config: dict[str, Any]) -> dict[str, Any]:
 
 
 def refresh_model_registry(force: bool = False) -> None:
-    global MODEL_CONFIGS, MODEL_RUNTIMES, EVIDENCE_PANELS, PUBLIC_MODEL_IDS, _REGISTRY_SIGNATURE
+    global MODEL_CONFIGS, MODEL_RUNTIMES, EVIDENCE_PANELS, PUBLIC_MODEL_IDS, PUBLIC_MODEL_ID_ORDER, MODEL_ROLES, _REGISTRY_SIGNATURE
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
     EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
     signature = _registry_signature()
@@ -241,6 +246,8 @@ def refresh_model_registry(force: bool = False) -> None:
     MODEL_RUNTIMES = {}
     EVIDENCE_PANELS = {}
     PUBLIC_MODEL_IDS = set()
+    PUBLIC_MODEL_ID_ORDER = tuple()
+    MODEL_ROLES = {}
     for path in sorted(MODELS_DIR.glob("*.json")):
         with path.open("r", encoding="utf-8") as f:
             config = json.load(f)
@@ -250,9 +257,19 @@ def refresh_model_registry(force: bool = False) -> None:
     if RELEASE_CONFIG_PATH.exists():
         with RELEASE_CONFIG_PATH.open("r", encoding="utf-8") as f:
             release_config = json.load(f)
-        PUBLIC_MODEL_IDS = {model_id for model_id in release_config.get("available_models", []) if model_id in MODEL_CONFIGS}
+        PUBLIC_MODEL_ID_ORDER = tuple(
+            model_id for model_id in release_config.get("available_models", []) if model_id in MODEL_CONFIGS
+        )
+        PUBLIC_MODEL_IDS = set(PUBLIC_MODEL_ID_ORDER)
+        configured_roles = release_config.get("model_roles", {})
+        MODEL_ROLES = {
+            model_id: str(configured_roles.get(model_id, PRODUCT_USE_ROLE))
+            for model_id in PUBLIC_MODEL_ID_ORDER
+        }
     else:
         PUBLIC_MODEL_IDS = set(MODEL_CONFIGS.keys())
+        PUBLIC_MODEL_ID_ORDER = tuple(MODEL_CONFIGS.keys())
+        MODEL_ROLES = {model_id: PRODUCT_USE_ROLE for model_id in PUBLIC_MODEL_ID_ORDER}
     for path in sorted(EVIDENCE_DIR.glob("*.json")):
         with path.open("r", encoding="utf-8") as f:
             config = json.load(f)
@@ -266,10 +283,11 @@ refresh_model_registry()
 
 def list_models(public_only: bool = False) -> list[dict[str, Any]]:
     models = []
-    visible_ids = PUBLIC_MODEL_IDS if public_only and PUBLIC_MODEL_IDS else set(MODEL_CONFIGS.keys())
-    for model_id, config in MODEL_CONFIGS.items():
-        if model_id not in visible_ids:
+    visible_ids = PUBLIC_MODEL_ID_ORDER if public_only and PUBLIC_MODEL_ID_ORDER else tuple(MODEL_CONFIGS.keys())
+    for model_id in visible_ids:
+        if model_id not in MODEL_CONFIGS:
             continue
+        config = MODEL_CONFIGS[model_id]
         models.append(
             {
                 "model_id": model_id,
@@ -277,11 +295,16 @@ def list_models(public_only: bool = False) -> list[dict[str, Any]]:
                 "category": config["category"],
                 "threshold": config["threshold"],
                 "model_type": config["model_type"],
+                "role": get_model_role(model_id),
                 "source_student": config.get("source_student", ""),
                 "description": config.get("description", ""),
             }
         )
     return models
+
+
+def get_model_role(model_id: str) -> str:
+    return MODEL_ROLES.get(model_id, HIDDEN_MODEL_ROLE)
 
 
 def _resolve_model_ids(model_ids: list[str] | None) -> list[str]:
@@ -294,7 +317,7 @@ def _resolve_model_ids(model_ids: list[str] | None) -> list[str]:
     resolved: list[str] = []
     for model_id in model_ids:
         if model_id == ALL_MODELS_SENTINEL:
-            resolved.extend(MODEL_CONFIGS.keys())
+            resolved.extend(PUBLIC_MODEL_ID_ORDER or tuple(MODEL_CONFIGS.keys()))
             continue
         if model_id not in MODEL_CONFIGS:
             raise KeyError(f"Unknown model_id: {model_id}")
@@ -376,7 +399,6 @@ def _score_kim(smiles: str, mol: Chem.Mol, runtime: dict[str, Any], config: dict
     score = config["w_Property"] * property_score + config["w_Structure"] * structure_score
     threshold = float(config["threshold"])
     margin = float(score - threshold)
-    category_slug = _slug(config["category"])
     decision = _decision_text(config["category"], score, threshold)
     return ScoreBreakdown(
         smiles=smiles,
@@ -425,7 +447,6 @@ def _score_lee(smiles: str, mol: Chem.Mol, runtime: dict[str, Any], config: dict
     score = float(combined ** float(config["gamma"]))
     threshold = float(config["threshold"])
     margin = float(score - threshold)
-    category_slug = _slug(config["category"])
     decision = _decision_text(config["category"], score, threshold)
     return ScoreBreakdown(
         smiles=smiles,
@@ -658,6 +679,13 @@ def choose_best_result(results: list[ScoreBreakdown]) -> ScoreBreakdown | None:
     return valid_results[0] if valid_results else None
 
 
+def choose_best_product_result(results: list[ScoreBreakdown]) -> ScoreBreakdown | None:
+    valid_product_results = [
+        result for result in results if result.valid and get_model_role(result.model_id) == PRODUCT_USE_ROLE
+    ]
+    return valid_product_results[0] if valid_product_results else None
+
+
 def list_evidence_panels() -> list[dict[str, Any]]:
     panels = []
     for panel_id, config in EVIDENCE_PANELS.items():
@@ -767,6 +795,7 @@ def score_csv(
     smiles_column: str | None = None,
     model_ids: list[str] | None = None,
 ) -> Path:
+    requested_all_models = not model_ids or ALL_MODELS_SENTINEL in model_ids
     selected_model_ids = _resolve_model_ids(model_ids)
     input_path = Path(input_csv)
     output_path = Path(output_csv)
@@ -782,10 +811,19 @@ def score_csv(
             "algorithm_category",
             "algorithm_score",
             "algorithm_threshold",
+            "algorithm_margin",
             "algorithm_property_score",
             "algorithm_structure_score",
             "algorithm_decision",
             "algorithm_valid",
+            "product_positive_count",
+            "auxiliary_hazard_model_id",
+            "auxiliary_hazard_category",
+            "auxiliary_hazard_score",
+            "auxiliary_hazard_threshold",
+            "auxiliary_hazard_margin",
+            "auxiliary_hazard_decision",
+            "auxiliary_hazard_valid",
         ]
 
         with output_path.open("w", encoding="utf-8", newline="") as out:
@@ -794,13 +832,27 @@ def score_csv(
             for row in reader:
                 smiles = row.get(resolved_smiles_column, "")
                 results = score_smiles_all(smiles, selected_model_ids)
-                result = results[0] if len(selected_model_ids) == 1 else choose_best_result(results)
+                result = (
+                    results[0]
+                    if len(selected_model_ids) == 1 and not requested_all_models
+                    else choose_best_product_result(results) or choose_best_result(results)
+                )
+                auxiliary_result = next(
+                    (item for item in results if get_model_role(item.model_id) == AUXILIARY_HAZARD_ROLE),
+                    None,
+                )
+                product_positive_count = sum(
+                    1
+                    for item in results
+                    if item.valid and get_model_role(item.model_id) == PRODUCT_USE_ROLE and item.score >= item.threshold
+                )
                 if result and result.valid:
                     row.update(
                         {
                             "algorithm_category": _humanize_category(result.category),
                             "algorithm_score": f"{result.score:.6f}",
                             "algorithm_threshold": f"{result.threshold:.6f}",
+                            "algorithm_margin": f"{result.margin:.6f}",
                             "algorithm_property_score": f"{result.property_score:.6f}",
                             "algorithm_structure_score": f"{result.structure_score:.6f}",
                             "algorithm_decision": result.decision,
@@ -813,10 +865,36 @@ def score_csv(
                             "algorithm_category": "",
                             "algorithm_score": "",
                             "algorithm_threshold": "",
+                            "algorithm_margin": "",
                             "algorithm_property_score": "",
                             "algorithm_structure_score": "",
                             "algorithm_decision": "invalid smiles",
                             "algorithm_valid": "false",
+                        }
+                    )
+                row["product_positive_count"] = str(product_positive_count) if results else ""
+                if auxiliary_result is not None:
+                    row.update(
+                        {
+                            "auxiliary_hazard_model_id": auxiliary_result.model_id,
+                            "auxiliary_hazard_category": _humanize_category(auxiliary_result.category),
+                            "auxiliary_hazard_score": f"{auxiliary_result.score:.6f}" if auxiliary_result.valid else "",
+                            "auxiliary_hazard_threshold": f"{auxiliary_result.threshold:.6f}",
+                            "auxiliary_hazard_margin": f"{auxiliary_result.margin:.6f}" if auxiliary_result.valid else "",
+                            "auxiliary_hazard_decision": auxiliary_result.decision,
+                            "auxiliary_hazard_valid": "true" if auxiliary_result.valid else "false",
+                        }
+                    )
+                else:
+                    row.update(
+                        {
+                            "auxiliary_hazard_model_id": "",
+                            "auxiliary_hazard_category": "",
+                            "auxiliary_hazard_score": "",
+                            "auxiliary_hazard_threshold": "",
+                            "auxiliary_hazard_margin": "",
+                            "auxiliary_hazard_decision": "",
+                            "auxiliary_hazard_valid": "",
                         }
                     )
                 writer.writerow(row)
