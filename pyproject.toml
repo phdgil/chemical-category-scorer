@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chemical-category-scorer"
-version = "1.0.0"
-description = "Local-first chemical product category scorers for desktop and Python library use."
+version = "2.0.0"
+description = "Validated local-first chemical category scorers for desktop and Python library use."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -24,7 +24,16 @@ chemical-category-scorer-desktop = "app.desktop_app:main"
 
 [tool.setuptools]
 packages = ["chemical_category_scorer", "app"]
-include-package-data = true
+include-package-data = false
 
 [tool.setuptools.package-data]
-app = ["data/*.json", "data/*.png", "data/models/*.json", "data/evidence_panels/*.json", "data/model_refs/*.csv"]
+app = [
+  "data/app_release_config.json",
+  "data/cross_category_calibration.json",
+  "data/AAA_logo.png",
+  "data/models/han_endocrine_disruptors.json",
+  "data/models/final_flavor_fragrance.json",
+  "data/models/final_pesticides.json",
+  "data/models/final_surfactants.json",
+  "data/model_refs/*.csv",
+]

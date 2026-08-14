@@ -81,14 +81,7 @@ def _category_function(model_id: str) -> Callable[[Mol], float]:
     return scorer
 
 
-animal_drugs = _category_function("final_animal_drugs")
-human_drugs = _category_function("final_human_drugs")
-cosmetics = _category_function("final_cosmetics")
 endocrine_disruptors = _category_function("han_endocrine_disruptors")
-flavoring_agents = _category_function("final_flavoring_agents")
-food_additives = _category_function("final_food_additives")
-food_contact_substances = _category_function("final_food_contact_substances")
-fragrances = _category_function("final_fragrances")
+flavor_fragrance = _category_function("final_flavor_fragrance")
 pesticides = _category_function("final_pesticides")
-solvents = _category_function("final_solvents")
 surfactants = _category_function("final_surfactants")

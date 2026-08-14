@@ -16,6 +16,8 @@ if __package__:
         PRODUCT_USE_ROLE,
         choose_best_product_result,
         choose_best_result,
+        choose_representative_product_result,
+        cross_category_specificity,
         get_model_role,
         list_models,
         refresh_model_registry,
@@ -33,6 +35,8 @@ else:  # pragma: no cover - for direct script execution
         PRODUCT_USE_ROLE,
         choose_best_product_result,
         choose_best_result,
+        choose_representative_product_result,
+        cross_category_specificity,
         get_model_role,
         list_models,
         refresh_model_registry,
@@ -68,10 +72,18 @@ def _matched_patterns_text(result) -> str:
 
 
 def _format_ranked_result(index: int, result) -> str:
+    specificity = cross_category_specificity(result)
+    evidence = {
+        "high_specificity": "category-enriched evidence",
+        "shared": "shared/nonspecific evidence",
+        "below": "below category threshold",
+        "unavailable": "cross-category calibration unavailable",
+    }[specificity]
     return (
         f"{index}. {_clean_label(result.model_label)} | "
         f"score={result.score:.6f} | threshold={result.threshold:.6f} | "
         f"margin={result.margin:.6f} | decision={_clean_decision(result.decision)} | "
+        f"cross-category interpretation={evidence} | "
         f"patterns={_matched_patterns_text(result)}"
     )
 
@@ -83,19 +95,28 @@ def format_all_model_results(results) -> str:
 
     product_results = [result for result in valid_results if get_model_role(result.model_id) == PRODUCT_USE_ROLE]
     auxiliary_results = [result for result in valid_results if get_model_role(result.model_id) == AUXILIARY_HAZARD_ROLE]
-    product_results.sort(key=lambda item: (item.score, item.margin), reverse=True)
+    rank = {"high_specificity": 2, "shared": 1, "below": 0, "unavailable": -1}
+    product_results.sort(
+        key=lambda item: (rank[cross_category_specificity(item)], item.score, item.margin),
+        reverse=True,
+    )
     auxiliary_results.sort(key=lambda item: (item.score, item.margin), reverse=True)
 
-    best_product = product_results[0] if product_results else choose_best_result(valid_results)
+    representative = choose_representative_product_result(product_results)
     positive_products = [result for result in product_results if result.score >= result.threshold]
     if len(positive_products) > 1:
         overlap_text = f"{len(positive_products)} product-use categories are threshold-positive; review overlap/ambiguity."
     else:
         overlap_text = f"{len(positive_products)} product-use category is threshold-positive."
 
+    representative_text = (
+        f"Representative product-use evidence: {_clean_label(representative.model_label)}"
+        if representative is not None
+        else "Representative product-use evidence: unresolved; no single category-enriched signal."
+    )
     lines = [
-        f"Highest raw product-category score (screening heuristic): {_clean_label(best_product.model_label)}",
-        "Raw scores and margins are not calibrated probabilities or validated cross-model distances.",
+        representative_text,
+        "Raw scores and margins are not calibrated probabilities or comparable cross-model distances.",
         overlap_text,
         "",
         "Product-use category scores:",
@@ -239,8 +260,9 @@ class AlgorithmScoringApp(tk.Tk):
         notes_text = (
             "- Core workflow: paste one SMILES for screening or score a CSV file in batch mode.\n"
             "- The model menu shows the public release models; All models is the default single-molecule view.\n"
-            "- All models ranks product-use scorers by raw score and separates the auxiliary endocrine-disruption signal.\n"
-            "- Raw scores and margins are screening heuristics, not calibrated probabilities or validated cross-model distances.\n"
+            "- All models separates category-enriched evidence from shared evidence and keeps endocrine disruption as an auxiliary hazard signal.\n"
+            "- A representative product-use result is reported only when exactly one score reaches its high-specificity cross-category threshold.\n"
+            "- Raw scores and margins are screening values, not calibrated probabilities or comparable cross-model distances.\n"
             "- Output CSV starts blank on purpose; after you choose an input file, the app suggests an output name automatically.\n"
             "- The molecule image and matched structural patterns are shown whenever pattern matches exist."
         )
@@ -455,22 +477,22 @@ def run_self_test() -> None:
     refresh_model_registry()
     models = list_models(public_only=True)
     print("SELF_TEST_MODELS=" + ",".join(model["model_id"] for model in models))
-    assert len(models) == 11
+    assert len(models) == 4
     assert "final_endocrine_disruptors" not in {model["model_id"] for model in models}
-    assert sum(1 for model in models if model["role"] == PRODUCT_USE_ROLE) == 10
+    assert sum(1 for model in models if model["role"] == PRODUCT_USE_ROLE) == 3
     assert [model["model_id"] for model in models if model["role"] == AUXILIARY_HAZARD_ROLE] == ["han_endocrine_disruptors"]
 
     single = score_smiles("CCO", DEFAULT_MODEL_ID)
     print(f"SELF_TEST_DEFAULT={single.model_id}:{single.score:.6f}:{single.decision}")
 
     ranked = score_smiles_all("CCO")
-    assert len(ranked) == 11
+    assert len(ranked) == 4
     assert "final_endocrine_disruptors" not in {result.model_id for result in ranked}
     best = choose_best_result(ranked)
     if best:
         print(f"SELF_TEST_BEST={best.model_id}:{best.score:.6f}:{best.margin:.6f}:{len(best.matched_patterns)}")
     formatted_ranked = format_all_model_results(ranked)
-    assert "Highest raw product-category score (screening heuristic):" in formatted_ranked
+    assert "Representative product-use evidence:" in formatted_ranked
     assert "Raw scores and margins are not calibrated probabilities" in formatted_ranked
     assert "Product-use category scores:" in formatted_ranked
     assert "Auxiliary hazard signal:" in formatted_ranked
@@ -488,18 +510,18 @@ def run_self_test() -> None:
     assert default_single == "Enter a SMILES string and click 'Score molecule'."
     assert default_pattern == "Matched structural patterns will appear here when the selected scorer uses them."
     assert app._get_selected_model_id() == ALL_MODELS_SENTINEL
-    app.model_box.set("Cosmetics")
+    app.model_box.set("Flavor and fragrance category score")
     app._sync_selected_model()
     app.single_smiles.insert("1.0", "CCCCCCCCCCCCCCCCCCCCCCCCCCCC")
     app.score_single()
     app.update_idletasks()
     scored_single = app.single_result.get("1.0", "end").strip()
     scored_pattern = app.pattern_summary.get("1.0", "end").strip()
-    assert "Model: Cosmetics" in scored_single
+    assert "Model: Flavor and fragrance category score" in scored_single
     assert "Decision:" in scored_single
     assert "Threshold:" in scored_single
     assert "Matched structural patterns:" in scored_single
-    assert scored_pattern.startswith("Matched structural patterns for Cosmetics") or scored_pattern.startswith("No structural pattern match was found for Cosmetics")
+    assert scored_pattern.startswith("Matched structural patterns for Flavor and fragrance category score") or scored_pattern.startswith("No structural pattern match was found for Flavor and fragrance category score")
     print("SELF_TEST_UI_TEXT=True")
     app.destroy()
 

@@ -1,0 +1,158 @@
+{
+  "model_id": "final_flavor_fragrance",
+  "label": "Flavor and fragrance category score",
+  "category": "flavor_fragrance",
+  "model_type": "choi_auto",
+  "threshold": 0.4658719173147511,
+  "source_student": "최예빈",
+  "source_student_id": "20251266",
+  "description": "Merged flavor-and-fragrance score trained after the source categories showed 46% exact structural overlap and reciprocal cross-response; evaluated against exact-overlap-excluded cross-category negatives.",
+  "metrics": {
+    "auc": 0.859147377981464,
+    "ks": 0.603285641949854,
+    "balanced_accuracy": 0.801642820974927,
+    "overlap": 0.40108434842933904,
+    "objective": 1.3465612934644098,
+    "negative_count": 12986
+  },
+  "selected_props": [
+    "MW",
+    "logP",
+    "HBD",
+    "HBA",
+    "TPSA",
+    "FCsp3",
+    "AromaticRings"
+  ],
+  "ranges": {
+    "MW": [
+      114.18799999999999,
+      258.4049999999999
+    ],
+    "logP": [
+      0.9384,
+      4.374200000000004
+    ],
+    "HBD": [
+      0.0,
+      1.0
+    ],
+    "HBA": [
+      1.0,
+      3.0
+    ],
+    "TPSA": [
+      12.03,
+      50.44
+    ],
+    "FCsp3": [
+      0.2222222222222222,
+      1.0
+    ],
+    "AromaticRings": [
+      0.0,
+      1.0
+    ]
+  },
+  "pattern_weights": {
+    "aldehyde": 7.872753015545181
+  },
+  "selected_patterns": {
+    "aldehyde": "[CH1](=O)"
+  },
+  "best_w": 0.5435172368672097,
+  "tanimoto_threshold": 1.01,
+  "ks_threshold": 0.17796965173823331,
+  "ratio_threshold": 5.432252752082425,
+  "range_quantiles": [
+    0.1,
+    0.9
+  ],
+  "optimization_method": "lee_tpe_bayesian",
+  "optimization_trials": 30,
+  "category_prior_used": false,
+  "category_prior": null,
+  "positive_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\merged_flavor_fragrance\\final_full\\positive.csv",
+  "negative_source_csv": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\merged_flavor_fragrance\\final_full\\negative.csv",
+  "merged_categories": [
+    "flavoring_agents",
+    "fragrances"
+  ],
+  "validation_summary": [
+    {
+      "fold": 0,
+      "positive_holdout_count": 696,
+      "negative_holdout_count": 2600,
+      "metrics": {
+        "auc": 0.8683407935455348,
+        "balanced_accuracy": 0.8099845269672856,
+        "threshold": 0.4658719173147511,
+        "tpr": 0.7830459770114943,
+        "fpr": 0.16307692307692306
+      },
+      "source_threshold_response": {
+        "cosmetics": 0.09612403100775194,
+        "endocrine_disruptors": 0.1556350626118068,
+        "food_additives": 0.34285714285714286,
+        "food_contact_substances": 0.15027322404371585,
+        "pesticides": 0.1875,
+        "solvents": 0.2597402597402597,
+        "surfactants": 0.057692307692307696
+      },
+      "worst_source": "food_additives",
+      "worst_source_response": 0.34285714285714286,
+      "positive_response": 0.7830459770114943,
+      "model_path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\merged_flavor_fragrance\\fold_0\\candidate.json"
+    },
+    {
+      "fold": 1,
+      "positive_holdout_count": 720,
+      "negative_holdout_count": 2682,
+      "metrics": {
+        "auc": 0.8563382943905875,
+        "balanced_accuracy": 0.8058398583146906,
+        "threshold": 0.5368723967546924,
+        "tpr": 0.7902777777777777,
+        "fpr": 0.17859806114839671
+      },
+      "source_threshold_response": {
+        "cosmetics": 0.07981220657276995,
+        "endocrine_disruptors": 0.15905245346869712,
+        "food_additives": 0.36649214659685864,
+        "food_contact_substances": 0.1875,
+        "pesticides": 0.24369747899159663,
+        "solvents": 0.20618556701030927,
+        "surfactants": 0.061224489795918366
+      },
+      "worst_source": "food_additives",
+      "worst_source_response": 0.36649214659685864,
+      "positive_response": 0.7902777777777777,
+      "model_path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\merged_flavor_fragrance\\fold_1\\candidate.json"
+    },
+    {
+      "fold": 2,
+      "positive_holdout_count": 766,
+      "negative_holdout_count": 2540,
+      "metrics": {
+        "auc": 0.8418661725704653,
+        "balanced_accuracy": 0.7782159083900413,
+        "threshold": 0.49988059140297786,
+        "tpr": 0.6997389033942559,
+        "fpr": 0.14330708661417324
+      },
+      "source_threshold_response": {
+        "cosmetics": 0.05511811023622047,
+        "endocrine_disruptors": 0.14389140271493212,
+        "food_additives": 0.3172043010752688,
+        "food_contact_substances": 0.1242603550295858,
+        "pesticides": 0.15900383141762453,
+        "solvents": 0.24719101123595505,
+        "surfactants": 0.0625
+      },
+      "worst_source": "food_additives",
+      "worst_source_response": 0.3172043010752688,
+      "positive_response": 0.6997389033942559,
+      "model_path": "D:\\DSWU\\2026_기말고사\\algorithm_paper_app\\app\\output\\merged_flavor_fragrance\\fold_2\\candidate.json"
+    }
+  ]
+}

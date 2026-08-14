@@ -21,6 +21,7 @@ DATA_DIR = APP_DIR / "data"
 MODELS_DIR = DATA_DIR / "models"
 EVIDENCE_DIR = DATA_DIR / "evidence_panels"
 RELEASE_CONFIG_PATH = DATA_DIR / "app_release_config.json"
+CROSS_CATEGORY_CALIBRATION_PATH = DATA_DIR / "cross_category_calibration.json"
 
 ALL_MODELS_SENTINEL = "__all__"
 DEFAULT_MODEL_ID = "final_pesticides"
@@ -75,6 +76,7 @@ EVIDENCE_PANELS: dict[str, dict[str, Any]] = {}
 PUBLIC_MODEL_IDS: set[str] = set()
 PUBLIC_MODEL_ID_ORDER: tuple[str, ...] = tuple()
 MODEL_ROLES: dict[str, str] = {}
+CROSS_CATEGORY_CALIBRATION: dict[str, dict[str, float]] = {}
 _REGISTRY_SIGNATURE: tuple[Any, ...] | None = None
 
 
@@ -169,6 +171,9 @@ def _registry_signature() -> tuple[Any, ...]:
     if RELEASE_CONFIG_PATH.exists():
         stat = RELEASE_CONFIG_PATH.stat()
         signature.append((str(RELEASE_CONFIG_PATH), stat.st_mtime_ns, stat.st_size))
+    if CROSS_CATEGORY_CALIBRATION_PATH.exists():
+        stat = CROSS_CATEGORY_CALIBRATION_PATH.stat()
+        signature.append((str(CROSS_CATEGORY_CALIBRATION_PATH), stat.st_mtime_ns, stat.st_size))
     return tuple(signature)
 
 
@@ -230,7 +235,7 @@ def _prepare_runtime_model(config: dict[str, Any]) -> dict[str, Any]:
 
 
 def refresh_model_registry(force: bool = False) -> None:
-    global MODEL_CONFIGS, MODEL_RUNTIMES, EVIDENCE_PANELS, PUBLIC_MODEL_IDS, PUBLIC_MODEL_ID_ORDER, MODEL_ROLES, _REGISTRY_SIGNATURE
+    global MODEL_CONFIGS, MODEL_RUNTIMES, EVIDENCE_PANELS, PUBLIC_MODEL_IDS, PUBLIC_MODEL_ID_ORDER, MODEL_ROLES, CROSS_CATEGORY_CALIBRATION, _REGISTRY_SIGNATURE
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
     EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
     signature = _registry_signature()
@@ -270,6 +275,14 @@ def refresh_model_registry(force: bool = False) -> None:
         PUBLIC_MODEL_IDS = set(MODEL_CONFIGS.keys())
         PUBLIC_MODEL_ID_ORDER = tuple(MODEL_CONFIGS.keys())
         MODEL_ROLES = {model_id: PRODUCT_USE_ROLE for model_id in PUBLIC_MODEL_ID_ORDER}
+    CROSS_CATEGORY_CALIBRATION = {}
+    if CROSS_CATEGORY_CALIBRATION_PATH.exists():
+        with CROSS_CATEGORY_CALIBRATION_PATH.open("r", encoding="utf-8") as f:
+            calibration_payload = json.load(f)
+        CROSS_CATEGORY_CALIBRATION = {
+            str(model_id): dict(values)
+            for model_id, values in calibration_payload.get("models", {}).items()
+        }
     for path in sorted(EVIDENCE_DIR.glob("*.json")):
         with path.open("r", encoding="utf-8") as f:
             config = json.load(f)
@@ -686,6 +699,27 @@ def choose_best_product_result(results: list[ScoreBreakdown]) -> ScoreBreakdown 
     return valid_product_results[0] if valid_product_results else None
 
 
+def cross_category_specificity(result: ScoreBreakdown) -> str:
+    calibration = CROSS_CATEGORY_CALIBRATION.get(result.model_id)
+    if calibration is None or not result.valid:
+        return "unavailable"
+    if result.score < result.threshold:
+        return "below"
+    high_specificity_threshold = float(calibration["high_specificity_threshold"])
+    return "high_specificity" if result.score >= high_specificity_threshold else "shared"
+
+
+def choose_representative_product_result(results: list[ScoreBreakdown]) -> ScoreBreakdown | None:
+    specific = [
+        result
+        for result in results
+        if result.valid
+        and get_model_role(result.model_id) == PRODUCT_USE_ROLE
+        and cross_category_specificity(result) == "high_specificity"
+    ]
+    return specific[0] if len(specific) == 1 else None
+
+
 def list_evidence_panels() -> list[dict[str, Any]]:
     panels = []
     for panel_id, config in EVIDENCE_PANELS.items():
@@ -817,6 +851,8 @@ def score_csv(
             "algorithm_decision",
             "algorithm_valid",
             "product_positive_count",
+            "product_high_specificity_count",
+            "representative_product_status",
             "auxiliary_hazard_model_id",
             "auxiliary_hazard_category",
             "auxiliary_hazard_score",
@@ -846,6 +882,14 @@ def score_csv(
                     for item in results
                     if item.valid and get_model_role(item.model_id) == PRODUCT_USE_ROLE and item.score >= item.threshold
                 )
+                high_specificity_products = [
+                    item
+                    for item in results
+                    if item.valid
+                    and get_model_role(item.model_id) == PRODUCT_USE_ROLE
+                    and cross_category_specificity(item) == "high_specificity"
+                ]
+                representative_result = choose_representative_product_result(results)
                 if result and result.valid:
                     row.update(
                         {
@@ -873,6 +917,14 @@ def score_csv(
                         }
                     )
                 row["product_positive_count"] = str(product_positive_count) if results else ""
+                row["product_high_specificity_count"] = (
+                    str(len(high_specificity_products)) if results else ""
+                )
+                row["representative_product_status"] = (
+                    _humanize_category(representative_result.category)
+                    if representative_result is not None
+                    else "unresolved"
+                )
                 if auxiliary_result is not None:
                     row.update(
                         {

@@ -13,10 +13,10 @@ class PublicModelAuditTests(unittest.TestCase):
     def test_public_model_roles_are_release_ordered_and_public_only(self) -> None:
         model_ids = audit.public_model_ids()
 
-        self.assertEqual(11, len(model_ids))
+        self.assertEqual(4, len(model_ids))
         self.assertNotIn("final_endocrine_disruptors", model_ids)
         self.assertEqual(["han_endocrine_disruptors"], [model_id for model_id in model_ids if audit.get_model_role(model_id) == audit.AUXILIARY_HAZARD_ROLE])
-        self.assertEqual(10, len(audit.product_model_ids()))
+        self.assertEqual(3, len(audit.product_model_ids()))
 
     def test_probe_audit_matches_committed_outputs(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -51,8 +51,8 @@ class PublicModelAuditTests(unittest.TestCase):
         shared = [row for row in rows if row["shared_across_models"] == "true"]
         shared_names = " ".join(row["pattern_names"] for row in shared)
 
-        self.assertGreaterEqual(len(shared), 1)
-        self.assertIn("ester", shared_names)
+        self.assertEqual(0, len(shared))
+        self.assertEqual("", shared_names)
         markdown = audit.DEFAULT_PATTERN_AUDIT.read_text(encoding="utf-8")
         self.assertIn("not a labeled classification benchmark", markdown)
         self.assertIn("makes no accuracy or BRICS-improvement claim", markdown)

@@ -15,19 +15,12 @@ Chemical manufacturers often treat molecular structures as confidential business
 
 ## Available categories
 
-The deployed public model set contains ten product-use scorers plus one auxiliary Han Se-eum endocrine-disruption hazard/activity signal.
+Version 2.0.0 contains exactly the four scoring functions reported in the associated article: three product-use functions and one auxiliary Han Se-eum endocrine-disruption hazard/activity function.
 
 Product-use scorers:
 
-- animal_drugs
-- human_drugs
-- cosmetics
-- flavoring_agents
-- food_additives
-- food_contact_substances
-- fragrances
+- flavor_fragrance (`final_flavor_fragrance`)
 - pesticides
-- solvents
 - surfactants
 
 Auxiliary signal:
@@ -36,7 +29,9 @@ Auxiliary signal:
 
 ## Score interpretation
 
-All-model output should be read as independently thresholded multi-label screening. A molecule can cross more than one product-use threshold because the categories are broad and chemically overlapping. Raw scores and margins are not calibrated probabilities and are not validated distances across models, so the highest raw product-use score is only a screening heuristic.
+All-model output should be read as independently thresholded multi-label screening. A molecule can cross more than one product-use threshold because the categories are broad and chemically overlapping. Raw scores and margins are not calibrated probabilities and are not comparable distances across models.
+
+The app now distinguishes **category-enriched evidence** from **shared/nonspecific evidence** using a second threshold calibrated against hard cross-category structures. It reports one representative product-use category only when exactly one product-use score reaches this higher-specificity operating point. Otherwise, the representative result is explicitly unresolved and the complete score panel remains visible.
 
 The endocrine-disruption result is an auxiliary Han signal, not a peer product-use category. Batch and audit reporting should keep this signal separate from the representative product-use category.
 
@@ -95,14 +90,17 @@ python -m app.public_model_audit pattern-overlap --csv-out docs/public_model_pat
 python -m app.public_model_audit pattern-candidates --input-csv path/to/category_smiles.csv --category-column category --smiles-column SMILES --output-csv results/pattern_candidates/fixed_murcko_brics_hybrid.csv
 ```
 
-The audit command is for the seven post-deployment probe molecules: caffeine, aspirin, DDT, bisphenol A, vanillin, SDS, and ethanol. These probes are diagnostic examples for all-model interpretation, not the formal ten-category benchmark.
+The audit command is for the seven post-deployment probe molecules: caffeine, aspirin, DDT, bisphenol A, vanillin, SDS, and ethanol. These probes are diagnostic examples for all-model interpretation, not the formal publication benchmark.
 
-The pattern-candidate input must provide category and SMILES columns. The local-only `--use-final-rebuild-inputs` shortcut requires all ten `app/output/final_category_rebuild/inputs/*__positive.csv` files and fails clearly when they are absent. The command is experimental: any fixed-SMARTS, Murcko, BRICS, or hybrid claim should come from a held-out ablation, not from replacing deployed models by inspection.
+The pattern-candidate input must provide category and SMILES columns. The local-only `--use-final-rebuild-inputs` shortcut is for development datasets and is not required by the release. The command is experimental: any fixed-SMARTS, Murcko, BRICS, or hybrid claim should come from a held-out ablation, not from replacing deployed models by inspection.
 
 ## Recommended GitHub release contents
 - `desktop_app.py`
 - `algorithm_score_engine.py`
-- `data/models/`
+- `data/models/han_endocrine_disruptors.json`
+- `data/models/final_flavor_fragrance.json`
+- `data/models/final_pesticides.json`
+- `data/models/final_surfactants.json`
 - `data/evidence_panels/`
 - `requirements.txt`
 - `run_desktop_app.bat`

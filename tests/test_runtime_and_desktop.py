@@ -37,21 +37,14 @@ def test_public_all_sentinel_uses_ordered_release_models_and_keeps_hidden_explic
     model_ids = [model["model_id"] for model in models]
 
     assert model_ids == [
-        "final_animal_drugs",
-        "final_human_drugs",
-        "final_cosmetics",
         "han_endocrine_disruptors",
-        "final_flavoring_agents",
-        "final_food_additives",
-        "final_food_contact_substances",
-        "final_fragrances",
+        "final_flavor_fragrance",
         "final_pesticides",
-        "final_solvents",
         "final_surfactants",
     ]
-    assert len(model_ids) == 11
+    assert len(model_ids) == 4
     assert "final_endocrine_disruptors" not in model_ids
-    assert sum(1 for model in models if model["role"] == "product_use") == 10
+    assert sum(1 for model in models if model["role"] == "product_use") == 3
     assert [model["model_id"] for model in models if model["role"] == "auxiliary_hazard"] == [
         "han_endocrine_disruptors"
     ]
@@ -71,18 +64,19 @@ def test_all_model_formatter_lists_product_scores_and_auxiliary_signal_separatel
     product_models = [model for model in list_models(public_only=True) if model["role"] == "product_use"]
     auxiliary_models = [model for model in list_models(public_only=True) if model["role"] == "auxiliary_hazard"]
 
-    assert "Highest raw product-category score (screening heuristic):" in formatted
+    assert "Representative product-use evidence:" in formatted
     assert "Best suggestion" not in formatted
     assert "Raw scores and margins are not calibrated probabilities" in formatted
-    assert "product-use categories are threshold-positive; review overlap/ambiguity" in formatted
+    assert "cross-category interpretation=" in formatted
+    assert "Representative product-use evidence: unresolved; no single category-enriched signal." in formatted
     assert "Product-use category scores:" in formatted
     assert "Auxiliary hazard signal:" in formatted
     assert formatted.index("Product-use category scores:") < formatted.index("Auxiliary hazard signal:")
-    assert formatted.count("score=") == 11
-    assert formatted.count("threshold=") == 11
-    assert formatted.count("margin=") == 11
-    assert formatted.count("decision=") == 11
-    assert formatted.count("patterns=") == 11
+    assert formatted.count("score=") == 4
+    assert formatted.count("threshold=") == 4
+    assert formatted.count("margin=") == 4
+    assert formatted.count("decision=") == 4
+    assert formatted.count("patterns=") == 4
 
     for model in product_models:
         assert _clean_label(model["label"]) in formatted
@@ -106,6 +100,8 @@ def test_all_model_batch_uses_product_representative_and_separate_auxiliary_fiel
 
     assert rows[0]["algorithm_category"] == "pesticides"
     assert rows[0]["algorithm_category"] != "endocrine disruptors"
+    assert rows[0]["representative_product_status"] in {"pesticides", "unresolved"}
+    assert rows[0]["product_high_specificity_count"].isdigit()
     assert rows[0]["algorithm_margin"]
     assert rows[0]["product_positive_count"] == "1"
     assert rows[0]["auxiliary_hazard_model_id"] == "han_endocrine_disruptors"

@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "release_version": "2.0.0",
+  "generated": "2026-08-14",
+  "interpretation": {
+    "shared": "score meets the original category threshold but not the cross-category-specific threshold",
+    "high_specificity": "score meets the threshold calibrated to at most 10% response in exact-overlap-excluded cross-category structures",
+    "below": "score is below the original category threshold"
+  },
+  "models": {
+    "han_endocrine_disruptors": {
+      "category": "endocrine_disruptors",
+      "original_threshold": 0.6643,
+      "high_specificity_threshold": 0.7369798618191684,
+      "hard_cross_category_auc": 0.9125587124283245,
+      "original_tpr": 0.8740665308893415,
+      "original_hard_fpr": 0.16714143284432417,
+      "high_specificity_tpr": 0.841479972844535,
+      "high_specificity_fpr": 0.09998575701467027
+    },
+    "final_flavor_fragrance": {
+      "category": "flavor_fragrance",
+      "original_threshold": 0.4658719173147511,
+      "high_specificity_threshold": 0.5341280826852488,
+      "hard_cross_category_auc": 0.8713327250009337,
+      "original_tpr": 0.7589917870291703,
+      "original_hard_fpr": 0.14101079070901665,
+      "high_specificity_tpr": 0.5919003115264797,
+      "high_specificity_fpr": 0.0682801926476864
+    },
+    "final_pesticides": {
+      "category": "pesticides",
+      "original_threshold": 0.4985092616952654,
+      "high_specificity_threshold": 0.5556776481822522,
+      "hard_cross_category_auc": 0.6997728457942947,
+      "original_tpr": 0.5279241306638567,
+      "original_hard_fpr": 0.22783402586761867,
+      "high_specificity_tpr": 0.30453108535300316,
+      "high_specificity_fpr": 0.05553929888219114
+    },
+    "final_surfactants": {
+      "category": "surfactants",
+      "original_threshold": 0.5382806792357159,
+      "high_specificity_threshold": 0.5402907493357126,
+      "hard_cross_category_auc": 0.9634021555499226,
+      "original_tpr": 0.9552238805970149,
+      "original_hard_fpr": 0.10866470049832198,
+      "high_specificity_tpr": 0.9365671641791045,
+      "high_specificity_fpr": 0.0925963591986169
+    }
+  }
+}

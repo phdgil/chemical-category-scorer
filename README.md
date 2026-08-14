@@ -63,14 +63,16 @@ pip install .
 
 ```python
 from rdkit import Chem
-from chemical_category_scorer import pesticides, details_mol, available_models
+from chemical_category_scorer import flavor_fragrance, pesticides, details_mol, available_models
 
 mol = Chem.MolFromSmiles("ClC1=C(Cl)C(C#N)=C(Cl)C(C#N)=C1Cl")
 score = pesticides(mol)
+sensory_score = flavor_fragrance(mol)
 info = details_mol(mol, model_id="final_pesticides")
 models = available_models()
 
 print(score)
+print(sensory_score)
 print(info.score, info.threshold, info.decision, info.matched_patterns)
 print(models)
 ```
@@ -86,19 +88,12 @@ chemical-category-scorer-desktop --list-models
 
 ## Available scoring categories
 
-The public app exposes ten product-use scorers and one auxiliary hazard/activity signal. Product-use scores and the Han endocrine-disruption score are reported together for convenience, but they answer different questions.
+Version 2.0.0 exposes exactly the four scoring functions reported in the associated article. The product-use scores and Han endocrine-disruption score answer different questions.
 
 Product-use scorers:
 
-- animal_drugs
-- human_drugs
-- cosmetics
-- flavoring_agents
-- food_additives
-- food_contact_substances
-- fragrances
+- flavor_fragrance (`final_flavor_fragrance`)
 - pesticides
-- solvents
 - surfactants
 
 Auxiliary hazard/activity signal:
@@ -109,7 +104,7 @@ Auxiliary hazard/activity signal:
 
 All-model scoring is a multi-label screening view. Each model has its own threshold, fitted independently against its own positive set and constructed background. Scores and margins are model-specific heuristics; they are not calibrated probabilities and are not validated cross-model distances.
 
-Multiple threshold-positive product-use categories can be chemically reasonable because the product-use categories overlap. The highest raw product-use score is a ranked screening suggestion, not proof of the true or closest category. The endocrine-disruption signal is reported separately as an auxiliary Han Se-eum hazard/activity signal and should not silently replace a product-use category.
+Multiple threshold-positive product-use categories can be chemically reasonable because the product-use categories overlap. A representative product-use result is emitted only when exactly one score reaches its high-specificity cross-category threshold; otherwise it remains unresolved. The endocrine-disruption signal is reported separately as an auxiliary Han Se-eum hazard/activity signal and does not replace a product-use category.
 
 ## Public-model audit
 
@@ -121,11 +116,11 @@ python -m app.public_model_audit pattern-overlap --csv-out docs/public_model_pat
 python -m app.public_model_audit pattern-candidates --input-csv path/to/category_smiles.csv --category-column category --smiles-column SMILES --output-csv results/pattern_candidates/fixed_murcko_brics_hybrid.csv
 ```
 
-The candidate input CSV must contain one category column and one SMILES column. The local-only `--use-final-rebuild-inputs` shortcut is available when all ten files under `app/output/final_category_rebuild/inputs/` exist; it fails clearly when they do not. The seven-molecule probe audit is intended for post-deployment diagnostics on caffeine, aspirin, DDT, bisphenol A, vanillin, SDS, and ethanol. It is not the formal ten-category classification benchmark. BRICS, Murcko scaffolds, fixed SMARTS, and hybrid candidates should be compared as a preregistered held-out ablation before any model replacement claim.
+The candidate input CSV must contain one category column and one SMILES column. The local-only `--use-final-rebuild-inputs` shortcut is for development datasets and is not required by the released package. The seven-molecule probe audit is intended for post-deployment diagnostics on caffeine, aspirin, DDT, bisphenol A, vanillin, SDS, and ethanol. It is not the formal publication benchmark. BRICS, Murcko scaffolds, fixed SMARTS, and hybrid candidates should be compared as a preregistered held-out ablation before any model replacement claim.
 
 ## Structural-pattern validation loop
 
-When the ten local final-rebuild positive CSVs are available, run the leakage-resistant comparison with:
+When the local development positive CSVs are available, run the leakage-resistant comparison with:
 
 ```bash
 python -m app.structural_pattern_validation --seeds 11,23,37
