@@ -2,6 +2,8 @@
 
 Local-first desktop application for broad chemical product-category scoring from molecular structure.
 
+Version **2.0.0** is synchronized with the associated manuscript and Python library. All three interfaces—the source application, packaged desktop archive, and importable library—use the same four model JSON files, thresholds, and cross-category calibration.
+
 ## Why a desktop app
 Chemical manufacturers often treat molecular structures as confidential business assets. This app is designed so that scoring can run on a local workstation without sending SMILES strings, descriptors, or batch files to an external server. That makes it suitable for GitHub distribution while still preserving offline use inside companies.
 
@@ -26,6 +28,8 @@ Product-use scorers:
 Auxiliary signal:
 
 - endocrine_disruptors (`han_endocrine_disruptors`)
+
+Flavoring agents and fragrances are represented by the merged `flavor_fragrance` score because the original positive sets shared 1,071 exact structures and the merged function passed three held-out evaluations. Categories rejected during exact-overlap-controlled publication screening are not exposed by the release.
 
 ## Score interpretation
 
@@ -54,6 +58,8 @@ or:
 ```bash
 python desktop_app.py
 ```
+
+Enter one SMILES string for interactive scoring, or select an input CSV and SMILES column for batch scoring. Selecting the all-model option displays all three product-use scores together and keeps the endocrine-disruption result in its separate auxiliary-hazard section.
 
 ## Install dependencies
 ```bash

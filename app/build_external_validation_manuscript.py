@@ -801,6 +801,16 @@ def build_markdown(
         "(https://github.com/phdgil/chemical-category-scorer), release version 2.0.0. The released model panel is "
         "identical to the four scoring functions reported here: endocrine disruptors, flavor and fragrance, pesticides, "
         "and surfactants.\n\n"
+        "The local-first desktop application provides single-SMILES and batch-CSV scoring without transmitting molecular "
+        "structures to a hosted service. After installation from the repository, it is launched with "
+        "`chemical-category-scorer-desktop`; the model list can be checked with "
+        "`chemical-category-scorer-desktop --list-models`.\n\n"
+        "The synchronized Python library is installed with "
+        "`pip install \"chemical-category-scorer @ git+https://github.com/phdgil/chemical-category-scorer.git\"`. "
+        "Users can call `details_smiles(smiles, model_id=...)` for a full score breakdown or the convenience functions "
+        "`endocrine_disruptors`, `flavor_fragrance`, `pesticides`, and `surfactants` with an RDKit molecule. "
+        "`available_models()` returns the four article-matched model identifiers. Both interfaces use the same bundled "
+        "JSON definitions, thresholds, and cross-category calibration.\n\n"
         "## Supporting Information\n\n"
         "Supporting Information is provided as `supporting_information_overlap_analysis.docx`: Table S1 and Figure S1 "
         "report screening and disposition of all eleven attempted scoring functions; Table S2 and Figure S2 report "
@@ -1090,6 +1100,22 @@ def build_docx(
         "(https://github.com/phdgil/chemical-category-scorer), release version 2.0.0. The released model panel is "
         "identical to the four scoring functions reported here: endocrine disruptors, flavor and fragrance, pesticides, "
         "and surfactants.",
+    )
+    add_paragraph_before(
+        references_heading,
+        "The local-first desktop application provides single-SMILES and batch-CSV scoring without transmitting molecular "
+        "structures to a hosted service. After installation from the repository, it is launched with "
+        "chemical-category-scorer-desktop; the model list can be checked with "
+        "chemical-category-scorer-desktop --list-models.",
+    )
+    add_paragraph_before(
+        references_heading,
+        "The synchronized Python library is installed with pip install \"chemical-category-scorer @ "
+        "git+https://github.com/phdgil/chemical-category-scorer.git\". Users can call "
+        "details_smiles(smiles, model_id=...) for a full score breakdown or the convenience functions "
+        "endocrine_disruptors, flavor_fragrance, pesticides, and surfactants with an RDKit molecule. "
+        "available_models() returns the four article-matched model identifiers. Both interfaces use the same bundled "
+        "JSON definitions, thresholds, and cross-category calibration.",
     )
     add_paragraph_before(references_heading, "Supporting Information", "Heading 1")
     add_paragraph_before(

@@ -8,6 +8,17 @@ This repository ships the project in two delivery modes:
 
 The local-first design matters for industrial chemistry use because molecular structures do not need to be uploaded to an external service.
 
+## Article-synchronized release
+
+Version **2.0.0** is synchronized with the scoring functions reported in the associated manuscript. The desktop app and Python library load the same four bundled model definitions, thresholds, and cross-category calibration:
+
+- `han_endocrine_disruptors`
+- `final_flavor_fragrance`
+- `final_pesticides`
+- `final_surfactants`
+
+Flavoring agents and fragrances are represented by one merged score because their original positive sets shared 1,071 exact structures and the merged function passed three held-out evaluations. Candidate functions for animal drugs, human drugs, cosmetics, food additives, food-contact substances, fragrances and flavoring agents separately, and solvents are not part of the public 2.0.0 panel.
+
 ## Desktop app
 
 <img src="docs/desktop_app_opened.png" alt="Chemical Category Scorer desktop app" width="900" />
@@ -45,6 +56,8 @@ python app/desktop_app.py
 - local JSON-backed score models
 - output without sending structures to a hosted API
 
+The desktop interface accepts one SMILES string or a batch CSV. Select **All article models** to display the complete synchronized score panel. Product-use results and the endocrine-disruption auxiliary signal are reported separately.
+
 ## Python library
 
 ### Install from the public GitHub repository
@@ -76,6 +89,8 @@ print(sensory_score)
 print(info.score, info.threshold, info.decision, info.matched_patterns)
 print(models)
 ```
+
+Use `details_smiles(smiles, model_id=...)` when starting from a SMILES string. It returns the score, threshold, decision, descriptor and structural components, and matched structural patterns.
 
 ### Command-line entry points after installation
 
