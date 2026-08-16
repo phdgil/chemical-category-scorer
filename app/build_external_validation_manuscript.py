@@ -22,6 +22,13 @@ REFERENCE_ADDITIONS = [
     "27. Health Canada Pest Management Regulatory Agency. Pesticide Product Information Database open data extracts. https://pest-control.canada.ca/pesticide-registry-api/api/extract/. Accessed 6 Aug 2026.",
     "28. European Commission. Cosmetic ingredient database (CosIng). https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en. Accessed 16 Aug 2026.",
     "29. U.S. Food and Drug Administration. Inventory of Effective Food Contact Substance Notifications. https://www.fda.gov/food/packaging-food-contact-substances-fcs/inventory-effective-food-contact-substance-fcs-notifications. Accessed 16 Aug 2026.",
+    "30. European Commission. EU Union List of Flavouring Substances. https://food.ec.europa.eu/food-safety/food-improvement-agents/flavourings/eu-lists-flavourings_en. Accessed 16 Aug 2026.",
+    "31. U.S. Environmental Protection Agency. Safer Chemical Ingredients List. https://www.epa.gov/saferchoice/safer-ingredients. Accessed 16 Aug 2026.",
+    "32. Health Canada. Lists of Permitted Food Additives. https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/lists-permitted.html. Accessed 16 Aug 2026.",
+    "33. Avram S, Wilson TB, Curpan R, Halip L, Borota A, Bora A, Bologa CG, Holmes J, Knockel J, Yang JJ, Oprea TI (2023) DrugCentral 2023 extends human clinical data and integrates veterinary drugs. Nucleic Acids Res 51:D1276-D1287. doi:10.1093/nar/gkac1085.",
+    "34. Health Canada. Drug Product Database. https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html. Accessed 16 Aug 2026.",
+    "35. California Department of Public Health. California Safe Cosmetics Program product database. https://data.chhs.ca.gov/dataset/california-safe-cosmetics-program-cscp-product-database. Accessed 16 Aug 2026.",
+    "36. Food Standards Agency and Food Standards Scotland. Register of regulated product applications: food-contact materials authorisations. https://data.food.gov.uk/regulated-products/id/food-contact-materials/authorisation.csv. Accessed 16 Aug 2026.",
 ]
 
 DISPLAY_NAMES = {
@@ -396,7 +403,7 @@ def discussion_text(rows: list[dict[str, str]], overlap_rows: list[dict[str, str
 def conclusions_text(rows: list[dict[str, str]]) -> list[str]:
     main = primary_rows(rows)
     return [
-        "Scoring-function development was attempted for all eleven original PubChem categories. Rigorous cross-category screening retained four reportable functions: endocrine disruptors, pesticides, surfactants, and a merged flavor-and-fragrance function. Animal-drug and human-drug functions were excluded because QED already represents general drug-likeness; cosmetics, food-contact-substance, food-additive, and solvent functions were excluded for inadequate threshold specificity. Flavoring agents and fragrances were merged because their positive sets shared 1,071 structures and the separate scores used near-identical descriptor and motif logic.",
+        "Scoring-function development was attempted for all eleven original PubChem categories. Rigorous cross-category screening retained four reportable functions: endocrine disruptors, pesticides, surfactants, and a merged flavor-and-fragrance function. Animal-drug and human-drug functions were excluded because QED already represents general drug-likeness; cosmetics, food-contact-substance, food-additive, and solvent functions were excluded for inadequate threshold specificity. Flavoring agents and fragrances were merged because their positive sets shared 1,071 structures and the separate scores used near-identical descriptor and motif logic. A final three-fold experiment added resolved external-database positives and rebuilt the corresponding comparison backgrounds, but no candidate reproducibly improved held-out transfer while preserving the original benchmark; the released four-function panel was therefore unchanged.",
         f"When the fixed rules were applied without refitting to {sum(integer(row, 'scored_true_external') for row in main):,} nonoverlapping external positives, recovery was strongly category dependent ({result_summary(rows)}). The endocrine-disruptor result defines an important limit on coverage, and the small pesticide set limits inference for that category. The defensible conclusion is therefore not universal external validity, but that explicit descriptor and structural-pattern scores can provide reusable, inspectable category evidence whose transfer must be established separately for each category and annotation source.",
     ]
 
@@ -461,7 +468,13 @@ def analysis_methods_text() -> str:
         "For final publication screening, exact canonical overlaps with each score's target set were removed separately from "
         "every other source category. A score was retained only when its threshold-positive response on its own positive set "
         "exceeded its response on every exact-overlap-excluded source set and its AUC against the pooled exact-overlap-excluded "
-        "cross-category background exceeded 0.5."
+        "cross-category background exceeded 0.5. As a final experiment, resolved structures from DEDuCT, the EU Union "
+        "List of Flavouring Substances, Health Canada PMRA and food-additive resources, EPA Safer Chemical Ingredients "
+        "List functional-use classes, DrugCentral, and the Health Canada Drug Product Database were added to the relevant "
+        "PubChem positives [26,27,30-34]. External additions were partitioned into three molecular-hash folds. Each candidate "
+        "was rebuilt using PubChem positives plus two external folds and an updated exact-overlap-excluded cross-category "
+        "background, then compared with the deployed baseline on the held-out external fold and original PubChem benchmark. "
+        "All database inventories and resolution yields are reported in Supporting Information Table S4."
     )
 
 
@@ -487,6 +500,40 @@ def sequential_rebuild_results() -> str:
         "They were merged into a broader flavor-and-fragrance target. Across three held-out hash folds, the merged function "
         "gave AUCs of 0.842–0.868 and positive responses of 70.0–79.0%; its highest source-specific response was observed "
         "for exact-overlap-excluded food additives (31.7–36.6%)."
+    )
+
+
+def combined_positive_rebuild_text() -> str:
+    summary_path = ROOT / "results/combined_external_positive_rebuild/summary.json"
+    if not summary_path.is_file():
+        return ""
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    ordered = (
+        "endocrine_disruptors",
+        "flavor_fragrance",
+        "pesticides",
+        "surfactants",
+        "animal_drugs",
+        "human_drugs",
+        "food_additives",
+        "solvents",
+    )
+    statements = []
+    for category in ordered:
+        values = summary[category]
+        display = DISPLAY_NAMES.get(category, category.replace("_", " "))
+        statements.append(
+            f"{display}: held-out external ΔAUC {float(values['mean_external_holdout_auc_delta']):+.3f}, "
+            f"original-benchmark ΔAUC {float(values['mean_original_auc_delta']):+.3f}"
+        )
+    return (
+        "The final combined-source experiment did not promote any candidate. Mean candidate-minus-baseline changes across "
+        f"three folds were {prose_list(statements)}. Endocrine disruption and flavor and fragrance showed only small "
+        "consistent external-holdout gains that remained below the predefined +0.020 mean-improvement gate. Surfactants "
+        "exceeded +0.020 on average, but one fold decreased by 0.030, so the consistency gate failed. Pesticides, animal "
+        "drugs, human drugs, food additives, and solvents failed external-transfer or original-benchmark preservation "
+        "criteria. The four released scoring functions therefore remained unchanged (Supporting Information Table S5 "
+        "and Figure S4)."
     )
 
 
@@ -648,6 +695,15 @@ def additional_discussion_text() -> list[str]:
             "Flavoring agents and fragrances were merged because their positive sets and scoring logic substantially overlapped; "
             "the merged target then passed three held-out evaluations."
         ),
+        (
+            "Combining external and PubChem positives was scientifically useful even though it did not change the release. "
+            "The added databases broadened annotation coverage, particularly for EU flavorings, EPA surfactants and solvents, "
+            "DrugCentral, and Canadian veterinary drugs [30-34]. However, adding positives also changed the hard comparison "
+            "background and sometimes reduced separability. The three-fold experiment therefore required reproducible "
+            "held-out transfer together with preservation of the original benchmark. No candidate satisfied both conditions, "
+            "so retaining the frozen four-function panel avoids replacing stable definitions with source-dependent changes "
+            "(Supporting Information Table S5 and Figure S4)."
+        ),
     ]
 
 
@@ -752,6 +808,8 @@ def build_markdown(
         "### Cross-category response, component contribution, and uncertainty\n\n"
         + sequential_rebuild_results()
         + "\n\n"
+        + combined_positive_rebuild_text()
+        + "\n\n"
         + cross_category_results(cross_rows)
         + "\n\n"
         + f"![Figure 6. Threshold response of frozen scores across chemical categories.](figures/figure6_cross_category_score_matrix.png)"
@@ -834,7 +892,9 @@ def build_markdown(
         "Supporting Information is provided as `supporting_information_overlap_analysis.docx`: Table S1 and Figure S1 "
         "report screening and disposition of all eleven attempted scoring functions; Table S2 and Figure S2 report "
         "pairwise exact-structure counts, directional category coverage, and Jaccard similarity; Table S3 and Figure S3 "
-        "report the multiplicity of original category assignments across unique structures.\n\n"
+        "report the multiplicity of original category assignments across unique structures; Table S4 lists the external "
+        "databases, citations, structure-resolution yields, and usable additions; Table S5 and Figure S4 report the final "
+        "combined PubChem-plus-external positive-set rebuilding experiment.\n\n"
     )
     if "## Supporting Information" not in text:
         text = text.replace("## References\n", supporting_text + "## References\n", 1)
@@ -1046,6 +1106,7 @@ def build_docx(
         "Heading 2",
     )
     add_paragraph_before(discussion_heading, sequential_rebuild_results())
+    add_paragraph_before(discussion_heading, combined_positive_rebuild_text())
     add_paragraph_before(discussion_heading, cross_category_results(cross_rows))
     add_figure_before(
         discussion_heading,
@@ -1142,7 +1203,9 @@ def build_docx(
         "Supporting Information is provided as supporting_information_overlap_analysis.docx. Table S1 and Figure S1 "
         "report screening and disposition of all eleven attempted scoring functions; Table S2 and Figure S2 report "
         "pairwise exact-structure counts, directional category coverage, and Jaccard similarity; Table S3 and Figure S3 "
-        "report the multiplicity of original category assignments across unique structures.",
+        "report the multiplicity of original category assignments across unique structures; Table S4 lists the external "
+        "databases, citations, structure-resolution yields, and usable additions; Table S5 and Figure S4 report the final "
+        "combined PubChem-plus-external positive-set rebuilding experiment.",
     )
 
     first_reference = find_paragraph(document, "1. Bickerton")

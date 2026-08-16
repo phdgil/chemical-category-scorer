@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -162,6 +163,8 @@ def add_csv_table(document: Document, path: Path, columns: list[tuple[str, str]]
             value = row.get(key, "")
             if key.startswith("fraction") or key == "jaccard_similarity":
                 value = f"{100 * float(value):.1f}%" if value else ""
+            elif "auc_delta" in key:
+                value = f"{float(value):+.3f}" if value else ""
             cell.text = value
 
 
@@ -172,6 +175,9 @@ def build_supporting_document(
     overlap_figure: Path,
     multiplicity_path: Path,
     multiplicity_figure: Path,
+    external_database_path: Path,
+    combined_test_path: Path,
+    combined_test_figure: Path,
 ) -> Path:
     document = Document()
     normal = document.styles["Normal"]
@@ -251,9 +257,132 @@ def build_supporting_document(
         "Figure S3. Multiplicity of original category assignments across unique structures. The vertical axis uses "
         "a logarithmic scale."
     )
+    document.add_heading("External databases and combined-positive-set experiment", level=1)
+    document.add_paragraph(
+        "Table S4 lists every external database considered for category enrichment or external comparison. Resolved "
+        "structures were canonicalized and exact PubChem-category overlaps were counted before defining additions."
+    )
+    document.add_paragraph("Table S4. External databases considered for positive-set enrichment.")
+    add_csv_table(
+        document,
+        external_database_path,
+        [
+            ("category", "Category"),
+            ("database", "External database"),
+            ("citation", "Citation"),
+            ("candidate_records", "Candidates"),
+            ("resolved_records", "Resolved"),
+            ("unique_structures", "Unique"),
+            ("new_vs_pubchem", "New vs PubChem"),
+            ("use_in_final_test", "Use"),
+        ],
+    )
+    document.add_paragraph(
+        "The final experiment added external structures to the PubChem positives within each training fold and rebuilt "
+        "the corresponding comparison background after exact target-overlap removal. External additions were divided "
+        "into three molecular-hash folds. Table S5 reports candidate-minus-baseline AUC changes on held-out external "
+        "positives versus held-out hard cross-category structures and on the original PubChem benchmark."
+    )
+    document.add_paragraph("Table S5. Three-fold combined-source positive-set rebuilding results.")
+    add_csv_table(
+        document,
+        combined_test_path,
+        [
+            ("category", "Category"),
+            ("pubchem_positive_count", "PubChem positives"),
+            ("external_new_count", "External additions"),
+            ("mean_external_holdout_auc_delta", "Mean external ΔAUC"),
+            ("minimum_external_holdout_auc_delta", "Minimum external ΔAUC"),
+            ("mean_original_auc_delta", "Mean original ΔAUC"),
+            ("promotion_gate", "Promotion gate"),
+        ],
+    )
+    document.add_picture(str(combined_test_figure), width=Inches(6.7))
+    document.add_paragraph(
+        "Figure S4. Candidate-minus-baseline AUC changes after combined PubChem and external positive-set rebuilding. "
+        "Bars show mean held-out external and original-benchmark changes across three molecular-hash folds."
+    )
     output = PAPER / "supporting_information_overlap_analysis.docx"
     document.save(output)
     return output
+
+
+def build_external_database_assets() -> tuple[Path, Path, Path]:
+    rows = [
+        {"category": "endocrine_disruptors", "database": "DEDuCT v3 categories I–III", "citation": "[26]", "candidate_records": 704, "resolved_records": 704, "unique_structures": 64, "new_vs_pubchem": 64, "use_in_final_test": "yes"},
+        {"category": "flavor_fragrance", "database": "EU Union List of Flavouring Substances", "citation": "[30]", "candidate_records": 2505, "resolved_records": 2264, "unique_structures": 2250, "new_vs_pubchem": 407, "use_in_final_test": "yes"},
+        {"category": "pesticides", "database": "Health Canada PMRA PPID", "citation": "[27]", "candidate_records": 545, "resolved_records": 228, "unique_structures": 15, "new_vs_pubchem": 15, "use_in_final_test": "yes"},
+        {"category": "surfactants", "database": "US EPA Safer Chemical Ingredients List", "citation": "[31]", "candidate_records": 355, "resolved_records": 181, "unique_structures": 174, "new_vs_pubchem": 162, "use_in_final_test": "yes"},
+        {"category": "animal_drugs", "database": "Health Canada Drug Product Database", "citation": "[34]", "candidate_records": 443, "resolved_records": 290, "unique_structures": 284, "new_vs_pubchem": 183, "use_in_final_test": "yes"},
+        {"category": "human_drugs", "database": "DrugCentral", "citation": "[33]", "candidate_records": 4099, "resolved_records": 4099, "unique_structures": 1633, "new_vs_pubchem": 1633, "use_in_final_test": "yes"},
+        {"category": "human_drugs", "database": "Health Canada Drug Product Database", "citation": "[34]", "candidate_records": 1887, "resolved_records": 14, "unique_structures": 14, "new_vs_pubchem": 13, "use_in_final_test": "partial cached resolution"},
+        {"category": "food_additives", "database": "Health Canada Lists of Permitted Food Additives", "citation": "[32]", "candidate_records": 498, "resolved_records": 239, "unique_structures": 236, "new_vs_pubchem": 85, "use_in_final_test": "yes"},
+        {"category": "solvents", "database": "US EPA Safer Chemical Ingredients List", "citation": "[31]", "candidate_records": 117, "resolved_records": 101, "unique_structures": 100, "new_vs_pubchem": 75, "use_in_final_test": "yes"},
+        {"category": "cosmetics", "database": "California Safe Cosmetics Program", "citation": "[35]", "candidate_records": 113, "resolved_records": 4, "unique_structures": 4, "new_vs_pubchem": 0, "use_in_final_test": "no new structures"},
+        {"category": "food_contact_substances", "database": "FSA/FSS regulated-products register", "citation": "[36]", "candidate_records": 763, "resolved_records": 0, "unique_structures": 0, "new_vs_pubchem": 0, "use_in_final_test": "unresolved"},
+    ]
+    database_path = PAPER / "supporting_information_external_databases.csv"
+    with database_path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+    summary = json.loads(
+        (ROOT / "results/combined_external_positive_rebuild/summary.json").read_text(encoding="utf-8")
+    )
+    test_rows: list[dict[str, object]] = []
+    external_counts = {
+        row["category"]: int(row["new_vs_pubchem"])
+        for row in rows
+        if row["use_in_final_test"] == "yes"
+    }
+    external_counts["human_drugs"] = 1639
+    for category, values in summary.items():
+        folds = values["folds"]
+        test_rows.append(
+            {
+                "category": category,
+                "pubchem_positive_count": folds[0]["pubchem_positive_count"],
+                "external_new_count": external_counts[category],
+                "mean_external_holdout_auc_delta": values["mean_external_holdout_auc_delta"],
+                "minimum_external_holdout_auc_delta": values["minimum_external_holdout_auc_delta"],
+                "mean_original_auc_delta": values["mean_original_auc_delta"],
+                "promotion_gate": str(values["promotion_gate"]).lower(),
+            }
+        )
+    test_path = PAPER / "supporting_information_combined_positive_rebuild.csv"
+    with test_path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(test_rows[0]))
+        writer.writeheader()
+        writer.writerows(test_rows)
+
+    x = np.arange(len(test_rows))
+    width = 0.36
+    fig, ax = plt.subplots(figsize=(14, 8), constrained_layout=True)
+    ax.bar(
+        x - width / 2,
+        [float(row["mean_external_holdout_auc_delta"]) for row in test_rows],
+        width,
+        label="Held-out external ΔAUC",
+        color="#4C78A8",
+    )
+    ax.bar(
+        x + width / 2,
+        [float(row["mean_original_auc_delta"]) for row in test_rows],
+        width,
+        label="Original-benchmark ΔAUC",
+        color="#F58518",
+    )
+    ax.axhline(0, color="black", linewidth=1)
+    ax.set_xticks(x, [DISPLAY.get(row["category"], row["category"]).replace("_", " ") for row in test_rows], rotation=40, ha="right")
+    ax.set_ylabel("Candidate minus baseline AUC")
+    ax.set_title("Combined PubChem and external positive-set rebuilding", fontsize=20, weight="bold")
+    ax.legend()
+    ax.grid(axis="y", alpha=0.25)
+    figure_path = PAPER / "figures/figureS4_combined_positive_rebuild.png"
+    fig.savefig(figure_path, dpi=300, facecolor="white")
+    plt.close(fig)
+    return database_path, test_path, figure_path
 
 
 def main() -> None:
@@ -317,6 +446,7 @@ def main() -> None:
     fig.savefig(PAPER / "figures" / "figureS1_publication_score_screening.png", dpi=300, facecolor="white")
     plt.close(fig)
     pairwise_path, overlap_figure, multiplicity_path, multiplicity_figure = build_overlap_assets()
+    external_database_path, combined_test_path, combined_test_figure = build_external_database_assets()
     supporting_document = build_supporting_document(
         table_path,
         PAPER / "figures" / "figureS1_publication_score_screening.png",
@@ -324,6 +454,9 @@ def main() -> None:
         overlap_figure,
         multiplicity_path,
         multiplicity_figure,
+        external_database_path,
+        combined_test_path,
+        combined_test_figure,
     )
     print(table_path)
     print(PAPER / "figures" / "figureS1_publication_score_screening.png")
@@ -332,6 +465,9 @@ def main() -> None:
     print(multiplicity_path)
     print(multiplicity_figure)
     print(supporting_document)
+    print(external_database_path)
+    print(combined_test_path)
+    print(combined_test_figure)
 
 
 if __name__ == "__main__":
