@@ -57,7 +57,12 @@ def load_current_models() -> dict[str, dict[str, Any]]:
 
 
 def selected_descriptors(config: dict[str, Any]) -> list[str]:
-    return list(config.get("selected_props", config.get("descriptor_ranges", {})))
+    return list(
+        config.get(
+            "selected_props",
+            config.get("descriptor_ranges", config.get("descriptor_stats", {})),
+        )
+    )
 
 
 def selected_patterns(config: dict[str, Any]) -> list[str]:
@@ -119,13 +124,11 @@ def refresh_markdown_core_tables(
             ]
             lines[index] = "| " + " | ".join(cells) + " |"
             table_rows.setdefault("composition", (index, len(cells)))
-    for table_type, columns in (("benchmark", 8), ("composition", 4)):
+    for table_type, columns in (("composition", 4), ("benchmark", 8)):
         if table_type not in table_rows or "flavor_fragrance" not in combined:
             continue
         anchor, _ = table_rows[table_type]
         display = DISPLAY_NAMES["flavor_fragrance"]
-        if any(line.startswith(f"| {display} ") for line in lines):
-            continue
         if columns == 8:
             score_auc = float(combined["flavor_fragrance"]["auc"])
             balanced = float(combined["flavor_fragrance"]["maximum_balanced_accuracy"])
@@ -208,6 +211,17 @@ def replace_docx_inline_images(docx_path: Path, image_paths: list[Path]) -> None
         for item in source.infolist():
             destination.writestr(item, replacements.get(item.filename, source.read(item.filename)))
     temporary.replace(docx_path)
+    document = Document(docx_path)
+    for shape, image_path in zip(document.inline_shapes, image_paths):
+        with image_path.open("rb") as handle:
+            header = handle.read(24)
+        if header[:8] != b"\x89PNG\r\n\x1a\n":
+            raise ValueError(f"Expected a PNG figure: {image_path}")
+        pixel_width = int.from_bytes(header[16:20], "big")
+        pixel_height = int.from_bytes(header[20:24], "big")
+        width = shape.width
+        shape.height = int(width * pixel_height / pixel_width)
+    document.save(docx_path)
 
 
 def integer(row: dict[str, str], key: str) -> int:
@@ -525,7 +539,12 @@ def ablation_results(rows: list[dict[str, str]]) -> str:
         f"For endocrine disruptors, structural evidence alone gave an AUC of "
         f"{endocrine['Structural evidence component']:.4f}, close to the combined-score AUC of "
         f"{endocrine['Combined score']:.4f}, indicating that explicit structural evidence accounted for most of the "
-        "separation in this category."
+        "separation in this category. The endocrine function nevertheless uses seven molecular descriptors through its "
+        "property term; their optimized weight is only 0.024, compared with 0.541 for scaffold evidence and 0.418 for "
+        "fingerprint similarity. The merged flavor-and-fragrance function assigns 0.544 of its combined score to seven "
+        "descriptor ranges. Its structural component contains only the aldehyde pattern because aldehydes were enriched "
+        "5.96-fold over the exact-overlap-excluded background, exceeding the optimized 5.43 enrichment threshold; "
+        "cinnamate (2.45-fold), ester (1.71-fold), and long-chain (1.14-fold) patterns did not pass that frozen criterion."
     )
 
 

@@ -113,7 +113,12 @@ def pattern_names(config: dict) -> list[str]:
 
 def descriptor_names(config: dict) -> list[str]:
     if config["model_type"] == "han_edc":
-        return list(config.get("selected_props", config.get("descriptor_ranges", {})))
+        return list(
+            config.get(
+                "selected_props",
+                config.get("descriptor_ranges", config.get("descriptor_stats", {})),
+            )
+        )
     return list(config.get("selected_props", []))
 
 
