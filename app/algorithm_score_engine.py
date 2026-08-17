@@ -208,12 +208,17 @@ def _prepare_runtime_model(config: dict[str, Any]) -> dict[str, Any]:
         runtime["residue_patterns"] = _compile_smarts_list(config["residue_smarts"])
     elif model_type == "lee_alert_qed":
         runtime["alert_patterns"] = _compile_smarts_list(config["alert_smarts"])
-    elif model_type == "choi_auto":
+    elif model_type in {"choi_auto", "network_augmented_choi"}:
         runtime["selected_patterns"] = {
             name: Chem.MolFromSmarts(smarts)
             for name, smarts in config["selected_patterns"].items()
             if Chem.MolFromSmarts(smarts) is not None
         }
+        if model_type == "network_augmented_choi":
+            runtime["network_pattern_fragments"] = {
+                str(item["fragment_smiles"]): float(item["weight"])
+                for item in config.get("network_patterns", [])
+            }
     elif model_type == "han_edc":
         runtime["smarts_patterns"] = {
             name: Chem.MolFromSmarts(smarts)
@@ -538,6 +543,76 @@ def _score_choi(smiles: str, mol: Chem.Mol, runtime: dict[str, Any], config: dic
     )
 
 
+def _network_neighborhood_fragments(mol: Chem.Mol, minimum_atoms: int, maximum_radius: int) -> set[str]:
+    fragments: set[str] = set()
+    for atom in mol.GetAtoms():
+        center = atom.GetIdx()
+        for radius in range(1, maximum_radius + 1):
+            bonds = list(Chem.FindAtomEnvironmentOfRadiusN(mol, radius, center))
+            if not bonds:
+                continue
+            atoms = {center}
+            for bond_index in bonds:
+                bond = mol.GetBondWithIdx(bond_index)
+                atoms.add(bond.GetBeginAtomIdx())
+                atoms.add(bond.GetEndAtomIdx())
+            try:
+                fragment = Chem.MolFragmentToSmiles(
+                    mol,
+                    atomsToUse=sorted(atoms),
+                    bondsToUse=bonds,
+                    canonical=True,
+                    isomericSmiles=False,
+                )
+            except RuntimeError:
+                continue
+            fragment_mol = Chem.MolFromSmiles(fragment)
+            if fragment_mol is not None and fragment_mol.GetNumHeavyAtoms() >= minimum_atoms:
+                fragments.add(fragment)
+    return fragments
+
+
+def _score_network_augmented_choi(
+    smiles: str,
+    mol: Chem.Mol,
+    runtime: dict[str, Any],
+    config: dict[str, Any],
+) -> ScoreBreakdown:
+    baseline = _score_choi(smiles, mol, runtime, config)
+    fragments = _network_neighborhood_fragments(
+        mol,
+        int(config.get("network_minimum_atoms", 3)),
+        int(config.get("network_maximum_radius", 3)),
+    )
+    network_weights = runtime["network_pattern_fragments"]
+    total_network_weight = sum(network_weights.values()) or 1.0
+    matched_network = sorted(fragment for fragment in fragments if fragment in network_weights)
+    network_score = sum(network_weights[fragment] for fragment in matched_network) / total_network_weight
+    baseline_weight = float(config["network_baseline_weight"])
+    score = baseline_weight * baseline.score + (1.0 - baseline_weight) * network_score
+    original_structure_weight = baseline_weight * (1.0 - float(config["best_w"]))
+    total_structure_weight = original_structure_weight + (1.0 - baseline_weight)
+    structure_score = (
+        original_structure_weight * baseline.structure_score + (1.0 - baseline_weight) * network_score
+    ) / max(total_structure_weight, 1e-12)
+    threshold = float(config["threshold"])
+    return ScoreBreakdown(
+        smiles=smiles,
+        model_id=config["model_id"],
+        model_label=config["label"],
+        category=config["category"],
+        valid=True,
+        score=float(score),
+        threshold=threshold,
+        margin=float(score - threshold),
+        property_score=baseline.property_score,
+        structure_score=float(structure_score),
+        decision=_decision_text(config["category"], score, threshold),
+        matched_patterns=tuple(baseline.matched_patterns)
+        + tuple(f"network:{fragment}" for fragment in matched_network),
+    )
+
+
 
 
 def _han_property_component(mol: Chem.Mol, config: dict[str, Any]) -> float:
@@ -676,6 +751,8 @@ def score_smiles(smiles: str, model_id: str = DEFAULT_MODEL_ID) -> ScoreBreakdow
         return _score_lee(smiles, mol, runtime, config)
     if model_type == "choi_auto":
         return _score_choi(smiles, mol, runtime, config)
+    if model_type == "network_augmented_choi":
+        return _score_network_augmented_choi(smiles, mol, runtime, config)
     if model_type == "han_edc":
         return _score_han(smiles, mol, runtime, config)
     raise ValueError(f"Unsupported model type: {model_type}")

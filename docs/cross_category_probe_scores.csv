@@ -1,29 +1,29 @@
 probe_id,molecule_name,smiles,expected_primary_use,release_model_order,score_rank_within_role,model_id,model_label,model_role,category,valid,score,threshold,margin,decision,matched_patterns
 caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.576791,0.664300,-0.087509,unlikely endocrine disruptors,
-caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,2,2,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.310581,0.465872,-0.155291,unlikely flavor fragrance,
-caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,3,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,2,1,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.310581,0.465872,-0.155291,unlikely flavor fragrance,
+caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,3,2,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.165000,0.143132,0.021868,likely pesticides,
 caffeine,Caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C,human_drugs,4,3,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.078571,0.538281,-0.459709,unlikely surfactants,
 aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.795566,0.664300,0.131266,likely endocrine disruptors,ether
-aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,2,2,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.388227,0.465872,-0.077645,unlikely flavor fragrance,
-aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,3,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
-aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,4,3,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.314286,0.538281,-0.223995,unlikely surfactants,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,2,1,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.388227,0.465872,-0.077645,unlikely flavor fragrance,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,3,3,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.165000,0.143132,0.021868,likely pesticides,
+aspirin,Aspirin,CC(=O)Oc1ccccc1C(=O)O,human_drugs,4,2,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.314286,0.538281,-0.223995,unlikely surfactants,
 ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.931635,0.664300,0.267335,likely endocrine disruptors,halogenated_aromatic
 ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,2,3,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.077645,0.465872,-0.388227,unlikely flavor fragrance,
-ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,3,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.577053,0.498509,0.078543,likely pesticides,chloroaromatic
+ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,3,1,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.214036,0.143132,0.070904,likely pesticides,chloroaromatic; network:Clc1ccccc1
 ddt,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,pesticides,4,2,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.078571,0.538281,-0.459709,unlikely surfactants,
 bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.962161,0.664300,0.297861,likely endocrine disruptors,phenol
-bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,2,2,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.310581,0.465872,-0.155291,unlikely flavor fragrance,
-bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,3,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,2,1,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.310581,0.465872,-0.155291,unlikely flavor fragrance,
+bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,3,2,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.165000,0.143132,0.021868,likely pesticides,
 bisphenol_a,Bisphenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,food_contact_substances,4,3,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.157143,0.538281,-0.381138,unlikely surfactants,
 vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.854484,0.664300,0.190184,likely endocrine disruptors,phenol; ether
 vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,2,1,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.922355,0.465872,0.456483,likely flavor fragrance,aldehyde
-vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,3,2,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.550000,0.498509,0.051491,likely pesticides,
-vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,4,3,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.235714,0.538281,-0.302566,unlikely surfactants,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,3,3,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.165000,0.143132,0.021868,likely pesticides,
+vanillin,Vanillin,COc1cc(C=O)ccc1O,flavoring_agents,4,2,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.235714,0.538281,-0.302566,unlikely surfactants,
 sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.000444,0.664300,-0.663856,unlikely endocrine disruptors,
-sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,2,3,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.232936,0.465872,-0.232936,unlikely flavor fragrance,
-sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,3,2,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.392857,0.498509,-0.105652,unlikely pesticides,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,2,2,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.232936,0.465872,-0.232936,unlikely flavor fragrance,
+sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,3,3,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.117857,0.143132,-0.025275,unlikely pesticides,
 sds,Sodium dodecyl sulfate,CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+],surfactants,4,1,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.687738,0.538281,0.149458,likely surfactants,sulfonate; long_chain
 ethanol,Ethanol,CCO,solvents,1,1,han_endocrine_disruptors,Endocrine disruptors,auxiliary_hazard,endocrine_disruptors,true,0.000434,0.664300,-0.663866,unlikely endocrine disruptors,
-ethanol,Ethanol,CCO,solvents,2,2,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.388227,0.465872,-0.077645,unlikely flavor fragrance,
-ethanol,Ethanol,CCO,solvents,3,1,final_pesticides,Pesticides / Final rebuilt scorer,product_use,pesticides,true,0.392857,0.498509,-0.105652,unlikely pesticides,
-ethanol,Ethanol,CCO,solvents,4,3,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.235714,0.538281,-0.302566,unlikely surfactants,
+ethanol,Ethanol,CCO,solvents,2,1,final_flavor_fragrance,Flavor and fragrance category score,product_use,flavor_fragrance,true,0.388227,0.465872,-0.077645,unlikely flavor fragrance,
+ethanol,Ethanol,CCO,solvents,3,3,final_pesticides,Pesticides / Network-augmented final scorer,product_use,pesticides,true,0.117857,0.143132,-0.025275,unlikely pesticides,
+ethanol,Ethanol,CCO,solvents,4,2,final_surfactants,Surfactants / Final rebuilt scorer,product_use,surfactants,true,0.235714,0.538281,-0.302566,unlikely surfactants,

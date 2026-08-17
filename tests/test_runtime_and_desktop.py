@@ -6,6 +6,7 @@ import sys
 
 from app.algorithm_score_engine import (
     ALL_MODELS_SENTINEL,
+    MODEL_CONFIGS,
     get_model_role,
     list_models,
     score_csv,
@@ -17,6 +18,18 @@ from app.desktop_app import _clean_label, format_all_model_results
 
 ASPIRIN_SMILES = "CC(=O)Oc1ccccc1C(=O)O"
 DDT_SMILES = "Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1"
+
+
+def test_pesticide_network_augmentation_is_released_and_observable() -> None:
+    config = MODEL_CONFIGS["final_pesticides"]
+    assert config["model_type"] == "network_augmented_choi"
+    assert len(config["network_patterns"]) == 15
+    assert config["network_fold_consensus_required"] == 3
+
+    result = score_smiles("Clc1ccc(Cl)cc1", "final_pesticides")
+    assert result.valid
+    assert result.score >= result.threshold
+    assert "network:Clc1ccccc1" in result.matched_patterns
 
 
 def test_desktop_import_and_direct_script_list_models() -> None:

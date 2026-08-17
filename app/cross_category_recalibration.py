@@ -152,8 +152,9 @@ def main() -> None:
     write_csv(OUTPUT_DIR / "hard_cross_category_fpr10_matrix.csv", matrix_rows)
     write_csv(OUTPUT_DIR / "coauthor_examples_recalibrated.csv", example_rows)
     calibration = {
-        "schema_version": 1,
-        "generated": "2026-08-13",
+        "schema_version": 2,
+        "release_version": "2.1.0",
+        "generated": "2026-08-17",
         "interpretation": {
             "shared": "score meets the original category threshold but not the cross-category-specific threshold",
             "high_specificity": "score meets the threshold calibrated to at most 10% response in hard cross-category structures",

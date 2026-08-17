@@ -53,7 +53,7 @@ def plot_negative_sets() -> None:
         x + width / 2,
         retained,
         width,
-        label="Retained after Tanimoto < 0.3",
+        label="Final comparison set",
         color="#3182BD",
         edgecolor="#333333",
         linewidth=0.6,
@@ -68,7 +68,7 @@ def plot_negative_sets() -> None:
             fontsize=11,
             color="black",
         )
-    ax.set_title("Negative-set construction for the retained category scores", fontsize=21, weight="bold", pad=14)
+    ax.set_title("Comparison-set construction for the retained category scores", fontsize=21, weight="bold", pad=14)
     ax.set_ylabel("Molecule count", fontsize=16)
     ax.set_xlabel("Chemical category", fontsize=16, labelpad=14)
     ax.set_xticks(x, labels(), rotation=45, ha="right", fontsize=13)
@@ -105,10 +105,13 @@ def load_models() -> dict[str, dict]:
     }
 
 
-def pattern_names(config: dict) -> list[str]:
+def pattern_names(config: dict, include_network: bool = False) -> list[str]:
     if config["model_type"] == "han_edc":
         return list(config.get("smarts_patterns", {}))
-    return list(config.get("selected_patterns", {}))
+    patterns = list(config.get("selected_patterns", {}))
+    if include_network:
+        patterns.extend(f"network:{item['fragment_smiles']}" for item in config.get("network_patterns", []))
+    return patterns
 
 
 def descriptor_names(config: dict) -> list[str]:
@@ -125,12 +128,14 @@ def descriptor_names(config: dict) -> list[str]:
 def descriptor_weight(config: dict) -> float:
     if config["model_type"] == "han_edc":
         return float(config.get("weights", {}).get("property_score", 0.0))
+    if config["model_type"] == "network_augmented_choi":
+        return float(config["network_baseline_weight"]) * float(config.get("best_w", 0.5))
     return float(config.get("best_w", 0.5))
 
 
 def plot_composition(models: dict[str, dict]) -> None:
     descriptor_counts = [len(descriptor_names(models[c])) for c in CATEGORIES]
-    pattern_counts = [len(pattern_names(models[c])) for c in CATEGORIES]
+    pattern_counts = [len(pattern_names(models[c], include_network=True)) for c in CATEGORIES]
     weights = [descriptor_weight(models[c]) for c in CATEGORIES]
     x = np.arange(len(CATEGORIES)); width = 0.36
     fig, ax = plt.subplots(figsize=(14, 9), constrained_layout=True)

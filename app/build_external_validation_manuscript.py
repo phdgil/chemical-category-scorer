@@ -18,18 +18,227 @@ from docx.shared import Inches, Pt
 
 
 REFERENCE_ADDITIONS = [
-    "26. Chivukula N, Vashishth S, Kandasamy P, Madgaonkar SR, Samal A (2026) DEDuCT 3.0: an enhanced and expanded FAIR-compliant resource and toxicology knowledge graph for endocrine disrupting chemicals. bioRxiv. doi:10.64898/2026.01.23.701267.",
-    "27. Health Canada Pest Management Regulatory Agency. Pesticide Product Information Database open data extracts. https://pest-control.canada.ca/pesticide-registry-api/api/extract/. Accessed 6 Aug 2026.",
-    "28. European Commission. Cosmetic ingredient database (CosIng). https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en. Accessed 16 Aug 2026.",
-    "29. U.S. Food and Drug Administration. Inventory of Effective Food Contact Substance Notifications. https://www.fda.gov/food/packaging-food-contact-substances-fcs/inventory-effective-food-contact-substance-fcs-notifications. Accessed 16 Aug 2026.",
-    "30. European Commission. EU Union List of Flavouring Substances. https://food.ec.europa.eu/food-safety/food-improvement-agents/flavourings/eu-lists-flavourings_en. Accessed 16 Aug 2026.",
-    "31. U.S. Environmental Protection Agency. Safer Chemical Ingredients List. https://www.epa.gov/saferchoice/safer-ingredients. Accessed 16 Aug 2026.",
-    "32. Health Canada. Lists of Permitted Food Additives. https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/lists-permitted.html. Accessed 16 Aug 2026.",
-    "33. Avram S, Wilson TB, Curpan R, Halip L, Borota A, Bora A, Bologa CG, Holmes J, Knockel J, Yang JJ, Oprea TI (2023) DrugCentral 2023 extends human clinical data and integrates veterinary drugs. Nucleic Acids Res 51:D1276-D1287. doi:10.1093/nar/gkac1085.",
-    "34. Health Canada. Drug Product Database. https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html. Accessed 16 Aug 2026.",
-    "35. California Department of Public Health. California Safe Cosmetics Program product database. https://data.chhs.ca.gov/dataset/california-safe-cosmetics-program-cscp-product-database. Accessed 16 Aug 2026.",
-    "36. Food Standards Agency and Food Standards Scotland. Register of regulated product applications: food-contact materials authorisations. https://data.food.gov.uk/regulated-products/id/food-contact-materials/authorisation.csv. Accessed 16 Aug 2026.",
+    "25. Chivukula N, Vashishth S, Kandasamy P, Madgaonkar SR, Samal A (2026) DEDuCT 3.0: an enhanced and expanded FAIR-compliant resource and toxicology knowledge graph for endocrine disrupting chemicals. bioRxiv. doi:10.64898/2026.01.23.701267.",
+    "26. Health Canada Pest Management Regulatory Agency. Pesticide Product Information Database open data extracts. https://pest-control.canada.ca/pesticide-registry-api/api/extract/. Accessed 6 Aug 2026.",
+    "27. European Commission. Cosmetic ingredient database (CosIng). https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en. Accessed 16 Aug 2026.",
+    "28. U.S. Food and Drug Administration. Inventory of Effective Food Contact Substance Notifications. https://www.fda.gov/food/packaging-food-contact-substances-fcs/inventory-effective-food-contact-substance-fcs-notifications. Accessed 16 Aug 2026.",
+    "29. European Commission. EU Union List of Flavouring Substances. https://food.ec.europa.eu/food-safety/food-improvement-agents/flavourings/eu-lists-flavourings_en. Accessed 16 Aug 2026.",
+    "30. U.S. Environmental Protection Agency. Safer Chemical Ingredients List. https://www.epa.gov/saferchoice/safer-ingredients. Accessed 16 Aug 2026.",
+    "31. Health Canada. Lists of Permitted Food Additives. https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/lists-permitted.html. Accessed 16 Aug 2026.",
+    "32. Avram S, Wilson TB, Curpan R, Halip L, Borota A, Bora A, Bologa CG, Holmes J, Knockel J, Yang JJ, Oprea TI (2023) DrugCentral 2023 extends human clinical data and integrates veterinary drugs. Nucleic Acids Res 51:D1276-D1287. doi:10.1093/nar/gkac1085.",
+    "33. Health Canada. Drug Product Database. https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html. Accessed 16 Aug 2026.",
+    "34. California Department of Public Health. California Safe Cosmetics Program product database. https://data.chhs.ca.gov/dataset/california-safe-cosmetics-program-cscp-product-database. Accessed 16 Aug 2026.",
+    "35. Food Standards Agency and Food Standards Scotland. Register of regulated product applications: food-contact materials authorisations. https://data.food.gov.uk/regulated-products/id/food-contact-materials/authorisation.csv. Accessed 16 Aug 2026.",
+    "36. Page L, Brin S, Motwani R, Winograd T (1999) The PageRank citation ranking: bringing order to the Web. Stanford InfoLab Technical Report 1999-66.",
+    "37. Tong H, Faloutsos C, Pan J-Y (2006) Fast random walk with restart and its applications. Proceedings of the 6th IEEE International Conference on Data Mining:613-622. doi:10.1109/ICDM.2006.70.",
 ]
+
+CURRENT_PARAGRAPHS = {
+    "The prior-art landscape therefore supports a narrower novelty claim.": (
+        "The prior-art landscape therefore supports a narrower novelty claim. Broad category-likeness scoring is not "
+        "entirely unprecedented, because pesticides already have direct continuous-score precedent through QEP [9], and "
+        "several original categories have strong adjacent literatures [10-18]. The contribution defended here is the "
+        "transparent development and screening of eleven broad PubChem category candidates, followed by release of four "
+        "inspectable functions that survived exact-overlap-controlled specificity testing. The retained functions use "
+        "explicit molecular descriptors and structural evidence, are benchmarked against raw RDKit QED on each function's "
+        "documented comparison set, and expose failed candidates rather than presenting only successful endpoints."
+    ),
+    "That design choice makes the negative set central rather than peripheral.": (
+        "That design choice makes the comparison set central rather than peripheral. For the eleven original candidate "
+        "reconstructions, comparison molecules were pooled from the other original PubChem categories, exact target "
+        "overlaps and duplicates were removed, and near-positive neighbors were excluded at Morgan-fingerprint Tanimoto "
+        "similarity 0.3. The later merged flavor-and-fragrance function used the more stringent hard cross-category pool "
+        "after exact target-overlap removal without near-positive filtering. Figure 1 and Table 1 distinguish these "
+        "category-specific construction regimes."
+    ),
+    "The objective of this study was to test whether": (
+        "The objective of this study was to determine whether inspectable scoring functions could provide category-associated "
+        "evidence beyond raw RDKit QED and remain sufficiently specific under exact-overlap-controlled cross-category "
+        "testing. Molecules were assembled from the PubChem Classification Browser HID 72 hierarchy [19]. Development was "
+        "attempted for eleven original categories; the final panel contains endocrine disruptors, pesticides, surfactants, "
+        "and merged flavor and fragrance. Tables 1-4 and Figures 1-8 report comparison-set construction, performance, "
+        "score composition, external positive-set transfer, cross-category response, component contribution, uncertainty, "
+        "and external score distributions; Supporting Information Tables S1-S5 and Figures S1-S4 report candidate "
+        "disposition, exact category overlap, external database provenance, and the final combined-source experiment."
+    ),
+    "Source categories were taken from the PubChem Classification Browser HID 72 hierarchy": (
+        "Source categories were taken from the PubChem Classification Browser HID 72 hierarchy, specifically the "
+        "`Chemical and Physical Properties > Chemical Classes` branch [19]. Eleven original categories were examined: "
+        "animal drugs, human drugs, cosmetics, endocrine disruptors, flavoring agents, food additives, food-contact "
+        "substances, fragrances, pesticides, solvents, and surfactants. Final publication screening retained three "
+        "standalone functions—endocrine disruptors, pesticides, and surfactants—and one merged flavor-and-fragrance "
+        "function. Supporting Information Table S1 records the disposition and reason for every original candidate."
+    ),
+    "For a target category, the negative-source pool was constructed": (
+        "For each original target category, the negative-source pool was constructed from the union of the other ten "
+        "original PubChem positive sets. Exact target-positive structures and duplicate comparison SMILES were removed. "
+        "Cross-category chemistry was otherwise retained before the near-positive filtering step. For the merged "
+        "flavor-and-fragrance function, the target was the union of both original positive sets and the comparison pool "
+        "was formed from the remaining original categories after exact target-overlap removal."
+    ),
+    "The near-positive filtering step used RDKit Morgan fingerprints": (
+        "For the original candidate reconstructions, near-positive filtering used RDKit Morgan fingerprints with radius 2 "
+        "and 2048 bits. A comparison molecule was retained only when its maximum Tanimoto similarity to target positives "
+        "was below 0.3. The merged flavor-and-fragrance function was deliberately rebuilt against hard cross-category "
+        "negatives without this near-positive removal. Consequently, Table 1 reports final comparison counts rather than "
+        "implying one filtering rule for all four retained functions."
+    ),
+    "Each final scorer combined two explicit components:": (
+        "The three retained product-use functions used an explicit descriptor-range and structural-pattern architecture. "
+        "Descriptor support was based on molecular weight, logP, hydrogen-bond counts, topological polar surface area, "
+        "rotatable bonds, fraction sp3, and aromatic rings; structural support came from named SMARTS patterns selected "
+        "by enrichment. The endocrine-disruptor function used a distinct reconstructed Han architecture combining seven "
+        "descriptor-derived property terms with Murcko-scaffold evidence, three-fingerprint similarity, and named SMARTS "
+        "evidence. The final pesticide function additionally combines its frozen baseline with a personalized-PageRank "
+        "score over consensus atom-neighborhood fragments. All four functions are inspectable, but they are not instances "
+        "of one identical mathematical form."
+    ),
+    "Structural pattern support was derived from a fixed library": (
+        "The candidate SMARTS library included aldehyde, ester, cinnamate, long-chain, sulfonate, carbamate, urea, "
+        "halogenated-aromatic, nitro, glycol, and quaternary-nitrogen motifs. Product-use candidates retained patterns by "
+        "enrichment against their documented comparison backgrounds and combined descriptor and pattern terms with an "
+        "optimized weight. The pesticide function also contains fifteen Morgan-radius atom-neighborhood fragments selected "
+        "in all three network-random-walk folds. The endocrine function retained its original scaffold, similarity, "
+        "property, and SMARTS weights. Interpretability therefore means that every score can be decomposed into explicit molecular properties "
+        "and named or structure-referenced evidence rather than opaque latent features."
+    ),
+    "Final category scorers were selected through grid-search and Bayesian-search procedures": (
+        "Product-use candidates were selected through grid or Bayesian search over descriptor windows, motif-enrichment "
+        "cutoffs, score thresholds, and descriptor-pattern weights. The endocrine-disruptor function was reconstructed "
+        "from the original Han implementation and retained its property, scaffold, similarity, and SMARTS architecture. "
+        "The merged flavor-and-fragrance function was trained and assessed in three molecular-hash folds before a full-data "
+        "definition was frozen. Network random-walk augmentation was evaluated later under a separate leakage-resistant "
+        "fold design."
+    ),
+    "Raw RDKit QED was computed on the same reconstructed evaluation set for every category": (
+        "Raw RDKit QED was computed on the same target and comparison structures used to evaluate each candidate [1,24]. "
+        "Exceeding QED AUC was an initial benchmark requirement, not the sole publication criterion. Final retention also "
+        "required hard-background AUC above 0.5, an own-category threshold response greater than every exact-overlap-excluded "
+        "foreign response, and no foreign-category response at or above 50%; reciprocal flavoring-agent and fragrance "
+        "cross-response was addressed by evaluating a merged target. Pesticides were additionally compared with the "
+        "reimplemented QEP family [9]."
+    ),
+    "The negative-selection step materially shaped every final benchmark": (
+        "Comparison-set construction materially shaped every benchmark (Figure 1; Table 1). For endocrine disruptors, "
+        "pesticides, and surfactants, the original cross-category source pools were filtered at maximum Tanimoto similarity "
+        "below 0.3, leaving 3,455, 4,438, and 11,815 comparison structures, respectively. The merged flavor-and-fragrance "
+        "function instead used all 12,679 exact-overlap-excluded hard cross-category structures without near-positive "
+        "filtering. QED was calculated on the same category-specific evaluation structures as each score."
+    ),
+    "This step is especially important for defending robustness.": (
+        "These distinctions are important for defending robustness. Chemically remote comparison sets can make descriptor "
+        "windows and motif enrichment appear artificially discriminating, whereas hard cross-category structures test "
+        "specificity directly. The reported AUC values must therefore be interpreted with each function's documented "
+        "comparison policy; they are not estimates against universal true negatives."
+    ),
+    "The final scorers did not reduce to models based on descriptors alone.": (
+        "The retained functions used both molecular-property and structural evidence, but with different architectures and "
+        "weights (Figure 3). The endocrine function assigned only 0.024 weight to its seven-property term and was dominated "
+        "by scaffold and fingerprint-similarity evidence. The merged flavor-and-fragrance and surfactant functions used "
+        "descriptor-range weights of 0.544 and 0.55, respectively. "
+        "The promoted pesticide score assigns 0.30 to its original baseline—an effective descriptor contribution of "
+        "0.165—and 0.70 to the consensus network-pattern component."
+    ),
+    "All four retained functions exceeded raw RDKit QED in AUC": (
+        "All four retained functions exceeded raw RDKit QED in AUC on their respective documented reconstructed "
+        "evaluation sets (Table 1; Figure 2). The largest margin over QED was observed for surfactants (ΔAUC 0.7062). "
+        "Surfactants and endocrine disruptors showed the strongest retained separation, merged flavor and fragrance also "
+        "substantially exceeded QED, and pesticides showed the smallest retained margin."
+    ),
+    "Interpretability is documented more directly in Table 2 and Figure 4.": (
+        "Interpretability is documented directly in Table 2 and Figure 4. The merged flavor-and-fragrance function retained "
+        "one enriched aldehyde SMARTS together with seven descriptor ranges; less specific ester, cinnamate, and long-chain "
+        "motifs did not pass its frozen enrichment cutoff. Pesticides retained six original named motifs and fifteen "
+        "consensus network-ranked atom neighborhoods, surfactants retained four, "
+        "and the endocrine function retained eleven SMARTS terms in addition to scaffold and similarity evidence. These "
+        "terms are inspectable associations, not mechanistic explanations of regulatory or commercial use."
+    ),
+    "The main contribution of this study is bounded but defensible.": (
+        "The main contribution is bounded but defensible. The study does not establish category-likeness scoring as a new "
+        "concept [1-9] or one universal architecture. It documents an auditable workflow in which eleven broad PubChem "
+        "category candidates were built, challenged with exact-overlap-controlled cross-category structures, merged or "
+        "excluded when specificity failed, and reduced to four released inspectable functions."
+    ),
+    "The most critical methodological choice is the negative set": (
+        "The most critical methodological choice is the comparison set. Three retained functions use the original "
+        "Tanimoto-filtered PubChem cross-category regime, whereas merged flavor and fragrance uses an unfiltered hard "
+        "cross-category regime. These category-specific choices are exposed in Figure 1 and Table 1 and preclude treating "
+        "cross-category AUC values as though they arose from one universal negative population."
+    ),
+    "The interpretability claim is narrower than a mechanistic explanation claim.": (
+        "The interpretability claim is narrower than a mechanistic explanation claim. Descriptor intervals and named "
+        "SMARTS motifs are reported for every function; the endocrine function additionally exposes property, scaffold, "
+        "fingerprint-similarity, and SMARTS contributions. None of these terms establishes why a molecule has a regulatory "
+        "or commercial use."
+    ),
+    "The cross-category matrix places an important boundary on interpretation.": (
+        "The cross-category matrix places an important boundary on interpretation. The intended function had the largest "
+        "raw threshold-positive fraction for all four retained source sets and remained largest for all four after "
+        "subtracting each function's own comparison-set response. Off-diagonal responses nevertheless remained, "
+        "particularly between broad use classes. "
+        "The functions should therefore not be treated as mutually exclusive classifiers or ranked by incomparable raw "
+        "score magnitudes; each value represents parallel category-associated evidence at its own calibrated operating point."
+    ),
+    "The external positive-set analysis is useful even though no statistical learning algorithm was fitted.": (
+        "The frozen external positive-set comparison is useful because no function or threshold was refitted during that "
+        "comparison. It tests transfer of the PubChem-derived definitions to independently curated positive annotations "
+        "after construction-set overlap removal. It is not conventional external classification validation because the "
+        "external sources do not provide verified negatives."
+    ),
+    "Several limitations remain.": (
+        "Several limitations remain. The main benchmarks and final combined-source experiment use constructed cross-category "
+        "negatives rather than universally verified true negatives. Positive-only external databases cannot by themselves "
+        "support specificity, balanced accuracy, or ROC AUC; AUC in the final rebuilding experiment paired held-out external "
+        "positives with constructed hard negatives. Annotation-lineage independence cannot be inferred from database names, "
+        "and identifier resolution was incomplete for several sources. The motif library is predefined, broad motifs are "
+        "not exclusive category identifiers, and the final screening ceiling was an operational publication criterion rather "
+        "than a preregistered threshold. The network augmentation used one bipartite graph construction and one PageRank "
+        "damping value; alternative graph definitions remain untested. Further work should use additional independently "
+        "curated sources and compare the promoted neighborhood fragments with Murcko-, BRICS-, or hybrid-fragment candidates "
+        "under the same held-out design [20-23]."
+    ),
+    "For pesticides, the final category scorer was also compared": (
+        "For pesticides, the final network-augmented function was also compared with a reimplementation of the published "
+        "QEP family under the same retained-comparison regime [9]. QEP_max reached AUC 0.6811, the pre-augmentation "
+        "pesticide function reached 0.7527, and the promoted network-augmented function reached 0.7795. The resulting "
+        "0.0984 margin over QEP_max does not make pesticide-likeness scoring itself new; it shows that the descriptor, "
+        "named-pattern, and network-ranked neighborhood evidence captured additional separation in this constructed regime."
+    ),
+    "**Figure 1.**": (
+        "**Figure 1.** Construction of final comparison sets for the retained category scorers. Light bars show the "
+        "source pool and dark bars show the final comparison count. Endocrine-disruptor, pesticide, and surfactant "
+        "comparisons used the Tanimoto below 0.3 filter; merged flavor and fragrance used exact-overlap-excluded hard "
+        "cross-category structures without near-positive filtering. Percentage labels show the retained fraction."
+    ),
+    "**Figure 2.**": (
+        "**Figure 2.** AUC comparison between each retained category function and raw RDKit QED on that function's "
+        "documented target and comparison structures."
+    ),
+    "**Figure 4.**": (
+        "**Figure 4.** Cross-category comparison of retained named SMARTS patterns. Filled cells mark named patterns in "
+        "the corresponding final function. The fifteen network-ranked pesticide atom neighborhoods are reported in "
+        "Supporting Information Table S7."
+    ),
+}
+
+
+def replace_current_paragraphs_in_markdown(text: str) -> str:
+    paragraphs = text.split("\n\n")
+    for index, paragraph in enumerate(paragraphs):
+        plain = paragraph.strip()
+        for prefix, replacement in CURRENT_PARAGRAPHS.items():
+            if plain.startswith(prefix):
+                paragraphs[index] = replacement
+                break
+    return "\n\n".join(paragraphs)
+
+
+def replace_current_paragraphs_in_docx(document: Document) -> None:
+    for paragraph in document.paragraphs:
+        for prefix, replacement in CURRENT_PARAGRAPHS.items():
+            if paragraph.text.strip().startswith(prefix):
+                replace_paragraph(paragraph, replacement)
+                break
 
 DISPLAY_NAMES = {
     "endocrine_disruptors": "Endocrine disruptors",
@@ -39,11 +248,12 @@ DISPLAY_NAMES = {
 }
 
 SOURCE_CITATIONS = {
-    "DEDuCT v3 I-III": 26,
-    "Health Canada PMRA PPID": 27,
+    "DEDuCT v3 I-III": 25,
+    "Health Canada PMRA PPID": 26,
 }
 
 ROOT = Path(__file__).resolve().parent.parent
+CURRENT_TITLE = "Chemical Category Scoring across Broad Use and Hazard Classes Using Molecular Descriptors and Structural Patterns"
 MODEL_IDS = {
     **{category: f"final_{category}" for category in DISPLAY_NAMES},
     "endocrine_disruptors": "han_endocrine_disruptors",
@@ -73,16 +283,37 @@ def selected_descriptors(config: dict[str, Any]) -> list[str]:
 
 
 def selected_patterns(config: dict[str, Any]) -> list[str]:
-    return list(config.get("selected_patterns", config.get("smarts_patterns", {})))
+    patterns = list(config.get("selected_patterns", config.get("smarts_patterns", {})))
+    patterns.extend(f"network:{item['fragment_smiles']}" for item in config.get("network_patterns", []))
+    return patterns
+
+
+def selected_patterns_text(config: dict[str, Any]) -> str:
+    if config.get("model_type") == "network_augmented_choi":
+        original = list(config.get("selected_patterns", {}))
+        return (
+            f"{', '.join(original)}; {len(config.get('network_patterns', []))} "
+            "consensus network fragments (Table S7)"
+        )
+    return ", ".join(selected_patterns(config)) or "none"
 
 
 def model_weight_text(config: dict[str, Any]) -> str:
     if config.get("model_type") == "han_edc":
         weights = config.get("weights", {})
         return (
+            f"property={float(weights.get('property_score', 0)):.3f};"
             f"scaffold={float(weights.get('scaffold_score', 0)):.3f};"
             f"similarity={float(weights.get('similarity_score', 0)):.3f};"
             f"smarts={float(weights.get('smarts_score', 0)):.3f}"
+        )
+    if config.get("model_type") == "network_augmented_choi":
+        baseline_weight = float(config["network_baseline_weight"])
+        property_weight = baseline_weight * float(config.get("best_w", 0.5))
+        return (
+            f"property={property_weight:.3f};"
+            f"baseline={baseline_weight:.3f};"
+            f"network={1.0 - baseline_weight:.3f}"
         )
     return f"{float(config.get('best_w', 0.5)):.4g}"
 
@@ -126,7 +357,7 @@ def refresh_markdown_core_tables(
             config = models[category]
             cells[1:] = [
                 ", ".join(selected_descriptors(config)) or "none",
-                ", ".join(selected_patterns(config)) or "none",
+                selected_patterns_text(config),
                 model_weight_text(config),
             ]
             lines[index] = "| " + " | ".join(cells) + " |"
@@ -177,7 +408,7 @@ def refresh_docx_core_tables(
                 config = models[category]
                 values = (
                     ", ".join(selected_descriptors(config)) or "none",
-                    ", ".join(selected_patterns(config)) or "none",
+                    selected_patterns_text(config),
                     model_weight_text(config),
                 )
                 for cell, value in zip(row.cells[1:], values):
@@ -374,7 +605,7 @@ def result_paragraphs(rows: list[dict[str, str]]) -> tuple[str, str]:
         "The external comparison was category dependent. The lower recovery "
         "for DEDuCT endocrine disruptors shows that the PubChem-derived endocrine score does not cover much of the broader "
         "literature-defined endocrine-disruption space. Only 15 nonoverlapping pesticide structures could be scored after "
-        "incomplete identifier resolution and extensive overlap removal, and three reached the threshold; this small, selected "
+        "incomplete identifier resolution and extensive overlap removal, and four reached the promoted threshold; this small, selected "
         "subset cannot establish pesticide transfer. These differences are scientifically informative and prevent a universal "
         "robustness claim."
     )
@@ -403,7 +634,7 @@ def discussion_text(rows: list[dict[str, str]], overlap_rows: list[dict[str, str
 def conclusions_text(rows: list[dict[str, str]]) -> list[str]:
     main = primary_rows(rows)
     return [
-        "Scoring-function development was attempted for all eleven original PubChem categories. Rigorous cross-category screening retained four reportable functions: endocrine disruptors, pesticides, surfactants, and a merged flavor-and-fragrance function. Animal-drug and human-drug functions were excluded because QED already represents general drug-likeness; cosmetics, food-contact-substance, food-additive, and solvent functions were excluded for inadequate threshold specificity. Flavoring agents and fragrances were merged because their positive sets shared 1,071 structures and the separate scores used near-identical descriptor and motif logic. A final three-fold experiment added resolved external-database positives and rebuilt the corresponding comparison backgrounds, but no candidate reproducibly improved held-out transfer while preserving the original benchmark; the released four-function panel was therefore unchanged.",
+        "Scoring-function development was attempted for all eleven original PubChem categories. Rigorous cross-category screening retained four reportable functions: endocrine disruptors, pesticides, surfactants, and a merged flavor-and-fragrance function. Animal-drug and human-drug functions were excluded because QED already represents general drug-likeness; cosmetics, food-contact-substance, food-additive, and solvent functions were excluded for inadequate threshold specificity. Flavoring agents and fragrances were merged because their positive sets shared 1,071 structures and the separate scores used near-identical descriptor and motif logic. Adding external-database positives did not produce a reproducibly superior candidate. Bipartite-network random-walk pattern discovery subsequently improved pesticide AUC in every held-out fold and increased original-benchmark AUC from 0.7527 to 0.7795; the network-augmented pesticide definition was promoted while the four-category panel remained unchanged.",
         f"When the fixed rules were applied without refitting to {sum(integer(row, 'scored_true_external') for row in main):,} nonoverlapping external positives, recovery was strongly category dependent ({result_summary(rows)}). The endocrine-disruptor result defines an important limit on coverage, and the small pesticide set limits inference for that category. The defensible conclusion is therefore not universal external validity, but that explicit descriptor and structural-pattern scores can provide reusable, inspectable category evidence whose transfer must be established separately for each category and annotation source.",
     ]
 
@@ -411,9 +642,23 @@ def conclusions_text(rows: list[dict[str, str]]) -> list[str]:
 def abstract_text(rows: list[dict[str, str]]) -> str:
     main = primary_rows(rows)
     return (
-        "Accessible continuous scores remain uncommon for broad chemical product categories. We attempted scoring-function development for eleven categories defined from compounds assigned to PubChem categories and subjected every candidate to exact-overlap-controlled cross-category screening. Four functions survived: endocrine disruptors, pesticides, surfactants, and a merged flavor-and-fragrance function. The merged target was justified by 1,071 shared structures, representing 46% of each original positive set, and showed held-out AUCs of 0.842–0.868 across three hash folds. Animal-drug and human-drug functions were excluded because QED already represents general drug-likeness; cosmetics, food-contact-substance, food-additive, and solvent functions were excluded for inadequate threshold specificity. For each retained target, the comparison background was filtered for target overlap, duplicate structures, and near-positive Morgan-fingerprint neighbors. The fixed rules were additionally applied, without refitting, to "
+        "Accessible continuous scores remain uncommon for broad chemical use and hazard categories. We developed "
+        "inspectable candidates for eleven PubChem categories and challenged them with exact-overlap-controlled "
+        "cross-category structures. Four functions survived final screening: endocrine disruptors, pesticides, "
+        "surfactants, and merged flavor and fragrance. Flavoring-agent and fragrance positives shared 1,071 structures "
+        "(approximately 46% of each set); the merged function gave held-out AUCs of 0.842–0.868 across three molecular-hash "
+        "folds. Endocrine-disruptor, pesticide, and surfactant benchmarks used Tanimoto-filtered cross-category comparison "
+        "sets, whereas merged flavor and fragrance used unfiltered hard cross-category structures after exact target-overlap "
+        "removal. Every retained function exceeded raw RDKit QED AUC on its documented evaluation set. Bipartite-network "
+        "random walks identified stable pesticide-associated fragment neighborhoods and increased pesticide AUC from "
+        "0.7527 to 0.7795 across the original benchmark, with positive gains in all three held-out folds. Frozen-score "
+        "comparison used "
         f"{sum(integer(row, 'scored_true_external') for row in main):,} external positive structures remaining after overlap control. "
-        f"Recovery at the pre-established thresholds was category dependent ({result_summary(rows)}). Each function can be decomposed into explicit descriptor intervals and named structural patterns. These findings support the use of inspectable category scores while showing that transfer to external annotation sources must be assessed separately for each chemical category."
+        f"Recovery was category dependent ({result_summary(rows)}). A final three-fold experiment added resolved external "
+        "database positives and rebuilt comparison backgrounds for eight candidates; none reproducibly improved held-out "
+        "transfer while preserving the original benchmark. The released functions expose descriptor-derived properties "
+        "and named or structure-referenced evidence, but they are category-associated scores rather than mutually exclusive "
+        "classifiers. Transfer must be established separately for each category and annotation source."
     )
 
 
@@ -461,20 +706,34 @@ def analysis_methods_text() -> str:
         "not removed by Tanimoto similarity. These chemically difficult cross-category structures were divided by a "
         "deterministic molecular hash into training and held-out sets. Candidate functions retained the same explicit "
         "descriptor-range and structural-pattern architecture. Promotion required improvement on held-out cross-category "
-        "separation without a material loss on the original retained-comparison benchmark. The only promising target, "
-        "cosmetics, was confirmed across three held-out hash folds and then rebuilt from all available structures. "
+        "separation without a material loss on the original retained-comparison benchmark. The only provisionally promising target, "
+        "cosmetics, was confirmed across three held-out hash folds and then rebuilt from all available structures before "
+        "the stricter source-specific publication screen. "
         "Animal-drug and human-drug functions were subsequently excluded from the retained panel because QED already "
         "represents generic drug-likeness and those broad categories did not provide sufficiently distinct product-use evidence. "
         "For final publication screening, exact canonical overlaps with each score's target set were removed separately from "
         "every other source category. A score was retained only when its threshold-positive response on its own positive set "
-        "exceeded its response on every exact-overlap-excluded source set and its AUC against the pooled exact-overlap-excluded "
-        "cross-category background exceeded 0.5. As a final experiment, resolved structures from DEDuCT, the EU Union "
+        "exceeded its response on every exact-overlap-excluded source set, its AUC against the pooled exact-overlap-excluded "
+        "cross-category background exceeded 0.5, and no foreign-category response reached 50%. Reciprocal flavoring-agent "
+        "and fragrance responses were handled by evaluating a merged target rather than retaining either standalone function. "
+        "These were operational final-publication criteria, not preregistered thresholds. As a final experiment, resolved structures from DEDuCT, the EU Union "
         "List of Flavouring Substances, Health Canada PMRA and food-additive resources, EPA Safer Chemical Ingredients "
         "List functional-use classes, DrugCentral, and the Health Canada Drug Product Database were added to the relevant "
-        "PubChem positives [26,27,30-34]. External additions were partitioned into three molecular-hash folds. Each candidate "
+        "PubChem positives [25,26,29-33]. External additions were partitioned into three molecular-hash folds. Each candidate "
         "was rebuilt using PubChem positives plus two external folds and an updated exact-overlap-excluded cross-category "
         "background, then compared with the deployed baseline on the held-out external fold and original PubChem benchmark. "
-        "All database inventories and resolution yields are reported in Supporting Information Table S4."
+        "The endocrine candidate updated descriptor statistics and similarity references while retaining its scaffold, "
+        "SMARTS, and component weights; the other candidates used the descriptor-range and structural-pattern pipeline. "
+        "Held-out external AUC paired positive external structures with constructed hard cross-category negatives and "
+        "therefore was not an external-database specificity estimate. "
+        "All database inventories and resolution yields are reported in Supporting Information Table S4. Finally, "
+        "network-analysis random walks were evaluated for the four retained functions [36,37]. Within each training fold, "
+        "a bipartite network connected molecule nodes to canonical Morgan-radius 1–3 atom-neighborhood fragment nodes. "
+        "Personalized PageRank with damping 0.85 was run from positive and hard-negative restart distributions, and "
+        "fragments were ranked by positive-to-negative stationary-probability enrichment. An augmented score mixed the "
+        "frozen baseline with the network-pattern score using a training-fold weight. Promotion required positive AUC "
+        "change in every held-out fold, mean hard-background ΔAUC at least 0.020, and mean original-benchmark ΔAUC no "
+        "lower than -0.020. Consensus fragments had to rank among the top 24 in all three folds."
     )
 
 
@@ -488,7 +747,7 @@ def sequential_rebuild_results() -> str:
         "943 structures. Complete pairwise and multiplicity results are reported in Supporting Information Tables S2–S3 "
         "and Figures S2–S3. "
         "Exact-overlap-controlled revalidation showed that industrial co-use could not explain the observed cross-response. "
-        "After structures assigned to cosmetics were removed from the surfactant set, the promoted cosmetics function still "
+        "After structures assigned to cosmetics were removed from the surfactant set, the provisionally promoted cosmetics function still "
         "called 81.0% of the remaining surfactants positive, compared with 43.5% of cosmetics positives. The food-contact "
         "function called 100% of surfactants not assigned to food contact positive, compared with 81.9% of its own positives. "
         "The food-additive function likewise responded more often to flavoring-agent structures than to its own positive set. "
@@ -532,8 +791,39 @@ def combined_positive_rebuild_text() -> str:
         "consistent external-holdout gains that remained below the predefined +0.020 mean-improvement gate. Surfactants "
         "exceeded +0.020 on average, but one fold decreased by 0.030, so the consistency gate failed. Pesticides, animal "
         "drugs, human drugs, food additives, and solvents failed external-transfer or original-benchmark preservation "
-        "criteria. The four released scoring functions therefore remained unchanged (Supporting Information Table S5 "
-        "and Figure S4)."
+        "criteria. No combined-source candidate was promoted; the subsequent network-random-walk experiment was evaluated "
+        "separately (Supporting Information Table S5 and Figure S4)."
+    )
+
+
+def network_random_walk_results() -> str:
+    summary_path = ROOT / "results/network_random_walk_pattern_rebuild/summary.json"
+    candidate_path = ROOT / "results/network_random_walk_pattern_rebuild/final_pesticide_candidate.json"
+    if not summary_path.is_file() or not candidate_path.is_file():
+        return ""
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
+    statements = []
+    for category in ("endocrine_disruptors", "flavor_fragrance", "pesticides", "surfactants"):
+        values = summary[category]
+        statements.append(
+            f"{DISPLAY_NAMES[category]} {float(values['mean_hard_auc_delta']):+.3f}"
+        )
+    fold = summary["pesticides"]
+    full = candidate["full_data"]
+    pmra = candidate["pmra_nonoverlap"]
+    return (
+        "Network-analysis random-walk augmentation produced mean held-out hard-background ΔAUC values of "
+        f"{prose_list(statements)}. Only pesticides passed the promotion gate: all three folds improved "
+        f"(minimum ΔAUC {float(fold['minimum_hard_auc_delta']):+.3f}; mean "
+        f"{float(fold['mean_hard_auc_delta']):+.3f}), and mean original-benchmark ΔAUC was "
+        f"{float(fold['mean_original_auc_delta']):+.3f}. Fifteen atom-neighborhood fragments ranked among the top 24 "
+        "in every fold, including organophosphorus, urea, triazine-like, and chlorophenyl neighborhoods. The consensus "
+        f"full-data augmentation increased pesticide AUC from {float(full['baseline_original_auc']):.4f} to "
+        f"{float(full['candidate_original_auc']):.4f}; recovery among the 15 nonoverlapping PMRA positives increased "
+        f"from {round(15 * float(pmra['baseline_recovery']))}/15 to "
+        f"{round(15 * float(pmra['candidate_recovery']))}/15. The network-augmented pesticide definition was therefore "
+        "promoted, while the other three functions remained unchanged (Supporting Information Tables S6-S7 and Figure S5)."
     )
 
 
@@ -558,15 +848,20 @@ def cross_category_results(rows: list[dict[str, str]]) -> str:
         )
         if abs(float(diagonal_row["excess_fraction_over_retained_comparison"]) - adjusted_maximum) < 1e-12:
             adjusted_diagonal_wins += 1
+    raw_interpretation = (
+        "Each intended function therefore had the largest raw threshold response in its own source set."
+        if diagonal_wins == len(diagonal)
+        else "Some non-intended functions therefore covered a source positive set more extensively than its intended function."
+    )
     return (
         f"Across the complete positive sets, the fraction exceeding the intended score threshold ranged from "
         f"{min(rates):.1f}% to {max(rates):.1f}%. The intended score produced the highest threshold-positive "
-        f"fraction for {diagonal_wins} of the {len(diagonal)} source sets (Figure 6A). Some non-intended scores "
-        "therefore covered a source positive set more extensively than its intended score. This comparison is affected "
+        f"fraction for {diagonal_wins} of the {len(diagonal)} source sets (Figure 6A). {raw_interpretation} "
+        "This comparison is affected "
         "by unequal operating points. After subtracting each score's corresponding "
         f"retained-comparison response, the intended score was highest for {adjusted_diagonal_wins} of "
         f"{len(diagonal)} source sets (Figure 6B), although substantial off-diagonal response remained. These responses "
-        "are consistent with both shared chemical features and nonexclusive product-use categories. "
+        "are consistent with both shared chemical features and nonexclusive chemical use or hazard categories. "
         "The functions therefore provide parallel measures of category-associated structural evidence rather than "
         "a mutually exclusive, winner-take-all classification."
     )
@@ -689,20 +984,30 @@ def additional_discussion_text() -> list[str]:
             "for nonspecific scores. Surfactants are legitimate cosmetic ingredients and can be authorized for food-contact "
             "uses, but these relationships do not validate a score that responds more often to category-exclusive "
             "surfactants than to its own positives. Official sources do confirm surfactant functions for cosmetic ingredients "
-            "and surfactant or emulsifier uses in food-contact materials [28,29], but industrial plausibility does not establish "
+            "and surfactant or emulsifier uses in food-contact materials [27,28], but industrial plausibility does not establish "
             "analytical specificity. Cosmetics, food-contact substances, food additives, and solvents were therefore "
             "excluded. Animal-drug and human-drug functions were removed because QED already covers generic drug-likeness. "
             "Flavoring agents and fragrances were merged because their positive sets and scoring logic substantially overlapped; "
             "the merged target then passed three held-out evaluations."
         ),
         (
-            "Combining external and PubChem positives was scientifically useful even though it did not change the release. "
+            "Combining external and PubChem positives was scientifically useful even though it did not justify a model replacement. "
             "The added databases broadened annotation coverage, particularly for EU flavorings, EPA surfactants and solvents, "
-            "DrugCentral, and Canadian veterinary drugs [30-34]. However, adding positives also changed the hard comparison "
+            "DrugCentral, and Canadian veterinary drugs [29-33]. However, adding positives also changed the hard comparison "
             "background and sometimes reduced separability. The three-fold experiment therefore required reproducible "
             "held-out transfer together with preservation of the original benchmark. No candidate satisfied both conditions, "
-            "so retaining the frozen four-function panel avoids replacing stable definitions with source-dependent changes "
+            "so retaining the then-frozen definitions avoided replacing stable scores with source-dependent changes "
             "(Supporting Information Table S5 and Figure S4)."
+        ),
+        (
+            "The network random-walk experiment addressed a different limitation: the fixed SMARTS library could miss "
+            "recurrent structural neighborhoods that become apparent only through network connectivity. Positive- and "
+            "negative-seeded personalized PageRank on the molecule-fragment bipartite network consistently prioritized "
+            "organophosphorus, urea, triazine-like, and chlorophenyl neighborhoods for pesticides [36,37]. Their benefit "
+            "was not inferred from training enrichment alone; pesticide AUC improved in every held-out fold and on the "
+            "original benchmark, while PMRA recovery increased by one molecule. The smaller gains for the other retained "
+            "functions did not pass the promotion gate. Thus, network analysis improved one definition without reopening "
+            "the entire four-function panel."
         ),
     ]
 
@@ -723,7 +1028,7 @@ def hard_negative_rebuild_text() -> list[str]:
             f"{100 * float(promotion['hard_deployed_fpr_candidate_mean']):.1f}%. This gain involved a sensitivity "
             f"tradeoff ({100 * float(promotion['hard_deployed_tpr_baseline_mean']):.1f}% to "
             f"{100 * float(promotion['hard_deployed_tpr_candidate_mean']):.1f}%). A stricter source-specific revalidation "
-            "then showed that the promoted function still called 81.0% of surfactants not assigned to cosmetics positive. "
+            "then showed that the provisionally promoted function still called 81.0% of surfactants not assigned to cosmetics positive. "
             "It was therefore excluded together with the food-contact and food-additive functions."
         )
     ]
@@ -748,6 +1053,11 @@ def build_markdown(
     figure_dir: Path,
 ) -> None:
     text = base_path.read_text(encoding="utf-8")
+    text = text.replace(
+        "# Chemical Category Scoring across Broad Product Classes Using Molecular Descriptors and Structural Patterns",
+        f"# {CURRENT_TITLE}",
+        1,
+    )
     text = text.replace(
         "After the maximum-similarity screen at Tanimoto below 0.3, retained negative counts ranged from 3,422 for human drugs to 11,815 for surfactants.",
         "After the maximum-similarity screen at Tanimoto below 0.3, retained negative counts ranged from 3,455 for endocrine disruptors to 11,815 for surfactants.",
@@ -810,6 +1120,8 @@ def build_markdown(
         + "\n\n"
         + combined_positive_rebuild_text()
         + "\n\n"
+        + network_random_walk_results()
+        + "\n\n"
         + cross_category_results(cross_rows)
         + "\n\n"
         + f"![Figure 6. Threshold response of frozen scores across chemical categories.](figures/figure6_cross_category_score_matrix.png)"
@@ -848,7 +1160,7 @@ def build_markdown(
         "threshold. (B) Cells report the percentage-point difference between that fraction and the threshold-positive "
         "fraction in the score's retained comparison set; positive values indicate enrichment above the corresponding "
         "comparison response. Cyan outlines identify the intended category-score pairs. Off-diagonal responses show "
-        "cross-response among nonexclusive product-use categories."
+        "cross-response among nonexclusive chemical categories."
     )
     figure_7_legend = (
         "**Figure 7.** Contribution of descriptor and structural-evidence components. ROC AUC values were calculated "
@@ -875,7 +1187,7 @@ def build_markdown(
         "## Code Availability\n\n"
         "The desktop application, Python library, four released scoring-function definitions, and usage instructions "
         "are available from the Chemical Category Scorer GitHub repository "
-        "(https://github.com/phdgil/chemical-category-scorer), release version 2.0.0. The released model panel is "
+        "(https://github.com/phdgil/chemical-category-scorer), release version 2.1.0. The released model panel is "
         "identical to the four scoring functions reported here: endocrine disruptors, flavor and fragrance, pesticides, "
         "and surfactants.\n\n"
         "The local-first desktop application provides single-SMILES and batch-CSV scoring without transmitting molecular "
@@ -889,12 +1201,13 @@ def build_markdown(
         "`available_models()` returns the four article-matched model identifiers. Both interfaces use the same bundled "
         "JSON definitions, thresholds, and cross-category calibration.\n\n"
         "## Supporting Information\n\n"
-        "Supporting Information is provided as `supporting_information_overlap_analysis.docx`: Table S1 and Figure S1 "
+        "Supporting Information is provided as `supporting_information_final.docx`: Table S1 and Figure S1 "
         "report screening and disposition of all eleven attempted scoring functions; Table S2 and Figure S2 report "
         "pairwise exact-structure counts, directional category coverage, and Jaccard similarity; Table S3 and Figure S3 "
         "report the multiplicity of original category assignments across unique structures; Table S4 lists the external "
         "databases, citations, structure-resolution yields, and usable additions; Table S5 and Figure S4 report the final "
-        "combined PubChem-plus-external positive-set rebuilding experiment.\n\n"
+        "combined PubChem-plus-external positive-set rebuilding experiment; Tables S6-S7 and Figure S5 report the "
+        "network-random-walk pattern experiment and consensus pesticide fragments.\n\n"
     )
     if "## Supporting Information" not in text:
         text = text.replace("## References\n", supporting_text + "## References\n", 1)
@@ -902,6 +1215,14 @@ def build_markdown(
     for reference in REFERENCE_ADDITIONS:
         if reference not in text:
             text = text.rstrip() + "\n" + reference + "\n"
+    text = replace_current_paragraphs_in_markdown(text)
+    text = text.replace("Negatives after Tanimoto < 0.3", "Final comparison structures")
+    text = text.replace(
+        "**Figure 1.** Construction of retained cross-category negative sets for the final category scorers.",
+        "**Figure 1.** Construction of final comparison sets for the retained category scorers. Endocrine-disruptor, "
+        "pesticide, and surfactant comparisons used the Tanimoto below 0.3 filter; merged flavor and fragrance used "
+        "exact-overlap-excluded hard cross-category structures without near-positive filtering.",
+    )
     output_path.write_text(apply_terminology(text), encoding="utf-8")
 
 
@@ -1039,6 +1360,10 @@ def build_docx(
     shutil.copyfile(base_path, output_path)
     document = Document(output_path)
     for paragraph in document.paragraphs:
+        if paragraph.text.strip() == "Chemical Category Scoring across Broad Product Classes Using Molecular Descriptors and Structural Patterns":
+            replace_paragraph(paragraph, CURRENT_TITLE)
+            break
+    for paragraph in document.paragraphs:
         if "retained negative counts ranged from 3,422 for human drugs to 11,815 for surfactants" in paragraph.text:
             paragraph.text = paragraph.text.replace(
                 "retained negative counts ranged from 3,422 for human drugs to 11,815 for surfactants",
@@ -1107,6 +1432,7 @@ def build_docx(
     )
     add_paragraph_before(discussion_heading, sequential_rebuild_results())
     add_paragraph_before(discussion_heading, combined_positive_rebuild_text())
+    add_paragraph_before(discussion_heading, network_random_walk_results())
     add_paragraph_before(discussion_heading, cross_category_results(cross_rows))
     add_figure_before(
         discussion_heading,
@@ -1116,7 +1442,7 @@ def build_docx(
         "threshold. (B) Cells report the percentage-point difference between that fraction and the threshold-positive "
         "fraction in the score's retained comparison set; positive values indicate enrichment above the corresponding "
         "comparison response. Cyan outlines identify the intended category-score pairs. Off-diagonal responses show "
-        "cross-response among nonexclusive product-use categories.",
+        "cross-response among nonexclusive chemical categories.",
     )
     add_paragraph_before(discussion_heading, ablation_results(ablation_rows))
     add_figure_before(
@@ -1177,7 +1503,7 @@ def build_docx(
         references_heading,
         "The desktop application, Python library, four released scoring-function definitions, and usage instructions "
         "are available from the Chemical Category Scorer GitHub repository "
-        "(https://github.com/phdgil/chemical-category-scorer), release version 2.0.0. The released model panel is "
+        "(https://github.com/phdgil/chemical-category-scorer), release version 2.1.0. The released model panel is "
         "identical to the four scoring functions reported here: endocrine disruptors, flavor and fragrance, pesticides, "
         "and surfactants.",
     )
@@ -1200,12 +1526,13 @@ def build_docx(
     add_paragraph_before(references_heading, "Supporting Information", "Heading 1")
     add_paragraph_before(
         references_heading,
-        "Supporting Information is provided as supporting_information_overlap_analysis.docx. Table S1 and Figure S1 "
+        "Supporting Information is provided as supporting_information_final.docx. Table S1 and Figure S1 "
         "report screening and disposition of all eleven attempted scoring functions; Table S2 and Figure S2 report "
         "pairwise exact-structure counts, directional category coverage, and Jaccard similarity; Table S3 and Figure S3 "
         "report the multiplicity of original category assignments across unique structures; Table S4 lists the external "
         "databases, citations, structure-resolution yields, and usable additions; Table S5 and Figure S4 report the final "
-        "combined PubChem-plus-external positive-set rebuilding experiment.",
+        "combined PubChem-plus-external positive-set rebuilding experiment; Tables S6-S7 and Figure S5 report the "
+        "network-random-walk pattern experiment and consensus pesticide fragments.",
     )
 
     first_reference = find_paragraph(document, "1. Bickerton")
@@ -1216,6 +1543,36 @@ def build_docx(
         if not any(paragraph.text.strip() == reference for paragraph in document.paragraphs):
             document.add_paragraph(reference)
 
+    replace_current_paragraphs_in_docx(document)
+    for table in document.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                if cell.text.strip() == "Negatives after Tanimoto < 0.3":
+                    set_cell_text(cell, "Final comparison structures")
+    for paragraph in document.paragraphs:
+        if paragraph.text.strip().startswith(
+            "Figure 1. Construction of retained cross-category negative sets"
+        ):
+            replace_paragraph(
+                paragraph,
+                "Figure 1. Construction of final comparison sets for the retained category scorers. Light bars show "
+                "the source pool and dark bars show the final comparison count. Endocrine-disruptor, pesticide, and "
+                "surfactant comparisons used the Tanimoto below 0.3 filter; merged flavor and fragrance used "
+                "exact-overlap-excluded hard cross-category structures without near-positive filtering.",
+            )
+        elif paragraph.text.strip().startswith("Figure 2. AUC comparison"):
+            replace_paragraph(
+                paragraph,
+                "Figure 2. AUC comparison between each retained category function and raw RDKit QED on that function's "
+                "documented target and comparison structures.",
+            )
+        elif paragraph.text.strip().startswith("Figure 4. Cross-category comparison"):
+            replace_paragraph(
+                paragraph,
+                "Figure 4. Cross-category comparison of retained named SMARTS patterns. Filled cells mark named patterns "
+                "in the corresponding final function. The fifteen network-ranked pesticide atom neighborhoods are "
+                "reported in Supporting Information Table S7.",
+            )
     for paragraph in document.paragraphs:
         revised = apply_terminology(paragraph.text)
         if revised != paragraph.text:

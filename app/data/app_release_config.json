@@ -1,6 +1,6 @@
 {
   "app_name": "Chemical Category Scorer",
-  "release_version": "2.0.0",
+  "release_version": "2.1.0",
   "status": "article-synchronized validated scoring-function release",
   "default_model": "final_pesticides",
   "supports_all_model_ranking": true,
@@ -20,6 +20,7 @@
   "built_in_model_policy": "The desktop app and Python library expose exactly the four scoring functions reported in the article. Endocrine disruption remains a separate auxiliary hazard signal.",
   "notes": [
     "The pesticide scorer remains tied to the dedicated Pesticides class and does not merge Agrochemical Information into the target definition.",
+    "The pesticide scorer includes fifteen atom-neighborhood fragments selected in all three held-out molecule-fragment network random-walk folds; original-benchmark AUC increased from 0.7527 to 0.7795.",
     "Flavoring agents and fragrances were merged because their positive sets shared 1,071 structures and their original functions used near-identical descriptor and motif logic; the merged function showed held-out AUC 0.842-0.868 across three folds.",
     "Animal-drug and human-drug functions were excluded because QED already represents general drug-likeness.",
     "Cosmetics, food-contact-substance, food-additive, and solvent functions were excluded after exact-overlap-controlled screening showed inadequate threshold specificity.",

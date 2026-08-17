@@ -29,7 +29,7 @@ REMOVED_LIBRARY_FUNCTIONS = {
 def test_library_and_desktop_manifest_expose_article_panel_only() -> None:
     release = json.loads((ROOT / "app" / "data" / "app_release_config.json").read_text(encoding="utf-8"))
 
-    assert release["release_version"] == "2.0.0"
+    assert release["release_version"] == "2.1.0"
     assert release["available_models"] == EXPECTED_MODEL_IDS
     assert scorer.available_models() == EXPECTED_MODEL_IDS
     assert [model["model_id"] for model in list_models(public_only=True)] == EXPECTED_MODEL_IDS
@@ -57,7 +57,7 @@ def test_every_released_model_has_calibration_and_definition() -> None:
         (ROOT / "app" / "data" / "cross_category_calibration.json").read_text(encoding="utf-8")
     )
 
-    assert calibration["release_version"] == "2.0.0"
+    assert calibration["release_version"] == "2.1.0"
     assert list(calibration["models"]) == EXPECTED_MODEL_IDS
     for model_id in EXPECTED_MODEL_IDS:
         assert (ROOT / "app" / "data" / "models" / f"{model_id}.json").is_file()

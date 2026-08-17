@@ -1,19 +1,23 @@
 {
   "model_id": "final_pesticides",
-  "label": "Pesticides / Final rebuilt scorer",
+  "label": "Pesticides / Network-augmented final scorer",
   "category": "pesticides",
-  "model_type": "choi_auto",
-  "threshold": 0.4985092616952654,
-  "source_student": "최예빈 + 이서윤 hybrid final rebuild",
-  "source_student_id": "20251266+20251288",
-  "description": "Final broad-category scorer rebuilt with retained cross-category negatives, positive-set physicochemical ranges, and structural patterns combined in one score.",
+  "model_type": "network_augmented_choi",
+  "threshold": 0.1431318658832471,
+  "source_student": "Choi Yebin (baseline); network random-walk augmentation",
+  "source_student_id": "20251266",
+  "description": "Pesticide category score augmented with structural neighborhoods ranked by positive-versus-negative personalized PageRank on a bipartite molecule-fragment network.",
   "metrics": {
-    "auc": 0.752695293845201,
-    "ks": 0.3679421568017566,
-    "balanced_accuracy": 0.6839710784008783,
-    "overlap": 0.5989079053985497,
-    "objective": 2.0774765078110886,
-    "negative_count": 4438
+    "auc": 0.7795161387594731,
+    "balanced_accuracy": 0.7131810039203843,
+    "negative_count": 4438,
+    "hard_cross_category_auc": 0.7414642443599812,
+    "baseline_auc_before_network": 0.752695293845201,
+    "baseline_hard_auc_before_network": 0.6997728457942947,
+    "mean_held_out_hard_auc_delta": 0.04661135124594562,
+    "minimum_held_out_hard_auc_delta": 0.04156139375988954,
+    "mean_held_out_original_auc_delta": 0.029979942370353285,
+    "pmra_nonoverlap_recovery": 0.26666666666666666
   },
   "selected_props": [
     "MW",
@@ -104,5 +108,110 @@
       "near_positive_tanimoto_after_step1"
     ],
     "note": "Molecules found in other categories are retained as negatives unless they are also in the target positive set."
+  },
+  "network_method": "bipartite molecule-fragment personalized PageRank; Morgan-radius atom-neighborhood fragment nodes; positive-versus-negative walk enrichment",
+  "network_damping": 0.85,
+  "network_minimum_atoms": 3,
+  "network_maximum_radius": 3,
+  "network_fold_consensus_required": 3,
+  "network_patterns": [
+    {
+      "fragment_smiles": "NC(N)=O",
+      "weight": 0.5873543782139161,
+      "mean_positive_prevalence": 0.06992085321052698,
+      "mean_walk_enrichment": 4.665211880063727
+    },
+    {
+      "fragment_smiles": "CCOP",
+      "weight": 0.48407056283570665,
+      "mean_positive_prevalence": 0.031237206752400437,
+      "mean_walk_enrichment": 6.699349879843112
+    },
+    {
+      "fragment_smiles": "COP",
+      "weight": 0.4833425916678927,
+      "mean_positive_prevalence": 0.06425487850663746,
+      "mean_walk_enrichment": 3.7505987248084733
+    },
+    {
+      "fragment_smiles": "OP(O)(O)=S",
+      "weight": 0.45718185005066436,
+      "mean_positive_prevalence": 0.017552422683342565,
+      "mean_walk_enrichment": 10.980643492352023
+    },
+    {
+      "fragment_smiles": "Cn1cncn1",
+      "weight": 0.4540382476137042,
+      "mean_positive_prevalence": 0.029497445744463183,
+      "mean_walk_enrichment": 6.260592877280538
+    },
+    {
+      "fragment_smiles": "CSP",
+      "weight": 0.44598276283824095,
+      "mean_positive_prevalence": 0.025285119130613997,
+      "mean_walk_enrichment": 7.009987878279588
+    },
+    {
+      "fragment_smiles": "CCn1cncn1",
+      "weight": 0.40013047589427736,
+      "mean_positive_prevalence": 0.022820154726405337,
+      "mean_walk_enrichment": 6.280871771074562
+    },
+    {
+      "fragment_smiles": "CNS",
+      "weight": 0.39970192349635436,
+      "mean_positive_prevalence": 0.03548900423081356,
+      "mean_walk_enrichment": 4.3606964338813015
+    },
+    {
+      "fragment_smiles": "Clc1ccccc1",
+      "weight": 0.3398499038456408,
+      "mean_positive_prevalence": 0.05689297356358036,
+      "mean_walk_enrichment": 2.693721824381259
+    },
+    {
+      "fragment_smiles": "OP(O)(=S)S",
+      "weight": 0.3313855591918186,
+      "mean_positive_prevalence": 0.013344341451071967,
+      "mean_walk_enrichment": 7.328258009105215
+    },
+    {
+      "fragment_smiles": "CNC(=O)O",
+      "weight": 0.3137591346743726,
+      "mean_positive_prevalence": 0.015451135973174884,
+      "mean_walk_enrichment": 5.779249561674708
+    },
+    {
+      "fragment_smiles": "COP(=S)(OC)SC",
+      "weight": 0.31107486881402907,
+      "mean_positive_prevalence": 0.011586853179014875,
+      "mean_walk_enrichment": 7.454576390782036
+    },
+    {
+      "fragment_smiles": "CN(C)c1c(C)cccc1C",
+      "weight": 0.27442536371892184,
+      "mean_positive_prevalence": 0.015804429258523715,
+      "mean_walk_enrichment": 4.5417542556318695
+    },
+    {
+      "fragment_smiles": "Clc1cccc(Cl)c1",
+      "weight": 0.2702475302581508,
+      "mean_positive_prevalence": 0.036184862824937596,
+      "mean_walk_enrichment": 2.6779431117493186
+    },
+    {
+      "fragment_smiles": "Oc1ccc(Cl)cc1",
+      "weight": 0.2611417904328625,
+      "mean_positive_prevalence": 0.020723227920443406,
+      "mean_walk_enrichment": 3.519161256920922
+    }
+  ],
+  "network_baseline_weight": 0.30000000000000004,
+  "network_pattern_weight": 0.7,
+  "promotion_date": "2026-08-17",
+  "promotion_evidence": {
+    "mean_hard_auc_delta": 0.04661135124594562,
+    "minimum_hard_auc_delta": 0.04156139375988954,
+    "mean_original_auc_delta": 0.029979942370353285
   }
 }

@@ -2,7 +2,7 @@
 
 Local-first desktop application for broad chemical product-category scoring from molecular structure.
 
-Version **2.0.0** is synchronized with the associated manuscript and Python library. All three interfaces—the source application, packaged desktop archive, and importable library—use the same four model JSON files, thresholds, and cross-category calibration.
+Version **2.1.0** is synchronized with the associated manuscript and Python library. All three interfaces—the source application, packaged desktop archive, and importable library—use the same four model JSON files, thresholds, and cross-category calibration.
 
 ## Why a desktop app
 Chemical manufacturers often treat molecular structures as confidential business assets. This app is designed so that scoring can run on a local workstation without sending SMILES strings, descriptors, or batch files to an external server. That makes it suitable for GitHub distribution while still preserving offline use inside companies.
@@ -17,7 +17,7 @@ Chemical manufacturers often treat molecular structures as confidential business
 
 ## Available categories
 
-Version 2.0.0 contains exactly the four scoring functions reported in the associated article: three product-use functions and one auxiliary Han Se-eum endocrine-disruption hazard/activity function.
+Version 2.1.0 contains exactly the four scoring functions reported in the associated article: three product-use functions and one auxiliary Han Se-eum endocrine-disruption hazard/activity function. The pesticide function includes fifteen consensus atom-neighborhood fragments identified by held-out bipartite-network random-walk analysis.
 
 Product-use scorers:
 

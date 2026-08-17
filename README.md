@@ -10,14 +10,14 @@ The local-first design matters for industrial chemistry use because molecular st
 
 ## Article-synchronized release
 
-Version **2.0.0** is synchronized with the scoring functions reported in the associated manuscript. The desktop app and Python library load the same four bundled model definitions, thresholds, and cross-category calibration:
+Version **2.1.0** is synchronized with the scoring functions reported in the associated manuscript. The desktop app and Python library load the same four bundled model definitions, thresholds, and cross-category calibration:
 
 - `han_endocrine_disruptors`
 - `final_flavor_fragrance`
 - `final_pesticides`
 - `final_surfactants`
 
-Flavoring agents and fragrances are represented by one merged score because their original positive sets shared 1,071 exact structures and the merged function passed three held-out evaluations. Candidate functions for animal drugs, human drugs, cosmetics, food additives, food-contact substances, fragrances and flavoring agents separately, and solvents are not part of the public 2.0.0 panel.
+Flavoring agents and fragrances are represented by one merged score because their original positive sets shared 1,071 exact structures and the merged function passed three held-out evaluations. Candidate functions for animal drugs, human drugs, cosmetics, food additives, food-contact substances, fragrances and flavoring agents separately, and solvents are not part of the public 2.1.0 panel. The pesticide function in 2.1.0 adds fifteen atom-neighborhood fragments discovered by positive- versus negative-seeded personalized PageRank on a molecule-fragment network; all fifteen were selected in every held-out fold.
 
 ## Desktop app
 
@@ -103,7 +103,7 @@ chemical-category-scorer-desktop --list-models
 
 ## Available scoring categories
 
-Version 2.0.0 exposes exactly the four scoring functions reported in the associated article. The product-use scores and Han endocrine-disruption score answer different questions.
+Version 2.1.0 exposes exactly the four scoring functions reported in the associated article. The product-use scores and Han endocrine-disruption score answer different questions.
 
 Product-use scorers:
 
